@@ -23,7 +23,7 @@ public class Game : MonoBehaviour
     private Status _currentStatus;
     public Status status => _currentStatus;
 
-    public EventChangeStatus eventChangeStatus = new EventChangeStatus();
+    public Action<Status> OnChangeMenu;
 
     public void RechangeStatus()
     {
@@ -40,11 +40,7 @@ public class Game : MonoBehaviour
                 break;
         }
 
-        eventChangeStatus.Invoke(_currentStatus);
+        OnChangeMenu.Invoke(_currentStatus);
     }
 
-    [Serializable]
-    public class EventChangeStatus : UnityEvent<Status>
-    {
-    }
 }

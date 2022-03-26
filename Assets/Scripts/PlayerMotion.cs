@@ -4,16 +4,17 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotion : MonoBehaviour
 {
-    [SerializeField] private float _speed = 3;
+    [SerializeField] private float _maxSpeed = 3;
+    [SerializeField] private float _maxJump = 5;
     [SerializeField] private float _jumpSence = 1;
     [SerializeField] private float _jumpForce = 500;
+    [SerializeField] private float _moveInertia = 10;
     [SerializeField] private LayerMask _checkGroundMask;
+
     private Rigidbody _rigidbody;
-    private float _targetX;
-    private float _startX;
-    private Vector3 _targetPosition;
     private bool _onGround = false;
-    
+    private float clampX;
+    private float clampY;
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class PlayerMotion : MonoBehaviour
 
     private void OnEnable()
     {
-        Game.Instance.eventChangeStatus.AddListener(PauseGame);
+       Game.Instance.OnChangeMenu += PauseGame;
     }
 
     private void Start()
@@ -32,33 +33,40 @@ public class PlayerMotion : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //if (Game.Instance.status == Game.Status.pause)
-        //{
-        //    _rigidbody.velocity = Vector3.zero;
-        //    return;
-        //}
-
-        if (InputHandler.Instance.OnSwipe == false)
-        {
-            _targetX = 0;
-            _startX = _rigidbody.position.x;
-        }
-        else
-        {
-            _targetX = InputHandler.Instance.SwipeDirection.x;
-        }
-
+        #region Jump
+        clampY = _rigidbody.velocity.y;
         if (_onGround)
         {
             if (InputHandler.Instance.SwipeDirection.y > _jumpSence)
             {
-                _rigidbody.AddForce(Vector3.up * _jumpForce);
+                clampY = _jumpForce;
+            }
+        }
+        clampY = Mathf.Clamp(clampY, Physics.gravity.y, _maxJump);
+        #endregion
+
+        #region Move
+        if (InputHandler.Instance.OnSwipe)
+        {
+            clampX = InputHandler.Instance.SwipeDirection.x;
+        }
+        else
+        {
+            if(_moveInertia != 0)
+            {
+                clampX = Mathf.MoveTowards(clampX, 0, _moveInertia * Time.deltaTime);
+            }
+            else
+            {
+                clampX = 0;
             }
         }
 
-        //_targetPosition = new Vector3(_startX + _targetX, _rigidbody.position.y, _rigidbody.position.z);
-        //_targetPosition = Vector3.MoveTowards(_rigidbody.position, _targetPosition, _speed * Time.deltaTime);
-        //_rigidbody.MovePosition(_targetPosition);
+        clampX = Mathf.Clamp(clampX, -_maxSpeed, _maxSpeed);
+        #endregion
+
+        _rigidbody.velocity = new Vector3(clampX, clampY, _rigidbody.velocity.z);
+
     }
 
     private void OnCollisionStay(Collision collision)
@@ -79,7 +87,8 @@ public class PlayerMotion : MonoBehaviour
 
     private void OnDisable()
     {
-        Game.Instance.eventChangeStatus.RemoveListener(PauseGame);
+        if (Game.Instance == null) return;
+        Game.Instance.OnChangeMenu -= PauseGame;
     }
 
     private void PauseGame(Game.Status status)

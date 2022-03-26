@@ -15,12 +15,13 @@ public class Ball : MonoBehaviour
 
     private void OnEnable()
     {
-        Game.Instance.eventChangeStatus.AddListener(PauseGame);
+        Game.Instance.OnChangeMenu += PauseGame;
     }
 
     private void OnDisable()
     {
-        Game.Instance.eventChangeStatus.RemoveListener(PauseGame);
+        if (Game.Instance == null) return;
+        Game.Instance.OnChangeMenu -= PauseGame;
     }
 
     private void FixedUpdate()
@@ -32,7 +33,7 @@ public class Ball : MonoBehaviour
         //}
 
         Vector3 currentVelosity = _rigidbody.velocity;
-        currentVelosity = Vector3.ClampMagnitude(currentVelosity, 15);
+        currentVelosity = Vector3.ClampMagnitude(currentVelosity, 10);
         _rigidbody.velocity = currentVelosity;
     }
 
