@@ -284,9 +284,9 @@
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Interface\Licenses\License.CCA3.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Debugging\GraphDebugDataProvider.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Plugins\PluginMigration.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Interface\Fuzzy\FuzzyOptionTree.cs" />
-    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Inspection\Primitives\DiscreteNumberInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Utilities\FrameLimiterUtility.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Inspection\Primitives\DiscreteNumberInspector.cs" />
+    <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Interface\Fuzzy\FuzzyOptionTree.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Inspection\ImplementationInspector.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Context\GraphContextAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Reflection\MemberOptionTree.cs" />
