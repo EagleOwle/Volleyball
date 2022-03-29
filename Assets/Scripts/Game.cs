@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Game : MonoBehaviour
 {
@@ -35,12 +34,25 @@ public class Game : MonoBehaviour
             case Status.pause:
                 _currentStatus = Status.game;
                 break;
-            default:
+        }
+
+        OnChangeMenu.Invoke(_currentStatus);
+    }
+
+    public void SetStatus(Status status)
+    {
+        switch (status)
+        {
+            case Status.game:
                 _currentStatus = Status.game;
+                break;
+            case Status.pause:
+                _currentStatus = Status.pause;
                 break;
         }
 
         OnChangeMenu.Invoke(_currentStatus);
+
     }
 
 }

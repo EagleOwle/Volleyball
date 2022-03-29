@@ -16,12 +16,22 @@ public class UITimer : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _showNumberParamID = Animator.StringToHash("Show");
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        _showNumberParamID = Animator.StringToHash("Show");
+        Game.Instance.SetStatus(Game.Status.pause);
         _animator.SetTrigger(_showNumberParamID);
+        transform.parent.SetAsLastSibling();
+    }
+
+    private void OnDisable()
+    {
+        if (Game.Instance != null)
+        {
+            Game.Instance.SetStatus(Game.Status.game);
+        }
     }
 
     public void EndShow()
@@ -32,7 +42,10 @@ public class UITimer : MonoBehaviour
         {
             _image.sprite = numbers[_nextIndex];
             _animator.SetTrigger(_showNumberParamID);
-            
+        }
+        else
+        {
+           transform.parent.gameObject.SetActive(false);
         }
     }
 
