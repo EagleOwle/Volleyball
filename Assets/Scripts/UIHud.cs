@@ -20,53 +20,26 @@ public class UIHud : MonoBehaviour
         }
     }
 
-    [SerializeField] private Button _restartBtn;
-    [SerializeField] private Button _pauseBtn;
-
-    [Space()]
-    [SerializeField] private GameObject pausePanel;
-    [SerializeField] private GameObject timerPanel;
+    [SerializeField] private UIPanel[] panels;
 
     private void Start()
     {
-        _restartBtn.onClick.AddListener(OnButtonRestart);
-        _pauseBtn.onClick.AddListener(OnButtonPause);
-
-        ShowTimerPanel();
+        ChangePanel("TimerPanel");
     }
 
-    private void OnButtonRestart()
+    public void ChangePanel(string namePanel)
     {
-        SceneManager.LoadScene(0);
-    }
-
-    private void OnButtonPause()
-    {
-        if (Game.Instance.status == Game.Status.game)
+        foreach (var item in panels)
         {
-            Game.Instance.SetStatus(Game.Status.pause);
-            ShowPausePanel();
+            if(item.namePanel == namePanel)
+            {
+                item.gameObject.SetActive(true);
+            }
+            else
+            {
+                item.gameObject.SetActive(false);
+            }
         }
-        else
-        {
-            Game.Instance.SetStatus(Game.Status.game);
-            HidePausePanel();
-        }
-    }
-
-    public void ShowPausePanel()
-    {
-        pausePanel.SetActive(true);
-    }
-
-    public void HidePausePanel()
-    {
-        pausePanel.SetActive(false);
-    }
-
-    public void ShowTimerPanel()
-    {
-        timerPanel.SetActive(true);
     }
 
 }

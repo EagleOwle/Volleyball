@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
-public class UITimer : MonoBehaviour
+public class UITimer : UIPanel
 {
     [SerializeField] Sprite[] numbers;
     [SerializeField] Image _image;
@@ -23,15 +23,6 @@ public class UITimer : MonoBehaviour
     {
         Game.Instance.SetStatus(Game.Status.pause);
         _animator.SetTrigger(_showNumberParamID);
-        transform.parent.SetAsLastSibling();
-    }
-
-    private void OnDisable()
-    {
-        if (Game.Instance != null)
-        {
-            Game.Instance.SetStatus(Game.Status.game);
-        }
     }
 
     public void EndShow()
@@ -45,7 +36,7 @@ public class UITimer : MonoBehaviour
         }
         else
         {
-           transform.parent.gameObject.SetActive(false);
+            UIHud.Instance.ChangePanel("GamePanel");
         }
     }
 
