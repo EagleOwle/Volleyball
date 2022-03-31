@@ -1,0 +1,2244 @@
+fileFormatVersion: 2
+guid: 9fb9501f4c0034f4295cd4157d4611de
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1831846330797209694
+    second: Social icon_0
+  - first:
+      213: -4594551583122357840
+    second: Social icon_1
+  - first:
+      213: -4743151445876436970
+    second: Social icon_2
+  - first:
+      213: 4710684961321912450
+    second: Social icon_3
+  - first:
+      213: -2328174091211599903
+    second: Social icon_4
+  - first:
+      213: -5432599380909670791
+    second: Social icon_5
+  - first:
+      213: -5011927648981436056
+    second: Social icon_6
+  - first:
+      213: 160233970357733805
+    second: Social icon_7
+  - first:
+      213: -1254681878224598493
+    second: Social icon_8
+  - first:
+      213: 1072071213984287653
+    second: Social icon_9
+  - first:
+      213: 4892090419918061748
+    second: Social icon_10
+  - first:
+      213: 4977726666276948837
+    second: Social icon_11
+  - first:
+      213: -258997746990525643
+    second: Social icon_12
+  - first:
+      213: 6407060433357800171
+    second: Social icon_13
+  - first:
+      213: -6348301135325361461
+    second: Social icon_14
+  - first:
+      213: 6386410420043426999
+    second: Social icon_15
+  - first:
+      213: 4410733017417743250
+    second: Social icon_16
+  - first:
+      213: -729576437172184607
+    second: Social icon_17
+  - first:
+      213: 1809090599555855487
+    second: Social icon_18
+  - first:
+      213: 5734649501015968582
+    second: Social icon_19
+  - first:
+      213: 5032668796574928915
+    second: Social icon_20
+  - first:
+      213: -7877082766392397521
+    second: Social icon_21
+  - first:
+      213: -3350160041514894521
+    second: Social icon_22
+  - first:
+      213: -5303878026883380197
+    second: Social icon_23
+  - first:
+      213: 7064065768575080741
+    second: Social icon_24
+  - first:
+      213: 4387412167432041215
+    second: Social icon_25
+  - first:
+      213: -9000311953511296915
+    second: Social icon_26
+  - first:
+      213: 8618912058427974372
+    second: Social icon_27
+  - first:
+      213: 3495725265366742159
+    second: Social icon_28
+  - first:
+      213: 700146904432062890
+    second: Social icon_29
+  - first:
+      213: -5206714157349688520
+    second: Social icon_30
+  - first:
+      213: -25658681402446778
+    second: Social icon_31
+  - first:
+      213: 4113866704075563768
+    second: Social icon_32
+  - first:
+      213: -176952487226301105
+    second: Social icon_33
+  - first:
+      213: 7043909121415991283
+    second: Social icon_34
+  - first:
+      213: -6673002903526645073
+    second: Social icon_35
+  - first:
+      213: -6131534529086228126
+    second: Social icon_36
+  - first:
+      213: -314545483283107116
+    second: Social icon_37
+  - first:
+      213: 6380720075180211766
+    second: Social icon_38
+  - first:
+      213: -5205830883530109261
+    second: Social icon_39
+  - first:
+      213: -1126862484056474493
+    second: Social icon_40
+  - first:
+      213: 5661523091343185601
+    second: Social icon_41
+  - first:
+      213: 6615193192063213781
+    second: Social icon_42
+  - first:
+      213: 1458671629880865487
+    second: Social icon_43
+  - first:
+      213: -7904755261580766235
+    second: Social icon_44
+  - first:
+      213: -1140024582337980110
+    second: Social icon_45
+  - first:
+      213: 1657467739509590111
+    second: Social icon_46
+  - first:
+      213: 7159008229709492520
+    second: Social icon_47
+  - first:
+      213: 2752327651185370376
+    second: Social icon_48
+  - first:
+      213: -8538049338835397901
+    second: Social icon_49
+  - first:
+      213: -2163544192363424300
+    second: Social icon_50
+  - first:
+      213: -7951286026457344121
+    second: Social icon_51
+  - first:
+      213: -4526992023967233358
+    second: Social icon_52
+  - first:
+      213: 5698631399483061838
+    second: Social icon_53
+  - first:
+      213: 8610712479290829653
+    second: Social icon_54
+  - first:
+      213: 5725147873366348556
+    second: Social icon_55
+  - first:
+      213: 5859390518812122978
+    second: Social icon_56
+  - first:
+      213: 792872031982500591
+    second: Social icon_57
+  - first:
+      213: -855847365384033264
+    second: Social icon_58
+  - first:
+      213: -5911103628902283425
+    second: Social icon_59
+  - first:
+      213: 3196102645098548871
+    second: Social icon_60
+  - first:
+      213: -1095213269654346637
+    second: Social icon_61
+  - first:
+      213: -7489317644550009990
+    second: Social icon_62
+  - first:
+      213: -1962873836726417736
+    second: Social icon_63
+  - first:
+      213: -6169949378259915850
+    second: Social icon_64
+  - first:
+      213: 1470837103309616706
+    second: Social icon_65
+  - first:
+      213: 6436142292011986194
+    second: Social icon_66
+  - first:
+      213: 2889115054045002081
+    second: Social icon_67
+  - first:
+      213: 6783524011866961688
+    second: Social icon_68
+  - first:
+      213: 6957925405275773653
+    second: Social icon_69
+  - first:
+      213: -2852142840715864719
+    second: Social icon_70
+  - first:
+      213: -3747339462496733748
+    second: Social icon_71
+  - first:
+      213: -771714953131264484
+    second: Social icon_72
+  - first:
+      213: -4578102556275782908
+    second: Social icon_73
+  - first:
+      213: 2903776870108459769
+    second: Social icon_74
+  - first:
+      213: -3560685828630229605
+    second: Social icon_75
+  - first:
+      213: -720981809573932299
+    second: Social icon_76
+  - first:
+      213: 527903641922281334
+    second: Social icon_77
+  - first:
+      213: 7095285926738307025
+    second: Social icon_78
+  - first:
+      213: 1144171360757357863
+    second: Social icon_79
+  - first:
+      213: -656938080838805454
+    second: Social icon_80
+  - first:
+      213: -736473190980995664
+    second: Social icon_81
+  - first:
+      213: -2119464155229559550
+    second: Social icon_82
+  - first:
+      213: -4285373618821160678
+    second: Social icon_83
+  - first:
+      213: 3670303025076265072
+    second: Social icon_84
+  - first:
+      213: -4141949863385726911
+    second: Social icon_85
+  - first:
+      213: -3958192872422162331
+    second: Social icon_86
+  - first:
+      213: 7085457176670326468
+    second: Social icon_87
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Social icon_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 745
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58354648860c6910800000000000000
+      internalID: 1831846330797209694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 743
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b188c99dafdc30c0800000000000000
+      internalID: -4594551583122357840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_2
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 743
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61097a8e3e0fc2eb0800000000000000
+      internalID: -4743151445876436970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_3
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 743
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2880e589307bf5140800000000000000
+      internalID: 4710684961321912450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_4
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 745
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ef801ecff9a0bfd0800000000000000
+      internalID: -2328174091211599903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_5
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 743
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e3fdd65a78b94b0800000000000000
+      internalID: -5432599380909670791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_6
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 743
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869b08a8b5e027ab0800000000000000
+      internalID: -5011927648981436056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_7
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 745
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da98f1472f3493200800000000000000
+      internalID: 160233970357733805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 671
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a8d46ba79769ee0800000000000000
+      internalID: -1254681878224598493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_9
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 669
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab847bc613c0ee00800000000000000
+      internalID: 1072071213984287653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_10
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 669
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b0ce48415234e340800000000000000
+      internalID: 4892090419918061748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_11
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 669
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b4d64a700741540800000000000000
+      internalID: 4977726666276948837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_12
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 669
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533d00ddbead76cf0800000000000000
+      internalID: -258997746990525643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_13
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 671
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be280c0a4837ae850800000000000000
+      internalID: 6407060433357800171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_14
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 671
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca09bd80cd46e7a0800000000000000
+      internalID: -6348301135325361461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_15
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 669
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bcaa8cb07611a850800000000000000
+      internalID: 6386410420043426999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_16
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 597
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b754e6f42163d30800000000000000
+      internalID: 4410733017417743250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_17
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 595
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e95bd9881600e5f0800000000000000
+      internalID: -729576437172184607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_18
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 595
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f747609b05e2b1910800000000000000
+      internalID: 1809090599555855487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_19
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 597
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b8d637651959f40800000000000000
+      internalID: 5734649501015968582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_20
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 595
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3109a043b91a7d540800000000000000
+      internalID: 5032668796574928915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_21
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 596
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2174d265fafea290800000000000000
+      internalID: -7877082766392397521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_22
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 595
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74bfbc03137d181d0800000000000000
+      internalID: -3350160041514894521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_23
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 595
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ccd932907d466b0800000000000000
+      internalID: -5303878026883380197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_24
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 523
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5291ae5b36a980260800000000000000
+      internalID: 7064065768575080741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_25
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 519
+        width: 58
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2730bee1833ec30800000000000000
+      internalID: 4387412167432041215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_26
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 520
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60d147c6f7781380800000000000000
+      internalID: -9000311953511296915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_27
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 523
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e22ee82ad68c9770800000000000000
+      internalID: 8618912058427974372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_28
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 523
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f84fa829b9f438030800000000000000
+      internalID: 3495725265366742159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_29
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 523
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1334966eb67b900800000000000000
+      internalID: 700146904432062890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_30
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 521
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83bac2c6f090eb7b0800000000000000
+      internalID: -5206714157349688520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_31
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 521
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64c2a91b097d4aff0800000000000000
+      internalID: -25658681402446778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_32
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 447
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f22bbd98f3671930800000000000000
+      internalID: 4113866704075563768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_33
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 449
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4521c086a65b8df0800000000000000
+      internalID: -176952487226301105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_34
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 444
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff4224960ef0c160800000000000000
+      internalID: 7043909121415991283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_35
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 449
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2e42ed63bb463a0800000000000000
+      internalID: -6673002903526645073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_36
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 446
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269f5c105d968eaa0800000000000000
+      internalID: -6131534529086228126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_37
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 449
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2f43bac8282abf0800000000000000
+      internalID: -314545483283107116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_38
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 447
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ef1541a1fdc8850800000000000000
+      internalID: 6380720075180211766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_39
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 447
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be0e62a46c21c7b0800000000000000
+      internalID: -5205830883530109261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_40
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 373
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38c79178a849c50f0800000000000000
+      internalID: -1126862484056474493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_41
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 370
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c69e2b6145c19e40800000000000000
+      internalID: 5661523091343185601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_42
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 373
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d0a28dc823edcb50800000000000000
+      internalID: 6615193192063213781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_43
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 373
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc23df67e1e3e3410800000000000000
+      internalID: 1458671629880865487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_44
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 375
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3141588faac4290800000000000000
+      internalID: -7904755261580766235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_45
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 373
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2391886bea1dd20f0800000000000000
+      internalID: -1140024582337980110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_46
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 373
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f588320a022800710800000000000000
+      internalID: 1657467739509590111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_47
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 383
+        width: 64
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821beeb0e08e95360800000000000000
+      internalID: 7159008229709492520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_48
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 299
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805a3629a6b323620800000000000000
+      internalID: 2752327651185370376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_49
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 300
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f215f3ec51c28980800000000000000
+      internalID: -8538049338835397901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_50
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 299
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5915e150c89f1e0800000000000000
+      internalID: -2163544192363424300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_51
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 301
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7879b759c7b57a190800000000000000
+      internalID: -7951286026457344121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_52
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 308
+        width: 64
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba086e3db4ec21c0800000000000000
+      internalID: -4526992023967233358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_53
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 301
+        width: 64
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e463310b01b951f40800000000000000
+      internalID: 5698631399483061838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_54
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 301
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55b272fd0656f7770800000000000000
+      internalID: 8610712479290829653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_55
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 301
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c03959e58afc37f40800000000000000
+      internalID: 5725147873366348556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_56
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 227
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f961ae1acb05150800000000000000
+      internalID: 5859390518812122978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_57
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 225
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feab8aa89e8d00b00800000000000000
+      internalID: 792872031982500591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_58
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 225
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ca45c0b5b6f14f0800000000000000
+      internalID: -855847365384033264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_59
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 225
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57c1c0619a87fda0800000000000000
+      internalID: -5911103628902283425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_60
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 227
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e09ca0c66da5c20800000000000000
+      internalID: 3196102645098548871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_61
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 225
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37465fc75550dc0f0800000000000000
+      internalID: -1095213269654346637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_62
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 227
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b088a4849901890800000000000000
+      internalID: -7489317644550009990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_63
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 227
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6830f25a872c4e0800000000000000
+      internalID: -1962873836726417736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_64
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 159
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbeca2fabfef5aa0800000000000000
+      internalID: -6169949378259915850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_65
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 153
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246fb397d86796410800000000000000
+      internalID: 1470837103309616706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_66
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 153
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d2e3f7055c15950800000000000000
+      internalID: 6436142292011986194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_67
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 151
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169f59f95d2381820800000000000000
+      internalID: 2889115054045002081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_68
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 151
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817b9ace52be32e50800000000000000
+      internalID: 6783524011866961688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_69
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 151
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dad02b9a448f8060800000000000000
+      internalID: 6957925405275773653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_70
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 150
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175157a92372b68d0800000000000000
+      internalID: -2852142840715864719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_71
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 153
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc53415fc96cefbc0800000000000000
+      internalID: -3747339462496733748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_72
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 79
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16f0ceb6515a45f0800000000000000
+      internalID: -771714953131264484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_73
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 77
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40bcfdb1bff4770c0800000000000000
+      internalID: -4578102556275782908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_74
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 79
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f27fc1bda94c4820800000000000000
+      internalID: 2903776870108459769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_75
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 79
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d4abbaa17e59ec0800000000000000
+      internalID: -3560685828630229605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_76
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 79
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2d3d63dde8ef5f0800000000000000
+      internalID: -720981809573932299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_77
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 79
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f996cb09d735700800000000000000
+      internalID: 527903641922281334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_78
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 79
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7a01b35f4877260800000000000000
+      internalID: 7095285926738307025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_79
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 79
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d1e106ac9e0ef00800000000000000
+      internalID: 1144171360757357863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_80
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 3
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2381d2ccb4612e6f0800000000000000
+      internalID: -656938080838805454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_81
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 3
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5baf8e88587c5f0800000000000000
+      internalID: -736473190980995664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_82
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 3
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2056e5984962692e0800000000000000
+      internalID: -2119464155229559550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_83
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 3
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11a558066b4784c0800000000000000
+      internalID: -4285373618821160678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_84
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 4
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07066bbb7298fe230800000000000000
+      internalID: 3670303025076265072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_85
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 2
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1408a635b86d486c0800000000000000
+      internalID: -4141949863385726911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_86
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 5
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5604bcecd8ca119c0800000000000000
+      internalID: -3958192872422162331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Social icon_87
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 5
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce4da603c9945260800000000000000
+      internalID: 7085457176670326468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

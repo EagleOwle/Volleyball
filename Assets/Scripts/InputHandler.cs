@@ -29,12 +29,13 @@ public class InputHandler : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Backspace))
+        if (Game.Instance.status != Game.Status.game)
         {
-            Game.Instance.RechangeStatus();
+            SwipeBreak();
+            return;
         }
 
-        if(Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             SceneManager.LoadScene(0);
         }

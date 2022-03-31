@@ -22,11 +22,6 @@ public class UIHud : MonoBehaviour
 
     [SerializeField] private UIPanel[] panels;
 
-    private void Start()
-    {
-        ChangePanel("TimerPanel");
-    }
-
     public void ChangePanel(string namePanel)
     {
         foreach (var item in panels)

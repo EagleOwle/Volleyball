@@ -1,18 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class UIButton : MonoBehaviour
+public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Color _defaultColor,  _enterColor, _exitColor, _downColor;
+    [SerializeField] private Text _text;
+
+    private void OnEnable()
     {
-        
+        _text.color = _defaultColor;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        //_text.color = _enterColor;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        //_text.color = _defaultColor;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        _text.color = _defaultColor;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        _text.color = _downColor;
     }
 }

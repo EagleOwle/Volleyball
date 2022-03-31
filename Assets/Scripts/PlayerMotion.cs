@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerMotion : MonoBehaviour
 {
     [SerializeField] private float _maxSpeed = 3;
+    [SerializeField] private float _minSpeed = 3;
+    [SerializeField] private float _moveSpeed = 3;
     [SerializeField] private float _maxJump = 5;
     [SerializeField] private float _jumpSence = 1;
     [SerializeField] private float _jumpForce = 500;
-    [SerializeField] private float _moveInertia = 10;
     [SerializeField] private LayerMask _checkGroundMask;
 
     private Rigidbody _rigidbody;
@@ -46,23 +47,18 @@ public class PlayerMotion : MonoBehaviour
         #endregion
 
         #region Move
+
+        clampX = 0;
         if (InputHandler.Instance.OnSwipe)
         {
-            clampX = InputHandler.Instance.SwipeDirection.x;
-        }
-        else
-        {
-            if(_moveInertia != 0)
+            if (Mathf.Abs(InputHandler.Instance.SwipeDirection.x) > _minSpeed)
             {
-                clampX = Mathf.MoveTowards(clampX, 0, _moveInertia * Time.deltaTime);
-            }
-            else
-            {
-                clampX = 0;
+                clampX = InputHandler.Instance.SwipeDirection.x;
             }
         }
 
         clampX = Mathf.Clamp(clampX, -_maxSpeed, _maxSpeed);
+        clampX = clampX * _moveSpeed * Time.deltaTime;
         #endregion
 
         _rigidbody.velocity = new Vector3(clampX, clampY, _rigidbody.velocity.z);
@@ -93,15 +89,18 @@ public class PlayerMotion : MonoBehaviour
 
     private void PauseGame(Game.Status status)
     {
-        switch (status)
-        {
-            case Game.Status.game:
-                _rigidbody.isKinematic = false;
-                break;
-            case Game.Status.pause:
-                _rigidbody.isKinematic = true;
-                break;
-        }
+        //switch (status)
+        //{
+        //    case Game.Status.game:
+        //        _rigidbody.isKinematic = false;
+        //        break;
+        //    case Game.Status.pause:
+        //        _rigidbody.isKinematic = true;
+        //        break;
+        //    case Game.Status.fall:
+        //        _rigidbody.isKinematic = true;
+        //        break;
+        //}
     }
 
     private bool CheckGround()
