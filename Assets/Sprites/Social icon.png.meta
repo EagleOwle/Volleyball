@@ -288,6 +288,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -2236,6 +2237,95 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Social icon_64: -6169949378259915850
+      Social icon_2: -4743151445876436970
+      Social icon_3: 4710684961321912450
+      Social icon_0: 1831846330797209694
+      Social icon_30: -5206714157349688520
+      Social icon_40: -1126862484056474493
+      Social icon_43: 1458671629880865487
+      Social icon_85: -4141949863385726911
+      Social icon_16: 4410733017417743250
+      Social icon_25: 4387412167432041215
+      Social icon_24: 7064065768575080741
+      Social icon_14: -6348301135325361461
+      Social icon_49: -8538049338835397901
+      Social icon_47: 7159008229709492520
+      Social icon_34: 7043909121415991283
+      Social icon_86: -3958192872422162331
+      Social icon_74: 2903776870108459769
+      Social icon_11: 4977726666276948837
+      Social icon_26: -9000311953511296915
+      Social icon_70: -2852142840715864719
+      Social icon_32: 4113866704075563768
+      Social icon_42: 6615193192063213781
+      Social icon_27: 8618912058427974372
+      Social icon_29: 700146904432062890
+      Social icon_13: 6407060433357800171
+      Social icon_12: -258997746990525643
+      Social icon_77: 527903641922281334
+      Social icon_35: -6673002903526645073
+      Social icon_10: 4892090419918061748
+      Social icon_60: 3196102645098548871
+      Social icon_1: -4594551583122357840
+      Social icon_72: -771714953131264484
+      Social icon_20: 5032668796574928915
+      Social icon_87: 7085457176670326468
+      Social icon_41: 5661523091343185601
+      Social icon_63: -1962873836726417736
+      Social icon_31: -25658681402446778
+      Social icon_21: -7877082766392397521
+      Social icon_82: -2119464155229559550
+      Social icon_66: 6436142292011986194
+      Social icon_84: 3670303025076265072
+      Social icon_7: 160233970357733805
+      Social icon_36: -6131534529086228126
+      Social icon_33: -176952487226301105
+      Social icon_39: -5205830883530109261
+      Social icon_5: -5432599380909670791
+      Social icon_71: -3747339462496733748
+      Social icon_17: -729576437172184607
+      Social icon_6: -5011927648981436056
+      Social icon_78: 7095285926738307025
+      Social icon_51: -7951286026457344121
+      Social icon_58: -855847365384033264
+      Social icon_54: 8610712479290829653
+      Social icon_69: 6957925405275773653
+      Social icon_44: -7904755261580766235
+      Social icon_61: -1095213269654346637
+      Social icon_8: -1254681878224598493
+      Social icon_53: 5698631399483061838
+      Social icon_18: 1809090599555855487
+      Social icon_65: 1470837103309616706
+      Social icon_73: -4578102556275782908
+      Social icon_83: -4285373618821160678
+      Social icon_81: -736473190980995664
+      Social icon_56: 5859390518812122978
+      Social icon_79: 1144171360757357863
+      Social icon_68: 6783524011866961688
+      Social icon_57: 792872031982500591
+      Social icon_28: 3495725265366742159
+      Social icon_80: -656938080838805454
+      Social icon_75: -3560685828630229605
+      Social icon_67: 2889115054045002081
+      Social icon_59: -5911103628902283425
+      Social icon_9: 1072071213984287653
+      Social icon_45: -1140024582337980110
+      Social icon_50: -2163544192363424300
+      Social icon_15: 6386410420043426999
+      Social icon_22: -3350160041514894521
+      Social icon_46: 1657467739509590111
+      Social icon_23: -5303878026883380197
+      Social icon_52: -4526992023967233358
+      Social icon_62: -7489317644550009990
+      Social icon_19: 5734649501015968582
+      Social icon_76: -720981809573932299
+      Social icon_37: -314545483283107116
+      Social icon_55: 5725147873366348556
+      Social icon_4: -2328174091211599903
+      Social icon_38: 6380720075180211766
+      Social icon_48: 2752327651185370376
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
