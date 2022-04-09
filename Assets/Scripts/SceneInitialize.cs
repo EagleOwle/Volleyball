@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SceneInitialize : MonoBehaviour
 {
-    private Enviropment enviropment;
+    private Cort cort;
     private GameObject player;
     private GameObject ball;
 
@@ -17,18 +17,18 @@ public class SceneInitialize : MonoBehaviour
     {
         ClearGame();
 
-        enviropment = Instantiate(Resources.Load("Prefabs/Enviropment", typeof(Enviropment)) as Enviropment);
-        player = Instantiate(Resources.Load("Prefabs/Player"), enviropment.PlayerSpawnPoint.position, Quaternion.identity) as GameObject;
-        ball = Instantiate(Resources.Load("Prefabs/Ball"), enviropment.BallSpawnPoint.position, Quaternion.identity) as GameObject;
+        cort = Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
+        player = Instantiate(Resources.Load("Prefabs/Player"), cort.PlayerSpawnPoint.position, Quaternion.identity) as GameObject;
+        ball = Instantiate(Resources.Load("Prefabs/Ball"), cort.BallSpawnPoint.position, Quaternion.identity) as GameObject;
 
         UIHud.Instance.ChangePanel("TimerPanel");
     }
 
     private void ClearGame()
     {
-        if(enviropment != null)
+        if(cort != null)
         {
-            Destroy(enviropment.gameObject);
+            Destroy(cort.gameObject);
         }
 
         if(player != null)

@@ -35,7 +35,6 @@ public class UIMainMenu : MonoBehaviour
     private void OnButtonStart()
     {
         SceneManager.LoadScene(1);
-
     }
 
     private void OnButtonPreference()
@@ -60,4 +59,5 @@ public class UIMainMenu : MonoBehaviour
          Application.Quit();
 #endif
     }
+
 }

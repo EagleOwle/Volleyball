@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -57,7 +57,7 @@
     <Compile Include="Assets\Scripts\UIGame.cs" />
     <Compile Include="Assets\FloatingEntities\Scripts\WakeGenerator.cs" />
     <Compile Include="Assets\Scripts\Match.cs" />
-    <Compile Include="Assets\Scripts\Enviropment.cs" />
+    <Compile Include="Assets\Scripts\Cort.cs" />
     <Compile Include="Assets\FloatingEntities\Scripts\Tools\Proxies.cs" />
     <Compile Include="Assets\FloatingEntities\Scripts\Orbital.cs" />
     <Compile Include="Assets\FloatingEntities\Scripts\GameEntity\GameEntity.cs" />
@@ -81,7 +81,7 @@
     <Compile Include="Assets\Scripts\UITimer.cs" />
     <Compile Include="Assets\FloatingEntities\Scripts\GameEntity\FloatingGameEntityStorm.cs" />
     <Compile Include="Assets\Scripts\Game.cs" />
-    <Compile Include="Assets\amusedART\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
+    <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FloatingEntities\Shaders\Ocean.shader" />
