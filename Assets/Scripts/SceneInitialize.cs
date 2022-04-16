@@ -19,7 +19,7 @@ public class SceneInitialize : MonoBehaviour
 
         cort = Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
         player = Instantiate(Resources.Load("Prefabs/Player"), cort.PlayerSpawnPoint.position, Quaternion.identity) as GameObject;
-        ball = Instantiate(Resources.Load("Prefabs/Ball"), cort.BallSpawnPoint.position, Quaternion.identity) as GameObject;
+        ball = Instantiate(Resources.Load("Prefabs/Volleyball"), cort.BallSpawnPoint.position, Quaternion.identity) as GameObject;
 
         UIHud.Instance.ChangePanel("TimerPanel");
     }

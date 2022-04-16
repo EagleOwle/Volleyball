@@ -7,15 +7,16 @@ public class PlayerMotion : MonoBehaviour
     [SerializeField] private float _maxSpeed = 3;
     [SerializeField] private float _minSpeed = 3;
     [SerializeField] private float _moveSpeed = 3;
-    [SerializeField] private float _maxJump = 5;
+    [SerializeField] private float _jumpSpeed = 5;
     [SerializeField] private float _jumpSence = 1;
     [SerializeField] private float _jumpForce = 500;
     [SerializeField] private LayerMask _checkGroundMask;
 
     private Rigidbody _rigidbody;
     private bool _onGround = false;
-    private float clampX;
-    private float clampY;
+    private float moveX;
+    private float moveY;
+    private float moveYTarget;
 
     private void Awake()
     {
@@ -35,33 +36,41 @@ public class PlayerMotion : MonoBehaviour
     private void FixedUpdate()
     {
         #region Jump
-        clampY = _rigidbody.velocity.y;
+
         if (_onGround)
         {
+            moveYTarget = 0;
+
             if (InputHandler.Instance.SwipeDirection.y > _jumpSence)
             {
-                clampY = _jumpForce;
+                moveY = _jumpForce;
             }
         }
-        clampY = Mathf.Clamp(clampY, Physics.gravity.y, _maxJump);
+        else
+        {
+            moveYTarget = Physics.gravity.y;
+        }
+
+        moveY = Mathf.MoveTowards(moveY, moveYTarget, _jumpSpeed * Time.deltaTime);
+
         #endregion
 
         #region Move
 
-        clampX = 0;
+        moveX = 0;
         if (InputHandler.Instance.OnSwipe)
         {
             if (Mathf.Abs(InputHandler.Instance.SwipeDirection.x) > _minSpeed)
             {
-                clampX = InputHandler.Instance.SwipeDirection.x;
+                moveX = InputHandler.Instance.SwipeDirection.x;
             }
         }
 
-        clampX = Mathf.Clamp(clampX, -_maxSpeed, _maxSpeed);
-        clampX = clampX * _moveSpeed * Time.deltaTime;
+        moveX = Mathf.Clamp(moveX, -_maxSpeed, _maxSpeed);
+        moveX = moveX * _moveSpeed * Time.deltaTime;
         #endregion
 
-        _rigidbody.velocity = new Vector3(clampX, clampY, _rigidbody.velocity.z);
+        _rigidbody.velocity = new Vector3(moveX, moveY, _rigidbody.velocity.z);
 
     }
 
@@ -78,6 +87,14 @@ public class PlayerMotion : MonoBehaviour
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             _onGround = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            _onGround = true;
         }
     }
 
