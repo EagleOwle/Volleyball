@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,34 +6,19 @@ using UnityEngine.UI;
 
 public class UIHud : MonoBehaviour
 {
-    private static UIHud _instance;
-    public static UIHud Instance
+    public static Action<UIPanelName> ActionChangePanel;
+    public static void OnChangePanel(UIPanelName panelName)
     {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = GameObject.FindObjectOfType<UIHud>();
-            }
-
-            return _instance;
-        }
+        ActionChangePanel?.Invoke(panelName);
     }
 
-    [SerializeField] private UIPanel[] panels;
+    public UIPanel[] uIPanels;
 
-    public void ChangePanel(string namePanel)
+    private void Start()
     {
-        foreach (var item in panels)
+        foreach (var item in uIPanels)
         {
-            if(item.namePanel == namePanel)
-            {
-                item.gameObject.SetActive(true);
-            }
-            else
-            {
-                item.gameObject.SetActive(false);
-            }
+            item.Init();
         }
     }
 

@@ -10,7 +10,7 @@ public class SceneInitialize : MonoBehaviour
 
     private void Start()
     {
-        Restart();
+        Invoke(nameof(Restart), Time.deltaTime);
     }
 
     public void Restart()
@@ -21,22 +21,22 @@ public class SceneInitialize : MonoBehaviour
         player = Instantiate(Resources.Load("Prefabs/Player"), cort.PlayerSpawnPoint.position, Quaternion.identity) as GameObject;
         ball = Instantiate(Resources.Load("Prefabs/Volleyball"), cort.BallSpawnPoint.position, Quaternion.identity) as GameObject;
 
-        UIHud.Instance.ChangePanel("TimerPanel");
+        UIHud.OnChangePanel(UIPanelName.Timer);
     }
 
     private void ClearGame()
     {
-        if(cort != null)
+        if (cort != null)
         {
             Destroy(cort.gameObject);
         }
 
-        if(player != null)
+        if (player != null)
         {
             Destroy(player);
         }
 
-        if(ball != null)
+        if (ball != null)
         {
             Destroy(ball);
         }

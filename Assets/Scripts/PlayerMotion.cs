@@ -23,11 +23,6 @@ public class PlayerMotion : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void OnEnable()
-    {
-       Game.Instance.OnChangeMenu += PauseGame;
-    }
-
     private void Start()
     {
         _onGround = false;
@@ -96,28 +91,6 @@ public class PlayerMotion : MonoBehaviour
         {
             _onGround = true;
         }
-    }
-
-    private void OnDisable()
-    {
-        if (Game.Instance == null) return;
-        Game.Instance.OnChangeMenu -= PauseGame;
-    }
-
-    private void PauseGame(Game.Status status)
-    {
-        //switch (status)
-        //{
-        //    case Game.Status.game:
-        //        _rigidbody.isKinematic = false;
-        //        break;
-        //    case Game.Status.pause:
-        //        _rigidbody.isKinematic = true;
-        //        break;
-        //    case Game.Status.fall:
-        //        _rigidbody.isKinematic = true;
-        //        break;
-        //}
     }
 
     private bool CheckGround()

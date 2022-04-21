@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28957714de00be849919976fce297c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  namePanel: PausePanel
+  panelName: 0
   _restartBtn: {fileID: 1502057219}
   _ressumBtn: {fileID: 843346527}
 --- !u!1 &1040254134
@@ -1155,7 +1155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1070665530}
-  - component: {fileID: 1070665533}
+  - component: {fileID: 1070665531}
   m_Layer: 5
   m_Name: HudPanel
   m_TagString: Untagged
@@ -1185,7 +1185,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1070665533
+--- !u!114 &1070665531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d8631bee1e1e3439e52fdb5526ad37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panels:
+  uIPanels:
   - {fileID: 1255491017}
   - {fileID: 1682216535}
   - {fileID: 928427015}
@@ -1459,7 +1459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747f3a386e05edf4ca70c6c6ef0580c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  namePanel: GamePanel
+  panelName: 1
   _pauseBtn: {fileID: 1040254136}
   _fallPanel: {fileID: 1284507573}
 --- !u!1 &1277019209
@@ -2065,7 +2065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374d7def792f9b14283c6b6ae97b4db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  namePanel: TimerPanel
+  panelName: 2
   numbers:
   - {fileID: -4412911677491635961, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
   - {fileID: -4217592887472625829, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}

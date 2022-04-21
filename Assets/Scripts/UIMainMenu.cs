@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -31,11 +32,20 @@ public class UIMainMenu : MonoBehaviour
         _quitBtn.onClick.AddListener(OnButtonQuit);
     }
 
-
     private void OnButtonStart()
     {
         SceneManager.LoadScene(1);
     }
+
+    //public async void SpinAndDisableButton()
+    //{
+    //    while (ani.isPlaying == true)
+    //    {
+    //        await Task.Yield();
+    //    }
+
+    //    SceneManager.LoadScene(1);
+    //}
 
     private void OnButtonPreference()
     {

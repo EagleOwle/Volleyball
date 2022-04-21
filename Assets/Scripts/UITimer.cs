@@ -21,7 +21,7 @@ public class UITimer : UIPanel
 
     private void OnEnable()
     {
-        Game.Instance.SetStatus(Game.Status.pause);
+        StateMachine.SetState<PauseState>();
         _animator.SetTrigger(_showNumberParamID);
     }
 
@@ -36,8 +36,9 @@ public class UITimer : UIPanel
         }
         else
         {
-            UIHud.Instance.ChangePanel("GamePanel");
+            UIHud.OnChangePanel(UIPanelName.Game);
         }
     }
 
+    
 }

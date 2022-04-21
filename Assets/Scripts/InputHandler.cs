@@ -29,34 +29,35 @@ public class InputHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Game.Instance.status != Game.Status.game)
+        if (StateMachine.currentState is GameState)
+        {
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                SceneManager.LoadScene(0);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                _tupPosition = (Vector2)Input.mousePosition;
+                _swipeDirection = _tupPosition;
+                _onSwipe = true;
+            }
+
+            if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                SwipeBreak();
+            }
+
+            if (_onSwipe)
+            {
+                _swipeDirection = ((Vector2)Input.mousePosition - _tupPosition);
+            }
+        }
+        else
         {
             SwipeBreak();
-            return;
         }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            SceneManager.LoadScene(0);
-        }
-
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            _tupPosition = (Vector2)Input.mousePosition;
-            _swipeDirection = _tupPosition;
-            _onSwipe = true;
-        }
-
-        if(Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            SwipeBreak();
-        }
-
-
-        if(_onSwipe)
-        {
-            _swipeDirection = ((Vector2)Input.mousePosition - _tupPosition);
-        }
+        
     }
 
     private void SwipeBreak()

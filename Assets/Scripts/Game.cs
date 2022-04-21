@@ -1,12 +1,11 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    public enum Status { game, pause, fall }
-
-    private static Game _instance;
+     private static Game _instance;
     public static Game Instance
     {
         get
@@ -20,38 +19,15 @@ public class Game : MonoBehaviour
         }
     }
 
-    private Status _currentStatus;
-    public Status status => _currentStatus;
-
     public Action OnRoundFall;
-    public Action<Status> OnChangeMenu;
 
     public Match match;
-
-    public void SetStatus(Status status)
-    {
-        switch (status)
-        {
-            case Status.game:
-                _currentStatus = Status.game;
-                break;
-            case Status.pause:
-                _currentStatus = Status.pause;
-                break;
-
-            case Status.fall:
-                _currentStatus = Status.fall;
-                break;
-        }
-
-        OnChangeMenu?.Invoke(_currentStatus);
-
-    }
 
     [SerializeField]private SceneInitialize sceneInitialize;
 
     private void Start()
     {
+        StateMachine.InitBeheviors();
         match = new Match();
     }
 
@@ -67,7 +43,7 @@ public class Game : MonoBehaviour
 
     private void RoundFall()
     {
-        SetStatus(Status.fall);
+        StateMachine.SetState<FallState>();
     }
 
     public void RestartMatch()

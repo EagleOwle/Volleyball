@@ -82,6 +82,12 @@
     <Compile Include="Assets\FloatingEntities\Scripts\GameEntity\FloatingGameEntityRealist.cs" />
     <Compile Include="Assets\Scripts\Game.cs" />
     <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
+    <Compile Include="Assets\Scripts\StateBehavior\State.cs" />
+    <Compile Include="Assets\Scripts\StateBehavior\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\StateBehavior\GameState.cs" />
+    <Compile Include="Assets\Scripts\StateBehavior\FallState.cs" />
+    <Compile Include="Assets\Scripts\StateBehavior\PauseState.cs" />
+    <Compile Include="Assets\Scripts\AudioController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FloatingEntities\Shaders\Ocean.shader" />

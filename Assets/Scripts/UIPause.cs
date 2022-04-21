@@ -9,23 +9,24 @@ public class UIPause : UIPanel
 
     private void OnEnable()
     {
-        Game.Instance.SetStatus(Game.Status.pause);
+        StateMachine.SetState<PauseState>();
     }
 
-    private void Start()
+    public override void Init()
     {
+        base.Init();
         _restartBtn.onClick.AddListener(OnButtonRestart);
         _ressumBtn.onClick.AddListener(OnButtonRessum);
     }
 
     private void OnButtonRessum()
     {
-        UIHud.Instance.ChangePanel("GamePanel");
+        UIHud.OnChangePanel(UIPanelName.Game);
     }
 
     private void OnButtonRestart()
     {
         SceneManager.LoadScene(0);
     }
-
+    
 }

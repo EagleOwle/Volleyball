@@ -10,7 +10,7 @@ public class UIGame : UIPanel
 
     private void OnEnable()
     {
-        Game.Instance.SetStatus(Game.Status.game);
+        StateMachine.SetState<GameState>();
         Game.Instance.OnRoundFall += OnFall;
         _fallPanel.SetActive(false);
         _pauseBtn.onClick.AddListener(OnButtonPause);
@@ -24,12 +24,11 @@ public class UIGame : UIPanel
 
     private void OnButtonPause()
     {
-        UIHud.Instance.ChangePanel("PausePanel");
+        UIHud.OnChangePanel(UIPanelName.Pause);
     }
 
     private void OnFall()
     {
         _fallPanel.SetActive(true);
     }
-
 }
