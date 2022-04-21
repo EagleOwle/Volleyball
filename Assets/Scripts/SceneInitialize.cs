@@ -21,7 +21,7 @@ public class SceneInitialize : MonoBehaviour
         player = Instantiate(Resources.Load("Prefabs/Player"), cort.PlayerSpawnPoint.position, Quaternion.identity) as GameObject;
         ball = Instantiate(Resources.Load("Prefabs/Volleyball"), cort.BallSpawnPoint.position, Quaternion.identity) as GameObject;
 
-        UIHud.OnChangePanel(UIPanelName.Timer);
+        UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
     }
 
     private void ClearGame()

@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
     [SerializeField] private float maxMagnetude = 5;
     [SerializeField] private PhysicMaterial ballPhysic, defaultPhysic;
     [SerializeField] private new Collider collider;
+    [SerializeField] private AudioClip hitClip;
     private new Rigidbody rigidbody;
 
     private void Awake()
@@ -32,6 +33,11 @@ public class Ball : MonoBehaviour
         Vector3 currentVelosity = rigidbody.velocity;
         currentVelosity = Vector3.ClampMagnitude(currentVelosity, maxMagnetude);
         rigidbody.velocity = currentVelosity;
+
+        if(transform.position.y < 0)
+        {
+            Game.Instance.OnRoundFall.Invoke();
+        }
     }
 
     private void OnDrawGizmos()
@@ -60,7 +66,7 @@ public class Ball : MonoBehaviour
 
         if (state is FallState)
         {
-            collider.material = defaultPhysic; ;
+            collider.material = defaultPhysic;
         }
     }
 
@@ -70,9 +76,11 @@ public class Ball : MonoBehaviour
         dir = -dir.normalized;
         rigidbody.AddForce(dir * pushForce);
 
+        AudioController.Instance.PlayClip(hitClip);
+
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-           // Game.Instance.OnRoundFall.Invoke();
+           Game.Instance.OnRoundFall.Invoke();
         }
     }
 

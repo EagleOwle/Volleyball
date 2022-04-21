@@ -21,11 +21,6 @@ public static class StateMachine
     
     public static void SetState<T>() where T : State
     {
-        if (currentState != null)
-        {
-            currentState.Exit();
-        }
-
         var type = typeof(T);
         var newState = behaviorMap[type];
         SetState(newState);
@@ -41,9 +36,16 @@ public static class StateMachine
     {
         if (currentState != null)
         {
-            currentState.Exit();
+            if(currentState == newState)
+            {
+                return;
+            }
+            else
+            {
+                currentState.Exit();
+            }
         }
-
+        
         currentState = newState;
         currentState.Enter();
         actionChangeState?.Invoke(currentState);

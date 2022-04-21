@@ -2071,6 +2071,8 @@ MonoBehaviour:
   - {fileID: -4217592887472625829, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
   - {fileID: -6629531029891648246, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
   _image: {fileID: 2054680058}
+  tickClip: {fileID: 8300000, guid: 0e32e90dfe9970d4a82faa246629faf5, type: 3}
+  tickEndClip: {fileID: 8300000, guid: 83fde5d9d05da5d478a6666c2177b8c3, type: 3}
 --- !u!95 &1682216536
 Animator:
   serializedVersion: 3

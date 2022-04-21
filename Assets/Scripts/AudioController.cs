@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,10 @@ using UnityEngine.Audio;
 
 public class AudioController : MonoBehaviour
 {
-    [SerializeField] private AudioMixerGroup _musicMixer;
-    [SerializeField] private AudioMixerGroup _sfxMixer;
+    private AudioMixerGroup _musicMixer;
+    private AudioMixerGroup _sfxMixer;
     [Header("Music Clips")]
-    [SerializeField] private AudioClip[] _musicClips;
+    [SerializeField] private AudioClip _musicClip;
     [Space]
     [Range(-60f, 0f)]
     [Tooltip("Music Volume, dB from -60 to 0")]
@@ -44,9 +45,9 @@ public class AudioController : MonoBehaviour
         //SceneLoader.OnSceneLoadStart += PauseMusic;
         //SceneLoader.OnSceneLoadComplete += ResumeMusic;
 
-        if (_musicClips.Length == 0) return;
+        if (_musicClip == null) return;
 
-        _musicSource.clip = _musicClips[Random.Range(0, _musicClips.Length)];
+        _musicSource.clip = _musicClip;
         _musicSource.loop = true;
         _musicSource.Play();
     }
@@ -111,12 +112,24 @@ public class AudioController : MonoBehaviour
         //SceneLoader.OnSceneLoadComplete -= ResumeMusic;
     }
 
-    public void PlayClip(AudioClip clip, float volume = 1f, float pitch = 1f)
+    public void PlayClip(AudioClip clip)
     {
         _sfxSource.clip = clip;
-        _sfxSource.volume = volume;
-        _sfxSource.spatialBlend = 0f;
         _sfxSource.Play();
     }
+
+    //public void PlayClip(AudioClip clip, Action actionEndPlay)
+    //{
+    //    StartCoroutine(PlayClip(clip, actionEndPlay));
+    //}
+
+    //private IEnumerator PlayClip(AudioClip clip, Action actionEndPlay)
+    //{
+    //    _sfxSource.clip = clip;
+    //    _sfxSource.Play();
+
+    //    yield return new WaitWhile(() => _sfxSource.isPlaying);
+    //    actionEndPlay?.Invoke();
+    //}
 
 }

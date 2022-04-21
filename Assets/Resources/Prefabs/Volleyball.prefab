@@ -126,7 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 25
-  maxMagnetude: 5
+  maxMagnetude: 10
   ballPhysic: {fileID: 13400000, guid: a4149fdeed0c70247a18f4470a9855df, type: 2}
   defaultPhysic: {fileID: 13400000, guid: 9e9289aec77f7a44db49ed4f1389c6af, type: 2}
   collider: {fileID: 5344061900924581766}
+  hitClip: {fileID: 8300000, guid: afcde19c076570543a7abbd2e67c3543, type: 3}
