@@ -6,6 +6,7 @@ public class SceneInitialize : MonoBehaviour
 {
     private Cort cort;
     private GameObject player;
+    private GameObject bot;
     private GameObject ball;
 
     private void Start()
@@ -18,8 +19,9 @@ public class SceneInitialize : MonoBehaviour
         ClearGame();
 
         cort = Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
-        player = Instantiate(Resources.Load("Prefabs/Player"), cort.PlayerSpawnPoint.position, Quaternion.identity) as GameObject;
         ball = Instantiate(Resources.Load("Prefabs/Volleyball"), cort.BallSpawnPoint.position, Quaternion.identity) as GameObject;
+        player = Instantiate(Resources.Load("Prefabs/Player"), cort.PlayerSpawnPoint.position, Quaternion.identity) as GameObject;
+        bot = Instantiate(Resources.Load("Prefabs/Enemy"), cort.BotSpawnPoint.position, Quaternion.identity) as GameObject;
 
         UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
     }

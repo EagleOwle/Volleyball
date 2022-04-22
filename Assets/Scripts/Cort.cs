@@ -5,5 +5,6 @@ using UnityEngine;
 public class Cort : MonoBehaviour
 {
     public Transform PlayerSpawnPoint;
+    public Transform BotSpawnPoint;
     public Transform BallSpawnPoint;
 }

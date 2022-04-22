@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIPause : UIPanel
@@ -26,7 +25,7 @@ public class UIPause : UIPanel
 
     private void OnButtonRestart()
     {
-        SceneManager.LoadScene(0);
+        SceneLoader.Instance.LoadMenu();
     }
     
 }

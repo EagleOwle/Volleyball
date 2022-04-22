@@ -10,11 +10,18 @@ public class Ball : MonoBehaviour
     [SerializeField] private PhysicMaterial ballPhysic, defaultPhysic;
     [SerializeField] private new Collider collider;
     [SerializeField] private AudioClip hitClip;
+    [SerializeField] private TrajectoryRender trajectoryRender;
     private new Rigidbody rigidbody;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+        trajectoryRender = GameObject.FindObjectOfType<TrajectoryRender>();
+    }
+
+    private void Start()
+    {
+        trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
     }
 
     private void OnEnable()
@@ -31,10 +38,14 @@ public class Ball : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 currentVelosity = rigidbody.velocity;
-        currentVelosity = Vector3.ClampMagnitude(currentVelosity, maxMagnetude);
-        rigidbody.velocity = currentVelosity;
 
-        if(transform.position.y < 0)
+        if (maxMagnetude > 0)
+        {
+            currentVelosity = Vector3.ClampMagnitude(currentVelosity, maxMagnetude);
+            rigidbody.velocity = currentVelosity;
+        }
+
+        if (transform.position.y < 0)
         {
             Game.Instance.OnRoundFall.Invoke();
         }
@@ -80,8 +91,10 @@ public class Ball : MonoBehaviour
 
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-           Game.Instance.OnRoundFall.Invoke();
+           //Game.Instance.OnRoundFall.Invoke();
         }
+
+        trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
     }
 
 

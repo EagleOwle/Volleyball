@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public static class SceneLoader
+public class SceneLoader : MonoBehaviour
 {
     public enum SceneType
     {
@@ -10,36 +10,52 @@ public static class SceneLoader
         InGame
     }
 
-    private static int _menuSceneIndex = 0;
-    private static int _levelSceneIndex = 1;
+    public static SceneLoader Instance;
     public static Action OnSceneLoadStart;
     public static Action OnSceneLoadComplete;
-
     public static SceneType currentSceneType;
 
-    public static void LoadLevel()
+    [SerializeField] private int _menuSceneIndex = 0;
+    [SerializeField] private int _levelSceneIndex = 1;
+    [SerializeField] private GameObject loadinUI;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(this);
+    }
+
+    public void LoadLevel()
     {
         Load(_levelSceneIndex, SceneType.InGame);
     }
 
-    public static void LoadMenu()
+    public void LoadMenu()
     {
         Load(_menuSceneIndex, SceneType.InMenu);
     }
 
-    private static void Load(int index, SceneType type)
+    private void Load(int index, SceneType type)
     {
+        loadinUI.SetActive(true);
         OnSceneLoadStart?.Invoke();
         AsyncOperation operation = SceneManager.LoadSceneAsync(index);
         operation.completed += AsyncLoadComplete;
         currentSceneType = type;
     }
 
-    private static void AsyncLoadComplete(AsyncOperation operation)
+    private void AsyncLoadComplete(AsyncOperation operation)
     {
+        loadinUI.SetActive(false);
         operation.completed -= AsyncLoadComplete;
         OnSceneLoadComplete?.Invoke();
     }
 
-    
+
 }

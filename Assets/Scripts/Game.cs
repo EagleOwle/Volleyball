@@ -27,6 +27,12 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
+        if(SceneLoader.Instance == null)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            return;
+        }
+
         StateMachine.InitBeheviors();
         match = new Match();
     }
