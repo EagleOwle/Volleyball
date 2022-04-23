@@ -19,7 +19,8 @@ public class SceneInitialize : MonoBehaviour
         ClearGame();
 
         cort = Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
-        ball = Instantiate(Resources.Load("Prefabs/Volleyball"), cort.BallSpawnPoint.position, Quaternion.identity) as GameObject;
+        Vector3 rnd =new Vector3(Random.Range(-0.1f, 0.1f),0,0);
+        ball = Instantiate(Resources.Load("Prefabs/Volleyball"), cort.BallSpawnPoint.position + rnd, Quaternion.identity) as GameObject;
         player = Instantiate(Resources.Load("Prefabs/Player"), cort.PlayerSpawnPoint.position, Quaternion.identity) as GameObject;
         bot = Instantiate(Resources.Load("Prefabs/Enemy"), cort.BotSpawnPoint.position, Quaternion.identity) as GameObject;
 
@@ -41,6 +42,11 @@ public class SceneInitialize : MonoBehaviour
         if (ball != null)
         {
             Destroy(ball);
+        }
+
+        if (bot != null)
+        {
+            Destroy(bot);
         }
     }
 

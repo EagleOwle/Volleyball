@@ -18,7 +18,8 @@ public class InputHandler : MonoBehaviour
         }
     }
 
-    [SerializeField] private float sence = 0.005f;
+    [Range(0,100)]
+    [SerializeField] private float sence = 10;
 
     private bool _onSwipe;
     public bool OnSwipe => _onSwipe;
@@ -30,28 +31,24 @@ public class InputHandler : MonoBehaviour
         {
             if (swipeDirection != value)
             {
-                swipeDirection = value * sence;
+                swipeDirection = value;
                 ActionSetSwipeDirection?.Invoke(swipeDirection);
             }
-
         }
     }
 
     public Action<Vector3> ActionSetSwipeDirection;
 
+    private Vector2 percent;
+
     private void Update()
     {
         if (StateMachine.currentState is GameState)
         {
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                SceneManager.LoadScene(0);
-            }
-
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 _tupPosition = (Vector2)Input.mousePosition;
-                SwipeDirection = _tupPosition;
+                InvokeRepeating(nameof(SetTupPosition), 0.1f, 0.1f);
                 _onSwipe = true;
             }
 
@@ -62,7 +59,22 @@ public class InputHandler : MonoBehaviour
 
             if (_onSwipe)
             {
-                SwipeDirection = ((Vector2)Input.mousePosition - _tupPosition);
+                Vector3 direction = (Input.mousePosition - (Vector3)_tupPosition);
+
+                percent.x = Screen.width / 100 * sence;
+                percent.y = Screen.height / 100 * sence;
+
+                if (Mathf.Abs(direction.x) < percent.x)
+                {
+                    direction.x = 0;
+                }
+
+                if (Mathf.Abs(direction.y) < percent.y)
+                {
+                    direction.y = 0;
+                }
+
+                SwipeDirection = direction;
             }
         }
         else
@@ -75,8 +87,9 @@ public class InputHandler : MonoBehaviour
     private void SwipeBreak()
     {
         _onSwipe = false;
-        SwipeDirection = Vector2.zero;
-        _tupPosition = Vector2.zero;
+        SwipeDirection = Vector3.zero;
+        _tupPosition = Vector3.zero;
+        CancelInvoke();
     }
 
     private void OnDrawGizmos()
@@ -93,6 +106,11 @@ public class InputHandler : MonoBehaviour
 
             Gizmos.DrawLine(Camera.main.ScreenToWorldPoint(startPosition), Camera.main.ScreenToWorldPoint(endPosition));
         }
+    }
+
+    void SetTupPosition()
+    {
+        _tupPosition = (Vector2)Input.mousePosition;
     }
 
 }

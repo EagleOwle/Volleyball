@@ -13,10 +13,9 @@ public class Ball : MonoBehaviour
     [SerializeField] private TrajectoryRender trajectoryRender;
     private new Rigidbody rigidbody;
 
-    private void Awake()
+    public void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
-        trajectoryRender = GameObject.FindObjectOfType<TrajectoryRender>();
+        
     }
 
     private void Start()
@@ -26,6 +25,8 @@ public class Ball : MonoBehaviour
 
     private void OnEnable()
     {
+        rigidbody = GetComponent<Rigidbody>();
+        trajectoryRender = GameObject.FindObjectOfType<TrajectoryRender>();
         StateMachine.actionChangeState += PauseGame;
     }
 
@@ -53,12 +54,12 @@ public class Ball : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (rigidbody == null) return;
+        //if (rigidbody == null) return;
 
-        Gizmos.color = Color.yellow;
-        Vector3 startPosition = transform.position;
-        Vector3 endPosition = startPosition + rigidbody.velocity;
-        Gizmos.DrawLine(startPosition, endPosition);
+        //Gizmos.color = Color.yellow;
+        //Vector3 startPosition = transform.position;
+        //Vector3 endPosition = startPosition + rigidbody.velocity;
+        //Gizmos.DrawLine(startPosition, endPosition);
 
     }
 
@@ -91,7 +92,7 @@ public class Ball : MonoBehaviour
 
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-           //Game.Instance.OnRoundFall.Invoke();
+          // Game.Instance.OnRoundFall.Invoke();
         }
 
         trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);

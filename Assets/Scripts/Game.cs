@@ -18,7 +18,7 @@ public class Game : MonoBehaviour
             return _instance;
         }
     }
-
+    public string currentState;
     public Action OnRoundFall;
 
     public Match match;
@@ -40,6 +40,12 @@ public class Game : MonoBehaviour
     private void OnEnable()
     {
         OnRoundFall += RoundFall;
+        StateMachine.actionChangeState += ChangeState;
+    }
+
+    private void ChangeState(State obj)
+    {
+        currentState = obj.nameState;
     }
 
     private void OnDisable()
