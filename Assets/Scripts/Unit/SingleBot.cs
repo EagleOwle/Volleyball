@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(UnitMotion))]
-public class SingleBot : MonoBehaviour
+public class SingleBot : Unit
 {
     private Ball ball;
     private UnitMotion unitMotion;
@@ -26,13 +26,14 @@ public class SingleBot : MonoBehaviour
     {
         Move();
         unitMotion.MoveDirection = direction.normalized;
+
     }
 
     private void Move()
     {
         direction = Vector3.zero;
 
-        if (ball.transform.position.x > 0 && TrajectoryCalculate.HitPosition.x > 0)
+        if (StateMachine.currentState is GameState && TrajectoryCalculate.HitPosition.x > 0)
         {
             float dir = TrajectoryCalculate.HitPosition.x - transform.position.x;
 
@@ -55,7 +56,7 @@ public class SingleBot : MonoBehaviour
 
     private void Jump()
     {
-        if (ball.transform.position.y > transform.position.y + 1)
+        if (ball.transform.position.y > transform.position.y + 2)
         {
             if (Mathf.Abs(ball.transform.position.y - transform.position.y) < 3)
             {

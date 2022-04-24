@@ -59,18 +59,4 @@ public static class TrajectoryCalculate
         }
     }
 
-    private static bool CheckSphereCollision(Vector3 center, float radius, LayerMask collisionMask)
-    {
-        Collider[] hitColliders = Physics.OverlapSphere(center, radius, collisionMask);
-
-        if (hitColliders.Length > 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
 }

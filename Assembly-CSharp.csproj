@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\TrajectoryCalculate.cs" />
     <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
     <Compile Include="Assets\Scripts\TrajectoryRenderAdvanced.cs" />
+    <Compile Include="Assets\Scripts\Unit\Unit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FloatingEntities\Shaders\Ocean.shader" />

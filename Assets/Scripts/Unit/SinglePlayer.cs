@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(UnitMotion))]
-public class SinglePlayer : MonoBehaviour
+public class SinglePlayer : Unit
 {
     private UnitMotion unitMotion;
 

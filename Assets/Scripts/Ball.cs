@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,13 +11,28 @@ public class Ball : MonoBehaviour
     [SerializeField] private PhysicMaterial ballPhysic, defaultPhysic;
     [SerializeField] private new Collider collider;
     [SerializeField] private AudioClip hitClip;
+    [SerializeField] protected LayerMask unitLayer = 0;
+    [SerializeField] protected LayerMask groundLayer = 0;
     [SerializeField] private TrajectoryRender trajectoryRender;
     private new Rigidbody rigidbody;
 
-    public void Awake()
+    private GameObject lastUnit;
+    private int hitCount;
+    public int HitCount
     {
-        
+        set
+        {
+            hitCount = value;
+            ActionHitCount?.Invoke(hitCount);
+        }
+
+        get
+        {
+            return hitCount;
+        }
     }
+
+    public Action<int> ActionHitCount;
 
     private void Start()
     {
@@ -28,6 +44,7 @@ public class Ball : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         trajectoryRender = GameObject.FindObjectOfType<TrajectoryRender>();
         StateMachine.actionChangeState += PauseGame;
+        HitCount = 0;
     }
 
     private void OnDisable()
@@ -43,6 +60,7 @@ public class Ball : MonoBehaviour
         if (maxMagnetude > 0)
         {
             currentVelosity = Vector3.ClampMagnitude(currentVelosity, maxMagnetude);
+            trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
             rigidbody.velocity = currentVelosity;
         }
 
@@ -50,17 +68,6 @@ public class Ball : MonoBehaviour
         {
             Game.Instance.OnRoundFall.Invoke();
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        //if (rigidbody == null) return;
-
-        //Gizmos.color = Color.yellow;
-        //Vector3 startPosition = transform.position;
-        //Vector3 endPosition = startPosition + rigidbody.velocity;
-        //Gizmos.DrawLine(startPosition, endPosition);
-
     }
 
     private void PauseGame(State state)
@@ -82,6 +89,24 @@ public class Ball : MonoBehaviour
         }
     }
 
+    private void HitUnit(GameObject obj)
+    {
+        if (obj == lastUnit)
+        {
+            HitCount++;
+
+            if(hitCount > 3 )
+            {
+                Game.Instance.OnRoundFall.Invoke();
+            }
+        }
+        else
+        {
+            HitCount = 1;
+            lastUnit = obj;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         Vector3 dir = collision.contacts[0].point - transform.position;
@@ -90,12 +115,18 @@ public class Ball : MonoBehaviour
 
         AudioController.Instance.PlayClip(hitClip);
 
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        //Debug.LogError("Hit " + collision.collider.gameObject.layer + "/ " + collision.collider.name);
+
+        if ((1 << collision.collider.gameObject.layer & unitLayer) != 0)
         {
-          // Game.Instance.OnRoundFall.Invoke();
+            HitUnit(collision.gameObject);
+            return;
         }
 
-        trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
+        if ((1 << collision.collider.gameObject.layer & groundLayer) != 0)
+        {
+            Game.Instance.OnRoundFall.Invoke();
+        }
     }
 
 
