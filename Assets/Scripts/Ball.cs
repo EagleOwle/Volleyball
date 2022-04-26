@@ -16,23 +16,11 @@ public class Ball : MonoBehaviour
     [SerializeField] private TrajectoryRender trajectoryRender;
     private new Rigidbody rigidbody;
 
-    private GameObject lastUnit;
-    private int hitCount;
-    public int HitCount
-    {
-        set
-        {
-            hitCount = value;
-            ActionHitCount?.Invoke(hitCount);
-        }
+    public PlayerType currentPlayerSide;
+    public int playerHitCount;
 
-        get
-        {
-            return hitCount;
-        }
-    }
-
-    public Action<int> ActionHitCount;
+    //public UnitSide currentUnitSide;
+    public Action<PlayerType, int> ActionUnitHit;
 
     private void Start()
     {
@@ -44,7 +32,12 @@ public class Ball : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         trajectoryRender = GameObject.FindObjectOfType<TrajectoryRender>();
         StateMachine.actionChangeState += PauseGame;
-        HitCount = 0;
+
+        currentPlayerSide = PlayerType.None;
+        playerHitCount = 0;
+
+        //currentUnitSide = new UnitSide(PlayerType.None);
+        //ActionPlayerHit?.Invoke(currentUnitSide.playerType, currentUnitSide.hitCount);
     }
 
     private void OnDisable()
@@ -60,13 +53,54 @@ public class Ball : MonoBehaviour
         if (maxMagnetude > 0)
         {
             currentVelosity = Vector3.ClampMagnitude(currentVelosity, maxMagnetude);
-            trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
+
+            if (StateMachine.currentState is GameState)
+            {
+                trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
+            }
+            else
+            {
+                trajectoryRender.Hide();
+            }
+
             rigidbody.velocity = currentVelosity;
         }
 
-        if (transform.position.y < 0)
+        if (StateMachine.currentState is GameState)
         {
-            Game.Instance.OnRoundFall.Invoke();
+            ChangeSide();
+
+            if (transform.position.y < 0)
+            {
+                Game.Instance.OnRoundFall(currentPlayerSide);
+            }
+        }
+    }
+
+    private void ChangeSide()
+    {
+        if (transform.position.x < 0 && currentPlayerSide != PlayerType.Local)
+        {
+            currentPlayerSide = PlayerType.Local;
+            playerHitCount = 0;
+
+            ActionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
+        }
+
+        if (transform.position.x > 0 && currentPlayerSide != PlayerType.Rival)
+        {
+            currentPlayerSide = PlayerType.Rival;
+            playerHitCount = 0;
+
+            ActionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
+        }
+
+        if (transform.position.x == 0 && currentPlayerSide != PlayerType.None)
+        {
+            currentPlayerSide = PlayerType.None;
+            playerHitCount = 0;
+
+            ActionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
         }
     }
 
@@ -89,45 +123,72 @@ public class Ball : MonoBehaviour
         }
     }
 
-    private void HitUnit(GameObject obj)
-    {
-        if (obj == lastUnit)
-        {
-            HitCount++;
-
-            if(hitCount > 3 )
-            {
-                Game.Instance.OnRoundFall.Invoke();
-            }
-        }
-        else
-        {
-            HitCount = 1;
-            lastUnit = obj;
-        }
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
-        Vector3 dir = collision.contacts[0].point - transform.position;
-        dir = -dir.normalized;
-        rigidbody.AddForce(dir * pushForce);
-
-        AudioController.Instance.PlayClip(hitClip);
-
-        //Debug.LogError("Hit " + collision.collider.gameObject.layer + "/ " + collision.collider.name);
-
-        if ((1 << collision.collider.gameObject.layer & unitLayer) != 0)
+        if (StateMachine.currentState is GameState)
         {
-            HitUnit(collision.gameObject);
-            return;
-        }
+            Vector3 dir = collision.contacts[0].point - transform.position;
+            dir = -dir.normalized;
+            rigidbody.AddForce(dir * pushForce);
 
-        if ((1 << collision.collider.gameObject.layer & groundLayer) != 0)
-        {
-            Game.Instance.OnRoundFall.Invoke();
+            AudioController.Instance.PlayClip(hitClip);
+
+            if ((1 << collision.collider.gameObject.layer & unitLayer) != 0)
+            {
+                Unit unit = collision.collider.GetComponentInParent<Unit>();
+
+                HitUnit();
+
+                ActionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
+            }
+
+            if ((1 << collision.collider.gameObject.layer & groundLayer) != 0)
+            {
+                ActionUnitHit?.Invoke(PlayerType.None, 0);
+                Game.Instance.OnRoundFall(currentPlayerSide);
+            }
         }
     }
 
+    private void HitUnit()
+    {
+        playerHitCount++;
 
+        if (playerHitCount > 3)
+        {
+            ActionUnitHit?.Invoke(PlayerType.None, 0);
+            Game.Instance.OnRoundFall(currentPlayerSide);
+        }
+    }
+
+    public struct UnitSide
+    {
+        public UnitSide (PlayerType playerType)
+        {
+            this.playerType = playerType;
+            hitCount = 0;
+        }
+
+        public int hitCount;
+        public PlayerType playerType;
+
+        public void Hit(PlayerType playerType)
+        {
+            if(this.playerType == playerType)
+            {
+                hitCount++;
+
+                if(hitCount > 3)
+                {
+                    Game.Instance.OnRoundFall(this.playerType);
+                }
+            }
+            else
+            {
+                this.playerType = playerType;
+                hitCount = 1;
+            }
+        }
+
+    }
 }

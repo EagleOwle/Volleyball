@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,6 +53,10 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Library\PackageCache\com.unity.device-simulator@3.0.3-preview\Editor\SimulatorWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.device-simulator@3.0.3-preview\Editor\DeviceInfo\DeviceInfoAsset.cs" />
     <Compile Include="Library\PackageCache\com.unity.device-simulator@3.0.3-preview\Editor\SimulatorPlayerSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.device-simulator@3.0.3-preview\Editor\settings\DeviceSimulatorProjectSettings.cs" />
@@ -69,7 +73,6 @@
     <Compile Include="Library\PackageCache\com.unity.device-simulator@3.0.3-preview\Editor\UserInterfaceController.cs" />
     <Compile Include="Library\PackageCache\com.unity.device-simulator@3.0.3-preview\Editor\SimulatorUtilities.cs" />
     <Compile Include="Library\PackageCache\com.unity.device-simulator@3.0.3-preview\Editor\DeviceListPopup.cs" />
-    <Compile Include="Library\PackageCache\com.unity.device-simulator@3.0.3-preview\Editor\SimulatorWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.device-simulator@3.0.3-preview\Editor\Plugins\DeviceSimulator.cs" />
     <Compile Include="Library\PackageCache\com.unity.device-simulator@3.0.3-preview\Editor\Plugins\DeviceSimulatorExtensionWrapperPlugin.cs" />
     <Compile Include="Library\PackageCache\com.unity.device-simulator@3.0.3-preview\Editor\Input\InputManagerBackend.cs" />
@@ -350,9 +353,6 @@
     </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="ArchimedsLab">
-      <HintPath>Assets\FloatingEntities\Scripts\ArchimedsLab.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.6\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>

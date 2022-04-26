@@ -21,4 +21,9 @@ public class TrajectoryRender : MonoBehaviour
         lineRenderer.SetPositions(points);
     }
 
+    public void Hide()
+    {
+        lineRenderer.positionCount = 0;
+    }
+
 }

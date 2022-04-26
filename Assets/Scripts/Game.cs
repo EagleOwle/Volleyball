@@ -19,7 +19,7 @@ public class Game : MonoBehaviour
         }
     }
     public string currentState;
-    public Action OnRoundFall;
+    public Action ActionRoundFall;
 
     public Match match;
 
@@ -35,12 +35,12 @@ public class Game : MonoBehaviour
 
         StateMachine.InitBeheviors();
         match = new Match();
+        match.Initialise();
     }
 
     private void OnEnable()
     {
-        OnRoundFall += RoundFall;
-        StateMachine.actionChangeState += ChangeState;
+       StateMachine.actionChangeState += ChangeState;
     }
 
     private void ChangeState(State obj)
@@ -48,20 +48,16 @@ public class Game : MonoBehaviour
         currentState = obj.nameState;
     }
 
-    private void OnDisable()
+    public void OnRoundFall(PlayerType luser)
     {
-        OnRoundFall -= RoundFall;
-    }
-
-    private void RoundFall()
-    {
+        match.SetScore(luser);
+        ActionRoundFall?.Invoke();
         StateMachine.SetState<FallState>();
     }
 
     public void RestartMatch()
     {
-        match.round.roundNumber++;
-        match.score++;
+        match.round++;
         StartCoroutine(FallWait());
     }
 
