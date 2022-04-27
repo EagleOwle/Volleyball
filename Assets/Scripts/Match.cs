@@ -6,8 +6,8 @@ public class Match
     public void Initialise()
     {
         round = 0;
-        playerScore = new Score(15);
-        enemyScore = new Score(15);
+        playerScore = new Score(5);
+        enemyScore = new Score(5);
     }
 
     public int round;
@@ -15,21 +15,26 @@ public class Match
     public Score enemyScore;
     public Action ActionSetScore;
 
-    public void SetScore(PlayerType luser)
+    public bool SetScore(PlayerType luser)
     {
+        bool endScore = false;
+
         switch (luser)
         {
             case PlayerType.None:
                 break;
             case PlayerType.Local:
-                playerScore.score--;
+                playerScore.ScoreReduction(out endScore);
                 break;
             case PlayerType.Rival:
-                enemyScore.score--;
+                enemyScore.ScoreReduction(out endScore);
                 break;
         }
 
         ActionSetScore?.Invoke();
+
+        return endScore;
+
     }
 
     [Serializable]
@@ -48,6 +53,16 @@ public class Match
 
 
         public PlayerType playerType;
-        public int score;
+        public int score { get; private set; }
+        public void ScoreReduction(out bool endScore)
+        {
+            endScore = false;
+            score--;
+            if (score < 1)
+            {
+                endScore = true;
+            }
+        }
     }
+
 }

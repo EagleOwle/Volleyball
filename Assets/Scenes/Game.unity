@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 571179530}
   - component: {fileID: 571179529}
   m_Layer: 5
-  m_Name: RessumButton
+  m_Name: ClosePanelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1602,10 +1602,8 @@ MonoBehaviour:
     round: 0
     playerScore:
       playerType: 0
-      score: 0
     enemyScore:
       playerType: 0
-      score: 0
   sceneInitialize: {fileID: 1917932971}
 --- !u!4 &1238531753
 Transform:
@@ -1742,8 +1740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelName: 1
-  _pauseBtn: {fileID: 1040254136}
-  _fallPanel: {fileID: 1284507573}
+  pauseBtn: {fileID: 1040254136}
+  fallPanel: {fileID: 1284507577}
   hitCountText: {fileID: 28111397}
   roundText: {fileID: 47703120}
   scorePlayerText: {fileID: 1702127000}
@@ -1818,7 +1816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tup to ressum...
+  m_Text: Tup To Continue
 --- !u!222 &1277019212
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1917,7 +1915,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea08a63183543146a50d437ccf1ba73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ressumBtn: {fileID: 571179529}
+  closePanelBtn: {fileID: 571179529}
+  buttonText: {fileID: 1277019211}
+  continueGameMessage: Tup To Continue
+  endGameMessage: Tup To End
 --- !u!1 &1341067961
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class UIGame : UIPanel
 {
-    [SerializeField] private Button _pauseBtn;
-    [SerializeField] private GameObject _fallPanel;
+    [SerializeField] private Button pauseBtn;
+    [SerializeField] private UIFallPanel fallPanel;
     [SerializeField] private Text hitCountText;
     [SerializeField] private Text roundText;
     [SerializeField] private Text scorePlayerText, scoreEnemyText;
@@ -16,9 +16,12 @@ public class UIGame : UIPanel
         StateMachine.SetState<GameState>();
         Game.Instance.ActionRoundFall += OnFall;
         Game.Instance.match.ActionSetScore += ShowScore;
-       Invoke(nameof( ShowScore), Time.deltaTime);
-        _fallPanel.SetActive(false);
-        _pauseBtn.onClick.AddListener(OnButtonPause);
+        Invoke(nameof(ShowScore), Time.deltaTime);
+
+        fallPanel.ShowMessage();
+        fallPanel.gameObject.SetActive(false);
+
+        pauseBtn.onClick.AddListener(OnButtonPause);
 
         Ball ball = GameObject.FindObjectOfType<Ball>();
         if (ball != null)
@@ -51,7 +54,7 @@ public class UIGame : UIPanel
             Game.Instance.match.ActionSetScore -= ShowScore;
         }
 
-        _pauseBtn.onClick.RemoveListener(OnButtonPause);
+        pauseBtn.onClick.RemoveListener(OnButtonPause);
 
         Ball ball = GameObject.FindObjectOfType<Ball>();
         if (ball != null)
@@ -66,8 +69,9 @@ public class UIGame : UIPanel
         UIHud.Singletone.OnChangePanel(UIPanelName.Pause);
     }
 
-    private void OnFall()
+    private void OnFall(bool endMatch)
     {
-        _fallPanel.SetActive(true);
+        fallPanel.ShowMessage(endMatch);
+        fallPanel.gameObject.SetActive(true);
     }
 }

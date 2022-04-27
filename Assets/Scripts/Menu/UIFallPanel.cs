@@ -6,16 +6,25 @@ using UnityEngine.UI;
 
 public class UIFallPanel : MonoBehaviour
 {
-    [SerializeField] private Button _ressumBtn;
+    [SerializeField] private Button closePanelBtn;
+    [SerializeField] private Text buttonText;
+    [SerializeField] private string continueGameMessage = "Tup To Continue";
+    [SerializeField] private string endGameMessage = "Tup To End";
 
-    private void Start()
+    public void ShowMessage(bool endGame = false)
     {
-        _ressumBtn.onClick.AddListener(OnButtonRessum);
-    }
-
-    private void OnButtonRessum()
-    {
-        Game.Instance.RestartMatch();
+        if(endGame == true)
+        {
+            buttonText.text = endGameMessage;
+            closePanelBtn.onClick.RemoveAllListeners();
+            closePanelBtn.onClick.AddListener(Game.Instance.EndGame);
+        }
+        else
+        {
+            buttonText.text = continueGameMessage;
+            closePanelBtn.onClick.RemoveAllListeners();
+            closePanelBtn.onClick.AddListener(Game.Instance.StartRound);
+        }
     }
 
 
