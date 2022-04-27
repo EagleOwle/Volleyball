@@ -19,7 +19,6 @@ public class Ball : MonoBehaviour
     public PlayerType currentPlayerSide;
     public int playerHitCount;
 
-    //public UnitSide currentUnitSide;
     public Action<PlayerType, int> ActionUnitHit;
 
     private void Start()
@@ -35,9 +34,6 @@ public class Ball : MonoBehaviour
 
         currentPlayerSide = PlayerType.None;
         playerHitCount = 0;
-
-        //currentUnitSide = new UnitSide(PlayerType.None);
-        //ActionPlayerHit?.Invoke(currentUnitSide.playerType, currentUnitSide.hitCount);
     }
 
     private void OnDisable()
@@ -161,34 +157,36 @@ public class Ball : MonoBehaviour
         }
     }
 
-    public struct UnitSide
-    {
-        public UnitSide (PlayerType playerType)
-        {
-            this.playerType = playerType;
-            hitCount = 0;
-        }
+    //public struct UnitSide
+    //{
+    //    public UnitSide (PlayerType playerType)
+    //    {
+    //        this.playerType = playerType;
+    //        hitCount = 0;
+    //    }
 
-        public int hitCount;
-        public PlayerType playerType;
+    //    public int hitCount;
+    //    public PlayerType playerType;
 
-        public void Hit(PlayerType playerType)
-        {
-            if(this.playerType == playerType)
-            {
-                hitCount++;
+    //    public void Hit(PlayerType playerType)
+    //    {
+    //        if(this.playerType == playerType)
+    //        {
+    //            hitCount++;
 
-                if(hitCount > 3)
-                {
-                    Game.Instance.OnRoundFall(this.playerType);
-                }
-            }
-            else
-            {
-                this.playerType = playerType;
-                hitCount = 1;
-            }
-        }
+    //            if(hitCount > 3)
+    //            {
+    //                Game.Instance.OnRoundFall(this.playerType);
+    //            }
+    //        }
+    //        else
+    //        {
+    //            this.playerType = playerType;
+    //            hitCount = 1;
+    //        }
+    //    }
 
-    }
+    //}
+
+
 }

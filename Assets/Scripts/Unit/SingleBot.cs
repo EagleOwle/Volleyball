@@ -9,7 +9,7 @@ public class SingleBot : Unit
     private UnitMotion unitMotion;
     private Vector3 direction;
 
-    private float spawnPositionX;
+    private float defaultPositionX;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class SingleBot : Unit
 
     private void Start()
     {
-        spawnPositionX = transform.position.x;
+        defaultPositionX = transform.position.x;
     }
 
     private void Update()
@@ -46,7 +46,7 @@ public class SingleBot : Unit
         }
         else
         {
-            float dir = spawnPositionX - transform.position.x;
+            float dir = defaultPositionX - transform.position.x;
             if (Mathf.Abs(dir) > 0.3f)
             {
                 direction = new Vector3(dir, 0, direction.z);
@@ -60,7 +60,7 @@ public class SingleBot : Unit
         {
             if (Mathf.Abs(ball.transform.position.y - transform.position.y) < 3)
             {
-                direction = new Vector3(direction.x, 10, direction.z);
+                direction = new Vector3(direction.x, 1, direction.z);
             }
             else
             {
