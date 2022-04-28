@@ -4,8 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class UnitMotion : MonoBehaviour
 {
-   [SerializeField] private float _moveSpeed = 250;
-    [SerializeField] private float _jumpForce = 250;
+    //[SerializeField] private float _moveSpeed = 250;
+    //[SerializeField] private float _jumpForce = 250;
 
     [SerializeField] private LayerMask _checkGroundMask;
 
@@ -15,9 +15,14 @@ public class UnitMotion : MonoBehaviour
     private float velocityY;
     private float moveYTarget;
 
-    public Vector3 MoveDirection;
-
-    [SerializeField] private float _downSpeed = 20;
+    private Vector3 moveDirection;
+    public Vector3 MoveDirection
+    {
+        set
+        {
+            moveDirection = value;
+        }
+    }
 
     private void Awake()
     {
@@ -35,11 +40,11 @@ public class UnitMotion : MonoBehaviour
 
         if (_onGround)
         {
-            velocityX = MoveDirection.x * _moveSpeed * Time.deltaTime;
+            velocityX = moveDirection.x * Preference.Singletone.moveSpeed * Time.deltaTime;
         }
         else
         {
-            velocityX = MoveDirection.x * (_moveSpeed * 1.5f) * Time.deltaTime;
+            velocityX = moveDirection.x * (Preference.Singletone.moveSpeed * 1.5f) * Time.deltaTime;
         }
 
         _rigidbody.velocity = new Vector3(velocityX, velocityY, _rigidbody.velocity.z);
@@ -53,15 +58,15 @@ public class UnitMotion : MonoBehaviour
 
         if (_onGround)
         {
-            if (MoveDirection.y > 0)
+            if (moveDirection.y > 0)
             {
-               velocityY = _jumpForce * Time.deltaTime;
+               velocityY = Preference.Singletone.jumpForce * Time.deltaTime;
             }
 
             moveYTarget = 0;
         }
 
-        return Mathf.MoveTowards(velocityY, moveYTarget, _downSpeed * Time.deltaTime);
+        return Mathf.MoveTowards(velocityY, moveYTarget, Preference.Singletone.downSpeed * Time.deltaTime);
     }
 
 

@@ -6,8 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private float pushForce = 25f;
-    [SerializeField] private float maxMagnetude = 5;
     [SerializeField] private PhysicMaterial ballPhysic, defaultPhysic;
     [SerializeField] private new Collider collider;
     [SerializeField] private AudioClip hitClip;
@@ -46,9 +44,9 @@ public class Ball : MonoBehaviour
     {
         Vector3 currentVelosity = rigidbody.velocity;
 
-        if (maxMagnetude > 0)
+        if (Preference.Singletone.maxMagnetude > 0)
         {
-            currentVelosity = Vector3.ClampMagnitude(currentVelosity, maxMagnetude);
+            currentVelosity = Vector3.ClampMagnitude(currentVelosity, Preference.Singletone.maxMagnetude);
 
             if (StateMachine.currentState is GameState)
             {
@@ -125,7 +123,7 @@ public class Ball : MonoBehaviour
         {
             Vector3 dir = collision.contacts[0].point - transform.position;
             dir = -dir.normalized;
-            rigidbody.AddForce(dir * pushForce);
+            rigidbody.AddForce(dir * Preference.Singletone.pushForce);
 
             AudioController.Instance.PlayClip(hitClip);
 
@@ -156,37 +154,4 @@ public class Ball : MonoBehaviour
             Game.Instance.OnRoundFall(currentPlayerSide);
         }
     }
-
-    //public struct UnitSide
-    //{
-    //    public UnitSide (PlayerType playerType)
-    //    {
-    //        this.playerType = playerType;
-    //        hitCount = 0;
-    //    }
-
-    //    public int hitCount;
-    //    public PlayerType playerType;
-
-    //    public void Hit(PlayerType playerType)
-    //    {
-    //        if(this.playerType == playerType)
-    //        {
-    //            hitCount++;
-
-    //            if(hitCount > 3)
-    //            {
-    //                Game.Instance.OnRoundFall(this.playerType);
-    //            }
-    //        }
-    //        else
-    //        {
-    //            this.playerType = playerType;
-    //            hitCount = 1;
-    //        }
-    //    }
-
-    //}
-
-
 }

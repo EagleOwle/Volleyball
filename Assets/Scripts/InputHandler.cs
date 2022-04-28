@@ -18,14 +18,12 @@ public class InputHandler : MonoBehaviour
         }
     }
 
-    [Range(0,100)]
-    [SerializeField] private float sence = 10;
+    public Action<Vector3> ActionSetSwipeDirection;
 
-    private bool _onSwipe;
-    public bool OnSwipe => _onSwipe;
-    private Vector2 _tupPosition;
+    private bool onSwipe;
+    private Vector2 tupPosition;
     private Vector3 swipeDirection;
-    public Vector3 SwipeDirection
+    private Vector3 SwipeDirection
     {
         set
         {
@@ -36,9 +34,6 @@ public class InputHandler : MonoBehaviour
             }
         }
     }
-
-    public Action<Vector3> ActionSetSwipeDirection;
-
     private Vector2 percent;
 
     private void Update()
@@ -47,9 +42,9 @@ public class InputHandler : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                _tupPosition = (Vector2)Input.mousePosition;
+                tupPosition = (Vector2)Input.mousePosition;
                 InvokeRepeating(nameof(SetTupPosition), 0.1f, 0.1f);
-                _onSwipe = true;
+                onSwipe = true;
             }
 
             if (Input.GetKeyUp(KeyCode.Mouse0))
@@ -57,12 +52,12 @@ public class InputHandler : MonoBehaviour
                 SwipeBreak();
             }
 
-            if (_onSwipe)
+            if (onSwipe)
             {
-                Vector3 direction = (Input.mousePosition - (Vector3)_tupPosition);
+                Vector3 direction = (Input.mousePosition - (Vector3)tupPosition);
 
-                percent.x = Screen.width / 100 * sence;
-                percent.y = Screen.height / 100 * sence;
+                percent.x = Screen.width / 100 * Preference.Singletone.deadZone;
+                percent.y = Screen.height / 100 * Preference.Singletone.deadZone;
 
                 if (Mathf.Abs(direction.x) < percent.x)
                 {
@@ -86,22 +81,22 @@ public class InputHandler : MonoBehaviour
 
     private void SwipeBreak()
     {
-        _onSwipe = false;
+        onSwipe = false;
         SwipeDirection = Vector3.zero;
-        _tupPosition = Vector3.zero;
+        tupPosition = Vector3.zero;
         CancelInvoke();
     }
 
     private void OnDrawGizmos()
     {
-        if (_onSwipe)
+        if (onSwipe)
         {
             Gizmos.color = Color.blue;
 
-            Vector3 startPosition = _tupPosition;
+            Vector3 startPosition = tupPosition;
             startPosition.z = Camera.main.nearClipPlane;
 
-            Vector3 endPosition = _tupPosition + (Vector2)swipeDirection;
+            Vector3 endPosition = tupPosition + (Vector2)swipeDirection;
             endPosition.z = Camera.main.nearClipPlane;
 
             Gizmos.DrawLine(Camera.main.ScreenToWorldPoint(startPosition), Camera.main.ScreenToWorldPoint(endPosition));
@@ -110,7 +105,7 @@ public class InputHandler : MonoBehaviour
 
     void SetTupPosition()
     {
-        _tupPosition = (Vector2)Input.mousePosition;
+        tupPosition = (Vector2)Input.mousePosition;
     }
 
 }

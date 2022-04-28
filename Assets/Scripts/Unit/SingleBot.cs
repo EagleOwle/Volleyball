@@ -37,7 +37,7 @@ public class SingleBot : Unit
         {
             float dir = TrajectoryCalculate.HitPosition.x - transform.position.x;
 
-            if (Mathf.Abs(dir) > 0.3f)
+            if (Mathf.Abs(dir) > Preference.Singletone.deadzoneForMove)
             {
                 direction = new Vector3(dir, direction.y, direction.z);
             }
@@ -58,7 +58,7 @@ public class SingleBot : Unit
     {
         if (ball.transform.position.y > transform.position.y + 2)
         {
-            if (Mathf.Abs(ball.transform.position.y - transform.position.y) < 3)
+            if (Mathf.Abs(ball.transform.position.y - transform.position.y) < Preference.Singletone.deadzoneForJump)
             {
                 direction = new Vector3(direction.x, 1, direction.z);
             }

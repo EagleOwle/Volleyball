@@ -5,6 +5,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GamePreference", menuName = "GamePreference")]
 public class Preference : ScriptableObject
 {
+    private static Preference singletone;
+    public static Preference Singletone
+    {
+        get
+        {
+            if(singletone == null)
+            {
+                singletone = Resources.Load("Preference") as Preference;
+            }
+
+            return singletone;
+        }
+    }
+
     [Header("Sound")]
     public int musicValue = 1;
     public int sfxValue = 1;
@@ -19,11 +33,11 @@ public class Preference : ScriptableObject
     public float downSpeed = 20;
 
     [Header("AiLogic")]
-    public float DeadzoneForMove = 0.3f;
-    public float DeadzoneForJump = 3;
+    public float deadzoneForMove = 0.3f;
+    public float deadzoneForJump = 3;
 
     [Header("Ball")]
-    private float pushForce = 25f;
-    private float maxMagnetude = 5;
+    public float pushForce = 25f;
+    public float maxMagnetude = 5;
 
 }
