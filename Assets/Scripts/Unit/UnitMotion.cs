@@ -40,11 +40,11 @@ public class UnitMotion : MonoBehaviour
 
         if (_onGround)
         {
-            velocityX = moveDirection.x * Preference.Singletone.moveSpeed * Time.deltaTime;
+            velocityX = moveDirection.x * Preference.Singleton.moveSpeed * Time.deltaTime;
         }
         else
         {
-            velocityX = moveDirection.x * (Preference.Singletone.moveSpeed * 1.5f) * Time.deltaTime;
+            velocityX = moveDirection.x * (Preference.Singleton.moveSpeed * 1.5f) * Time.deltaTime;
         }
 
         _rigidbody.velocity = new Vector3(velocityX, velocityY, _rigidbody.velocity.z);
@@ -60,13 +60,13 @@ public class UnitMotion : MonoBehaviour
         {
             if (moveDirection.y > 0)
             {
-               velocityY = Preference.Singletone.jumpForce * Time.deltaTime;
+               velocityY = Preference.Singleton.jumpForce * Time.deltaTime;
             }
 
             moveYTarget = 0;
         }
 
-        return Mathf.MoveTowards(velocityY, moveYTarget, Preference.Singletone.downSpeed * Time.deltaTime);
+        return Mathf.MoveTowards(velocityY, moveYTarget, Preference.Singleton.downSpeed * Time.deltaTime);
     }
 
 

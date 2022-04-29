@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Menu\UITimer.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Unit\SingleBot.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIGamePreference.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\FallState.cs" />
     <Compile Include="Assets\Scripts\Unit\PlayerType.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\GameState.cs" />
@@ -87,7 +88,7 @@
     <Compile Include="Assets\Scripts\TrajectoryCalculate.cs" />
     <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
     <Compile Include="Assets\Scripts\TrajectoryRenderAdvanced.cs" />
-    <Compile Include="Assets\Scripts\Menu\UIGamePreference.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIItemPreference.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Snowconesolid Assets\Super Beach Pack\Snowconesolid Assets ReadMe.txt" />

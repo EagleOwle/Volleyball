@@ -19,6 +19,8 @@ public class Ball : MonoBehaviour
 
     public Action<PlayerType, int> ActionUnitHit;
 
+    private bool isInit = false;
+
     private void Start()
     {
         trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
@@ -32,6 +34,7 @@ public class Ball : MonoBehaviour
 
         currentPlayerSide = PlayerType.None;
         playerHitCount = 0;
+        isInit = true;
     }
 
     private void OnDisable()
@@ -44,9 +47,9 @@ public class Ball : MonoBehaviour
     {
         Vector3 currentVelosity = rigidbody.velocity;
 
-        if (Preference.Singletone.maxMagnetude > 0)
+        if (Preference.Singleton.maxMagnetude > 0)
         {
-            currentVelosity = Vector3.ClampMagnitude(currentVelosity, Preference.Singletone.maxMagnetude);
+            currentVelosity = Vector3.ClampMagnitude(currentVelosity, Preference.Singleton.maxMagnetude);
 
             if (StateMachine.currentState is GameState)
             {
@@ -100,6 +103,8 @@ public class Ball : MonoBehaviour
 
     private void PauseGame(State state)
     {
+        if (isInit == false) return;
+
         if(state is GameState)
         {
             rigidbody.isKinematic = false;
@@ -123,7 +128,7 @@ public class Ball : MonoBehaviour
         {
             Vector3 dir = collision.contacts[0].point - transform.position;
             dir = -dir.normalized;
-            rigidbody.AddForce(dir * Preference.Singletone.pushForce);
+            rigidbody.AddForce(dir * Preference.Singleton.pushForce);
 
             AudioController.Instance.PlayClip(hitClip);
 

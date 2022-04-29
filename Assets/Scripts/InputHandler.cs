@@ -56,8 +56,8 @@ public class InputHandler : MonoBehaviour
             {
                 Vector3 direction = (Input.mousePosition - (Vector3)tupPosition);
 
-                percent.x = Screen.width / 100 * Preference.Singletone.deadZone;
-                percent.y = Screen.height / 100 * Preference.Singletone.deadZone;
+                percent.x = Screen.width / 100 * Preference.Singleton.InputDeadZone;
+                percent.y = Screen.height / 100 * Preference.Singleton.InputDeadZone;
 
                 if (Mathf.Abs(direction.x) < percent.x)
                 {

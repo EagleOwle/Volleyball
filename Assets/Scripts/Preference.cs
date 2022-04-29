@@ -5,30 +5,30 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GamePreference", menuName = "GamePreference")]
 public class Preference : ScriptableObject
 {
-    private static Preference singletone;
-    public static Preference Singletone
+    private static Preference singleton;
+    public static Preference Singleton
     {
         get
         {
-            if(singletone == null)
+            if(singleton == null)
             {
-                singletone = Resources.Load("Preference") as Preference;
+                singleton = Resources.Load("GamePreference") as Preference;
             }
 
-            return singletone;
+            return singleton;
         }
     }
 
     [Header("Sound")]
-    public int musicValue = 1;
-    public int sfxValue = 1;
+    public float musicValue = 1;
+    public float sfxValue = 1;
 
     [Header("Input")]
-    public int deadZone = 10;
+    public float InputDeadZone = 10;
 
     [Header("UnitMotion")]
-    public int moveSpeed = 250;
-    public int jumpForce = 250;
+    public float moveSpeed = 250;
+    public float jumpForce = 250;
     public float horizontalMultiply = 1.5f;
     public float downSpeed = 20;
 

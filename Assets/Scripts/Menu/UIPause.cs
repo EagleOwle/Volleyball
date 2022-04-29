@@ -5,10 +5,13 @@ public class UIPause : UIPanel
 {
     [SerializeField] private Button _restartBtn;
     [SerializeField] private Button _ressumBtn;
+    [SerializeField] private Button _prefBtn;
+    [SerializeField] private GameObject preferencePanel;
 
     private void OnEnable()
     {
         StateMachine.SetState<PauseState>();
+        HidePreferencePanel();
     }
 
     public override void Init()
@@ -16,6 +19,7 @@ public class UIPause : UIPanel
         base.Init();
         _restartBtn.onClick.AddListener(OnButtonRestart);
         _ressumBtn.onClick.AddListener(OnButtonRessum);
+        _prefBtn.onClick.AddListener(ShowPreferencePanel);
     }
 
     private void OnButtonRessum()
@@ -27,5 +31,15 @@ public class UIPause : UIPanel
     {
         SceneLoader.Instance.LoadMenu();
     }
-    
+
+    private void ShowPreferencePanel()
+    {
+        preferencePanel.SetActive(true);
+    }
+
+    public void HidePreferencePanel()
+    {
+        preferencePanel.SetActive(false);
+    }
+
 }
