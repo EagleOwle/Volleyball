@@ -4,9 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class UnitMotion : MonoBehaviour
 {
-    //[SerializeField] private float _moveSpeed = 250;
-    //[SerializeField] private float _jumpForce = 250;
-
     [SerializeField] private LayerMask _checkGroundMask;
 
     private Rigidbody _rigidbody;
@@ -36,7 +33,7 @@ public class UnitMotion : MonoBehaviour
 
     private void FixedUpdate()
     {
-        velocityY = Jump();
+        velocityY = Jump(moveDirection.y);
 
         if (_onGround)
         {
@@ -51,14 +48,14 @@ public class UnitMotion : MonoBehaviour
 
     }
 
-    private float Jump()
+    private float Jump(float inputJump)
     {
         float velocityY = _rigidbody.velocity.y;
         float moveYTarget = Physics.gravity.y;
 
         if (_onGround)
         {
-            if (moveDirection.y > 0)
+            if (inputJump > 0)
             {
                velocityY = Preference.Singleton.jumpForce * Time.deltaTime;
             }
@@ -68,7 +65,6 @@ public class UnitMotion : MonoBehaviour
 
         return Mathf.MoveTowards(velocityY, moveYTarget, Preference.Singleton.downSpeed * Time.deltaTime);
     }
-
 
     private void OnCollisionStay(Collision collision)
     {
@@ -92,29 +88,6 @@ public class UnitMotion : MonoBehaviour
         {
             _onGround = true;
         }
-    }
-
-    private bool CheckGround()
-    {
-        bool onGround = false;
-        float distance = 0.3f;
-        Vector3 startRayPosition = transform.position;
-        Vector3 direction = Vector3.down;
-
-        Physics.Raycast(startRayPosition, direction, out RaycastHit hitInfo, distance, _checkGroundMask);
-
-        if (hitInfo.collider)
-        {
-            Debug.DrawLine(startRayPosition, hitInfo.point, Color.red);
-            onGround = true;
-        }
-        else
-        {
-            Debug.DrawRay(startRayPosition, direction * distance, Color.green);
-           
-        }
-
-        return onGround;
     }
 
     private void OnDrawGizmos()

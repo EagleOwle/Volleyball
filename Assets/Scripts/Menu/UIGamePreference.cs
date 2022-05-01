@@ -17,8 +17,14 @@ public class UIGamePreference : MonoBehaviour
     public UnityEvent<float> actionReadAiJumpDeadZone;
     public UnityEvent<float> actionReadBallPushForce;
     public UnityEvent<float> actionReadBallMaxValocity;
+    public UnityEvent<float> actionSetDefaultValue;
 
     private void OnEnable()
+    {
+        ReadValue();
+    }
+
+    private void ReadValue()
     {
         actionReadMusicValue.Invoke(Preference.Singleton.musicValue);
         actionReadSfxValue.Invoke(Preference.Singleton.sfxValue);
@@ -87,5 +93,12 @@ public class UIGamePreference : MonoBehaviour
     {
         Preference.Singleton.InputDeadZone = value;
     }
+
+    public void SetDefaultValue()
+    {
+        Preference.Singleton.SetDefaultValue();
+        ReadValue();
+    }
+
 
 }

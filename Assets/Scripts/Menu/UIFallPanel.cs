@@ -24,8 +24,12 @@ public class UIFallPanel : MonoBehaviour
             buttonText.text = continueGameMessage;
             closePanelBtn.onClick.RemoveAllListeners();
             closePanelBtn.onClick.AddListener(Game.Instance.StartRound);
+            closePanelBtn.onClick.AddListener(Hide);
         }
     }
 
-
+    private void Hide()
+    {
+        gameObject.SetActive(false);
+    }
 }

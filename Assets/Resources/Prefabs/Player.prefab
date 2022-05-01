@@ -421,13 +421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bd3f3a90ac285439edf69ad77868aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 250
-  _jumpForce: 350
   _checkGroundMask:
     serializedVersion: 2
     m_Bits: 64
-  MoveDirection: {x: 0, y: 0, z: 0}
-  _downSpeed: 5
 --- !u!114 &462525173706812902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,6 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c3f07a25367094a915c1f4b286b0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpOnButton: 1
 --- !u!136 &1792570961327367572
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -450,7 +447,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1
+  m_Radius: 0.30151898
+  m_Height: 0.98112226
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0.0022250414, y: 0.5094389, z: 0}

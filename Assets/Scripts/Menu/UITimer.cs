@@ -42,6 +42,7 @@ public class UITimer : UIPanel
         {
             UIHud.Singletone.OnChangePanel(UIPanelName.Game);
             AudioController.Instance.PlayClip(tickEndClip);
+            StateMachine.SetState<GameState>();
         }
     }
 

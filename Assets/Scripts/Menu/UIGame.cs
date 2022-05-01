@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class UIGame : UIPanel
 {
     [SerializeField] private Button pauseBtn;
+    //[SerializeField] private Button jumpBtn;
+    //[SerializeField] private Button rightBtn;
+    //[SerializeField] private Button leftBtn;
     [SerializeField] private UIFallPanel fallPanel;
     [SerializeField] private Text hitCountText;
     [SerializeField] private Text roundText;
@@ -13,7 +16,6 @@ public class UIGame : UIPanel
 
     private void OnEnable()
     {
-        StateMachine.SetState<GameState>();
         Game.Instance.ActionRoundFall += OnFall;
         Game.Instance.match.ActionSetScore += ShowScore;
         Invoke(nameof(ShowScore), Time.deltaTime);
@@ -63,6 +65,38 @@ public class UIGame : UIPanel
 
         }
     }
+
+    public void OnButtonJumpDown()
+    {
+        InputHandler.Instance.OnButtonJumpDown();
+    }
+
+    public void OnButtonJumpUp()
+    {
+        InputHandler.Instance.OnButtonJumpUp();
+    }
+
+    public void OnButtonLeftDown()
+    {
+        InputHandler.Instance.OnButtonLeftDown();
+    }
+
+    public void OnButtonLeftUp()
+    {
+        InputHandler.Instance.OnButtonLeftUp();
+    }
+
+    public void OnButtonRightDown()
+    {
+        InputHandler.Instance.OnButtonRightDown();
+    }
+
+    public void OnButtonRightUp()
+    {
+        InputHandler.Instance.OnButtonRightUp();
+    }
+
+    
 
     private void OnButtonPause()
     {
