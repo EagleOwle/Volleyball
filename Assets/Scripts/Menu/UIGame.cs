@@ -6,30 +6,40 @@ using UnityEngine.UI;
 
 public class UIGame : UIPanel
 {
+    private static UIGame _instance;
+    public static UIGame Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<UIGame>();
+            }
+
+            return _instance;
+        }
+    }
+
     [SerializeField] private Button pauseBtn;
     [SerializeField] private UIFallPanel fallPanel;
     [SerializeField] private Text hitCountText;
     [SerializeField] private Text roundText;
     [SerializeField] private Text scorePlayerText, scoreEnemyText;
 
-    private void OnEnable()
+    public void Initialise()
     {
         StateMachine.actionChangeState += OnChangeGameState;
 
         Game.Instance.ActionRoundFall += OnFall;
         Invoke(nameof(ShowScore), Time.deltaTime);
 
-        fallPanel.ShowMessage();
         fallPanel.gameObject.SetActive(false);
 
         pauseBtn.onClick.AddListener(OnButtonPause);
 
         Ball ball = GameObject.FindObjectOfType<Ball>();
-        if (ball != null)
-        {
-            ball.ActionUnitHit += ShowBallHitCount;
-            ShowBallHitCount(PlayerType.None, 0);
-        }
+        ball.ActionUnitHit += ShowBallHitCount;
+        ShowBallHitCount(PlayerType.None, 0);
 
     }
 
@@ -59,7 +69,7 @@ public class UIGame : UIPanel
 
     private void ShowBallHitCount(PlayerType playerType, int hitCount)
     {
-        if (StateMachine.currentState is GameState)
+        //if (StateMachine.currentState is GameState)
         {
             hitCountText.text = hitCount.ToString();
         }
@@ -119,10 +129,10 @@ public class UIGame : UIPanel
         UIHud.Singletone.OnChangePanel(UIPanelName.Pause);
     }
 
-    private void OnFall(bool endMatch)
+    private void OnFall(bool endMatch, PlayerType luser)
     {
         ShowScore();
-        fallPanel.ShowMessage(endMatch);
+        fallPanel.ShowMessage(endMatch, luser);
         fallPanel.gameObject.SetActive(true);
     }
 }

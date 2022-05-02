@@ -25,6 +25,7 @@ public class SceneInitialize : MonoBehaviour
 
     private void StartGame()
     {
+        UIGame.Instance.Initialise();
         UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
     }
 
