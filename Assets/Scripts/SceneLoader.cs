@@ -17,7 +17,6 @@ public class SceneLoader : MonoBehaviour
 
     [SerializeField] private int _menuSceneIndex = 0;
     [SerializeField] private int _levelSceneIndex = 1;
-    [SerializeField] private GameObject loadinUI;
 
     private void Awake()
     {
@@ -43,7 +42,6 @@ public class SceneLoader : MonoBehaviour
 
     private void Load(int index, SceneType type)
     {
-        loadinUI.SetActive(true);
         OnSceneLoadStart?.Invoke();
         AsyncOperation operation = SceneManager.LoadSceneAsync(index);
         operation.completed += AsyncLoadComplete;
@@ -52,7 +50,6 @@ public class SceneLoader : MonoBehaviour
 
     private void AsyncLoadComplete(AsyncOperation operation)
     {
-        loadinUI.SetActive(false);
         operation.completed -= AsyncLoadComplete;
         OnSceneLoadComplete?.Invoke();
     }

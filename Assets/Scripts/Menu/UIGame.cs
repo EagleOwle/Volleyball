@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,6 @@ using UnityEngine.UI;
 public class UIGame : UIPanel
 {
     [SerializeField] private Button pauseBtn;
-    //[SerializeField] private Button jumpBtn;
-    //[SerializeField] private Button rightBtn;
-    //[SerializeField] private Button leftBtn;
     [SerializeField] private UIFallPanel fallPanel;
     [SerializeField] private Text hitCountText;
     [SerializeField] private Text roundText;
@@ -16,8 +14,9 @@ public class UIGame : UIPanel
 
     private void OnEnable()
     {
+        StateMachine.actionChangeState += OnChangeGameState;
+
         Game.Instance.ActionRoundFall += OnFall;
-        Game.Instance.match.ActionSetScore += ShowScore;
         Invoke(nameof(ShowScore), Time.deltaTime);
 
         fallPanel.ShowMessage();
@@ -32,6 +31,24 @@ public class UIGame : UIPanel
             ShowBallHitCount(PlayerType.None, 0);
         }
 
+    }
+
+    private void OnChangeGameState(State value)
+    {
+        if (value is GameState)
+        {
+            pauseBtn.gameObject.SetActive(true);
+        }
+
+        if (value is PauseState)
+        {
+            pauseBtn.gameObject.SetActive(false);
+        }
+
+        if (value is FallState)
+        {
+            pauseBtn.gameObject.SetActive(false);
+        }
     }
 
     private void ShowScore()
@@ -53,8 +70,9 @@ public class UIGame : UIPanel
         if (Game.Instance != null)
         {
             Game.Instance.ActionRoundFall -= OnFall;
-            Game.Instance.match.ActionSetScore -= ShowScore;
         }
+
+        StateMachine.actionChangeState -= OnChangeGameState;
 
         pauseBtn.onClick.RemoveListener(OnButtonPause);
 
@@ -96,8 +114,6 @@ public class UIGame : UIPanel
         InputHandler.Instance.OnButtonRightUp();
     }
 
-    
-
     private void OnButtonPause()
     {
         UIHud.Singletone.OnChangePanel(UIPanelName.Pause);
@@ -105,6 +121,7 @@ public class UIGame : UIPanel
 
     private void OnFall(bool endMatch)
     {
+        ShowScore();
         fallPanel.ShowMessage(endMatch);
         fallPanel.gameObject.SetActive(true);
     }

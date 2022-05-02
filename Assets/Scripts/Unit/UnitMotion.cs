@@ -33,6 +33,11 @@ public class UnitMotion : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if ((StateMachine.currentState is GameState) is false)
+        {
+            moveDirection = Vector3.zero;
+        }
+
         velocityY = Jump(moveDirection.y);
 
         if (_onGround)

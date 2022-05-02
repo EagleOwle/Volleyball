@@ -24,7 +24,8 @@ public class UIPause : UIPanel
 
     private void OnButtonRessum()
     {
-        UIHud.Singletone.OnChangePanel(UIPanelName.Game);
+        StateMachine.SetState<GameState>();
+        gameObject.SetActive(false);
     }
 
     private void OnButtonRestart()

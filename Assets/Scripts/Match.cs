@@ -13,7 +13,6 @@ public class Match
     public int round;
     public Score playerScore;
     public Score enemyScore;
-    public Action ActionSetScore;
 
     public bool SetScore(PlayerType luser)
     {
@@ -30,8 +29,6 @@ public class Match
                 enemyScore.ScoreReduction(out endScore);
                 break;
         }
-
-        ActionSetScore?.Invoke();
 
         return endScore;
 

@@ -18,6 +18,7 @@ public class Game : MonoBehaviour
             return _instance;
         }
     }
+
     public string currentState;
     public Action<bool> ActionRoundFall;
 
@@ -47,7 +48,7 @@ public class Game : MonoBehaviour
 
     public void OnRoundFall(PlayerType luser)
     {
-       bool endMatch = match.SetScore(luser);
+        bool endMatch = match.SetScore(luser);
         ActionRoundFall?.Invoke(endMatch);
         StateMachine.SetState<FallState>();
     }
@@ -65,7 +66,7 @@ public class Game : MonoBehaviour
 
     private IEnumerator FallWait()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(Time.deltaTime);
         sceneInitialize.Restart();
     }
 

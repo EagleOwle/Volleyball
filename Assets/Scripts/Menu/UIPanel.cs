@@ -28,6 +28,9 @@ public abstract class UIPanel : MonoBehaviour
 
     protected void OnDestroy()
     {
-        UIHud.Singletone.ActionChangePanel -= ChangePanel;
+        if (UIHud.Singletone != null)
+        {
+            UIHud.Singletone.ActionChangePanel -= ChangePanel;
+        }
     }
 }

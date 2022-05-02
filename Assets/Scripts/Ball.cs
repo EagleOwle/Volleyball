@@ -137,8 +137,6 @@ public class Ball : MonoBehaviour
                 Unit unit = collision.collider.GetComponentInParent<Unit>();
 
                 HitUnit();
-
-                ActionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
             }
 
             if ((1 << collision.collider.gameObject.layer & groundLayer) != 0)
@@ -157,6 +155,10 @@ public class Ball : MonoBehaviour
         {
             ActionUnitHit?.Invoke(PlayerType.None, 0);
             Game.Instance.OnRoundFall(currentPlayerSide);
+        }
+        else
+        {
+            ActionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
         }
     }
 }
