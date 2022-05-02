@@ -125,8 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce1b4875358317448db4824521d2699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 20
-  maxMagnetude: 8
   ballPhysic: {fileID: 13400000, guid: a4149fdeed0c70247a18f4470a9855df, type: 2}
   defaultPhysic: {fileID: 13400000, guid: 9e9289aec77f7a44db49ed4f1389c6af, type: 2}
   collider: {fileID: 5344061900924581766}
@@ -138,5 +136,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   trajectoryRender: {fileID: 0}
+  rigidbody: {fileID: 1144449166666998622}
   currentPlayerSide: 0
   playerHitCount: 0

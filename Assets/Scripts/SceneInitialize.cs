@@ -9,11 +9,6 @@ public class SceneInitialize : MonoBehaviour
     private GameObject bot;
     private Ball ball;
 
-    private void Start()
-    {
-        Invoke(nameof(Restart), Time.deltaTime);
-    }
-
     public void Restart()
     {
         ClearGame();
@@ -24,7 +19,8 @@ public class SceneInitialize : MonoBehaviour
         player = Instantiate(Resources.Load("Prefabs/Player"), cort.PlayerSpawnPoint.position, Quaternion.identity) as GameObject;
         bot = Instantiate(Resources.Load("Prefabs/Enemy"), cort.BotSpawnPoint.position, Quaternion.identity) as GameObject;
 
-        Invoke(nameof(StartGame), Time.deltaTime);
+        StartGame();
+        StateMachine.SetState<PauseState>();
     }
 
     private void StartGame()

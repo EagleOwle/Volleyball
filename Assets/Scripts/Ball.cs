@@ -11,8 +11,9 @@ public class Ball : MonoBehaviour
     [SerializeField] private AudioClip hitClip;
     [SerializeField] protected LayerMask unitLayer = 0;
     [SerializeField] protected LayerMask groundLayer = 0;
-    [SerializeField] private TrajectoryRender trajectoryRender;
+    
     private new Rigidbody rigidbody;
+    private TrajectoryRender trajectoryRender;
 
     public PlayerType currentPlayerSide;
     public int playerHitCount;
@@ -21,20 +22,20 @@ public class Ball : MonoBehaviour
 
     private bool isInit = false;
 
-    private void Start()
-    {
-        trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
-    }
-
     private void OnEnable()
     {
-        rigidbody = GetComponent<Rigidbody>();
         trajectoryRender = GameObject.FindObjectOfType<TrajectoryRender>();
+        rigidbody = GetComponent<Rigidbody>();
         StateMachine.actionChangeState += PauseGame;
 
         currentPlayerSide = PlayerType.None;
         playerHitCount = 0;
         isInit = true;
+    }
+
+    private void Start()
+    {
+        trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
     }
 
     private void OnDisable()

@@ -23,8 +23,7 @@ public class UITimer : UIPanel
 
     private void OnEnable()
     {
-        StateMachine.SetState<PauseState>();
-        _nextIndex = 0;
+         _nextIndex = 0;
         _animator.SetTrigger(_showNumberParamID);
     }
 

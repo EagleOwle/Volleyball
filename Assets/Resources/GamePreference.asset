@@ -15,7 +15,7 @@ MonoBehaviour:
   musicValue: 1
   sfxValue: 1
   InputDeadZone: 0.3
-  moveSpeed: 250
+  moveSpeed: 150
   jumpForce: 450
   horizontalMultiply: 1.5
   downSpeed: 10

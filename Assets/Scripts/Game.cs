@@ -39,6 +39,8 @@ public class Game : MonoBehaviour
         StateMachine.InitBeheviors();
         match = new Match();
         match.Initialise();
+
+        StartRound();
     }
 
     private void ChangeState(State obj)

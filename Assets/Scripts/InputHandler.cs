@@ -43,13 +43,60 @@ public class InputHandler : MonoBehaviour
 
     private void Update()
     {
-        if (StateMachine.currentState is GameState)
+#if UNITY_EDITOR
+        KeyboardInput();
+#elif UNITY_ANDROID
+
+#elif UNITY_IOS
+                 
+#elif UNITY_STANDALONE_OSX
+                 
+#elif UNITY_STANDALONE_WIN
+
+#endif
+
+
+        //if (StateMachine.currentState is GameState)
+        //{
+        //    //GetSwipe();
+        //}
+        //else
+        //{
+        //    //SwipeBreak();
+        //}
+
+    }
+
+    private void KeyboardInput()
+    {
+        if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            //GetSwipe();
+            OnButtonRightDown();
         }
-        else
+
+        if (Input.GetKeyUp(KeyCode.RightArrow))
         {
-            //SwipeBreak();
+            OnButtonRightUp();
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            OnButtonLeftDown();
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            OnButtonLeftUp();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnButtonJumpDown();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            OnButtonJumpUp();
         }
 
     }
