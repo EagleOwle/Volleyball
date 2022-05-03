@@ -17,7 +17,8 @@ public class UIMainMenu : UIPanel
 
     private void OnButtonStart()
     {
-        SceneLoader.Instance.LoadLevel();
+        //SceneLoader.Instance.LoadLevel();
+        UIHud.Singletone.OnChangePanel(UIPanelName.ScenePreference);
     }
 
     private void OnButtonPreference()

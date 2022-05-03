@@ -4,29 +4,18 @@ using UnityEngine;
 
 public class UILoadingScreen : CanvasGroupUI
 {
-    private static UILoadingScreen instance;
-    public static UILoadingScreen Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = GameObject.FindObjectOfType<UILoadingScreen>();
-            }
-
-            return instance;
-        }
-    }
+    public static UILoadingScreen Instance;
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        Instance = this;
+        DontDestroyOnLoad(this);
     }
 
     private void Start()

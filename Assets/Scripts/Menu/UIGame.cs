@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIGame : UIPanel
+public class UIGame : MonoBehaviour
 {
     private static UIGame _instance;
     public static UIGame Instance
@@ -26,21 +26,24 @@ public class UIGame : UIPanel
     [SerializeField] private Text roundText;
     [SerializeField] private Text scorePlayerText, scoreEnemyText;
 
-    public void Initialise()
+    private Ball ball;
+
+    public void Start()
     {
         StateMachine.actionChangeState += OnChangeGameState;
+        pauseBtn.onClick.AddListener(OnButtonPause);
+    }
+
+    public void StartRound(Ball ball)
+    {
+        this.ball = ball;
+        this.ball.ActionUnitHit += ShowBallHitCount;
 
         Game.Instance.ActionRoundFall += OnFall;
-        Invoke(nameof(ShowScore), Time.deltaTime);
-
-        fallPanel.gameObject.SetActive(false);
-
-        pauseBtn.onClick.AddListener(OnButtonPause);
-
-        Ball ball = GameObject.FindObjectOfType<Ball>();
-        ball.ActionUnitHit += ShowBallHitCount;
         ShowBallHitCount(PlayerType.None, 0);
-
+        fallPanel.gameObject.SetActive(false);
+        
+        ShowScore();
     }
 
     private void OnChangeGameState(State value)
@@ -69,7 +72,7 @@ public class UIGame : UIPanel
 
     private void ShowBallHitCount(PlayerType playerType, int hitCount)
     {
-        //if (StateMachine.currentState is GameState)
+        if (StateMachine.currentState is GameState)
         {
             hitCountText.text = hitCount.ToString();
         }
@@ -77,21 +80,12 @@ public class UIGame : UIPanel
 
     private void OnDisable()
     {
-        if (Game.Instance != null)
-        {
-            Game.Instance.ActionRoundFall -= OnFall;
-        }
-
         StateMachine.actionChangeState -= OnChangeGameState;
+    }
 
-        pauseBtn.onClick.RemoveListener(OnButtonPause);
-
-        Ball ball = GameObject.FindObjectOfType<Ball>();
-        if (ball != null)
-        {
-            ball.ActionUnitHit -= ShowBallHitCount;
-
-        }
+    private void OnDestroy()
+    {
+        StateMachine.actionChangeState -= OnChangeGameState;
     }
 
     public void OnButtonJumpDown()
@@ -131,8 +125,12 @@ public class UIGame : UIPanel
 
     private void OnFall(bool endMatch, PlayerType luser)
     {
+        ball.ActionUnitHit -= ShowBallHitCount;
+        Game.Instance.ActionRoundFall -= OnFall;
+
         ShowScore();
         fallPanel.ShowMessage(endMatch, luser);
         fallPanel.gameObject.SetActive(true);
     }
+
 }

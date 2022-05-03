@@ -21,6 +21,7 @@ public class UIHud : MonoBehaviour
     }
 
     public Action<UIPanelName> ActionChangePanel;
+
     public void OnChangePanel(UIPanelName panelName)
     {
         ActionChangePanel?.Invoke(panelName);

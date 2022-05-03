@@ -5984,7 +5984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &928427012
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7703,6 +7703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11f6d3bead165c4a90e3ee0d580a710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roundFallClip: {fileID: 8300000, guid: 5ba96fc4947271d4f8c3c7917e659a12, type: 3}
   currentState: 
   match:
     round: 0
@@ -8131,7 +8132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747f3a386e05edf4ca70c6c6ef0580c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelName: 1
   pauseBtn: {fileID: 1040254136}
   fallPanel: {fileID: 1284507577}
   hitCountText: {fileID: 28111397}
@@ -8337,7 +8337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1284507574
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10178,7 +10178,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelName: 2
+  defaultSprite: {fileID: 21300000, guid: 8819af0d4415c3e46a6ec65bd933ae02, type: 3}
   numbers:
+  - {fileID: -6395529614303463221, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
   - {fileID: -4412911677491635961, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
   - {fileID: -4217592887472625829, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
   - {fileID: -6629531029891648246, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
@@ -12185,7 +12187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4412911677491635961, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8819af0d4415c3e46a6ec65bd933ae02, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

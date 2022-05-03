@@ -28,8 +28,8 @@ public static class StateMachine
 
     private static void SetDefaultState()
     {
-        var defaultState = GetState<GameState>();
-        SetState(defaultState);
+        currentState = GetState<GameState>();
+        currentState.Enter();
     }
 
     private static void SetState(State newState)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -16,6 +17,8 @@ public class UIFallPanel : MonoBehaviour
 
     public void ShowMessage(bool endGame, PlayerType luser)
     {
+        EventSystem.current.SetSelectedGameObject(closePanelBtn.gameObject);
+
         messageText.text = FallMessage(endGame, luser);
 
         if (endGame == true)

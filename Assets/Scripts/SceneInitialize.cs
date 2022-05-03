@@ -9,24 +9,21 @@ public class SceneInitialize : MonoBehaviour
     private GameObject bot;
     private Ball ball;
 
-    public void Restart()
+    public void StartRound()
     {
         ClearGame();
 
         cort = Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
         Vector3 rnd =new Vector3(Random.Range(-0.1f, 0.1f),0,0);
         ball = Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball)), cort.BallSpawnPoint.position + rnd, Quaternion.identity) as Ball;
+        ball.Initialise();
         player = Instantiate(Resources.Load("Prefabs/Player"), cort.PlayerSpawnPoint.position, Quaternion.identity) as GameObject;
         bot = Instantiate(Resources.Load("Prefabs/Enemy"), cort.BotSpawnPoint.position, Quaternion.identity) as GameObject;
 
-        StartGame();
-        StateMachine.SetState<PauseState>();
-    }
-
-    private void StartGame()
-    {
-        UIGame.Instance.Initialise();
+        UIGame.Instance.StartRound(ball);
         UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
+        StateMachine.SetState<PauseState>();
+
     }
 
     private void ClearGame()

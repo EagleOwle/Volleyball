@@ -11,8 +11,8 @@ public class Ball : MonoBehaviour
     [SerializeField] private AudioClip hitClip;
     [SerializeField] protected LayerMask unitLayer = 0;
     [SerializeField] protected LayerMask groundLayer = 0;
-    
-    private new Rigidbody rigidbody;
+
+    private Rigidbody _rigidbody;
     private TrajectoryRender trajectoryRender;
 
     public PlayerType currentPlayerSide;
@@ -20,33 +20,37 @@ public class Ball : MonoBehaviour
 
     public Action<PlayerType, int> ActionUnitHit;
 
-    private bool isInit = false;
-
-    private void OnEnable()
+    public void Initialise()
     {
         trajectoryRender = GameObject.FindObjectOfType<TrajectoryRender>();
-        rigidbody = GetComponent<Rigidbody>();
-        StateMachine.actionChangeState += PauseGame;
+        _rigidbody = GetComponent<Rigidbody>();
+        //Debug.LogError("Set RigidBody ");
+        StateMachine.actionChangeState += OnChangeGameState;
 
         currentPlayerSide = PlayerType.None;
         playerHitCount = 0;
-        isInit = true;
     }
 
     private void Start()
     {
-        trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
+        trajectoryRender.ShowTrajectory(transform.position, _rigidbody.velocity);
     }
 
     private void OnDisable()
     {
         if (Game.Instance == null) return;
-        StateMachine.actionChangeState -= PauseGame;
+        StateMachine.actionChangeState -= OnChangeGameState;
+    }
+
+    private void OnDestroy()
+    {
+        if (Game.Instance == null) return;
+        StateMachine.actionChangeState -= OnChangeGameState;
     }
 
     private void FixedUpdate()
     {
-        Vector3 currentVelosity = rigidbody.velocity;
+        Vector3 currentVelosity = _rigidbody.velocity;
 
         if (Preference.Singleton.maxMagnetude > 0)
         {
@@ -54,14 +58,14 @@ public class Ball : MonoBehaviour
 
             if (StateMachine.currentState is GameState)
             {
-                trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
+                trajectoryRender.ShowTrajectory(transform.position, _rigidbody.velocity);
             }
             else
             {
                 trajectoryRender.Hide();
             }
 
-            rigidbody.velocity = currentVelosity;
+            _rigidbody.velocity = currentVelosity;
         }
 
         if (StateMachine.currentState is GameState)
@@ -102,19 +106,28 @@ public class Ball : MonoBehaviour
         }
     }
 
-    private void PauseGame(State state)
+    private void OnChangeGameState(State state)
     {
-        if (isInit == false) return;
+        //Debug.LogError("Action ChangeState ");
 
-        if(state is GameState)
+        if (state is GameState)
         {
-            rigidbody.isKinematic = false;
+            //if (rigidbody == null)
+            //{
+            //    return;
+            //}
+            _rigidbody.isKinematic = false;
             collider.material = ballPhysic;
         }
 
         if (state is PauseState)
         {
-            rigidbody.isKinematic = true;
+            //if (rigidbody == null)
+            //{
+            //    return;
+            //}
+
+            _rigidbody.isKinematic = true;
         }
 
         if (state is FallState)
@@ -129,7 +142,7 @@ public class Ball : MonoBehaviour
         {
             Vector3 dir = collision.contacts[0].point - transform.position;
             dir = -dir.normalized;
-            rigidbody.AddForce(dir * Preference.Singleton.pushForce);
+            _rigidbody.AddForce(dir * Preference.Singleton.pushForce);
 
             AudioController.Instance.PlayClip(hitClip);
 

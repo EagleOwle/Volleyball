@@ -135,7 +135,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  trajectoryRender: {fileID: 0}
-  rigidbody: {fileID: 1144449166666998622}
+  _rigidbody: {fileID: 1144449166666998622}
   currentPlayerSide: 0
   playerHitCount: 0

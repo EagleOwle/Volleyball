@@ -30,6 +30,11 @@ public class SceneLoader : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    public void LoadLevel(int _levelSceneIndex)
+    {
+        Load(_levelSceneIndex, SceneType.InGame);
+    }
+
     public void LoadLevel()
     {
         Load(_levelSceneIndex, SceneType.InGame);

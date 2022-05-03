@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UIPanelName { Pause, Game, Timer, Main, Preference }
+public enum UIPanelName { Pause, Game, Timer, Main, Preference, ScenePreference }
 
 public abstract class UIPanel : MonoBehaviour
 {
@@ -23,10 +23,10 @@ public abstract class UIPanel : MonoBehaviour
     public virtual void Init()
     {
         UIHud.Singletone.ActionChangePanel += ChangePanel;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
-    protected void OnDestroy()
+    protected virtual void OnDestroy()
     {
         if (UIHud.Singletone != null)
         {

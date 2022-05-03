@@ -19,6 +19,7 @@ public class Game : MonoBehaviour
         }
     }
 
+    [SerializeField] private AudioClip roundFallClip;
     public string currentState;
     public Action<bool, PlayerType> ActionRoundFall;
 
@@ -34,11 +35,11 @@ public class Game : MonoBehaviour
             return;
         }
 
+        StateMachine.InitBeheviors();
         StateMachine.actionChangeState += ChangeState;
 
-        StateMachine.InitBeheviors();
         match = new Match();
-        match.Initialise();
+        match.Initialise();      
 
         StartRound();
     }
@@ -50,6 +51,7 @@ public class Game : MonoBehaviour
 
     public void OnRoundFall(PlayerType luser)
     {
+        AudioController.Instance.PlayClip(roundFallClip);
         bool endMatch = match.SetScore(luser);
         ActionRoundFall?.Invoke(endMatch, luser);
         StateMachine.SetState<FallState>();
@@ -58,18 +60,12 @@ public class Game : MonoBehaviour
     public void StartRound()
     {
         match.round++;
-        StartCoroutine(FallWait());
+        sceneInitialize.StartRound();
     }
 
     public void EndGame()
     {
         SceneLoader.Instance.LoadMenu();
-    }
-
-    private IEnumerator FallWait()
-    {
-        yield return new WaitForSeconds(Time.deltaTime);
-        sceneInitialize.Restart();
     }
 
 }

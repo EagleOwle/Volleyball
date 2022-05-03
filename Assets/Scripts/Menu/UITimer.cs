@@ -6,6 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Animator))]
 public class UITimer : UIPanel
 {
+    [SerializeField] Sprite defaultSprite;
     [SerializeField] Sprite[] numbers;
     [SerializeField] Image _image;
     [SerializeField] private AudioClip tickClip;
@@ -23,7 +24,8 @@ public class UITimer : UIPanel
 
     private void OnEnable()
     {
-         _nextIndex = 0;
+        _image.sprite = defaultSprite;
+        _nextIndex = 0;
         _animator.SetTrigger(_showNumberParamID);
     }
 
