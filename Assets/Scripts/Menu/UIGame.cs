@@ -39,10 +39,15 @@ public class UIGame : MonoBehaviour
         this.ball = ball;
         this.ball.ActionUnitHit += ShowBallHitCount;
 
+        StartRound();
+    }
+
+    public void StartRound()
+    {
         Game.Instance.ActionRoundFall += OnFall;
         ShowBallHitCount(PlayerType.None, 0);
         fallPanel.gameObject.SetActive(false);
-        
+        roundText.text = "Round \n" + Game.Instance.match.round.ToString();
         ShowScore();
     }
 
@@ -125,7 +130,11 @@ public class UIGame : MonoBehaviour
 
     private void OnFall(bool endMatch, PlayerType luser)
     {
-        ball.ActionUnitHit -= ShowBallHitCount;
+        if (ball != null)
+        {
+            ball.ActionUnitHit -= ShowBallHitCount;
+        }
+
         Game.Instance.ActionRoundFall -= OnFall;
 
         ShowScore();

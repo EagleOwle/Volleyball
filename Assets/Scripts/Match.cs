@@ -3,11 +3,11 @@ using System;
 [Serializable]
 public class Match
 {
-    public void Initialise()
+    public void Initialise(int roundCount)
     {
         round = 0;
-        playerScore = new Score(5);
-        enemyScore = new Score(5);
+        playerScore = new Score(roundCount);
+        enemyScore = new Score(roundCount);
     }
 
     public int round;

@@ -69,7 +69,7 @@ public class InputHandler : MonoBehaviour
 
     private void KeyboardInput()
     {
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if(Input.GetKey(KeyCode.RightArrow))
         {
             OnButtonRightDown();
         }
@@ -79,7 +79,7 @@ public class InputHandler : MonoBehaviour
             OnButtonRightUp();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             OnButtonLeftDown();
         }
@@ -89,7 +89,7 @@ public class InputHandler : MonoBehaviour
             OnButtonLeftUp();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             OnButtonJumpDown();
         }

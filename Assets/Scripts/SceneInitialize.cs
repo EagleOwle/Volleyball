@@ -21,6 +21,8 @@ public class SceneInitialize : MonoBehaviour
         bot = Instantiate(Resources.Load("Prefabs/Enemy"), cort.BotSpawnPoint.position, Quaternion.identity) as GameObject;
 
         UIGame.Instance.StartRound(ball);
+        //UIGame.Instance.StartRound();
+
         UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
         StateMachine.SetState<PauseState>();
 

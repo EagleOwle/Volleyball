@@ -128,6 +128,7 @@ MonoBehaviour:
   ballPhysic: {fileID: 13400000, guid: a4149fdeed0c70247a18f4470a9855df, type: 2}
   defaultPhysic: {fileID: 13400000, guid: 9e9289aec77f7a44db49ed4f1389c6af, type: 2}
   collider: {fileID: 5344061900924581766}
+  rigidbody: {fileID: 1144449166666998622}
   hitClip: {fileID: 8300000, guid: afcde19c076570543a7abbd2e67c3543, type: 3}
   unitLayer:
     serializedVersion: 2
@@ -135,6 +136,5 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  _rigidbody: {fileID: 1144449166666998622}
   currentPlayerSide: 0
   playerHitCount: 0

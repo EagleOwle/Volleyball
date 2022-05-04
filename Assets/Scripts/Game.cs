@@ -23,6 +23,7 @@ public class Game : MonoBehaviour
     public string currentState;
     public Action<bool, PlayerType> ActionRoundFall;
 
+    public ScenePreference.Scene scene;
     public Match match;
 
     [SerializeField] private SceneInitialize sceneInitialize;
@@ -35,11 +36,13 @@ public class Game : MonoBehaviour
             return;
         }
 
+        scene = ScenePreference.Singleton.scenes[ScenePreference.Singleton.nextScene];
+
         StateMachine.InitBeheviors();
         StateMachine.actionChangeState += ChangeState;
 
         match = new Match();
-        match.Initialise();      
+        match.Initialise(scene.rounds);      
 
         StartRound();
     }

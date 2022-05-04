@@ -18,11 +18,27 @@ public class ScenePreference : ScriptableObject
         }
     }
 
+    public int nextScene;
+
     public Scene[] scenes;
+
+    public void SetScene(Scene scene)
+    {
+        for (int i = 0; i < scenes.Length; i++)
+        {
+            if(scenes[i].arrayIndex == scene.arrayIndex)
+            {
+                scenes[i] = scene;
+                nextScene = i;
+                return;
+            }
+        }
+    }
 
     [System.Serializable]
     public struct Scene
     {
+        public int arrayIndex;
         public string name;
         public Sprite sprite;
         public int rounds;

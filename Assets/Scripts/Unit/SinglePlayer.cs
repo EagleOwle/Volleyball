@@ -40,6 +40,7 @@ public class SinglePlayer : Unit
                     lastMoveDirection = new Vector2(-1, lastMoveDirection.y);
                 }
                 break;
+
             case InputHandler.InputButton.right:
                 if (type == InputHandler.InputType.up)
                 {
@@ -50,6 +51,7 @@ public class SinglePlayer : Unit
                     lastMoveDirection = new Vector2(1, lastMoveDirection.y);
                 }
                 break;
+
             case InputHandler.InputButton.jump:
                 if (type == InputHandler.InputType.up)
                 {
