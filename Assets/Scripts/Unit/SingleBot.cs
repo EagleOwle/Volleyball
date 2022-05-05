@@ -31,6 +31,10 @@ public class SingleBot : Unit
 
     private void Move()
     {
+        //if (Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    Debug.Break();
+        //}
         direction = Vector3.zero;
 
         if (StateMachine.currentState is GameState && TrajectoryCalculate.HitPosition.x > 0)
