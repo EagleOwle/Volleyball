@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class UIScenePreference : UIPanel
     [SerializeField] private Text nameSceneText;
     [SerializeField] private Text descriptionText;
     [SerializeField] private Button startButton;
+    [SerializeField] private Button returnButton;
     [SerializeField] private Slider roundCountSlider;
     [SerializeField] private Text roundCountText;
 
@@ -21,7 +23,13 @@ public class UIScenePreference : UIPanel
     private void Awake()
     {
         startButton.onClick.AddListener(OnButtonStart);
+        returnButton.onClick.AddListener(OnButtonReturn);
         scenes = ScenePreference.Singleton.scenes;
+    }
+
+    private void OnButtonReturn()
+    {
+        UIHud.Singletone.OnChangePanel(UIPanelName.Main);
     }
 
     private void OnEnable()
