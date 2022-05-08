@@ -9,23 +9,34 @@ public class SceneInitialize : MonoBehaviour
     private GameObject bot;
     private Ball ball;
 
+    private bool isIntialise = false;
+
     public void StartRound()
     {
-        ClearGame();
+        if (isIntialise == false)
+        {
+            cort = Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
+            ball = Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
+            ball.Initialise();
+            player = Instantiate(Resources.Load("Prefabs/Player")) as GameObject;
+            bot = Instantiate(Resources.Load("Prefabs/Enemy")) as GameObject;
 
-        cort = Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
-        Vector3 rnd =new Vector3(Random.Range(-0.1f, 0.1f),0,0);
-        ball = Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball)), cort.BallSpawnPoint.position + rnd, Quaternion.identity) as Ball;
-        ball.Initialise();
-        player = Instantiate(Resources.Load("Prefabs/Player"), cort.PlayerSpawnPoint.position, Quaternion.identity) as GameObject;
-        bot = Instantiate(Resources.Load("Prefabs/Enemy"), cort.BotSpawnPoint.position, Quaternion.identity) as GameObject;
+            isIntialise = true;
+        }
+
+        RestartRound();
+
+    }
+
+    private void RestartRound()
+    {
+        Vector3 rnd = new Vector3(Random.Range(-0.1f, 0.1f), 0, 0);
+        ball.transform.position = cort.BallSpawnPoint.position + rnd;
+        player.transform.position = cort.PlayerSpawnPoint.position;
+        bot.transform.position = cort.BotSpawnPoint.position;
 
         UIGame.Instance.StartRound(ball);
-        //UIGame.Instance.StartRound();
-
         UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
-        StateMachine.SetState<PauseState>();
-
     }
 
     private void ClearGame()

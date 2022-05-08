@@ -67,7 +67,7 @@ public class UIScenePreference : UIPanel
 
     private void OnChangeRoundCountValue(float value)
     {
-        Debug.Log("OnChangeRoundCountValue " + value);
+        //Debug.Log("OnChangeRoundCountValue " + value);
         currentScene.rounds = (int)value;
         roundCountText.text = value.ToString();
     }

@@ -28,7 +28,7 @@ public static class StateMachine
 
     private static void SetDefaultState()
     {
-        currentState = GetState<GameState>();
+        currentState = GetState<PauseState>();
         currentState.Enter();
     }
 

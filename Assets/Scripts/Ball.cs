@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
     [SerializeField] private PhysicMaterial ballPhysic, defaultPhysic;
@@ -23,7 +22,9 @@ public class Ball : MonoBehaviour
         trajectoryRender = GameObject.FindObjectOfType<TrajectoryRender>();
 
         //Debug.LogError("Set RigidBody ");
-        StateMachine.actionChangeState += OnChangeGameState;
+        //StateMachine.actionChangeState += OnChangeGameState;
+        Game.Instance.actionChangeState += OnChangeGameState;
+        OnPouse();
 
         currentPlayerSide = PlayerType.None;
         playerHitCount = 0;
@@ -37,13 +38,15 @@ public class Ball : MonoBehaviour
     private void OnDisable()
     {
         if (Game.Instance == null) return;
-        StateMachine.actionChangeState -= OnChangeGameState;
+        Game.Instance.actionChangeState -= OnChangeGameState;
+        //StateMachine.actionChangeState -= OnChangeGameState;
     }
 
     private void OnDestroy()
     {
         if (Game.Instance == null) return;
-        StateMachine.actionChangeState -= OnChangeGameState;
+        Game.Instance.actionChangeState -= OnChangeGameState;
+        //StateMachine.actionChangeState -= OnChangeGameState;
     }
 
     private void FixedUpdate()
@@ -124,13 +127,15 @@ public class Ball : MonoBehaviour
 
     private void OnGame()
     {
-        rigidbody.isKinematic = false;
+        GetComponent<Rigidbody>().isKinematic = false;
+        //rigidbody.isKinematic = false;
         collider.material = ballPhysic;
     }
 
     private void OnPouse()
     {
-        rigidbody.isKinematic = true;
+        GetComponent<Rigidbody>().isKinematic = true;
+        //rigidbody.isKinematic = true;
     }
 
     private void OnFall()

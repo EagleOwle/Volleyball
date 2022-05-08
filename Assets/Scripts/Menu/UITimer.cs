@@ -27,6 +27,7 @@ public class UITimer : UIPanel
         _image.sprite = defaultSprite;
         _nextIndex = 0;
         _animator.SetTrigger(_showNumberParamID);
+        StateMachine.SetState<PauseState>();
     }
 
     public void EndShow()
