@@ -72,6 +72,7 @@ public class InputHandler : MonoBehaviour
         if(Input.GetKey(KeyCode.RightArrow))
         {
             OnButtonRightDown();
+            
         }
 
         if (Input.GetKeyUp(KeyCode.RightArrow))

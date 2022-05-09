@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
     [SerializeField] private PhysicMaterial ballPhysic, defaultPhysic;
@@ -12,37 +11,23 @@ public class Ball : MonoBehaviour
     [SerializeField] private AudioClip hitClip;
     [SerializeField] protected LayerMask unitLayer = 0;
     [SerializeField] protected LayerMask groundLayer = 0;
-
-    private TrajectoryRender trajectoryRender;
+    
     public PlayerType currentPlayerSide;
     public int playerHitCount;
-    public Action<PlayerType, int> ActionUnitHit;
+    public Action<PlayerType, int> actionUnitHit;
 
-    public void Initialise()
+    private void OnEnable()
     {
-        trajectoryRender = GameObject.FindObjectOfType<TrajectoryRender>();
-
-        //Debug.LogError("Set RigidBody ");
         StateMachine.actionChangeState += OnChangeGameState;
-
-        currentPlayerSide = PlayerType.None;
-        playerHitCount = 0;
-    }
-
-    private void Start()
-    {
-        trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
     }
 
     private void OnDisable()
     {
-        if (Game.Instance == null) return;
         StateMachine.actionChangeState -= OnChangeGameState;
     }
 
     private void OnDestroy()
     {
-        if (Game.Instance == null) return;
         StateMachine.actionChangeState -= OnChangeGameState;
     }
 
@@ -56,11 +41,11 @@ public class Ball : MonoBehaviour
 
             if (StateMachine.currentState is GameState)
             {
-                trajectoryRender.ShowTrajectory(transform.position, rigidbody.velocity);
+                TrajectoryRender.Instance.ShowTrajectory(transform.position, rigidbody.velocity);
             }
             else
             {
-                trajectoryRender.Hide();
+                TrajectoryRender.Instance.Hide();
             }
 
             rigidbody.velocity = currentVelosity;
@@ -84,7 +69,7 @@ public class Ball : MonoBehaviour
             currentPlayerSide = PlayerType.Local;
             playerHitCount = 0;
 
-            ActionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
+            actionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
         }
 
         if (transform.position.x > 0 && currentPlayerSide != PlayerType.Rival)
@@ -92,7 +77,7 @@ public class Ball : MonoBehaviour
             currentPlayerSide = PlayerType.Rival;
             playerHitCount = 0;
 
-            ActionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
+            actionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
         }
 
         if (transform.position.x == 0 && currentPlayerSide != PlayerType.None)
@@ -100,12 +85,13 @@ public class Ball : MonoBehaviour
             currentPlayerSide = PlayerType.None;
             playerHitCount = 0;
 
-            ActionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
+            actionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
         }
     }
 
     private void OnChangeGameState(State state)
     {
+        //Debug.LogError(" OnChangeGameState: " + state);
         if (state is GameState)
         {
             OnGame();
@@ -124,6 +110,11 @@ public class Ball : MonoBehaviour
 
     private void OnGame()
     {
+        if(rigidbody == null)
+        {
+            Debug.LogError("rigidbody is null ");
+        }
+
         rigidbody.isKinematic = false;
         collider.material = ballPhysic;
     }
@@ -136,6 +127,8 @@ public class Ball : MonoBehaviour
     private void OnFall()
     {
         collider.material = defaultPhysic;
+        currentPlayerSide = PlayerType.None;
+        playerHitCount = 0;
     }
 
 
@@ -143,9 +136,9 @@ public class Ball : MonoBehaviour
     {
         if (StateMachine.currentState is GameState)
         {
-            Vector3 dir = collision.contacts[0].point - transform.position;
-            dir = -dir.normalized;
-            rigidbody.AddForce(dir * Preference.Singleton.pushForce);
+            //Vector3 dir = collision.contacts[0].point - transform.position;
+            //dir = -dir.normalized;
+            //rigidbody.AddForce(dir * Preference.Singleton.pushForce);
 
             AudioController.Instance.PlayClip(hitClip);
 
@@ -158,7 +151,7 @@ public class Ball : MonoBehaviour
 
             if ((1 << collision.collider.gameObject.layer & groundLayer) != 0)
             {
-                ActionUnitHit?.Invoke(PlayerType.None, 0);
+                actionUnitHit?.Invoke(PlayerType.None, 0);
                 Game.Instance.OnRoundFall(currentPlayerSide);
             }
         }
@@ -170,12 +163,12 @@ public class Ball : MonoBehaviour
 
         if (playerHitCount > 3)
         {
-            ActionUnitHit?.Invoke(PlayerType.None, 0);
+            actionUnitHit?.Invoke(PlayerType.None, 0);
             Game.Instance.OnRoundFall(currentPlayerSide);
         }
         else
         {
-            ActionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
+            actionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
         }
     }
 }

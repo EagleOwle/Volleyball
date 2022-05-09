@@ -12,7 +12,10 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void OnEnable()
     {
-        _text.color = _defaultColor;
+        if (_text != null)
+        {
+            _text.color = _defaultColor;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -27,12 +30,19 @@ public class UIButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        _text.color = _defaultColor;
+        if (_text != null)
+        {
+            _text.color = _defaultColor;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _text.color = _downColor;
+        if (_text != null)
+        {
+            _text.color = _downColor;
+        }
+
         AudioController.Instance.PlayClip(clickClip);
     }
 }

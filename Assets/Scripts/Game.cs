@@ -20,8 +20,9 @@ public class Game : MonoBehaviour
     }
 
     [SerializeField] private AudioClip roundFallClip;
-    public string currentState;
+    public string debugCurrentState;
     public Action<bool, PlayerType> ActionRoundFall;
+    public Action<State> actionChangeState;
 
     public ScenePreference.Scene scene;
     public Match match;
@@ -49,7 +50,8 @@ public class Game : MonoBehaviour
 
     private void ChangeState(State obj)
     {
-        currentState = obj.nameState;
+        debugCurrentState = obj.nameState;
+        actionChangeState?.Invoke(obj);
     }
 
     public void OnRoundFall(PlayerType luser)

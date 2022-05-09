@@ -15,11 +15,11 @@ MonoBehaviour:
   musicValue: 1
   sfxValue: 1
   InputDeadZone: 0.3
-  moveSpeed: 150
+  moveSpeed: 250
   jumpForce: 450
   horizontalMultiply: 1.5
   downSpeed: 10
-  deadzoneForMove: 0.5
+  deadzoneForMove: 0.1
   deadzoneForJump: 3
-  pushForce: 25
+  pushForce: 150
   maxMagnetude: 8

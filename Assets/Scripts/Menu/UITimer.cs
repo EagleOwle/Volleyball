@@ -27,6 +27,7 @@ public class UITimer : UIPanel
         _image.sprite = defaultSprite;
         _nextIndex = 0;
         _animator.SetTrigger(_showNumberParamID);
+        StateMachine.SetState<PauseState>();
     }
 
     public void EndShow()
@@ -41,9 +42,10 @@ public class UITimer : UIPanel
         }
         else
         {
-            UIHud.Singletone.OnChangePanel(UIPanelName.Game);
             AudioController.Instance.PlayClip(tickEndClip);
             StateMachine.SetState<GameState>();
+            UIHud.Singletone.OnChangePanel(UIPanelName.Game);
+            
         }
     }
 

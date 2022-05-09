@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,10 @@ public class UIScenePreference : UIPanel
     [SerializeField] private Text nameSceneText;
     [SerializeField] private Text descriptionText;
     [SerializeField] private Button startButton;
+    [SerializeField] private Button returnButton;
     [SerializeField] private Slider roundCountSlider;
     [SerializeField] private Text roundCountText;
+    [SerializeField] private Dropdown dropdown;
 
     private ScenePreference.Scene[] scenes;
     private ScenePreference.Scene currentScene;
@@ -21,7 +24,14 @@ public class UIScenePreference : UIPanel
     private void Awake()
     {
         startButton.onClick.AddListener(OnButtonStart);
+        returnButton.onClick.AddListener(OnButtonReturn);
+       
         scenes = ScenePreference.Singleton.scenes;
+    }
+
+    private void OnButtonReturn()
+    {
+        UIHud.Singletone.OnChangePanel(UIPanelName.Main);
     }
 
     private void OnEnable()
@@ -57,9 +67,13 @@ public class UIScenePreference : UIPanel
         buttons.Clear();
     }
 
+    private void OnChangeDropdownValue(int value)
+    {
+        currentScene.difficult = value;
+    }
+
     private void OnChangeRoundCountValue(float value)
     {
-        Debug.Log("OnChangeRoundCountValue " + value);
         currentScene.rounds = (int)value;
         roundCountText.text = value.ToString();
     }
@@ -78,6 +92,11 @@ public class UIScenePreference : UIPanel
         roundCountSlider.value = currentScene.rounds;
         roundCountSlider.onValueChanged.AddListener(OnChangeRoundCountValue);
         roundCountText.text = roundCountSlider.value.ToString();
+
+        dropdown.onValueChanged.RemoveAllListeners();
+        dropdown.value = (int)currentScene.difficultEnum;
+        dropdown.onValueChanged.AddListener(OnChangeDropdownValue);
+
     }
 
 }

@@ -288,7 +288,6 @@ GameObject:
   - component: {fileID: 8894947739782925225}
   - component: {fileID: 3552686032616412689}
   - component: {fileID: 2390012871689189901}
-  - component: {fileID: 7753794447069792449}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -342,7 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _checkGroundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
 --- !u!114 &2390012871689189901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,20 +354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1c410c05bd20240b3fa7303825854b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &7753794447069792449
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8894947739782925218}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.29584712
-  m_Height: 1.1021216
-  m_Direction: 1
-  m_Center: {x: 0.1062088, y: 0.4489392, z: 0}
+  ballLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &8894947741565998583
 GameObject:
   m_ObjectHideFlags: 0

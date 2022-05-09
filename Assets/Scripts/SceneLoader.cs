@@ -14,7 +14,7 @@ public class SceneLoader : MonoBehaviour
     public static Action OnSceneLoadStart;
     public static Action OnSceneLoadComplete;
     public static SceneType currentSceneType;
-
+    public static bool SceneLoadComplete = false;
     [SerializeField] private int _menuSceneIndex = 0;
     [SerializeField] private int _levelSceneIndex = 1;
 

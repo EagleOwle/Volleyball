@@ -23,16 +23,15 @@ public class UIFallPanel : MonoBehaviour
 
         if (endGame == true)
         {
-            buttonText.text = endGameMessage;
+            
             closePanelBtn.onClick.RemoveAllListeners();
-            closePanelBtn.onClick.AddListener(Game.Instance.EndGame);
+            Invoke(nameof(SetButtonEndGame), 1);
         }
         else
         {
-            buttonText.text = continueGameMessage;
+            
             closePanelBtn.onClick.RemoveAllListeners();
-            closePanelBtn.onClick.AddListener(Game.Instance.StartRound);
-            closePanelBtn.onClick.AddListener(Hide);
+            Invoke(nameof(SetButtonStartRound), 1);
         }
     }
 
@@ -71,8 +70,22 @@ public class UIFallPanel : MonoBehaviour
         return luserMessage;
     }
 
+    private void SetButtonEndGame()
+    {
+        buttonText.text = endGameMessage;
+        closePanelBtn.onClick.AddListener(Game.Instance.EndGame);
+    }
+
+    private void SetButtonStartRound()
+    {
+        buttonText.text = continueGameMessage;
+        closePanelBtn.onClick.AddListener(Game.Instance.StartRound);
+        closePanelBtn.onClick.AddListener(Hide);
+    }
+
     private void Hide()
     {
+        buttonText.text = "Wait...";
         gameObject.SetActive(false);
     }
 }
