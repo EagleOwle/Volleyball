@@ -10897,6 +10897,7 @@ GameObject:
   - component: {fileID: 1761512236}
   - component: {fileID: 1761512238}
   - component: {fileID: 1761512237}
+  - component: {fileID: 1761512239}
   m_Layer: 0
   m_Name: Tree (2)
   m_TagString: Untagged
@@ -10967,6 +10968,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761512235}
   m_Mesh: {fileID: 4300000, guid: 350321c747d89b9499c4b78b87a78378, type: 3}
+--- !u!114 &1761512239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761512235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b8e4de8aaea8c45bd60e8e1b5f8bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overwriteColorsRed: 1
+  colorGradientType: 3
+  colorPercent: 1
+  overwriteColorsGreen: 1
+  barkMat: {fileID: 0}
+  leafMat: {fileID: 0}
+  paintAllAsBark: 0
+  overwriteUv2Red: 1
+  uv2RedGradientType: 1
+  uv2RedPercent: 1
+  overwriteUv2Green: 1
+  uv2GreenGradientType: 1
+  uv2GreenPercent: 0.5
 --- !u!1 &1785455146
 GameObject:
   m_ObjectHideFlags: 0
