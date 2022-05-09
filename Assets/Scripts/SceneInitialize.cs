@@ -27,7 +27,8 @@ public class SceneInitialize : MonoBehaviour
 
         player.transform.position = cort.PlayerSpawnPoint.position;
         bot.transform.position = cort.BotSpawnPoint.position;
-        ball.transform.position = cort.BallSpawnPoint.position + new Vector3(UnityEngine.Random.Range(-0.1f, 0.1f), 0, 0);
+
+        ball.transform.position = cort.BallSpawnPoint.position + new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), 0, 0);
 
         ReadyForStart();
     }
@@ -50,7 +51,6 @@ public class SceneInitialize : MonoBehaviour
 
     private void OnEnable()
     {
-        //readyForStart = false;
         SceneLoader.OnSceneLoadComplete += SceneLoadComplete;
     }
 
