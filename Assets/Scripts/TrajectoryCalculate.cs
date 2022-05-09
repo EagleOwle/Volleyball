@@ -4,16 +4,13 @@ using UnityEngine;
 
 public static class TrajectoryCalculate
 {
-    private static Vector3 hitPosition;
-    public static Vector3 HitPosition => hitPosition;
-
+    private static RaycastHit hit;
+    public static RaycastHit Hit => hit;
     private static List<Vector3> points;
 
     public static Vector3[] Calculate(Vector3 origin, Vector3 speed, LayerMask collisionMask)
     {
-        hitPosition = Vector3.zero;
-
-        if (points == null)
+       if (points == null)
         {
             points = new List<Vector3>();
         }
@@ -33,7 +30,6 @@ public static class TrajectoryCalculate
 
             if (CheckNextPointCollision(lastPoint, nextPoint, collisionMask))
             {
-                hitPosition = lastPoint;
                 break;
             }
 
@@ -45,8 +41,6 @@ public static class TrajectoryCalculate
 
     private static bool CheckNextPointCollision(Vector3 startPosition, Vector3 targetPosition, LayerMask collisionMask)
     {
-        RaycastHit hit;
-
         float distance = (targetPosition - startPosition).magnitude;
 
         if (Physics.Raycast(startPosition, targetPosition - startPosition, out hit, distance, collisionMask))

@@ -6,6 +6,20 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class TrajectoryRender : MonoBehaviour
 {
+    private static TrajectoryRender _instance;
+    public static TrajectoryRender Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<TrajectoryRender>();
+            }
+
+            return _instance;
+        }
+    }
+
     [SerializeField] private LayerMask collisionMask;
     private LineRenderer lineRenderer;
 

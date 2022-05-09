@@ -1,65 +1,69 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class SceneInitialize : MonoBehaviour
 {
     private Cort cort;
-    private GameObject player;
-    private GameObject bot;
+    private Unit player;
+    private Unit bot;
     private Ball ball;
 
     private bool isIntialise = false;
+    private bool readyForStart = false;
 
     public void StartRound()
     {
         if (isIntialise == false)
         {
             cort = Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
+            player = Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
+            bot = Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
             ball = Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
-            ball.Initialise();
-            player = Instantiate(Resources.Load("Prefabs/Player")) as GameObject;
-            bot = Instantiate(Resources.Load("Prefabs/Enemy")) as GameObject;
-
             isIntialise = true;
         }
 
-        RestartRound();
-
-    }
-
-    private void RestartRound()
-    {
-        Vector3 rnd = new Vector3(Random.Range(-0.1f, 0.1f), 0, 0);
-        ball.transform.position = cort.BallSpawnPoint.position + rnd;
         player.transform.position = cort.PlayerSpawnPoint.position;
         bot.transform.position = cort.BotSpawnPoint.position;
+        ball.transform.position = cort.BallSpawnPoint.position + new Vector3(UnityEngine.Random.Range(-0.1f, 0.1f), 0, 0);
 
-        UIGame.Instance.StartRound(ball);
+        ReadyForStart();
+    }
+
+    private async void ReadyForStart()
+    {
+        while (readyForStart == false)
+        {
+            await Task.Yield();
+        }
+
+        UIGame.Instance.StartRound();
         UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
     }
 
-    private void ClearGame()
+    private void SceneLoadComplete()
     {
-        if (cort != null)
-        {
-            Destroy(cort.gameObject);
-        }
+        readyForStart = true;
+    }
 
-        if (player != null)
-        {
-            Destroy(player.gameObject);
-        }
+    private void OnEnable()
+    {
+        //readyForStart = false;
+        SceneLoader.OnSceneLoadComplete += SceneLoadComplete;
+    }
 
-        if (ball != null)
-        {
-            Destroy(ball.gameObject);
-        }
+    private void OnDisable()
+    {
+        if (SceneLoader.Instance == null) return;
+        SceneLoader.OnSceneLoadComplete -= SceneLoadComplete;
+    }
 
-        if (bot != null)
-        {
-            Destroy(bot.gameObject);
-        }
+    private void OnDestroy()
+    {
+        if (SceneLoader.Instance == null) return;
+        SceneLoader.OnSceneLoadComplete -= SceneLoadComplete;
     }
 
 }

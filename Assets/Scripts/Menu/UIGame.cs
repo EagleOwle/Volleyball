@@ -26,7 +26,7 @@ public class UIGame : MonoBehaviour
     [SerializeField] private Text roundText;
     [SerializeField] private Text scorePlayerText, scoreEnemyText;
 
-    private Ball ball;
+    //private Ball ball;
 
     public void Start()
     {
@@ -36,8 +36,8 @@ public class UIGame : MonoBehaviour
 
     public void StartRound(Ball ball)
     {
-        this.ball = ball;
-        this.ball.ActionUnitHit += ShowBallHitCount;
+        //this.ball = ball;
+        //this.ball.actionUnitHit += ShowBallHitCount;
 
         StartRound();
     }
@@ -130,10 +130,10 @@ public class UIGame : MonoBehaviour
 
     private void OnFall(bool endMatch, PlayerType luser)
     {
-        if (ball != null)
-        {
-            ball.ActionUnitHit -= ShowBallHitCount;
-        }
+        //if (ball != null)
+        //{
+        //    ball.actionUnitHit -= ShowBallHitCount;
+        //}
 
         Game.Instance.ActionRoundFall -= OnFall;
 

@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(UnitMotion))]
 public class SinglePlayer : Unit
 {
+    [SerializeField] protected LayerMask ballLayer = 0;
     private UnitMotion unitMotion;
     private Vector3 lastMoveDirection;
     [SerializeField] private bool jumpOnButton = true;
@@ -12,7 +13,15 @@ public class SinglePlayer : Unit
     {
         InputHandler.Instance.ActionSetSwipeDirection += OnSwipe;
         InputHandler.Instance.ActionOnInputButton += OnInputButton;
+        StateMachine.actionChangeState += OnChangeGameState;
         unitMotion = GetComponent<UnitMotion>();
+    }
+
+
+    public override void Initialise()
+    {
+        lastMoveDirection = Vector3.zero;
+        jumpOnButton = false;
     }
 
     private void OnSwipe(Vector3 direction)
@@ -24,6 +33,22 @@ public class SinglePlayer : Unit
 
         lastMoveDirection = direction.normalized;
         unitMotion.MoveDirection = lastMoveDirection;
+    }
+
+    private void OnChangeGameState(State state)
+    {
+        if (state is GameState)
+        {
+            Initialise();
+        }
+
+        if (state is PauseState)
+        {
+        }
+
+        if (state is FallState)
+        {
+        }
     }
 
     private void OnInputButton(InputHandler.InputButton button, InputHandler.InputType type)
@@ -69,18 +94,38 @@ public class SinglePlayer : Unit
 
     private void OnDisable()
     {
+        StateMachine.actionChangeState -= OnChangeGameState;
+
         if (InputHandler.Instance == null) return;
 
         InputHandler.Instance.ActionSetSwipeDirection -= OnSwipe;
         InputHandler.Instance.ActionOnInputButton -= OnInputButton;
+        
     }
 
     private void OnDestroy()
     {
+        StateMachine.actionChangeState -= OnChangeGameState;
+
         if (InputHandler.Instance == null) return;
 
         InputHandler.Instance.ActionSetSwipeDirection -= OnSwipe;
         InputHandler.Instance.ActionOnInputButton -= OnInputButton;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (StateMachine.currentState is GameState)
+        {
+            if ((1 << collision.collider.gameObject.layer & ballLayer) != 0)
+            {
+                if (collision.collider.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rigidBody))
+                {
+                    rigidBody.AddForce((Vector3.right + Vector3.up) * Preference.Singleton.pushForce);
+                }
+            }
+        }
+    }
+
+    
 }

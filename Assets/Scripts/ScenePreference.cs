@@ -42,7 +42,11 @@ public class ScenePreference : ScriptableObject
         public string name;
         public Sprite sprite;
         public int rounds;
-        public GameDifficult difficult;
+        public GameDifficult difficultEnum;
+        public int difficult
+        {
+            set { difficultEnum = (GameDifficult)value; }
+        }
         public int buildIndex;
         public string description;
     }
