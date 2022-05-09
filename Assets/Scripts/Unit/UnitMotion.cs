@@ -63,6 +63,7 @@ public class UnitMotion : MonoBehaviour
             if (inputJump > 0)
             {
                velocityY = Preference.Singleton.jumpForce * Time.deltaTime;
+               // Invoke(nameof(DebugBreak), Time.deltaTime);
             }
 
             moveYTarget = 0;
@@ -107,6 +108,11 @@ public class UnitMotion : MonoBehaviour
 
         Gizmos.DrawLine(startPosition, endPosition);
 
+    }
+
+    private void DebugBreak()
+    {
+        Debug.Break();
     }
 
 }

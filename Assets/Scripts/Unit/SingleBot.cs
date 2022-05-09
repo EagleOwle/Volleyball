@@ -21,7 +21,6 @@ public class SingleBot : Unit
     }
     private UnitMotion unitMotion;
     private Vector3 direction;
-    private float lastTargetPositionX;
     private float defaultPositionX;
 
     private void Awake()
@@ -129,8 +128,6 @@ public class SingleBot : Unit
             float targetPositionX = TrajectoryCalculate.Hit.point.x + CalculateAdjustment();
             float dir = targetPositionX - transform.position.x;
 
-            lastTargetPositionX = TrajectoryCalculate.Hit.point.x;
-
             if (Mathf.Abs(dir) > Preference.Singleton.deadzoneForMove)
             {
                 direction = new Vector3(dir, direction.y, direction.z);
@@ -169,15 +166,15 @@ public class SingleBot : Unit
     {
         float adjustment = 0;
 
-        if (Mathf.Abs(lastTargetPositionX - transform.position.x) > .1f)
+        if (Mathf.Abs(ball.transform.position.x - transform.position.x) > .1f)
         {
-            if (lastTargetPositionX < transform.position.x)
+            if (ball.transform.position.x < transform.position.x)
             {
-                adjustment = -.5f;
+                //adjustment = -.5f;
             }
             else
             {
-                if (lastTargetPositionX > transform.position.x)
+                if (ball.transform.position.x > transform.position.x)
                 {
                     adjustment = .5f;
                 }
@@ -253,5 +250,6 @@ public class SingleBot : Unit
 
     }
 
+    
 
 }
