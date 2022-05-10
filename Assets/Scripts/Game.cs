@@ -21,7 +21,7 @@ public class Game : MonoBehaviour
 
     [SerializeField] private AudioClip roundFallClip;
     public string debugCurrentState;
-    public Action<bool, PlayerType> ActionRoundFall;
+    public Action<bool, PlayerType> ActionRoundFail;
     public Action<State> actionChangeState;
 
     public ScenePreference.Scene scene;
@@ -58,7 +58,7 @@ public class Game : MonoBehaviour
     {
         AudioController.Instance.PlayClip(roundFallClip);
         bool endMatch = match.SetScore(luser);
-        ActionRoundFall?.Invoke(endMatch, luser);
+        ActionRoundFail?.Invoke(endMatch, luser);
         StateMachine.SetState<FallState>();
     }
 

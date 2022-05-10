@@ -21,7 +21,7 @@ public class UIGame : MonoBehaviour
     }
 
     [SerializeField] private Button pauseBtn;
-    [SerializeField] private UIFallPanel fallPanel;
+    [SerializeField] private UIFailPanel failPanel;
     [SerializeField] private Text hitCountText;
     [SerializeField] private Text roundText;
     [SerializeField] private Text scorePlayerText, scoreEnemyText;
@@ -44,9 +44,9 @@ public class UIGame : MonoBehaviour
 
     public void StartRound()
     {
-        Game.Instance.ActionRoundFall += OnFall;
+        Game.Instance.ActionRoundFail += OnFail;
         ShowBallHitCount(PlayerType.None, 0);
-        fallPanel.gameObject.SetActive(false);
+        failPanel.gameObject.SetActive(false);
         roundText.text = "Round \n" + Game.Instance.match.round.ToString();
         ShowScore();
     }
@@ -128,18 +128,18 @@ public class UIGame : MonoBehaviour
         UIHud.Singletone.OnChangePanel(UIPanelName.Pause);
     }
 
-    private void OnFall(bool endMatch, PlayerType luser)
+    private void OnFail(bool endMatch, PlayerType luser)
     {
         //if (ball != null)
         //{
         //    ball.actionUnitHit -= ShowBallHitCount;
         //}
 
-        Game.Instance.ActionRoundFall -= OnFall;
+        Game.Instance.ActionRoundFail -= OnFail;
 
         ShowScore();
-        fallPanel.ShowMessage(endMatch, luser);
-        fallPanel.gameObject.SetActive(true);
+        failPanel.ShowMessage(endMatch, luser);
+        failPanel.gameObject.SetActive(true);
     }
 
 }
