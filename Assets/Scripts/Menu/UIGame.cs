@@ -128,7 +128,7 @@ public class UIGame : MonoBehaviour
         UIHud.Singletone.OnChangePanel(UIPanelName.Pause);
     }
 
-    private void OnFail(bool endMatch, PlayerType luser)
+    private void OnFail(RoundResult roundResult)
     {
         //if (ball != null)
         //{
@@ -138,7 +138,7 @@ public class UIGame : MonoBehaviour
         Game.Instance.actionRoundFail -= OnFail;
 
         ShowScore();
-        failPanel.ShowMessage(endMatch, luser);
+        failPanel.ShowMessage(roundResult);
         failPanel.gameObject.SetActive(true);
     }
 

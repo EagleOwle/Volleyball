@@ -6,16 +6,21 @@ using UnityEngine;
 
 public static class SceneInitialize
 {
-    private static Cort cort;
-    private static Unit player;
-    private static Unit bot;
-    private static Ball ball;
+    private static Cort Cort;
+    private static Unit Player;
+    private static Unit Bot;
+    private static Ball Ball;
+    private static bool isInitialise = false;
 
     public static void StartRound(PlayerType lastLuser)
     {
-        if (ball == null)
+        if (isInitialise == false)
         {
-            InstanceActors();
+            Cort = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
+            Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
+            Bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
+            Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
+            isInitialise = true;
         }
 
         ArrangementOfActors(lastLuser);
@@ -29,29 +34,21 @@ public static class SceneInitialize
         switch (lastLuser)
         {
             case PlayerType.None:
-                player.transform.position = cort.PlayerSpawnPoint.position;
-                bot.transform.position = cort.BotSpawnPoint.position;
-                ball.transform.position = cort.BallSpawnPoint.position;
+                Player.transform.position = Cort.PlayerSpawnPoint.position;
+                Bot.transform.position = Cort.BotSpawnPoint.position;
+                Ball.transform.position = Cort.BallSpawnPoint.position;
                 break;
             case PlayerType.Local:
-                player.transform.position = cort.PlayerSpawnPoint.position;
-                bot.transform.position = cort.BotSpawnPoint.position;
-                ball.transform.position = cort.BotSpawnPoint.position + Vector3.up * 3;
+                Player.transform.position = Cort.PlayerSpawnPoint.position;
+                Bot.transform.position = Cort.BotSpawnPoint.position;
+                Ball.transform.position = Cort.BotSpawnPoint.position + Vector3.up * 3;
                 break;
             case PlayerType.Rival:
-                player.transform.position = cort.PlayerSpawnPoint.position;
-                bot.transform.position = cort.BotSpawnPoint.position;
-                ball.transform.position = cort.PlayerSpawnPoint.position + Vector3.up * 3; 
+                Player.transform.position = Cort.PlayerSpawnPoint.position;
+                Bot.transform.position = Cort.BotSpawnPoint.position;
+                Ball.transform.position = Cort.PlayerSpawnPoint.position + Vector3.up * 3; 
                 break;
         }
-    }
-
-    private static void InstanceActors()
-    {
-        cort = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
-        player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
-        bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
-        ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
     }
 
 }

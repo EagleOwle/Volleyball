@@ -136,25 +136,24 @@ public class Ball : MonoBehaviour
     {
         if (StateMachine.currentState is GameState)
         {
-            //Vector3 dir = collision.contacts[0].point - transform.position;
-            //dir = -dir.normalized;
-            //rigidbody.AddForce(dir * Preference.Singleton.pushForce);
-
             AudioController.Instance.PlayClip(hitClip);
 
             if ((1 << collision.collider.gameObject.layer & unitLayer) != 0)
             {
-                Unit unit = collision.collider.GetComponentInParent<Unit>();
-
                 HitUnit();
             }
 
             if ((1 << collision.collider.gameObject.layer & groundLayer) != 0)
             {
-                actionUnitHit?.Invoke(PlayerType.None, 0);
-                Game.Instance.OnRoundFall(currentPlayerSide);
+                HitEnvironment();
             }
         }
+    }
+
+    private void HitEnvironment()
+    {
+        actionUnitHit?.Invoke(PlayerType.None, 0);
+        Game.Instance.OnRoundFall(currentPlayerSide);
     }
 
     private void HitUnit()

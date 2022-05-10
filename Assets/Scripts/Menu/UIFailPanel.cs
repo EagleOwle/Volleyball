@@ -15,55 +15,53 @@ public class UIFailPanel : MonoBehaviour
     [SerializeField] private string continueGameMessage = "Tup To Continue";
     [SerializeField] private string endGameMessage = "Tap To End";
 
-    public void ShowMessage(bool endGame, PlayerType luser)
+    public void ShowMessage(RoundResult roundResult)
     {
         EventSystem.current.SetSelectedGameObject(closePanelBtn.gameObject);
 
-        messageText.text = FallMessage(endGame, luser);
+        messageText.text =  FallMessage(roundResult);
 
-        if (endGame == true)
+        if (roundResult == RoundResult.WinningGame || roundResult == RoundResult.LoseGame)
         {
-            
             closePanelBtn.onClick.RemoveAllListeners();
             Invoke(nameof(SetButtonEndGame), 1);
         }
         else
         {
-            
             closePanelBtn.onClick.RemoveAllListeners();
             Invoke(nameof(SetButtonStartRound), 1);
         }
     }
 
-    private string FallMessage(bool endGame, PlayerType luser)
+    private string FallMessage(RoundResult roundResult)
     {
-        string luserMessage = "End Round";
+        string luserMessage = "Errore";
 
-        switch (luser)
+        switch (roundResult)
         {
-            case PlayerType.None:
+            case RoundResult.None:
+                luserMessage = "None";
                 break;
-            case PlayerType.Local:
-                if (endGame)
-                {
-                    luserMessage = "You Fail";
-                }
-                else
-                {
-                    luserMessage = "Fail";
-                }
+            case RoundResult.FeedLoss:
+                luserMessage = "Feed Loss";
                 break;
-            case PlayerType.Rival:
-                if (endGame)
-                {
-                    luserMessage = "You Win";
-                }
-                else
-                {
-                    luserMessage = "Win";
-                }
+            case RoundResult.PlayerFeedLoss:
+                luserMessage = "Rival Attacks";// "Rival serving the ball";
                 break;
-            default:
+            case RoundResult.RivalFeedLoss:
+                luserMessage = "You Attacks";  //"You serving the ball";
+                break;
+            case RoundResult.Victory:
+                luserMessage = "Victory";
+                break;
+            case RoundResult.Losing:
+                luserMessage = "Losing";
+                break;
+            case RoundResult.WinningGame:
+                luserMessage = "You Winning Games";
+                break;
+            case RoundResult.LoseGame:
+                luserMessage = "You Lose Game";
                 break;
         }
 

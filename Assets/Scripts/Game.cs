@@ -5,12 +5,7 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    void Awake()
-    {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
-    }
-
+    #region Singleton
     private static Game _instance;
     public static Game Instance
     {
@@ -24,16 +19,23 @@ public class Game : MonoBehaviour
             return _instance;
         }
     }
+    #endregion
 
     [SerializeField] private AudioClip roundFallClip;
-    public string debugCurrentState;
-    public Action<bool, PlayerType> actionRoundFail;
-    public Action<State> actionChangeState;
+    public string debugCurrentGameState;
 
-    public ScenePreference.Scene scene;
+    public Action<RoundResult> actionRoundFail;
+
+    public ScenePreference.Scene scene;//Curret scene preference
     public Match match;
 
     private PlayerType lastLuser = PlayerType.None;
+
+    private void Awake()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+    }
 
     private void Start()
     {
@@ -56,17 +58,17 @@ public class Game : MonoBehaviour
 
     private void ChangeState(State obj)
     {
-        debugCurrentState = obj.nameState;
-        actionChangeState?.Invoke(obj);
+        debugCurrentGameState = obj.nameState;
     }
 
     public void OnRoundFall(PlayerType luser)
     {
         AudioController.Instance.PlayClip(roundFallClip);
 
+        RoundResult roundResult = match.SetScore(luser);
+        actionRoundFail?.Invoke(roundResult);
+
         lastLuser = luser;
-        bool endMatch = match.SetScore(luser);
-        actionRoundFail?.Invoke(endMatch, luser);
 
         StateMachine.SetState<FallState>();
     }
