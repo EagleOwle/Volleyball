@@ -53,7 +53,7 @@ public class UIScenePreference : UIPanel
 
     private void OnButtonStart()
     {
-        ScenePreference.Singleton.SetScene(currentScene);
+        ScenePreference.Singleton.GameScene = currentScene;
         SceneLoader.Instance.LoadLevel(currentScene.buildIndex);
     }
 

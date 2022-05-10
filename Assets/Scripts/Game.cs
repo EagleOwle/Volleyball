@@ -45,14 +45,15 @@ public class Game : MonoBehaviour
             return;
         }
 
-        scene = ScenePreference.Singleton.scenes[ScenePreference.Singleton.nextScene];
+        scene = ScenePreference.Singleton.GameScene;
 
         StateMachine.InitBeheviors();
         StateMachine.actionChangeState += ChangeState;
 
         match = new Match();
-        match.Initialise(scene.rounds);      
+        match.Initialise(scene.rounds);
 
+        SceneInitialize.Initialise();
         StartRound();
     }
 
@@ -73,7 +74,12 @@ public class Game : MonoBehaviour
         StateMachine.SetState<FallState>();
     }
 
-    public void StartRound()
+    public void RestartRaund()
+    {
+        StartRound();
+    }
+
+    private void StartRound()
     {
         match.round++;
         SceneInitialize.StartRound(lastLuser);

@@ -8,6 +8,7 @@ public class UnitMotion : MonoBehaviour
 
     private Rigidbody _rigidbody;
     private bool _onGround = false;
+    public bool OnGround => _onGround;
     private float velocityX;
     private float velocityY;
     private float moveYTarget;
@@ -63,7 +64,6 @@ public class UnitMotion : MonoBehaviour
             if (inputJump > 0)
             {
                velocityY = Preference.Singleton.jumpForce * Time.deltaTime;
-               // Invoke(nameof(DebugBreak), Time.deltaTime);
             }
 
             moveYTarget = 0;

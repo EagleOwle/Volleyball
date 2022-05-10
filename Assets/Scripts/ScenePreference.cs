@@ -18,20 +18,27 @@ public class ScenePreference : ScriptableObject
         }
     }
 
-    public int nextScene;
-
     public Scene[] scenes;
 
-    public void SetScene(Scene scene)
+    private int nextScene;
+    public Scene GameScene
     {
-        for (int i = 0; i < scenes.Length; i++)
+        set
         {
-            if(scenes[i].arrayIndex == scene.arrayIndex)
+            for (int i = 0; i < scenes.Length; i++)
             {
-                scenes[i] = scene;
-                nextScene = i;
-                return;
+                if (scenes[i].arrayIndex == value.arrayIndex)
+                {
+                    scenes[i] = value;
+                    nextScene = i;
+                    return;
+                }
             }
+        }
+
+        get
+        {
+            return scenes[nextScene];
         }
     }
 

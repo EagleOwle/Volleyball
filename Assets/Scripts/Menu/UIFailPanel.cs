@@ -77,7 +77,7 @@ public class UIFailPanel : MonoBehaviour
     private void SetButtonStartRound()
     {
         buttonText.text = continueGameMessage;
-        closePanelBtn.onClick.AddListener(Game.Instance.StartRound);
+        closePanelBtn.onClick.AddListener(Game.Instance.RestartRaund);
         closePanelBtn.onClick.AddListener(Hide);
     }
 

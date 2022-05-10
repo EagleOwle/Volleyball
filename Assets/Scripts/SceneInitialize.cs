@@ -10,19 +10,17 @@ public static class SceneInitialize
     private static Unit Player;
     private static Unit Bot;
     private static Ball Ball;
-    private static bool isInitialise = false;
+
+    public static void Initialise()
+    {
+        Cort = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
+        Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
+        Bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
+        Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
+    }
 
     public static void StartRound(PlayerType lastLuser)
     {
-        if (isInitialise == false)
-        {
-            Cort = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
-            Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
-            Bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
-            Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
-            isInitialise = true;
-        }
-
         ArrangementOfActors(lastLuser);
 
         UIGame.Instance.StartRound();

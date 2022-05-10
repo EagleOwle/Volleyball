@@ -22,11 +22,13 @@ public class SingleBot : Unit
     private UnitMotion unitMotion;
     private Vector3 direction;
     private float defaultPositionX;
+    private float nextHeightForJamp;
+    public ScenePreference.GameDifficult debugCurrentDifficult;
 
     private void Awake()
     {
         unitMotion = GetComponent<UnitMotion>();
-        
+
     }
 
     private void Start()
@@ -64,7 +66,9 @@ public class SingleBot : Unit
 
     private void Update()
     {
-         switch (Game.Instance.scene.difficultEnum)
+        debugCurrentDifficult = Game.Instance.scene.difficultEnum;
+        nextHeightForJamp = NextHeightForJump();
+        switch (Game.Instance.scene.difficultEnum)
         {
             case ScenePreference.GameDifficult.Easy:
                 EasyBehavior();
@@ -83,15 +87,13 @@ public class SingleBot : Unit
 
     private void EasyBehavior()
     {
-        //if (Input.GetKey(KeyCode.UpArrow))
-        //{
-        //    Debug.Break();
-        //}
         direction = Vector3.zero;
 
         if (StateMachine.currentState is GameState && TrajectoryCalculate.Hit.point.x >= 0)
         {
-            float dir = TrajectoryCalculate.Hit.point.x - transform.position.x;
+            defaultPositionX = 0;
+            float targetPositionX = TrajectoryCalculate.Hit.point.x + CalculateAdjustment();
+            float dir = targetPositionX - transform.position.x;
 
             if (Mathf.Abs(dir) > Preference.Singleton.deadzoneForMove)
             {
@@ -99,15 +101,16 @@ public class SingleBot : Unit
             }
             #region Jump
 
-            if (ball.transform.position.y > transform.position.y + 1)
+            direction = new Vector3(direction.x, 0, direction.z);
+
+            if (ball.transform.position.x > -0.5f && unitMotion.OnGround)
             {
-                if (Mathf.Abs(ball.transform.position.y - transform.position.y) < Preference.Singleton.deadzoneForJump)
+                if (ball.transform.position.y > transform.position.y + 1)
                 {
-                    direction = new Vector3(direction.x, 1, direction.z);
-                }
-                else
-                {
-                    direction = new Vector3(direction.x, 0, direction.z);
+                    if (Mathf.Abs(ball.transform.position.y - transform.position.y) < nextHeightForJamp)
+                    {
+                        direction = new Vector3(direction.x, 1, direction.z);
+                    }
                 }
             }
             #endregion
@@ -115,7 +118,7 @@ public class SingleBot : Unit
         }
         else
         {
-            float dir = defaultPositionX - transform.position.x;
+            float dir = WaitPosition - transform.position.x;
             if (Mathf.Abs(dir) > 0.3f)
             {
                 direction = new Vector3(dir, 0, direction.z);
@@ -129,6 +132,7 @@ public class SingleBot : Unit
 
         if (StateMachine.currentState is GameState && TrajectoryCalculate.Hit.point.x >= 0)
         {
+            defaultPositionX = 0;
             float targetPositionX = TrajectoryCalculate.Hit.point.x + CalculateAdjustment();
             float dir = targetPositionX - transform.position.x;
 
@@ -139,17 +143,15 @@ public class SingleBot : Unit
 
             #region Jump
 
-            if (ball.transform.position.y > transform.position.y + 1)
+            direction = new Vector3(direction.x, 0, direction.z);
+
+            if (ball.transform.position.x > -0.5f && unitMotion.OnGround)
             {
-                if ((ball.transform.position - transform.position).magnitude < 2.5f)
+                if (ball.transform.position.y > transform.position.y + 1)
                 {
-                    if (Mathf.Abs(ball.transform.position.y - transform.position.y) < Preference.Singleton.deadzoneForJump)
+                    if ((ball.transform.position - transform.position).magnitude < nextHeightForJamp)
                     {
                         direction = new Vector3(direction.x, 1, direction.z);
-                    }
-                    else
-                    {
-                        direction = new Vector3(direction.x, 0, direction.z);
                     }
                 }
             }
@@ -158,13 +160,76 @@ public class SingleBot : Unit
         }
         else
         {
-            float dir = defaultPositionX - transform.position.x;
+            float dir = WaitPosition - transform.position.x;
             if (Mathf.Abs(dir) > 0.3f)
             {
                 direction = new Vector3(dir, 0, direction.z);
             }
         }
     }
+
+    private void HardBehavior()
+    {
+        direction = Vector3.zero;
+
+        if (StateMachine.currentState is GameState && TrajectoryCalculate.Hit.point.x >= 0)
+        {
+            defaultPositionX = 0;
+            float targetPositionX = TrajectoryCalculate.Hit.point.x + CalculateAdjustment();
+            float dir = targetPositionX - transform.position.x;
+
+            if (Mathf.Abs(dir) > Preference.Singleton.deadzoneForMove)
+            {
+                direction = new Vector3(dir, direction.y, direction.z);
+            }
+
+            #region Jump
+
+            direction = new Vector3(direction.x, 0, direction.z);
+            if (ball.transform.position.x > -0.5f && unitMotion.OnGround)
+            {
+                if (ball.transform.position.y > transform.position.y + 1)
+                {
+                    if ((ball.transform.position - transform.position).magnitude < nextHeightForJamp)
+                    {
+                        direction = new Vector3(direction.x, 1, direction.z);
+                    }
+                }
+            }
+            #endregion
+
+        }
+        else
+        {
+            float dir = WaitPosition - transform.position.x;
+            if (Mathf.Abs(dir) > 0.3f)
+            {
+                direction = new Vector3(dir, 0, direction.z);
+            }
+        }
+    }
+
+    private float NextHeightForJump()
+    {
+        if (nextHeightForJamp == 0)
+        {
+            switch (ball.currentPlayerSide)
+            {
+                case PlayerType.None:
+                    nextHeightForJamp = Random.Range(2, 5);
+                    break;
+                case PlayerType.Local:
+                    nextHeightForJamp = 0;
+                    break;
+                case PlayerType.Rival:
+                    nextHeightForJamp = Random.Range(0, 5);
+                    break;
+            }
+        }
+
+        return nextHeightForJamp;
+    }
+
 
     private float CalculateAdjustment()
     {
@@ -174,7 +239,7 @@ public class SingleBot : Unit
         {
             if (ball.transform.position.x < transform.position.x)
             {
-                //adjustment = -.5f;
+                adjustment = -.5f;
             }
             else
             {
@@ -186,50 +251,6 @@ public class SingleBot : Unit
         }
 
         return adjustment;
-    }
-
-    private void HardBehavior()
-    {
-        direction = Vector3.zero;
-
-        if (StateMachine.currentState is GameState && TrajectoryCalculate.Hit.point.x >= 0)
-        {
-            float targetPositionX = TrajectoryCalculate.Hit.point.x + -.5f;
-
-            float dir = targetPositionX - transform.position.x;
-
-            if (Mathf.Abs(dir) > Preference.Singleton.deadzoneForMove)
-            {
-                direction = new Vector3(dir, direction.y, direction.z);
-            }
-
-            #region Jump
-
-            if (ball.transform.position.y > transform.position.y + 1)
-            {
-                if ((ball.transform.position - transform.position).magnitude < 2.5f)
-                {
-                    if (Mathf.Abs(ball.transform.position.y - transform.position.y) < Preference.Singleton.deadzoneForJump)
-                    {
-                        direction = new Vector3(direction.x, 1, direction.z);
-                    }
-                    else
-                    {
-                        direction = new Vector3(direction.x, 0, direction.z);
-                    }
-                }
-            }
-            #endregion
-
-        }
-        else
-        {
-            float dir = defaultPositionX - transform.position.x;
-            if (Mathf.Abs(dir) > 0.3f)
-            {
-                direction = new Vector3(dir, 0, direction.z);
-            }
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -246,6 +267,19 @@ public class SingleBot : Unit
         }
     }
 
+    private float WaitPosition
+    {
+        get
+        {
+            if (defaultPositionX == 0)
+            {
+                defaultPositionX = Random.Range(0.2f, 5);
+            }
+
+            return defaultPositionX;
+        }
+    }
+
     void OnDrawGizmosSelected()
     {
 
@@ -253,7 +287,5 @@ public class SingleBot : Unit
         Gizmos.DrawSphere(TrajectoryCalculate.Hit.point, 0.1f);
 
     }
-
     
-
 }
