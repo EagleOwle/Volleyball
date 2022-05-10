@@ -44,7 +44,7 @@ public class UIGame : MonoBehaviour
 
     public void StartRound()
     {
-        Game.Instance.ActionRoundFail += OnFail;
+        Game.Instance.actionRoundFail += OnFail;
         ShowBallHitCount(PlayerType.None, 0);
         failPanel.gameObject.SetActive(false);
         roundText.text = "Round \n" + Game.Instance.match.round.ToString();
@@ -135,7 +135,7 @@ public class UIGame : MonoBehaviour
         //    ball.actionUnitHit -= ShowBallHitCount;
         //}
 
-        Game.Instance.ActionRoundFail -= OnFail;
+        Game.Instance.actionRoundFail -= OnFail;
 
         ShowScore();
         failPanel.ShowMessage(endMatch, luser);

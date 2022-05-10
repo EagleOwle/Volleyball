@@ -4,66 +4,54 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class SceneInitialize : MonoBehaviour
+public static class SceneInitialize
 {
-    private Cort cort;
-    private Unit player;
-    private Unit bot;
-    private Ball ball;
+    private static Cort cort;
+    private static Unit player;
+    private static Unit bot;
+    private static Ball ball;
 
-    private bool isIntialise = false;
-    private bool readyForStart = false;
-
-    public void StartRound()
+    public static void StartRound(PlayerType lastLuser)
     {
-        if (isIntialise == false)
+        if (ball == null)
         {
-            cort = Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
-            player = Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
-            bot = Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
-            ball = Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
-            isIntialise = true;
+            InstanceActors();
         }
 
-        player.transform.position = cort.PlayerSpawnPoint.position;
-        bot.transform.position = cort.BotSpawnPoint.position;
-
-        ball.transform.position = cort.BallSpawnPoint.position + new Vector3(UnityEngine.Random.Range(-0.5f, 0.5f), 0, 0);
-
-        ReadyForStart();
-    }
-
-    private async void ReadyForStart()
-    {
-        while (readyForStart == false)
-        {
-            await Task.Yield();
-        }
+        ArrangementOfActors(lastLuser);
 
         UIGame.Instance.StartRound();
         UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
     }
 
-    private void SceneLoadComplete()
+    private static void ArrangementOfActors(PlayerType lastLuser)
     {
-        readyForStart = true;
+        switch (lastLuser)
+        {
+            case PlayerType.None:
+                player.transform.position = cort.PlayerSpawnPoint.position;
+                bot.transform.position = cort.BotSpawnPoint.position;
+                ball.transform.position = cort.BallSpawnPoint.position;
+                break;
+            case PlayerType.Local:
+                player.transform.position = cort.PlayerSpawnPoint.position;
+                bot.transform.position = cort.BotSpawnPoint.position;
+                ball.transform.position = cort.BotSpawnPoint.position + Vector3.up * 3;
+                break;
+            case PlayerType.Rival:
+                player.transform.position = cort.PlayerSpawnPoint.position;
+                bot.transform.position = cort.BotSpawnPoint.position;
+                ball.transform.position = cort.PlayerSpawnPoint.position + Vector3.up * 3; 
+                break;
+        }
     }
 
-    private void OnEnable()
+    private static void InstanceActors()
     {
-        SceneLoader.OnSceneLoadComplete += SceneLoadComplete;
-    }
-
-    private void OnDisable()
-    {
-        if (SceneLoader.Instance == null) return;
-        SceneLoader.OnSceneLoadComplete -= SceneLoadComplete;
-    }
-
-    private void OnDestroy()
-    {
-        if (SceneLoader.Instance == null) return;
-        SceneLoader.OnSceneLoadComplete -= SceneLoadComplete;
+        cort = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
+        player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
+        bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
+        ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
     }
 
 }

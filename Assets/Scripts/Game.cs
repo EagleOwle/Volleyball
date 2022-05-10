@@ -21,13 +21,13 @@ public class Game : MonoBehaviour
 
     [SerializeField] private AudioClip roundFallClip;
     public string debugCurrentState;
-    public Action<bool, PlayerType> ActionRoundFail;
+    public Action<bool, PlayerType> actionRoundFail;
     public Action<State> actionChangeState;
 
     public ScenePreference.Scene scene;
     public Match match;
 
-    [SerializeField] private SceneInitialize sceneInitialize;
+    private PlayerType lastLuser = PlayerType.None;
 
     private void Start()
     {
@@ -57,15 +57,18 @@ public class Game : MonoBehaviour
     public void OnRoundFall(PlayerType luser)
     {
         AudioController.Instance.PlayClip(roundFallClip);
+
+        lastLuser = luser;
         bool endMatch = match.SetScore(luser);
-        ActionRoundFail?.Invoke(endMatch, luser);
+        actionRoundFail?.Invoke(endMatch, luser);
+
         StateMachine.SetState<FallState>();
     }
 
     public void StartRound()
     {
         match.round++;
-        sceneInitialize.StartRound();
+        SceneInitialize.StartRound(lastLuser);
     }
 
     public void EndGame()
