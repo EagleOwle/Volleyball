@@ -5,50 +5,50 @@ using UnityEngine.UI;
 
 public class UIPreferenceMenu : UIPanel
 {
-    [SerializeField] private Button graphicsMenuBtn;
-    [SerializeField] private Button soundMenuBtn;
-    [SerializeField] private Button gameMenuBtn;
     [SerializeField] private Button returnBtn;
 
-    [SerializeField] private GameObject buttonPanel;
-    [SerializeField] private GameObject preferencePanel;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Text musicValueText;
+    [SerializeField] private Slider sfxSlider;
+    [SerializeField] private Text sfxValueText;
+    [SerializeField] private Toggle vibraToggle;
+    [SerializeField] private Text vibraValueText;
 
     public override void Init()
     {
         base.Init();
-        graphicsMenuBtn.onClick.AddListener(OnButtonGraphics);
-        soundMenuBtn.onClick.AddListener(OnButtonSound);
-        gameMenuBtn.onClick.AddListener(OnButtonGame);
+
         returnBtn.onClick.AddListener(OnButtonReturn);
 
-        ShowButtonPanel();
+        musicSlider.onValueChanged.AddListener(OnMusicValueChange);
+        musicSlider.value = Preference.Singleton.musicValue;
+        musicValueText.text = (musicSlider.value * 100).ToString("F0");
+
+        sfxSlider.onValueChanged.AddListener(OnSfxValueChange);
+        sfxSlider.value = Preference.Singleton.sfxValue;
+        sfxValueText.text = (sfxSlider.value * 100).ToString("F0");
+
+        vibraToggle.onValueChanged.AddListener(OnVibraChange);
+        vibraToggle.isOn = Preference.Singleton.onVibration;
+        vibraValueText.text = "Vibration is" + vibraToggle.isOn;
     }
 
-    public void ShowButtonPanel()
+    private void OnMusicValueChange(float value)
     {
-        buttonPanel.SetActive(true);
-        preferencePanel.SetActive(false);
+        Preference.Singleton.musicValue = value;
+        musicValueText.text = (musicSlider.value * 100).ToString("F0");
     }
 
-    private void ShowPreferencePanel()
+    private void OnSfxValueChange(float value)
     {
-        buttonPanel.SetActive(false);
-        preferencePanel.SetActive(true);
+        Preference.Singleton.sfxValue = value;
+        sfxValueText.text = (sfxSlider.value * 100).ToString("F0");
     }
 
-    private void OnButtonGraphics()
+    private void OnVibraChange(bool value)
     {
-
-    }
-
-    private void OnButtonSound()
-    {
-        
-    }
-
-    private void OnButtonGame()
-    {
-        ShowPreferencePanel();
+        Preference.Singleton.onVibration = value;
+        vibraValueText.text = "Vibration is " + vibraToggle.isOn;
     }
 
     private void OnButtonReturn()
