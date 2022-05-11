@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,21 +20,72 @@ public class Preference : ScriptableObject
         }
     }
 
-    [Header("Sound")]
-    
-    public float musicValue = 1;
+    private float _musicValue = 1;
+    public float MusicValue
+    {
+        set
+        {
+            if (value != _musicValue)
+            {
+                _musicValue = value;
+                actionOnChangeMusicValue?.Invoke(_musicValue);
+            }
+        }
+
+        get
+        {
+            return _musicValue;
+        }
+    }
     public const float musicValueDef = 1;
-    
-    public float sfxValue = 1;
+    public Action<float> actionOnChangeMusicValue;
+
+    private float _sfxValue = 1;
+    public float SfxValue
+    {
+        set
+        {
+            if (value != _sfxValue)
+            {
+                _sfxValue = value;
+                actionOnChangeSfxValue?.Invoke(_sfxValue);
+            }
+        }
+
+        get
+        {
+            return _sfxValue;
+        }
+    }
     public const float sfxValueDef = 1;
+    public Action<float> actionOnChangeSfxValue;
 
     [Header("Vibra")]
-    public bool onVibration = true;
+    public bool _onVibration = true;
+    public bool Vibration
+    {
+        set
+        {
+            if (value != _onVibration)
+            {
+                _onVibration = value;
+                actionOnChangeVibration?.Invoke(_onVibration);
+            }
+        }
+
+        get
+        {
+            return _onVibration;
+        }
+    }
     public const bool onVibrationDef = true;
+    public Action<bool> actionOnChangeVibration;
+
 
     [Header("Input")]
     public float InputDeadZone = 10;
     public const float InputDeadZoneDef = 10;
+    
 
     [Header("UnitMotion")]
     public float moveSpeed = 250;
@@ -60,8 +112,8 @@ public class Preference : ScriptableObject
 
     public void SetDefaultValue()
     {
-        musicValue = musicValueDef;
-        sfxValue = sfxValueDef;
+        MusicValue = musicValueDef;
+        SfxValue = sfxValueDef;
         InputDeadZone = InputDeadZoneDef;
         moveSpeed = moveSpeedDef;
         jumpForce = jumpForceDef;

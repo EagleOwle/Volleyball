@@ -21,33 +21,33 @@ public class UIPreferenceMenu : UIPanel
         returnBtn.onClick.AddListener(OnButtonReturn);
 
         musicSlider.onValueChanged.AddListener(OnMusicValueChange);
-        musicSlider.value = Preference.Singleton.musicValue;
+        musicSlider.value = Preference.Singleton.MusicValue;
         musicValueText.text = (musicSlider.value * 100).ToString("F0");
 
         sfxSlider.onValueChanged.AddListener(OnSfxValueChange);
-        sfxSlider.value = Preference.Singleton.sfxValue;
+        sfxSlider.value = Preference.Singleton.SfxValue;
         sfxValueText.text = (sfxSlider.value * 100).ToString("F0");
 
         vibraToggle.onValueChanged.AddListener(OnVibraChange);
-        vibraToggle.isOn = Preference.Singleton.onVibration;
+        vibraToggle.isOn = Preference.Singleton.Vibration;
         vibraValueText.text = "Vibration is" + vibraToggle.isOn;
     }
 
     private void OnMusicValueChange(float value)
     {
-        Preference.Singleton.musicValue = value;
+        Preference.Singleton.MusicValue = value;
         musicValueText.text = (musicSlider.value * 100).ToString("F0");
     }
 
     private void OnSfxValueChange(float value)
     {
-        Preference.Singleton.sfxValue = value;
+        Preference.Singleton.SfxValue = value;
         sfxValueText.text = (sfxSlider.value * 100).ToString("F0");
     }
 
     private void OnVibraChange(bool value)
     {
-        Preference.Singleton.onVibration = value;
+        Preference.Singleton.Vibration = value;
         vibraValueText.text = "Vibration is " + vibraToggle.isOn;
     }
 

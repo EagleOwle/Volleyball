@@ -26,8 +26,8 @@ public class UIGamePreference : MonoBehaviour
 
     private void ReadValue()
     {
-        actionReadMusicValue.Invoke(Preference.Singleton.musicValue);
-        actionReadSfxValue.Invoke(Preference.Singleton.sfxValue);
+        actionReadMusicValue.Invoke(Preference.Singleton.MusicValue);
+        actionReadSfxValue.Invoke(Preference.Singleton.SfxValue);
         actionReadInputDeadZone.Invoke(Preference.Singleton.InputDeadZone);
         actionReadUnitMoveSpeed.Invoke(Preference.Singleton.moveSpeed);
         actionReadUnitJumpForce.Invoke(Preference.Singleton.jumpForce);
@@ -81,12 +81,12 @@ public class UIGamePreference : MonoBehaviour
 
     public void SliderChangeMusicValue(float value)
     {
-        Preference.Singleton.musicValue = value;
+        Preference.Singleton.MusicValue = value;
     }
 
     public void SliderChangeSfxValue(float value)
     {
-        Preference.Singleton.sfxValue = value;
+        Preference.Singleton.SfxValue = value;
     }
 
     public void SliderChangeInputDeadZone(float value)
