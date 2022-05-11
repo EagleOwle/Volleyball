@@ -69,8 +69,14 @@ public class AudioController : MonoBehaviour
         Preference.Singleton.actionOnChangeMusicValue -= OnChangeMusicValue;
     }
 
-    public void PlayClip(AudioClip clip)
+    public void PlayClip(AudioClip clip, bool replay = true)
     {
+        if (replay == false)
+        {
+            if (_sfxSource.isPlaying)
+                return;
+        }
+
         _sfxSource.clip = clip;
         _sfxSource.Play();
     }

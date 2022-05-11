@@ -136,7 +136,7 @@ public class Ball : MonoBehaviour
     {
         if (StateMachine.currentState is GameState)
         {
-            AudioController.Instance.PlayClip(hitClip);
+            AudioController.Instance.PlayClip(hitClip, true);
 
             if ((1 << collision.collider.gameObject.layer & unitLayer) != 0)
             {

@@ -2519,6 +2519,7 @@ GameObject:
   - component: {fileID: 324925695}
   - component: {fileID: 324925694}
   - component: {fileID: 324925697}
+  - component: {fileID: 324925698}
   m_Layer: 5
   m_Name: LeftButton
   m_TagString: Untagged
@@ -2673,6 +2674,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &324925698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324925692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  _enterColor: {r: 0, g: 0, b: 0, a: 0}
+  _exitColor: {r: 0, g: 0, b: 0, a: 0}
+  _downColor: {r: 0, g: 0, b: 0, a: 0}
+  _text: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
 --- !u!1 &342154716
 GameObject:
   m_ObjectHideFlags: 0
@@ -4558,6 +4577,7 @@ GameObject:
   - component: {fileID: 645774595}
   - component: {fileID: 645774594}
   - component: {fileID: 645774597}
+  - component: {fileID: 645774598}
   m_Layer: 5
   m_Name: RightButton
   m_TagString: Untagged
@@ -4712,6 +4732,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &645774598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645774592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  _enterColor: {r: 0, g: 0, b: 0, a: 0}
+  _exitColor: {r: 0, g: 0, b: 0, a: 0}
+  _downColor: {r: 0, g: 0, b: 0, a: 0}
+  _text: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
 --- !u!1 &649432018
 GameObject:
   m_ObjectHideFlags: 0
@@ -5620,6 +5658,7 @@ GameObject:
   - component: {fileID: 843346529}
   - component: {fileID: 843346528}
   - component: {fileID: 843346527}
+  - component: {fileID: 843346530}
   m_Layer: 5
   m_Name: RessumButton
   m_TagString: Untagged
@@ -5729,6 +5768,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843346525}
   m_CullTransparentMesh: 1
+--- !u!114 &843346530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843346525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  _enterColor: {r: 0, g: 0, b: 0, a: 0}
+  _exitColor: {r: 0, g: 0, b: 0, a: 0}
+  _downColor: {r: 0, g: 0, b: 0, a: 0}
+  _text: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
 --- !u!1 &876043302
 GameObject:
   m_ObjectHideFlags: 0
@@ -6954,6 +7011,7 @@ GameObject:
   - component: {fileID: 1040254138}
   - component: {fileID: 1040254137}
   - component: {fileID: 1040254136}
+  - component: {fileID: 1040254139}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -7062,6 +7120,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040254134}
   m_CullTransparentMesh: 1
+--- !u!114 &1040254139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040254134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  _enterColor: {r: 0, g: 0, b: 0, a: 0}
+  _exitColor: {r: 0, g: 0, b: 0, a: 0}
+  _downColor: {r: 0, g: 0, b: 0, a: 0}
+  _text: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
 --- !u!1 &1056607901
 GameObject:
   m_ObjectHideFlags: 0
@@ -8883,13 +8959,14 @@ GameObject:
   - component: {fileID: 1392436041}
   - component: {fileID: 1392436040}
   - component: {fileID: 1392436039}
+  - component: {fileID: 1392436042}
   m_Layer: 5
   m_Name: PreferenceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1392436038
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8991,6 +9068,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392436037}
   m_CullTransparentMesh: 1
+--- !u!114 &1392436042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392436037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  _enterColor: {r: 0, g: 0, b: 0, a: 0}
+  _exitColor: {r: 0, g: 0, b: 0, a: 0}
+  _downColor: {r: 0, g: 0, b: 0, a: 0}
+  _text: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
 --- !u!1 &1417175517
 GameObject:
   m_ObjectHideFlags: 0
@@ -9444,6 +9539,7 @@ GameObject:
   - component: {fileID: 1502057221}
   - component: {fileID: 1502057220}
   - component: {fileID: 1502057219}
+  - component: {fileID: 1502057222}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -9552,6 +9648,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502057217}
   m_CullTransparentMesh: 1
+--- !u!114 &1502057222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502057217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  _enterColor: {r: 0, g: 0, b: 0, a: 0}
+  _exitColor: {r: 0, g: 0, b: 0, a: 0}
+  _downColor: {r: 0, g: 0, b: 0, a: 0}
+  _text: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
 --- !u!1 &1511337331
 GameObject:
   m_ObjectHideFlags: 0
@@ -9719,6 +9833,7 @@ GameObject:
   - component: {fileID: 1520744026}
   - component: {fileID: 1520744025}
   - component: {fileID: 1520744028}
+  - component: {fileID: 1520744029}
   m_Layer: 5
   m_Name: JumpButton
   m_TagString: Untagged
@@ -9872,6 +9987,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1520744029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520744023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  _enterColor: {r: 0, g: 0, b: 0, a: 0}
+  _exitColor: {r: 0, g: 0, b: 0, a: 0}
+  _downColor: {r: 0, g: 0, b: 0, a: 0}
+  _text: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
 --- !u!1 &1551280992
 GameObject:
   m_ObjectHideFlags: 0
