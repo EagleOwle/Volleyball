@@ -13,7 +13,8 @@ public static class SceneInitialize
 
     public static void Initialise()
     {
-        Cort = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
+        Cort = GameObject.FindObjectOfType<Cort>();
+        //Cort = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
         Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
         Bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
         Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
@@ -39,12 +40,12 @@ public static class SceneInitialize
             case PlayerType.Local:
                 Player.transform.position = Cort.PlayerSpawnPoint.position;
                 Bot.transform.position = Cort.BotSpawnPoint.position;
-                Ball.transform.position = Cort.BotSpawnPoint.position + Vector3.up * 3;
+                Ball.transform.position = Cort.BotSpawnPoint.position + Vector3.up * 3f;
                 break;
             case PlayerType.Rival:
                 Player.transform.position = Cort.PlayerSpawnPoint.position;
                 Bot.transform.position = Cort.BotSpawnPoint.position;
-                Ball.transform.position = Cort.PlayerSpawnPoint.position + Vector3.up * 3; 
+                Ball.transform.position = Cort.PlayerSpawnPoint.position + Vector3.up * 3f; 
                 break;
         }
     }

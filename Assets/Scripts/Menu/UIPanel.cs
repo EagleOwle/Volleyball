@@ -23,7 +23,7 @@ public abstract class UIPanel : MonoBehaviour
     public virtual void Init()
     {
         UIHud.Singletone.ActionChangePanel += ChangePanel;
-        //gameObject.SetActive(false);
+        //Debug.LogError("Init " + panelName);
     }
 
     protected virtual void OnDestroy()
