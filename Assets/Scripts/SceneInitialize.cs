@@ -17,7 +17,7 @@ public static class SceneInitialize
         //Cort = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
         Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
         Bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
-        Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
+        Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Head", typeof(Ball))) as Ball;
     }
 
     public static void StartRound(PlayerType lastLuser)
