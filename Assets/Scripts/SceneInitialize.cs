@@ -14,10 +14,12 @@ public static class SceneInitialize
     public static void Initialise()
     {
         Cort = GameObject.FindObjectOfType<Cort>();
-        //Cort = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Cort", typeof(Cort)) as Cort);
         Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
+        Player.transform.position = Cort.PlayerSpawnPoint.position;
         Bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
+        Bot.transform.position = Cort.BotSpawnPoint.position;
         Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Head", typeof(Ball))) as Ball;
+        Ball.transform.position = Cort.BallSpawnPoint.position;
     }
 
     public static void StartRound(PlayerType lastLuser)
@@ -40,12 +42,12 @@ public static class SceneInitialize
             case PlayerType.Local:
                 Player.transform.position = Cort.PlayerSpawnPoint.position;
                 Bot.transform.position = Cort.BotSpawnPoint.position;
-                Ball.transform.position = Cort.BotSpawnPoint.position + Vector3.up * 3f;
+                Ball.transform.position = Cort.BotSpawnPoint.position + Vector3.up * 2.5f;
                 break;
             case PlayerType.Rival:
                 Player.transform.position = Cort.PlayerSpawnPoint.position;
                 Bot.transform.position = Cort.BotSpawnPoint.position;
-                Ball.transform.position = Cort.PlayerSpawnPoint.position + Vector3.up * 3f; 
+                Ball.transform.position = Cort.PlayerSpawnPoint.position + Vector3.up * 2.5f; 
                 break;
         }
     }

@@ -13217,7 +13217,7 @@ TerrainCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450944964682499900}
   m_Material: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: 3cc78fc270781664bbfc0e8746ce660d, type: 2}
   m_EnableTreeColliders: 1
 --- !u!1 &1450944964682499900
@@ -13231,7 +13231,7 @@ GameObject:
   - component: {fileID: 1450944964682499897}
   - component: {fileID: 1450944964682499898}
   - component: {fileID: 1450944964682499899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

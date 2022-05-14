@@ -15,17 +15,17 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.122641504, g: 0.122063, b: 0.122063, a: 1}
+  m_FogColor: {r: 0.052954797, g: 0.09053714, b: 0.13207549, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.002
   m_LinearFogStart: 0
-  m_LinearFogEnd: 170
+  m_LinearFogEnd: 150
   m_AmbientSkyColor: {r: 0.122641504, g: 0.12090601, b: 0.12090601, a: 1}
   m_AmbientEquatorColor: {r: 0.77205884, g: 0.77205884, b: 0.77205884, a: 1}
   m_AmbientGroundColor: {r: 0.08086861, g: 0.14150941, b: 0.07809718, a: 1}
   m_AmbientIntensity: 3.44
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.85564256, g: 0.85990715, b: 0.8679245, a: 1}
+  m_SubtractiveShadowColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -133,6 +133,14 @@ PrefabInstance:
     - target: {fileID: 8434888001521389512, guid: c17e9e47cc676694b846368df518efe8, type: 3}
       propertyPath: m_Name
       value: TrajectoryRender
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434888001521389514, guid: c17e9e47cc676694b846368df518efe8, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434888001521389514, guid: c17e9e47cc676694b846368df518efe8, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
       propertyPath: m_RootOrder
@@ -456,7 +464,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.11320752, g: 0.11267352, b: 0.11267352, a: 1}
+  m_BackGroundColor: {r: 0.040494844, g: 0.08399566, b: 0.13207549, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -667,7 +675,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.03137237, g: 0.22365017, b: 0.4433962, a: 1}
   m_Intensity: 10
   m_Range: 10
   m_SpotAngle: 30
@@ -725,13 +733,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766945551}
-  m_LocalRotation: {x: 0, y: 0.9063079, z: -0.42261827, w: 0}
-  m_LocalPosition: {x: 0, y: 99.84, z: 157.8}
+  m_LocalRotation: {x: 0.32788906, y: 0.18707414, z: -0.06641182, w: 0.9236241}
+  m_LocalPosition: {x: 0, y: 99.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 50, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 39.09, y: 22.9, z: 0}
 --- !u!1001 &2910364878848285486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -853,11 +861,11 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4309578524425393512}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 471ff2ede4033254b87035571012c056, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 66c41a2a98e978c46af07632276902fd, type: 3}
 --- !u!23 &4309578524427391464
