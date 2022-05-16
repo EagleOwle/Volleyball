@@ -87,6 +87,9 @@
     <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
     <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\DitheringModelEditor.cs" />
     <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
+    <Compile Include="Assets\BrokenVector\TreeRandomizer\Editor\TreeRandomizer.cs" />
+    <Compile Include="Assets\BrokenVector\TreeRandomizer\Editor\Constants.cs" />
+    <Compile Include="Assets\BrokenVector\TreeRandomizer\Editor\TreeRandomizerWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

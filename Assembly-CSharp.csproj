@@ -161,12 +161,14 @@
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\TAA.cginc" />
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
     <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
+    <None Include="Assets\BrokenVector\TreeRandomizer\readme.txt" />
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
     <None Include="Assets\DreamForestTree\ReadMe.txt" />
     <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\Snowconesolid Assets\Super Beach Pack\Snowconesolid Assets ReadMe.txt" />
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
+    <None Include="Assets\Day-Night Skyboxes\Textures\Readme for Assigning.txt" />
     <None Include="Assets\Free Stylized Skybox\ReadMe.txt" />
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\ACES.cginc" />
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
@@ -186,6 +188,7 @@
     <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Common.cginc" />
     <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
+    <None Include="Assets\Day-Night Skyboxes\readme.txt" />
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Bloom.shader" />
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Uber.shader" />
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\DepthOfField.shader" />
