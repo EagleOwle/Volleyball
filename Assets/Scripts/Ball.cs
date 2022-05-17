@@ -129,6 +129,7 @@ public class Ball : MonoBehaviour
         collider.material = defaultPhysic;
         currentPlayerSide = PlayerType.None;
         playerHitCount = 0;
+        transform.rotation = Quaternion.identity;
     }
 
 
