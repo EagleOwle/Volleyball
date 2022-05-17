@@ -146,6 +146,7 @@
     <Compile Include="Assets\Scripts\Menu\EffectChangeSize.cs" />
     <Compile Include="Assets\Scripts\Menu\UIItemPreference.cs" />
     <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\CustomDebug\Fps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
