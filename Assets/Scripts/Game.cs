@@ -31,11 +31,11 @@ public class Game : MonoBehaviour
 
     private PlayerType lastLuser = PlayerType.None;
 
-    private void Awake()
-    {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
-    }
+    //private void Awake()
+    //{
+    //    QualitySettings.vSyncCount = 0;
+    //    Application.targetFrameRate = 60;
+    //}
 
     private void Start()
     {
