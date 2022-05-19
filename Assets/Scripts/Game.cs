@@ -53,8 +53,8 @@ public class Game : MonoBehaviour
         match = new Match();
         match.Initialise(scene.rounds);
 
-        SceneInitialize.Initialise();
-        Invoke(nameof(StartRound), Time.deltaTime);
+        //SceneInitialize.Initialise();
+        //Invoke(nameof(StartRound), Time.deltaTime);
     }
 
     private void ChangeState(State obj)
