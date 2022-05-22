@@ -112,19 +112,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpSpecMap:
-        m_Texture: {fileID: 2800000, guid: 031296e2564293a48a31ef1233fd06c4, type: 3}
+        m_Texture: {fileID: 2800000, guid: a1db26fea06546c4eb777d661d447cc9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a2f7f6e5276378b47b43fd4473fd0626, type: 3}
+        m_Texture: {fileID: 2800000, guid: ae94cdce82298034ab77224b6e5946a2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadowTex:
-        m_Texture: {fileID: 2800000, guid: 1717d909695cae04493f32c7ba29e7e4, type: 3}
+        m_Texture: {fileID: 2800000, guid: df1f5396c206f274d9f6aeffe4caf1bb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TranslucencyMap:
-        m_Texture: {fileID: 2800000, guid: 4ae0d65d85ec39145abeb82f949eb0ee, type: 3}
+        m_Texture: {fileID: 2800000, guid: 29fdfc3f3b44078469d4b0989d37878b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -147,7 +147,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Optimized Bark Material
-  m_Shader: {fileID: 14000, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 10604, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _WINDQUALITY_NONE
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -163,7 +163,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpSpecMap:
-        m_Texture: {fileID: 2800000, guid: 031296e2564293a48a31ef1233fd06c4, type: 3}
+        m_Texture: {fileID: 2800000, guid: a1db26fea06546c4eb777d661d447cc9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailTex:
@@ -175,7 +175,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a2f7f6e5276378b47b43fd4473fd0626, type: 3}
+        m_Texture: {fileID: 2800000, guid: ae94cdce82298034ab77224b6e5946a2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SubsurfaceTex:
@@ -183,7 +183,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TranslucencyMap:
-        m_Texture: {fileID: 2800000, guid: 4ae0d65d85ec39145abeb82f949eb0ee, type: 3}
+        m_Texture: {fileID: 2800000, guid: 29fdfc3f3b44078469d4b0989d37878b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
