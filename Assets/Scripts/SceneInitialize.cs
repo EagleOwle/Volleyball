@@ -18,7 +18,9 @@ public static class SceneInitialize
         Player.transform.position = Cort.PlayerSpawnPoint.position;
         Bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
         Bot.transform.position = Cort.BotSpawnPoint.position;
-        Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Head", typeof(Ball))) as Ball;
+        //Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Head", typeof(Ball))) as Ball;
+        Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
+        
         Ball.transform.position = Cort.BallSpawnPoint.position;
     }
 

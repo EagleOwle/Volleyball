@@ -29,3 +29,11 @@ MonoBehaviour:
     buildIndex: 2
     description: Description In progress... There will be a description of the level
       and a brief background.
+  - arrayIndex: 2
+    name: Free Sky Game
+    sprite: {fileID: 21300000, guid: 458261610528cad4f84f645bc2d532f8, type: 3}
+    rounds: 15
+    difficultEnum: 1
+    buildIndex: 3
+    description: Description In progress... There will be a description of the level
+      and a brief background.

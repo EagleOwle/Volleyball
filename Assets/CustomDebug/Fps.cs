@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
@@ -5,14 +6,14 @@ using UnityEngine.UI;
 
 public class Fps : MonoBehaviour
 {
+    [SerializeField] private Text text;
+
     const string display = "{0} fps";
     const float fpsMeasurePeriod = 1;
 
     private int fpsAccumulator = 0;
     private float fpsNextPeriod = 0;
     private int currentFps;
-
-    [SerializeField] private Text text;
 
     public async void Start()
     {
@@ -42,4 +43,6 @@ public class Fps : MonoBehaviour
         }
     }
 
+
+    
 }

@@ -21,6 +21,7 @@ public class Game : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] private bool starMatch = true;
     [SerializeField] private AudioClip roundFallClip;
     public string debugCurrentGameState;
 
@@ -31,19 +32,18 @@ public class Game : MonoBehaviour
 
     private PlayerType lastLuser = PlayerType.None;
 
-    //private void Awake()
-    //{
-    //    QualitySettings.vSyncCount = 0;
-    //    Application.targetFrameRate = 60;
-    //}
+    private void Awake()
+    {
+         Application.targetFrameRate = 30;
+    }
 
     private void Start()
     {
-        if (SceneLoader.Instance == null)
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-            return;
-        }
+        //if (SceneLoader.Instance == null)
+        //{
+        //    UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        //    return;
+        //}
 
         scene = ScenePreference.Singleton.GameScene;
 
@@ -53,8 +53,11 @@ public class Game : MonoBehaviour
         match = new Match();
         match.Initialise(scene.rounds);
 
-        SceneInitialize.Initialise();
-        Invoke(nameof(StartRound), Time.deltaTime);
+        if (starMatch)
+        {
+            SceneInitialize.Initialise();
+            Invoke(nameof(StartRound), Time.deltaTime);
+        }
     }
 
     private void ChangeState(State obj)
