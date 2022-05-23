@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,75 +53,44 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\PropertyDrawers\GetSetDrawer.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\DepthOfFieldModelEditor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\Preview.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\PropertyDrawers\MinDrawer.cs" />
-    <Compile Include="Assets\BrokenVector\TreeRandomizer\Editor\Constants.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\VignetteModelEditor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\RaiseLowerEditor\RaiseLowerEditor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassPainter.Instance.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassPainter.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Utils\CurveEditor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\TextureArrayPainter\TextureArrayManager.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\PaintHeightEditor\PaintHeightEditor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetailList.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\MotionBlurModelEditor.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Utils\FxStyles.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\PostProcessingInspector.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\UserLutModelEditor.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectPainter.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SplatPainter\TextureModifyGroup.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassEditorUtilityWindow.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Utils\EditorGUIHelper.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\MeshToolbox\MeshToolbox.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Monitors\ParadeMonitor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetailList.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\MeshModifyGroup.cs" />
     <Compile Include="Assets\MeshCombiner\Editor\MeshCombinerEditor.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\DefaultPostFxModelEditor.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Utils\EditorResources.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\PostProcessingMonitor.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\BloomModelEditor.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\ColorGradingModelEditor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\EditorFilterMode.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\DetailListBox.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\PropertyDrawers\TrackballGroupDrawer.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassMap.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetailListBox.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Monitors\HistogramMonitor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\FlowPainter\FlowPainter.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\PostProcessingFactory.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\ScreenSpaceReflectionModelEditor.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\BuiltinDebugViewsEditor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\VertexColorPainter\VertexColorPainter.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
-    <Compile Include="Assets\BrokenVector\TreeRandomizer\Editor\TreeRandomizerWindow.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\PostProcessingModelEditor.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\GrainModelEditor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetailListBox.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SplatPainter\SplatPainter.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\PostProcessingBehaviourEditor.cs" />
+    <Compile Include="Assets\TreeRandomizer\Editor\TreeRandomizerWindow.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetail.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\EyeAdaptationModelEditor.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\FogModelEditor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassItem.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetail.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\Detail.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SmoothHeightEditor\SmoothHeightEditor.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\Preview.cs" />
+    <Compile Include="Assets\TreeRandomizer\Editor\Constants.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassPainter.Instance.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassPainter.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetailList.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SplatPainter\TextureModifyGroup.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassEditorUtilityWindow.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\MeshModifyGroup.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassMap.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\FlowPainter\FlowPainter.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetailListBox.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SplatPainter\SplatPainter.cs" />
+    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassItem.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\TextureArrayPainter\TextureArrayPainter.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassEditorUtil.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassType.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Monitors\WaveformMonitor.cs" />
-    <Compile Include="Assets\BrokenVector\TreeRandomizer\Editor\TreeRandomizer.cs" />
+    <Compile Include="Assets\TreeRandomizer\Editor\TreeRandomizer.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassLoaderEditor.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\DitheringModelEditor.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Models\ChromaticAberrationEditor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SmoothHeightEditor\SmoothHeightEditor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetailEditorWindow.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
+    <Compile Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Scripts\Editor\CTI_ShaderGUI.cs" />
+    <Compile Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Scripts\Editor\CTI_DetailsEnum.cs" />
+    <Compile Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Scripts\Editor\CTI_AdvancedEdgeFluttering.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshTerrainEditor\Editor\MTE.dll" />
@@ -754,9 +723,6 @@
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -765,12 +731,6 @@
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -783,9 +743,6 @@
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.DeviceSimulator.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
@@ -805,26 +762,20 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.DeviceSimulator.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

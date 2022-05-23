@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,130 +53,82 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\FxaaComponent.cs" />
-    <Compile Include="Assets\Scripts\InputHandler.cs" />
-    <Compile Include="Assets\Scripts\Unit\SinglePlayer.cs" />
-    <Compile Include="Assets\Scripts\StateBehavior\State.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
-    <Compile Include="Assets\Scripts\Menu\CanvasGroupUI.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
     <Compile Include="Assets\Scripts\RoundResult.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
     <Compile Include="Assets\Scripts\Menu\UIGame.cs" />
-    <Compile Include="Assets\Scripts\Unit\UnitMotion.cs" />
-    <Compile Include="Assets\CustomDebug\LogCallBack.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
     <Compile Include="Assets\CustomDebug\Fps.cs" />
     <Compile Include="Assets\Scripts\Match.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\VignetteComponent.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\FogModel.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\TaaComponent.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
     <Compile Include="Assets\Scripts\Menu\UICanvasGroupBase.cs" />
     <Compile Include="Assets\Scripts\Menu\UIScenePreference.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\VignetteModel.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\GrainModel.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\PostProcessingModel.cs" />
-    <Compile Include="Assets\Scripts\Menu\UIFailPanel.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\PostProcessingProfile.cs" />
     <Compile Include="Assets\CustomDebug\CustomDebugUI.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\GrainComponent.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\PostProcessingContext.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
-    <Compile Include="Assets\Scripts\MenuInitializer.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\UserLutModel.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\BloomComponent.cs" />
-    <Compile Include="Assets\Scripts\Menu\UIToggle.cs" />
     <Compile Include="Assets\Scripts\Cort.cs" />
-    <Compile Include="Assets\Scripts\Menu\UIButton.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
-    <Compile Include="Assets\Scripts\Menu\UIPanel.cs" />
-    <Compile Include="Assets\MeshCombiner\Scripts\MeshCombiner.cs" />
     <Compile Include="Assets\Scripts\Menu\UIPreferenceMenu.cs" />
     <Compile Include="Assets\Scripts\AudioController.cs" />
-    <Compile Include="Assets\Scripts\CustomEvent.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\UserLutComponent.cs" />
-    <Compile Include="Assets\Scripts\Preference.cs" />
-    <Compile Include="Assets\DreamForestTree\Script\FreeCam.cs" />
-    <Compile Include="Assets\Scripts\SceneLoader.cs" />
-    <Compile Include="Assets\Scripts\Ball.cs" />
-    <Compile Include="Assets\Scripts\Menu\UIHud.cs" />
     <Compile Include="Assets\Scripts\Unit\Unit.cs" />
     <Compile Include="Assets\Scripts\ScenePreference.cs" />
     <Compile Include="Assets\Scripts\TrajectoryRender.cs" />
     <Compile Include="Assets\Scripts\Menu\UISlider.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\PauseState.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\DitheringComponent.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\PostProcessingComponent.cs" />
     <Compile Include="Assets\Scripts\SceneInitialize.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
-    <Compile Include="Assets\Scripts\Menu\UIPause.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
-    <Compile Include="Assets\DreamForestTree\Script\ScrollUVWater.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
     <Compile Include="Assets\Scripts\Menu\UIMainMenu.cs" />
-    <Compile Include="Assets\Scripts\Menu\UITimer.cs" />
-    <Compile Include="Assets\Scripts\Menu\UILoadingScreen.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\StateMachine.cs" />
-    <Compile Include="Assets\Scripts\Unit\SingleBot.cs" />
     <Compile Include="Assets\Scripts\Menu\UIGamePreference.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\FogComponent.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\BloomModel.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\FallState.cs" />
     <Compile Include="Assets\Scripts\Unit\PlayerType.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIItemPreference.cs" />
+    <Compile Include="Assets\Scripts\InputHandler.cs" />
+    <Compile Include="Assets\Scripts\Unit\SinglePlayer.cs" />
+    <Compile Include="Assets\Scripts\StateBehavior\State.cs" />
+    <Compile Include="Assets\Scripts\Menu\CanvasGroupUI.cs" />
+    <Compile Include="Assets\Scripts\Unit\UnitMotion.cs" />
+    <Compile Include="Assets\CustomDebug\LogCallBack.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIFailPanel.cs" />
+    <Compile Include="Assets\Scripts\MenuInitializer.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIToggle.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIButton.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIPanel.cs" />
+    <Compile Include="Assets\MeshCombiner\Scripts\MeshCombiner.cs" />
+    <Compile Include="Assets\Scripts\CustomEvent.cs" />
+    <Compile Include="Assets\Scripts\Preference.cs" />
+    <Compile Include="Assets\Scripts\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\Ball.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIHud.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIPause.cs" />
+    <Compile Include="Assets\Scripts\Menu\UITimer.cs" />
+    <Compile Include="Assets\Scripts\Menu\UILoadingScreen.cs" />
+    <Compile Include="Assets\Scripts\Unit\SingleBot.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\GameState.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\Scripts\Game.cs" />
     <Compile Include="Assets\Scripts\TrajectoryCalculate.cs" />
-    <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
     <Compile Include="Assets\Scripts\TrajectoryRenderAdvanced.cs" />
+    <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
     <Compile Include="Assets\Scripts\Menu\EffectChangeSize.cs" />
-    <Compile Include="Assets\Scripts\Menu\UIItemPreference.cs" />
-    <Compile Include="Assets\DreamForestTree\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Scripts\CTI_CustomWind.cs" />
+    <Compile Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Scripts\CTI_Utils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\CTI_LOD_Bark_Array_301.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Unlit\2 Textures_realtime_shadow.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\Surface\3Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\MTE_EDITOR_RESOURCE_LOCATION.txt" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Specular-NoFog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\2Textures.shader" />
+    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\CTI_LOD_Billboard_301.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\8Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\Bumped.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\GrainGen.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\5Textures\Diffuse-NoFog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\8Textures\VertexColored.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Grass\UnlitAlphaCutout.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Languages\zh-Hans.xml" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\5Textures_DisplayNormal.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\FXAA3.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\3Textures\Specular_for_target_2.0.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Shaders\Highlight.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Unlit\3 Textures_baked_lightmap.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\7Textures\Diffuse.shader" />
+    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Resources\CTI_Camera-DepthNormalTexture_301.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Vertex-colored\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Specular_for_target_2.0.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Diffuse-NoFog.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\8Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\3Textures\VertexColored.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\VertexColored-Fog.shader" />
@@ -184,39 +136,33 @@
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\4Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\4Textures\HeightBlendPacked.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Bumped_for_target_2.0.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\LutGen.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Specular-Fog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\6Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Languages\en-US.xml" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\4Textures\Bumped.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\TAA.cginc" />
+    <None Include="Assets\Conifers [BOTD]\Conifers [BOTD] URP Readme.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\6Textures\VertexColored.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
+    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Resources\CTI_Internal-DeferredShading.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\6Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Grass\AlphaCutout.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Bumped-Fog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\TextureArray\Lambert.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\TextureArray\BlinnPhong.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\TextureArray_Triplanar.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Vertex-colored\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\Packed\4Textures.shader" />
-    <None Include="Assets\BrokenVector\TreeRandomizer\readme.txt" />
+    <None Include="Assets\TreeRandomizer\readme.txt" />
+    <None Include="Assets\Conifers [BOTD]\Getting started.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\Surface\2Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\7Textures\Diffuse.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
-    <None Include="Assets\DreamForestTree\ReadMe.txt" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\4Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\4Textures\VertexColored.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\VertexColored.shader" />
-    <None Include="Assets\Snowconesolid Assets\Super Beach Pack\Snowconesolid Assets ReadMe.txt" />
+    <None Include="Assets\Super Beach Pack\Snowconesolid Assets ReadMe.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\5Textures.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\7Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Shaders\PaintTexturePreview_URP.shader" />
+    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\Includes\CTI_BillboardVertex_301.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\3Textures\Bumped_for_target_2.0.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Grass\UnlitBillboard.Shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\ReadMe.txt" />
@@ -224,73 +170,55 @@
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\6Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Bumped-NoFog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\2Textures\VertexColored.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
-    <None Include="Assets\Day-Night Skyboxes\Textures\Readme for Assigning.txt" />
+    <None Include="Assets\Skybox\Day-Night Skyboxes\Textures\Readme for Assigning.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Vertex-colored\ColorOnly.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\3Textures\VertexColored.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\4Textures\Specular_for_target_2.0.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\3Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\Packed\8Textures.shader" />
-    <None Include="Assets\Free Stylized Skybox\ReadMe.txt" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\ACES.cginc" />
+    <None Include="Assets\Skybox\Free Stylized Skybox\ReadMe.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Diffuse-Fog.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\8Textures\Bumped.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
+    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\Includes\CTI_TranslucentLighting_301.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\6Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\5Textures\VertexColored-Fog.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\FXAA.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\WaterFlow.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Shaders\ConverterSplitPreview_URP.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\4Textures.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
+    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\CTI_LOD_Bark_301.shader" />
+    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Resources\CTI_Internal-DeferredReflections.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\5Textures\VertexColored-NoFog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Vertex-colored\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\4Textures\Bumped_for_target_2.0.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Fog.shader" />
+    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\Includes\CTI_indirect.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\3Textures\Bumped.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\5Textures\Bumped-Fog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\3Textures\Diffuse.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\MotionBlur.shader" />
+    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\CTI_LOD_Leaves_301.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\MTECommon.hlsl" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\2Textures\Diffuse.shader" />
-    <None Include="Assets\Cloudy Summer Day Skybox\CloudySummerDaySkybox_Info.txt" />
-    <None Include="Assets\Snowconesolid Assets\Super Beach Pack\Super Beach Ball Pack\Snowconesolid Assets ReadMe.txt" />
+    <None Include="Assets\Skybox\Summer Day Skybox\CloudySummerDaySkybox_Info.txt" />
+    <None Include="Assets\Super Beach Pack\Super Beach Ball Pack\Snowconesolid Assets ReadMe.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\Surface\2Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\MTECommonPBR.hlsl" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\8Textures\Bumped.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\UI\Trackball.shader" />
     <None Include="Assets\AvtorMusicAnitation.txt" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\4Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\2Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\VertexColored-NoFog.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Common.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\6Textures\Bumped.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
-    <None Include="Assets\Day-Night Skyboxes\readme.txt" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Bloom.shader" />
+    <None Include="Assets\Skybox\Day-Night Skyboxes\readme.txt" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Details\ReadMe.txt" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Uber.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\TextureArray\TextureArray_DisplayNormal.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Grass\Billborad.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\3Textures.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\TextureArray\TextureArray.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\TAA.shader" />
+    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\Includes\CTI_Builtin4xTreeLibraryTumbling_301.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\2Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\3Textures\Diffuse.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Blit.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Bloom.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\3Textures\Bumped.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\Surface\3Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\8Textures\Diffuse.shader" />
-    <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Unlit\2 Textures_baked_lightmap.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Shaders\ConverterSplitPreview_Builtin.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\4Textures\Diffuse.shader" />
@@ -876,9 +804,6 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.25f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -887,12 +812,6 @@
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -905,9 +824,6 @@
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.DeviceSimulator.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
@@ -927,26 +843,20 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.DeviceSimulator.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
