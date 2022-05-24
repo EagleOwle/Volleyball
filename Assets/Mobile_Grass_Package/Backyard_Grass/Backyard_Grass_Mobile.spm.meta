@@ -1,42 +1,64 @@
 fileFormatVersion: 2
 guid: 7b4fc7539d7e83a42abecd42cb6374ad
 SpeedTreeImporter:
-  serializedVersion: 3
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Billboard
+    second: {fileID: 2100000, guid: 297898113b534b8489a8f218647c2a53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves_0_LOD0
+    second: {fileID: 2100000, guid: 1a55c468c57cf7d46b3bdafca33edc47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves_0_LOD1
+    second: {fileID: 2100000, guid: bfde7d93c405a774ca54c69c05bb1b62, type: 2}
+  serializedVersion: 6
   mainColor: {r: 1, g: 1, b: 1, a: 1}
-  specColor: {r: .5, g: .5, b: .5, a: 0}
-  hueVariation: {r: 1, g: .5, b: 0, a: .100000001}
-  shininess: .125
-  alphaTestRef: .330000013
+  hueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
+  alphaTestRef: 0.33
   bestWindQuality: 5
   hasBillboard: 1
   lODSettings:
-  - height: .5
+  - height: 0.5
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 1
     reflectionProbeUsage: 1
     enableBump: 1
     enableHue: 1
+    enableSubsurface: 0
     windQuality: 5
-  - height: .25
+  - height: 0.25
     castShadows: 1
     receiveShadows: 1
     useLightProbes: 1
     reflectionProbeUsage: 1
     enableBump: 1
     enableHue: 1
+    enableSubsurface: 0
     windQuality: 5
-  - height: .00999999978
+  - height: 0.01
     castShadows: 0
     receiveShadows: 0
     useLightProbes: 0
     reflectionProbeUsage: 0
     enableBump: 1
     enableHue: 1
+    enableSubsurface: 0
     windQuality: 1
   enableSmoothLODTransition: 1
-  billboardTransitionCrossFadeWidth: .25
-  fadeOutWidth: .25
-  scaleFactor: .304800004
+  animateCrossFading: 1
+  billboardTransitionCrossFadeWidth: 0.25
+  fadeOutWidth: 0.25
+  scaleFactor: 0.3048
+  materialVersion: 1
+  materialLocation: 0
+  fileIDType: 0
   userData: 
   assetBundleName: 
+  assetBundleVariant: 
