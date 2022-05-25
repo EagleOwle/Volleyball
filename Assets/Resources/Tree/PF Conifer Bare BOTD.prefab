@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9065439598739886509}
   - component: {fileID: 9152706909421603631}
-  - component: {fileID: 8951581054566979303}
   m_Layer: 0
   m_Name: PF Conifer Bare BOTD
   m_TagString: Untagged
@@ -49,33 +48,19 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.8602908
+  - screenRelativeHeight: 0.7144619
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 9046593827184318023}
-  - screenRelativeHeight: 0.302975
+  - screenRelativeHeight: 0.450499
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 9046673353596535813}
-  - screenRelativeHeight: 0.05199933
+  - screenRelativeHeight: 0.2994225
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 9149214241614913157}
   m_Enabled: 1
---- !u!136 &8951581054566979303
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9068212500359757901}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.25
-  m_Height: 6
-  m_Direction: 1
-  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &9068250629319455573
 GameObject:
   m_ObjectHideFlags: 0
