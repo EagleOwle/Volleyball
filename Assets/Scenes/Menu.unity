@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1334711490}
-  m_IndirectSpecularColor: {r: 0.40695217, g: 0.5269749, b: 0.5989263, a: 0.5}
+  m_IndirectSpecularColor: {r: 0.40692016, g: 0.526949, b: 0.5989041, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 7a71da9b885873a439cd9a4f2bd90d5a, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: b1e2736c342850f449852b772292114a, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -2780,7 +2780,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446750038}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -6515,7 +6515,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -6533,13 +6533,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334711489}
-  m_LocalRotation: {x: 0.16653119, y: -0.6687967, z: 0.1574807, w: 0.7072327}
-  m_LocalPosition: {x: 18.519999, y: 44.479996, z: -3.5300007}
+  m_LocalRotation: {x: 0.37454474, y: -0.42775205, z: 0.20082907, w: 0.7977544}
+  m_LocalPosition: {x: 38.3, y: 18.8, z: 2.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 26.5, y: -86.8, z: 0}
+  m_LocalEulerAnglesHint: {x: 50.3, y: -56.4, z: 0}
 --- !u!1 &1353453294
 GameObject:
   m_ObjectHideFlags: 0
