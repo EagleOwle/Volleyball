@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -54,7 +54,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\InputHandler.cs" />
-    <Compile Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Scripts\CTI_CustomWind.cs" />
     <Compile Include="Assets\Scripts\Unit\SinglePlayer.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\State.cs" />
     <Compile Include="Assets\Scripts\Menu\CanvasGroupUI.cs" />
@@ -91,7 +90,6 @@
     <Compile Include="Assets\Scripts\Menu\UIPause.cs" />
     <Compile Include="Assets\Scripts\Menu\UIMainMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\UITimer.cs" />
-    <Compile Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Scripts\CTI_Utils.cs" />
     <Compile Include="Assets\Scripts\Menu\UILoadingScreen.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Unit\SingleBot.cs" />
@@ -107,14 +105,12 @@
     <Compile Include="Assets\Scripts\Menu\UIItemPreference.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\CTI_LOD_Bark_Array_301.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Unlit\2 Textures_realtime_shadow.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\Surface\3Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\MTE_EDITOR_RESOURCE_LOCATION.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Specular-NoFog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\2Textures.shader" />
-    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\CTI_LOD_Billboard_301.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\8Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\5Textures\Diffuse-NoFog.shader" />
@@ -126,7 +122,6 @@
     <None Include="Assets\MeshTerrainEditor\EditorResources\Shaders\Highlight.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Unlit\3 Textures_baked_lightmap.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\7Textures\Diffuse.shader" />
-    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Resources\CTI_Camera-DepthNormalTexture_301.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Vertex-colored\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Specular_for_target_2.0.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Diffuse-NoFog.shader" />
@@ -141,9 +136,7 @@
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\6Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Languages\en-US.xml" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\4Textures\Bumped.shader" />
-    <None Include="Assets\Conifers [BOTD]\Conifers [BOTD] URP Readme.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\6Textures\VertexColored.shader" />
-    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Resources\CTI_Internal-DeferredShading.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\6Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Grass\AlphaCutout.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Bumped-Fog.shader" />
@@ -153,17 +146,14 @@
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Vertex-colored\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\Packed\4Textures.shader" />
     <None Include="Assets\TreeRandomizer\readme.txt" />
-    <None Include="Assets\Conifers [BOTD]\Getting started.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\Surface\2Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\7Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\4Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\4Textures\VertexColored.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\VertexColored.shader" />
-    <None Include="Assets\Super Beach Pack\Snowconesolid Assets ReadMe.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\5Textures.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\7Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Shaders\PaintTexturePreview_URP.shader" />
-    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\Includes\CTI_BillboardVertex_301.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\3Textures\Bumped_for_target_2.0.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Grass\UnlitBillboard.Shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\ReadMe.txt" />
@@ -180,26 +170,20 @@
     <None Include="Assets\Skybox\Free Stylized Skybox\ReadMe.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Diffuse-Fog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\8Textures\Bumped.shader" />
-    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\Includes\CTI_TranslucentLighting_301.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\6Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\5Textures\VertexColored-Fog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\WaterFlow.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Shaders\ConverterSplitPreview_URP.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\4Textures.shader" />
-    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\CTI_LOD_Bark_301.shader" />
-    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Resources\CTI_Internal-DeferredReflections.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\5Textures\VertexColored-NoFog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Vertex-colored\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\4Textures\Bumped_for_target_2.0.shader" />
-    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\Includes\CTI_indirect.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\3Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\5Textures\Bumped-Fog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\3Textures\Diffuse.shader" />
-    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\CTI_LOD_Leaves_301.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\MTECommon.hlsl" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\2Textures\Diffuse.shader" />
     <None Include="Assets\Skybox\Summer Day Skybox\CloudySummerDaySkybox_Info.txt" />
-    <None Include="Assets\Super Beach Pack\Super Beach Ball Pack\Snowconesolid Assets ReadMe.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\Surface\2Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\MTECommonPBR.hlsl" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\8Textures\Bumped.shader" />
@@ -214,7 +198,6 @@
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Grass\Billborad.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\3Textures.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\TextureArray\TextureArray.shader" />
-    <None Include="Assets\Conifers [BOTD]\Render Pipeline Support\Built-in RP\CTI Runtime Components\Shaders\Includes\CTI_Builtin4xTreeLibraryTumbling_301.cginc" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\2Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\3Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\3Textures\Bumped.shader" />
