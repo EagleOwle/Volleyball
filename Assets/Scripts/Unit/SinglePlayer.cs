@@ -11,6 +11,12 @@ public class SinglePlayer : Unit
 
     private void OnEnable()
     {
+        if(InputHandler.Instance == null)
+        {
+            Debug.LogError("Input handler is null");
+            return;
+        }
+
         InputHandler.Instance.ActionSetSwipeDirection += OnSwipe;
         InputHandler.Instance.ActionOnInputButton += OnInputButton;
         StateMachine.actionChangeState += OnChangeGameState;

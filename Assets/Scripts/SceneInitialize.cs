@@ -14,6 +14,13 @@ public static class SceneInitialize
     public static void Initialise()
     {
         Cort = GameObject.FindObjectOfType<Cort>();
+
+        if (Cort == null)
+        {
+            Debug.LogError("Cort is Null");
+            return;
+        }
+
         Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
         Player.transform.position = Cort.PlayerSpawnPoint.position;
         Bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);

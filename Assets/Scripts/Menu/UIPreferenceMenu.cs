@@ -13,6 +13,11 @@ public class UIPreferenceMenu : UIPanel
     [SerializeField] private Text sfxValueText;
     [SerializeField] private Toggle vibraToggle;
     [SerializeField] private Text vibraValueText;
+    [Space]
+    [SerializeField] private Text lowQualityText;
+    [SerializeField] private Text normalQualityText;
+    [SerializeField] private Text highQualityText;
+    [SerializeField] private Slider qualitySlider;
 
     public override void Init()
     {
@@ -31,6 +36,11 @@ public class UIPreferenceMenu : UIPanel
         vibraToggle.onValueChanged.AddListener(OnVibraChange);
         vibraToggle.isOn = Preference.Singleton.Vibration;
         vibraValueText.text = "Vibration is" + vibraToggle.isOn;
+
+        qualitySlider.onValueChanged.AddListener(OnQualityChange);
+        int value = QualitySettings.GetQualityLevel();
+        qualitySlider.value = value;
+        OnQualityChange(value);
     }
 
     private void OnMusicValueChange(float value)
@@ -54,6 +64,33 @@ public class UIPreferenceMenu : UIPanel
     private void OnButtonReturn()
     {
         UIHud.Singletone.OnChangePanel(UIPanelName.Main);
+    }
+
+    private void OnQualityChange(float value)
+    {
+        switch (value)
+        {
+            case 0:
+                lowQualityText.fontSize = 50;
+                normalQualityText.fontSize = 30;
+                highQualityText.fontSize = 30;
+                break;
+
+            case 1:
+                lowQualityText.fontSize = 30;
+                normalQualityText.fontSize = 50;
+                highQualityText.fontSize = 30;
+                break;
+
+            case 2:
+                lowQualityText.fontSize = 30;
+                normalQualityText.fontSize = 30;
+                highQualityText.fontSize = 50;
+                break;
+                
+        }
+
+        QualitySettings.SetQualityLevel((int)value);
     }
 
 }

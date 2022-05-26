@@ -39,11 +39,11 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
-        //if (SceneLoader.Instance == null)
-        //{
-        //    UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-        //    return;
-        //}
+        if (SceneLoader.Instance == null)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            return;
+        }
 
         scene = ScenePreference.Singleton.GameScene;
 
