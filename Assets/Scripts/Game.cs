@@ -34,7 +34,7 @@ public class Game : MonoBehaviour
 
     private void Awake()
     {
-         Application.targetFrameRate = 30;
+         Application.targetFrameRate = 90;
     }
 
     private void Start()
