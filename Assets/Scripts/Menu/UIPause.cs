@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class UIPause : UIPanel
 {
@@ -24,7 +25,7 @@ public class UIPause : UIPanel
 
     private void OnButtonRessum()
     {
-        StateMachine.SetState<GameState>();
+        UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
         gameObject.SetActive(false);
     }
 

@@ -15,10 +15,10 @@ public static class StateMachine
         behaviorMap[typeof(GameState)] = new GameState();
         behaviorMap[typeof(PauseState)] = new PauseState();
         behaviorMap[typeof(FallState)] = new FallState();
-
+        behaviorMap[typeof(TimerState)] = new TimerState();
         SetDefaultState();
     }
-    
+
     public static void SetState<T>() where T : State
     {
         var type = typeof(T);
@@ -51,7 +51,7 @@ public static class StateMachine
         actionChangeState?.Invoke(currentState);
     }
 
-    private static State GetState<T>() where T : State
+    public static State GetState<T>() where T : State
     {
         var type = typeof(T);
         return behaviorMap[type];

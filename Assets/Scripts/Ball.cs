@@ -94,42 +94,27 @@ public class Ball : MonoBehaviour
         //Debug.LogError(" OnChangeGameState: " + state);
         if (state is GameState)
         {
-            OnGame();
+            if (rigidbody == null)
+            {
+                Debug.LogError("rigidbody is null ");
+            }
+
+            rigidbody.isKinematic = false;
+            collider.material = ballPhysic;
         }
 
-        if (state is PauseState)
+        if (state is PauseState || state is TimerState)
         {
-            OnPouse();
+            rigidbody.isKinematic = true;
         }
 
         if (state is FallState)
         {
-            OnFall();
+            collider.material = defaultPhysic;
+            currentPlayerSide = PlayerType.None;
+            playerHitCount = 0;
+            transform.rotation = Quaternion.identity;
         }
-    }
-
-    private void OnGame()
-    {
-        if(rigidbody == null)
-        {
-            Debug.LogError("rigidbody is null ");
-        }
-
-        rigidbody.isKinematic = false;
-        collider.material = ballPhysic;
-    }
-
-    private void OnPouse()
-    {
-        rigidbody.isKinematic = true;
-    }
-
-    private void OnFall()
-    {
-        collider.material = defaultPhysic;
-        currentPlayerSide = PlayerType.None;
-        playerHitCount = 0;
-        transform.rotation = Quaternion.identity;
     }
 
 

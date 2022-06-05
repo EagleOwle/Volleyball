@@ -7,4 +7,9 @@ public class FallState : State
     {
         nameState = "Fall";
     }
+
+    public override void Exit()
+    {
+        
+    }
 }

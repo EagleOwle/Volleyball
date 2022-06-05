@@ -8,4 +8,8 @@ public class GameState : State
         nameState = "Game";
     }
 
+    public override void Exit()
+    {
+        
+    }
 }

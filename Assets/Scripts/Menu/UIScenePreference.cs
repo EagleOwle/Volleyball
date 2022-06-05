@@ -86,6 +86,18 @@ public class UIScenePreference : UIPanel
         previewImage.sprite = currentScene.sprite;
         descriptionText.text = currentScene.description;
 
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            if(i == index)
+            {
+                buttons[i].GetComponent<UIChangeSceneButton>().SetActiveSprite = true;
+            }
+            else
+            {
+                buttons[i].GetComponent<UIChangeSceneButton>().SetActiveSprite = false;
+            }
+        }
+
         roundCountSlider.onValueChanged.RemoveAllListeners();
         roundCountSlider.minValue = 1;
         roundCountSlider.maxValue = 15;

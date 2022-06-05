@@ -36,9 +36,6 @@ public class UIGame : MonoBehaviour
 
     public void StartRound(Ball ball)
     {
-        //this.ball = ball;
-        //this.ball.actionUnitHit += ShowBallHitCount;
-
         StartRound();
     }
 

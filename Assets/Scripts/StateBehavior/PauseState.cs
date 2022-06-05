@@ -7,4 +7,9 @@ public class PauseState : State
     {
         nameState = "Pause";
     }
+
+    public override void Exit()
+    {
+        
+    }
 }
