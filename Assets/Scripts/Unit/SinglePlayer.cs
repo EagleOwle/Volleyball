@@ -127,7 +127,7 @@ public class SinglePlayer : Unit
             {
                 if (collision.collider.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rigidBody))
                 {
-                    rigidBody.AddForce((Vector3.right + Vector3.up) * Preference.Singleton.pushForce);
+                    //rigidBody.AddForce((Vector3.right + Vector3.up) * Preference.Singleton.pushForce);
                 }
             }
         }

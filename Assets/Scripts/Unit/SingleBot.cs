@@ -261,7 +261,7 @@ public class SingleBot : Unit
             {
                 if (collision.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rigidBody))
                 {
-                    rigidBody.AddForce((Vector3.left + Vector3.up) * Preference.Singleton.pushForce);
+                   // rigidBody.AddForce((Vector3.left + Vector3.up) * Preference.Singleton.pushForce);
                 }
             }
         }
