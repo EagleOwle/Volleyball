@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3036286961800321414}
   - component: {fileID: 6749304152938924269}
   - component: {fileID: 6542583291263299722}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3a15c5081b2d54e49b59b9d06ec9c899, type: 2}
+  - {fileID: 2100000, guid: e1d390b6205a9684a9d7f3670a8d8293, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,10 +91,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8546560687653349729}
   - component: {fileID: 188948765594262952}
-  - component: {fileID: 4294974067637198558}
   - component: {fileID: 3807298152630121872}
-  - component: {fileID: 6325132098050416791}
-  m_Layer: 0
+  - component: {fileID: 4801896581279629572}
+  - component: {fileID: 8473463937728182334}
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,23 +128,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 3
---- !u!135 &4294974067637198558
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3890578020711540319}
-  m_Material: {fileID: 13400000, guid: a4149fdeed0c70247a18f4470a9855df, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.4178816
-  m_Center: {x: 0, y: -0.013983548, z: 0}
 --- !u!114 &3807298152630121872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPhysic: {fileID: 13400000, guid: a4149fdeed0c70247a18f4470a9855df, type: 2}
   defaultPhysic: {fileID: 13400000, guid: 9e9289aec77f7a44db49ed4f1389c6af, type: 2}
-  collider: {fileID: 6325132098050416791}
+  collider: {fileID: 8473463937728182334}
   rigidbody: {fileID: 188948765594262952}
   hitClip: {fileID: 8300000, guid: afcde19c076570543a7abbd2e67c3543, type: 3}
   unitLayer:
@@ -170,7 +157,20 @@ MonoBehaviour:
     m_Bits: 64
   currentPlayerSide: 0
   playerHitCount: 0
---- !u!136 &6325132098050416791
+--- !u!135 &4801896581279629572
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3890578020711540319}
+  m_Material: {fileID: 13400000, guid: a4149fdeed0c70247a18f4470a9855df, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.35711527
+  m_Center: {x: 0.0027977228, y: 0.010406017, z: 0.018210411}
+--- !u!136 &8473463937728182334
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,7 +180,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.287152
-  m_Height: 0.9
+  m_Radius: 0.28147548
+  m_Height: 0.8465128
   m_Direction: 1
-  m_Center: {x: 0.00027912855, y: 0, z: 0.019305468}
+  m_Center: {x: 0.0039022565, y: -0.0013003349, z: 0.03511998}

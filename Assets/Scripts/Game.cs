@@ -55,7 +55,7 @@ public class Game : MonoBehaviour
 
         if (starMatch)
         {
-            SceneInitialize.Initialise();
+            SceneInitialize.Initialise(scene);
             Invoke(nameof(StartRound), Time.deltaTime);
         }
     }

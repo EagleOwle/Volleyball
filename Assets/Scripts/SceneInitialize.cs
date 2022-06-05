@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public static class SceneInitialize
@@ -11,7 +7,7 @@ public static class SceneInitialize
     private static Unit Bot;
     private static Ball Ball;
 
-    public static void Initialise()
+    public static void Initialise(ScenePreference.Scene scene)
     {
         Cort = GameObject.FindObjectOfType<Cort>();
 
@@ -21,14 +17,23 @@ public static class SceneInitialize
             return;
         }
 
-        Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
+        GameObject tmp = null;
+
+        tmp = Object.Instantiate(scene.playerPrefab);
+        Player = tmp.GetComponent<Unit>();
         Player.transform.position = Cort.PlayerSpawnPoint.position;
-        Bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
+
+        tmp = Object.Instantiate(scene.enemyPrefab);
+        Bot = tmp.GetComponent<Unit>();
         Bot.transform.position = Cort.BotSpawnPoint.position;
-        //Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Head", typeof(Ball))) as Ball;
-        Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
-        
+
+        tmp = Object.Instantiate(scene.ballPrefab);
+        Ball = tmp.GetComponent<Ball>();
         Ball.transform.position = Cort.BallSpawnPoint.position;
+
+        //Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
+        //Bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
+        //Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;
     }
 
     public static void StartRound(PlayerType lastLuser)

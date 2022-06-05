@@ -55,6 +55,9 @@ public class ScenePreference : ScriptableObject
             set { difficultEnum = (GameDifficult)value; }
         }
         public int buildIndex;
+        public GameObject ballPrefab;
+        public GameObject playerPrefab;
+        public GameObject enemyPrefab;
         public string description;
     }
 

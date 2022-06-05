@@ -11,7 +11,9 @@ public class Ball : MonoBehaviour
     [SerializeField] private AudioClip hitClip;
     [SerializeField] protected LayerMask unitLayer = 0;
     [SerializeField] protected LayerMask groundLayer = 0;
-    
+
+    private const float maxAngularVelocity = 80;
+
     public PlayerType currentPlayerSide;
     public int playerHitCount;
     public Action<PlayerType, int> actionUnitHit;
@@ -19,6 +21,7 @@ public class Ball : MonoBehaviour
     private void OnEnable()
     {
         StateMachine.actionChangeState += OnChangeGameState;
+        rigidbody.maxAngularVelocity = maxAngularVelocity;
     }
 
     private void OnDisable()
