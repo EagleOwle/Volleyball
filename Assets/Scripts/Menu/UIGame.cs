@@ -21,17 +21,32 @@ public class UIGame : MonoBehaviour
     }
 
     [SerializeField] private Button pauseBtn;
+    [SerializeField] private GameObject inputButtonPanel, inputJoystickPanel;
     [SerializeField] private UIFailPanel failPanel;
     [SerializeField] private Text hitCountText;
     [SerializeField] private Text roundText;
     [SerializeField] private Text scorePlayerText, scoreEnemyText;
 
-    //private Ball ball;
-
     public void Start()
     {
         StateMachine.actionChangeState += OnChangeGameState;
         pauseBtn.onClick.AddListener(OnButtonPause);
+    }
+
+    private void OnEnable()
+    {
+        switch (Preference.Singleton.inputType)
+        {
+            case InputType.button:
+                inputJoystickPanel.SetActive(false);
+                inputButtonPanel.SetActive(true);
+                break;
+            case InputType.joystick:
+                inputJoystickPanel.SetActive(true);
+                inputButtonPanel.SetActive(false);
+                break;
+        }
+        
     }
 
     public void StartRound(Ball ball)
@@ -88,36 +103,6 @@ public class UIGame : MonoBehaviour
     private void OnDestroy()
     {
         StateMachine.actionChangeState -= OnChangeGameState;
-    }
-
-    public void OnButtonJumpDown()
-    {
-        InputHandler.Instance.OnButtonJumpDown();
-    }
-
-    public void OnButtonJumpUp()
-    {
-        InputHandler.Instance.OnButtonJumpUp();
-    }
-
-    public void OnButtonLeftDown()
-    {
-        InputHandler.Instance.OnButtonLeftDown();
-    }
-
-    public void OnButtonLeftUp()
-    {
-        InputHandler.Instance.OnButtonLeftUp();
-    }
-
-    public void OnButtonRightDown()
-    {
-        InputHandler.Instance.OnButtonRightDown();
-    }
-
-    public void OnButtonRightUp()
-    {
-        InputHandler.Instance.OnButtonRightUp();
     }
 
     private void OnButtonPause()

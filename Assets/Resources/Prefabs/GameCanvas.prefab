@@ -9076,6 +9076,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseBtn: {fileID: 8116216493825344510}
+  inputButtonPanel: {fileID: 0}
+  inputJoystickPanel: {fileID: 0}
   failPanel: {fileID: 8116216493516079359}
   hitCountText: {fileID: 8116216494537160035}
   roundText: {fileID: 8116216494560813846}

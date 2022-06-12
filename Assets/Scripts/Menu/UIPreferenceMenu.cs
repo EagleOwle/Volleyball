@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class UIPreferenceMenu : UIPanel
 {
-    [SerializeField] private Button returnBtn;
+    private enum PreferenceType { noneType, soundType, inputType, graphicType }
 
+    
+    [SerializeField] private Button soundButton, inputButton, graphicsButton, returnButton;
+    [SerializeField] private GameObject soundPanel, inputPanel, graphicsPanel;
+    [Space()]
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Text musicValueText;
     [SerializeField] private Slider sfxSlider;
@@ -18,12 +22,19 @@ public class UIPreferenceMenu : UIPanel
     [SerializeField] private Text normalQualityText;
     [SerializeField] private Text highQualityText;
     [SerializeField] private Slider qualitySlider;
+    [Space]
+    [SerializeField] private Text inputButtonText;
+    [SerializeField] private Text inputJoystickText;
+    [SerializeField] private Slider inputTypeSlider;
 
     public override void Init()
     {
         base.Init();
 
-        returnBtn.onClick.AddListener(OnButtonReturn);
+        soundButton.onClick.AddListener(delegate { ShowPreferenceType(PreferenceType.soundType); });
+        inputButton.onClick.AddListener(delegate { ShowPreferenceType(PreferenceType.inputType); });
+        graphicsButton.onClick.AddListener(delegate { ShowPreferenceType(PreferenceType.graphicType); });
+        returnButton.onClick.AddListener(OnButtonReturn);
 
         musicSlider.onValueChanged.AddListener(OnMusicValueChange);
         musicSlider.value = Preference.Singleton.MusicValue;
@@ -41,6 +52,11 @@ public class UIPreferenceMenu : UIPanel
         int value = QualitySettings.GetQualityLevel();
         qualitySlider.value = value;
         OnQualityChange(value);
+
+        inputTypeSlider.onValueChanged.AddListener(OnInputTypeChange);
+        value = (int)Preference.Singleton.inputType;
+        inputTypeSlider.value = value;
+        OnInputTypeChange(value);
     }
 
     private void OnMusicValueChange(float value)
@@ -91,6 +107,52 @@ public class UIPreferenceMenu : UIPanel
         }
 
         QualitySettings.SetQualityLevel((int)value);
+    }
+
+    private void OnInputTypeChange(float value)
+    {
+        switch (value)
+        {
+            case 0:
+                inputButtonText.fontSize = 50;
+                inputJoystickText.fontSize = 30;
+                break;
+
+            case 1:
+                inputButtonText.fontSize = 30;
+                inputJoystickText.fontSize = 50;
+                break;
+
+        }
+
+        Preference.Singleton.inputType = (InputType)value;
+    }
+
+    private void ShowPreferenceType(PreferenceType  type)
+    {
+        switch (type)
+        {
+            case PreferenceType.noneType:
+                soundPanel.SetActive(false);
+                inputPanel.SetActive(false);
+                graphicsPanel.SetActive(false);
+                break;
+            case PreferenceType.soundType:
+                soundPanel.SetActive(true);
+                inputPanel.SetActive(false);
+                graphicsPanel.SetActive(false);
+                break;
+            case PreferenceType.inputType:
+                soundPanel.SetActive(false);
+                inputPanel.SetActive(true);
+                graphicsPanel.SetActive(false);
+                break;
+            case PreferenceType.graphicType:
+                soundPanel.SetActive(false);
+                inputPanel.SetActive(false);
+                graphicsPanel.SetActive(true);
+                break;
+        }
     }
 
 }

@@ -85,7 +85,7 @@ public class Preference : ScriptableObject
     [Header("Input")]
     public float InputDeadZone = 10;
     public const float InputDeadZoneDef = 10;
-    
+    public InputType inputType = InputType.button;
 
     [Header("UnitMotion")]
     public float moveSpeed = 250;
@@ -108,7 +108,6 @@ public class Preference : ScriptableObject
     public const float pushForceDef = 25;
     public const float maxMagnetudeDef = 5;
     public float maxMagnetude = 5;
-
 
     public void SetDefaultValue()
     {

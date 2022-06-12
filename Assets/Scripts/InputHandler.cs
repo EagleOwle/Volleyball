@@ -2,10 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum InputType { button, joystick }
+
+
 public class InputHandler : MonoBehaviour
 {
     public enum InputButton { left, right, jump}
-    public enum InputType { up, down }
+    public enum InputDirection { up, down }
+    
     private static InputHandler _instance;
     public static InputHandler Instance
     {
@@ -21,7 +25,7 @@ public class InputHandler : MonoBehaviour
     }
 
     public Action<Vector3> ActionSetSwipeDirection;
-    public Action<InputButton, InputType> ActionOnInputButton;
+    public Action<InputButton, InputDirection> ActionOnInputButton;
 
     [SerializeField] private LayerMask uiButtonMask;
 
@@ -40,32 +44,6 @@ public class InputHandler : MonoBehaviour
         }
     }
     private Vector2 percent;
-
-    private void Update()
-    {
-#if UNITY_EDITOR
-        KeyboardInput();
-#elif UNITY_ANDROID
-
-#elif UNITY_IOS
-                 
-#elif UNITY_STANDALONE_OSX
-                 
-#elif UNITY_STANDALONE_WIN
-
-#endif
-
-
-        //if (StateMachine.currentState is GameState)
-        //{
-        //    //GetSwipe();
-        //}
-        //else
-        //{
-        //    //SwipeBreak();
-        //}
-
-    }
 
     private void KeyboardInput()
     {
@@ -171,7 +149,7 @@ public class InputHandler : MonoBehaviour
         tupPosition = (Vector2)Input.mousePosition;
     }
 
-    private void OnInputButton(InputButton button, InputType type)
+    private void OnInputButton(InputButton button, InputDirection type)
     {
         if (StateMachine.currentState is GameState)
         {
@@ -179,34 +157,49 @@ public class InputHandler : MonoBehaviour
         }
     }
 
+    public void OnJoysticInput(Vector2 value)
+    {
+        if (Mathf.Abs(value.x) < Preference.Singleton.InputDeadZone)
+        {
+            value.x = 0;
+        }
+        if (Mathf.Abs(value.y) < Preference.Singleton.InputDeadZone)
+        {
+            value.y = 0;
+        }
+
+        SwipeDirection = value;
+
+    }
+
     public void OnButtonJumpDown()
     {
-        OnInputButton(InputButton.jump, InputType.down);
+        OnInputButton(InputButton.jump, InputDirection.down);
     }
 
     public void OnButtonJumpUp()
     {
-        OnInputButton(InputButton.jump, InputType.up);
+        OnInputButton(InputButton.jump, InputDirection.up);
     }
 
     public void OnButtonLeftDown()
     {
-        OnInputButton(InputButton.left, InputType.down);
+        OnInputButton(InputButton.left, InputDirection.down);
     }
 
     public void OnButtonLeftUp()
     {
-        OnInputButton(InputButton.left, InputType.up);
+        OnInputButton(InputButton.left, InputDirection.up);
     }
 
     public void OnButtonRightDown()
     {
-        OnInputButton(InputButton.right, InputType.down);
+        OnInputButton(InputButton.right, InputDirection.down);
     }
 
     public void OnButtonRightUp()
     {
-        OnInputButton(InputButton.right, InputType.up);
+        OnInputButton(InputButton.right, InputDirection.up);
     }
 
     private GameObject GetUIObject(Vector3 touchScreenPositin)

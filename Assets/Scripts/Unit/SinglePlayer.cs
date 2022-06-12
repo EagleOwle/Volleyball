@@ -57,12 +57,12 @@ public class SinglePlayer : Unit
         }
     }
 
-    private void OnInputButton(InputHandler.InputButton button, InputHandler.InputType type)
+    private void OnInputButton(InputHandler.InputButton button, InputHandler.InputDirection type)
     {
         switch (button)
         {
             case InputHandler.InputButton.left:
-                if (type == InputHandler.InputType.up)
+                if (type == InputHandler.InputDirection.up)
                 {
                     lastMoveDirection = new Vector2(0, lastMoveDirection.y);
                 }
@@ -73,7 +73,7 @@ public class SinglePlayer : Unit
                 break;
 
             case InputHandler.InputButton.right:
-                if (type == InputHandler.InputType.up)
+                if (type == InputHandler.InputDirection.up)
                 {
                     lastMoveDirection = new Vector2(0, lastMoveDirection.y);
                 }
@@ -84,7 +84,7 @@ public class SinglePlayer : Unit
                 break;
 
             case InputHandler.InputButton.jump:
-                if (type == InputHandler.InputType.up)
+                if (type == InputHandler.InputDirection.up)
                 {
                     lastMoveDirection = new Vector2(lastMoveDirection.x, 0);
                 }
