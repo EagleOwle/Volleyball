@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UIPanelName { Pause, Game, Timer, Main, Preference, ScenePreference }
+public enum UIPanelName { Pause, Game, Timer, Main, Preference, ScenePreference, Connect }
 
 public abstract class UIPanel : MonoBehaviour
 {

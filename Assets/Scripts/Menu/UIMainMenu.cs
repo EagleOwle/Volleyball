@@ -26,6 +26,11 @@ public class UIMainMenu : UIPanel
         UIHud.Singletone.OnChangePanel(UIPanelName.Preference);
     }
 
+    private void OnButtonConnect()
+    {
+        UIHud.Singletone.OnChangePanel(UIPanelName.Connect);
+    }
+
     private void OnButtonQuit()
     {
         QuitApplication();
