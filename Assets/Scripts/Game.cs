@@ -22,8 +22,14 @@ public class Game : MonoBehaviour
     #endregion
 
     [SerializeField] private bool starMatch = true;
+    [SerializeField] private bool useTargetFramerate = false;
+    [SerializeField] private int targetFrameRate = 30;
     [SerializeField] private AudioClip roundFallClip;
-    public string debugCurrentGameState;
+    private string debugCurrentGameState;
+    [SerializeField] private GameObject RunningLights;
+    [SerializeField] private GameObject Shuts;
+
+    
 
     public Action<RoundResult> actionRoundFail;
 
@@ -34,7 +40,23 @@ public class Game : MonoBehaviour
 
     private void Awake()
     {
-         Application.targetFrameRate = 90;
+        if (useTargetFramerate) Application.targetFrameRate = targetFrameRate;
+        int qualityLevel = QualitySettings.GetQualityLevel();
+        if (qualityLevel == 0) 
+        {
+            RunningLights.SetActive(false);
+            Shuts.SetActive(false);
+        }// выключаем шафт и лийт
+        if (qualityLevel == 1) 
+        {
+            RunningLights.SetActive(true); 
+            Shuts.SetActive(false);
+        } // выключаем шафт
+        if (qualityLevel == 2) 
+        {
+            RunningLights.SetActive(true);
+            Shuts.SetActive(true);
+        } //
     }
 
     private void Start()

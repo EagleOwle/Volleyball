@@ -66,10 +66,11 @@ public class UnitMotion : MonoBehaviour
                velocityY = Preference.Singleton.jumpForce * Time.deltaTime;
             }
 
-            moveYTarget = 0;
+            //moveYTarget = 0;
         }
 
-        return Mathf.MoveTowards(velocityY, moveYTarget, Preference.Singleton.downSpeed * Time.deltaTime);
+        return  Mathf.MoveTowards(velocityY, moveYTarget, Preference.Singleton.downSpeed * Time.deltaTime);
+        //return  Mathf.Lerp(velocityY, moveYTarget, Preference.Singleton.downSpeed * Time.deltaTime);
     }
 
     private void OnCollisionStay(Collision collision)

@@ -14,13 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - arrayIndex: 1
-    name: Forest Game
-    sprite: {fileID: 21300000, guid: 458261610528cad4f84f645bc2d532f8, type: 3}
+    name: Beach Game
+    sprite: {fileID: 21300000, guid: 6941a25a714dc064b8fe3024e37ba7ea, type: 3}
     rounds: 15
     difficultEnum: 1
     buildIndex: 1
     ballPrefab: {fileID: 3890578020711540319, guid: 7b16ac917d7f8f541b04fc07f5ccc407, type: 3}
+    playerPrefab: {fileID: 4895197878652982575, guid: 110dfd4946fba6c48ba7bc8e5fae2ddf, type: 3}
+    enemyPrefab: {fileID: 4895197878652982575, guid: 1c208436220bd274d9f487233c918a30, type: 3}
+    description: You will find a paradise beach where volleyballs do their thing,
+      volleyball is played.
+  - arrayIndex: 2
+    name: Forest Game
+    sprite: {fileID: 21300000, guid: 1fac706d236382c4d93ad016186b5313, type: 3}
+    rounds: 15
+    difficultEnum: 1
+    buildIndex: 2
+    ballPrefab: {fileID: 3890578020711540319, guid: 7b16ac917d7f8f541b04fc07f5ccc407, type: 3}
     playerPrefab: {fileID: 7611914722553763607, guid: 203fa9de41e82764c9c6f02c54c98293, type: 3}
     enemyPrefab: {fileID: 8894947739782925218, guid: 3e9b4b089647c0147865bb0335ee4e7b, type: 3}
-    description: Description In progress... There will be a description of the level
-      and a brief background.
+    description: You will find a forest filled with horror and cheerful inhabitants
+      playing their favorite game. Head volleyball.

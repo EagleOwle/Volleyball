@@ -192,7 +192,7 @@ TextureImporter:
       213: 4873681199220631615
     second: GUI White_62
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -213,6 +213,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -251,6 +252,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -302,6 +304,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1648,6 +1674,70 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GUI White_0: 5524873095023302392
+      GUI White_1: 3836712433040872684
+      GUI White_10: 4736341622275249041
+      GUI White_11: -8933638279071935929
+      GUI White_12: 5390931726937388280
+      GUI White_13: 3908874484473432716
+      GUI White_14: 6999763570390534428
+      GUI White_15: 7157966645217147155
+      GUI White_16: 7348740596366785067
+      GUI White_17: 7802895406435009686
+      GUI White_18: 2706376355899495415
+      GUI White_19: 4362433744602662036
+      GUI White_2: 8484065434528617320
+      GUI White_20: 8508990828537399797
+      GUI White_21: 7957515407164622309
+      GUI White_22: 7299784352216124933
+      GUI White_23: -1928774717308034176
+      GUI White_24: 3496311665916892335
+      GUI White_25: 5267977764330031794
+      GUI White_26: 8469759272784492189
+      GUI White_27: -1616834517386360490
+      GUI White_28: 1344343690575998413
+      GUI White_29: -4537092154248833479
+      GUI White_3: -6439128331341585893
+      GUI White_30: 8104997922282016391
+      GUI White_31: -8889029161135953401
+      GUI White_32: 2938329035891943279
+      GUI White_33: 8782301934791672635
+      GUI White_34: 7254508205130972177
+      GUI White_35: 8306078633465900054
+      GUI White_36: 4067351835267428254
+      GUI White_37: -3788589515825841547
+      GUI White_38: -5836261988729490377
+      GUI White_39: 1740292967191219355
+      GUI White_4: 600347773377657770
+      GUI White_40: 958899974619643996
+      GUI White_41: 937719607301915286
+      GUI White_42: 8597036878327799501
+      GUI White_43: -8876413904158997078
+      GUI White_44: -5981409938896430212
+      GUI White_45: 6510891231747778406
+      GUI White_46: -78404135554684937
+      GUI White_47: 3656995010839375626
+      GUI White_48: 2105004341040402270
+      GUI White_49: 198151124310493792
+      GUI White_5: 2563377522371259071
+      GUI White_50: 8276184260082165687
+      GUI White_51: 9152521291498019514
+      GUI White_52: -6663018100393577524
+      GUI White_53: -4506612274623728919
+      GUI White_54: 2060222611354695968
+      GUI White_55: -1556994750475013057
+      GUI White_56: 405382454066709280
+      GUI White_57: 1726837269655291596
+      GUI White_58: 7453518357866736069
+      GUI White_59: 2074527133012964575
+      GUI White_6: 2427491414040934862
+      GUI White_60: 3532771012592667919
+      GUI White_61: 7387106850869476396
+      GUI White_62: 4873681199220631615
+      GUI White_7: 2266392679635228268
+      GUI White_8: -1873453069350102015
+      GUI White_9: -548520157032317366
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

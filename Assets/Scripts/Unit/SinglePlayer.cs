@@ -11,7 +11,7 @@ public class SinglePlayer : Unit
 
     private void OnEnable()
     {
-        if(InputHandler.Instance == null)
+        if (InputHandler.Instance == null)
         {
             Debug.LogError("Input handler is null");
             return;
@@ -106,7 +106,6 @@ public class SinglePlayer : Unit
 
         InputHandler.Instance.ActionSetSwipeDirection -= OnSwipe;
         InputHandler.Instance.ActionOnInputButton -= OnInputButton;
-        
     }
 
     private void OnDestroy()
@@ -132,6 +131,4 @@ public class SinglePlayer : Unit
             }
         }
     }
-
-    
 }

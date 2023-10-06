@@ -16,7 +16,7 @@ public static class CoroutineUtility
 public class UIEditInputElement : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private Rigidbody2D rigidbody;
+    [SerializeField] new private Rigidbody2D rigidbody;
     private bool onCollision = false;
 
     private string debugCollision;

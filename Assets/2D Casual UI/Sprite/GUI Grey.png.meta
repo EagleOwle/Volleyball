@@ -189,7 +189,7 @@ TextureImporter:
       213: -6854567261001148839
     second: GUI Grey_61
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -210,6 +210,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -248,6 +249,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -299,6 +301,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1624,6 +1650,69 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GUI Grey_0: -1133615396161706765
+      GUI Grey_1: 5262658620106906509
+      GUI Grey_10: 743914695888108358
+      GUI Grey_11: -2890608886393784813
+      GUI Grey_12: 3673272055400480115
+      GUI Grey_13: 3882337858373332768
+      GUI Grey_14: -9030076386723163753
+      GUI Grey_15: 5339125637167456460
+      GUI Grey_16: -6755810133330678078
+      GUI Grey_17: 1113269252869993440
+      GUI Grey_18: 7670694629246505733
+      GUI Grey_19: 2384414133386754608
+      GUI Grey_2: -6506369071054144998
+      GUI Grey_20: 722552586959571827
+      GUI Grey_21: 1729684526170635491
+      GUI Grey_22: 5567738719777039057
+      GUI Grey_23: -8522302431869262460
+      GUI Grey_24: 3142273124889900581
+      GUI Grey_25: -1374998680979746643
+      GUI Grey_26: 9207423229355677564
+      GUI Grey_27: 6434160734438906011
+      GUI Grey_28: 5554190641011701142
+      GUI Grey_29: -7642467629944475361
+      GUI Grey_3: 4501791508571905823
+      GUI Grey_30: -4158082710313756585
+      GUI Grey_31: -2522973673791765495
+      GUI Grey_32: -6528416120810061497
+      GUI Grey_33: 8029955555182161459
+      GUI Grey_34: 1763722922029988042
+      GUI Grey_35: 8739679911334204863
+      GUI Grey_36: 6664617541939924057
+      GUI Grey_37: 2220850620461444472
+      GUI Grey_38: -2594960356216179134
+      GUI Grey_39: 5532068847218244205
+      GUI Grey_4: 9218170856508168716
+      GUI Grey_40: 4344470639181948512
+      GUI Grey_41: -6531625721481234245
+      GUI Grey_42: 8365048709545813109
+      GUI Grey_43: 6974052002469790483
+      GUI Grey_44: -7934417479700715592
+      GUI Grey_45: -6073125470493999758
+      GUI Grey_46: 4927032344429804394
+      GUI Grey_47: 3793051692258027163
+      GUI Grey_48: -224323617499081912
+      GUI Grey_49: 8915510225158187080
+      GUI Grey_5: 6494441899283576280
+      GUI Grey_50: 6990750563432874178
+      GUI Grey_51: 7301479359586041315
+      GUI Grey_52: -5699440669952372831
+      GUI Grey_53: 3507843694263221490
+      GUI Grey_54: 6575803308919004397
+      GUI Grey_55: 5626300745442215285
+      GUI Grey_56: -8627415602640879710
+      GUI Grey_57: 7988373663027681402
+      GUI Grey_58: 4497695676003882114
+      GUI Grey_59: -8625868515062896181
+      GUI Grey_6: -4590138262101288430
+      GUI Grey_60: 745798295999112995
+      GUI Grey_61: -6854567261001148839
+      GUI Grey_7: 5580676573903897527
+      GUI Grey_8: -4739596088322813664
+      GUI Grey_9: -8408375039510655736
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

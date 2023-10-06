@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b93cb26a7633248b716604e2edd005, type: 3}
   m_Name: GamePreference
   m_EditorClassIdentifier: 
-  musicValue: 1
-  sfxValue: 1
+  _onVibration: 1
   InputDeadZone: 0.3
-  moveSpeed: 150
-  jumpForce: 450
+  inputType: 1
+  moveSpeed: 250
+  jumpForce: 400
   horizontalMultiply: 1.5
-  downSpeed: 10
+  downSpeed: 12
   deadzoneForMove: 0.2
   deadzoneForJump: 3
   pushForce: 150

@@ -189,7 +189,7 @@ TextureImporter:
       213: 5275429658488804442
     second: GUI Yellow_61
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -210,6 +210,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -248,6 +249,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -299,6 +301,30 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1624,6 +1650,69 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GUI Yellow_0: 454734881184731381
+      GUI Yellow_1: -6488843448246374538
+      GUI Yellow_10: 3227051038360064867
+      GUI Yellow_11: -4244294423630861160
+      GUI Yellow_12: -8859285149994485279
+      GUI Yellow_13: 8448088462282574001
+      GUI Yellow_14: -8738344931885231967
+      GUI Yellow_15: -7521369020847792036
+      GUI Yellow_16: 2461110567381155937
+      GUI Yellow_17: 2965770129060954554
+      GUI Yellow_18: 6618880938702557986
+      GUI Yellow_19: -5515018097673944247
+      GUI Yellow_2: -7585808245296944854
+      GUI Yellow_20: 8920151740178054423
+      GUI Yellow_21: 843111172372847453
+      GUI Yellow_22: 2723848688429882665
+      GUI Yellow_23: 7859615589121323753
+      GUI Yellow_24: 549170010832269802
+      GUI Yellow_25: -1654489404512714625
+      GUI Yellow_26: 4593986058258232630
+      GUI Yellow_27: 245050745142160808
+      GUI Yellow_28: -6115788707293909679
+      GUI Yellow_29: -5364791690147287139
+      GUI Yellow_3: -659567567480043376
+      GUI Yellow_30: 473131774405167371
+      GUI Yellow_31: -323713733580763721
+      GUI Yellow_32: 1374638698693099332
+      GUI Yellow_33: -9158003000208839715
+      GUI Yellow_34: 4682008516378395919
+      GUI Yellow_35: 4921921496444675307
+      GUI Yellow_36: -8394901343016702945
+      GUI Yellow_37: 7381489901070606839
+      GUI Yellow_38: -8286522920439322804
+      GUI Yellow_39: -1344735210670299579
+      GUI Yellow_4: 279586377511493595
+      GUI Yellow_40: -942157188831257018
+      GUI Yellow_41: 5647812657638204933
+      GUI Yellow_42: 4147708127103131266
+      GUI Yellow_43: 4007447587466475996
+      GUI Yellow_44: -5636976699971846160
+      GUI Yellow_45: -8606977664180059870
+      GUI Yellow_46: 2066054006936665861
+      GUI Yellow_47: -7920742507368660010
+      GUI Yellow_48: -2018148306862364544
+      GUI Yellow_49: -6171582029503039871
+      GUI Yellow_5: 2238820522751774778
+      GUI Yellow_50: -7157288006255064608
+      GUI Yellow_51: -5661996147228789526
+      GUI Yellow_52: -8432322985109313860
+      GUI Yellow_53: -6920544627652771094
+      GUI Yellow_54: -5440621870386250105
+      GUI Yellow_55: 1793806230056187567
+      GUI Yellow_56: 4583550833109061565
+      GUI Yellow_57: -6301072378562847001
+      GUI Yellow_58: 2049482336092042779
+      GUI Yellow_59: -5741970350561150602
+      GUI Yellow_6: -7337526345466351980
+      GUI Yellow_60: 2655651597804539438
+      GUI Yellow_61: 5275429658488804442
+      GUI Yellow_7: -176458350175435143
+      GUI Yellow_8: 8249895977729408867
+      GUI Yellow_9: 5260845749821205805
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
