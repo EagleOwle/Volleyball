@@ -7722,11 +7722,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelName: 2
-  defaultSprite: {fileID: 0}
+  defaultSprite: {fileID: -4412911677491635961, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
   numbers:
-  - {fileID: -6395529614303463221, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
-  - {fileID: -4412911677491635961, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
   - {fileID: -4217592887472625829, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
+  - {fileID: -6629531029891648246, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
   - {fileID: -6629531029891648246, guid: 8f67aab90fb752f42a8d39d41841ac57, type: 3}
   _image: {fileID: 5297679489240413486}
   tickClip: {fileID: 8300000, guid: 0e32e90dfe9970d4a82faa246629faf5, type: 3}
