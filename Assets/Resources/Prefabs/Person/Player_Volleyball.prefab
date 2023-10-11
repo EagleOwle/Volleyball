@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 766736103791874438}
   - component: {fileID: 4131375589224137663}
   - component: {fileID: 624063972341582098}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Volleyball_Roundcube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,11 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4895197878653077775}
   - component: {fileID: 1144449166666998622}
-  - component: {fileID: 5344061900924581766}
-  - component: {fileID: 2169715214396463027}
   - component: {fileID: -7516554191101304933}
   - component: {fileID: -5377241208931848275}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Player_Volleyball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,10 +112,11 @@ Transform:
   m_GameObject: {fileID: 4895197878652982575}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 766736103791874438}
+  - {fileID: 6913568859810916133}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -129,52 +128,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4895197878652982575}
   serializedVersion: 2
-  m_Mass: 0.5
+  m_Mass: 10
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 56
-  m_CollisionDetection: 3
---- !u!135 &5344061900924581766
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4895197878652982575}
-  m_Material: {fileID: 13400000, guid: a4149fdeed0c70247a18f4470a9855df, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2169715214396463027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4895197878652982575}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce1b4875358317448db4824521d2699, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ballPhysic: {fileID: 13400000, guid: a4149fdeed0c70247a18f4470a9855df, type: 2}
-  defaultPhysic: {fileID: 13400000, guid: 9e9289aec77f7a44db49ed4f1389c6af, type: 2}
-  collider: {fileID: 5344061900924581766}
-  rigidbody: {fileID: 1144449166666998622}
-  hitClip: {fileID: 8300000, guid: afcde19c076570543a7abbd2e67c3543, type: 3}
-  unitLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  currentPlayerSide: 0
-  playerHitCount: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!114 &-7516554191101304933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _checkGroundMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
 --- !u!114 &-5377241208931848275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,5 +165,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballLayer:
     serializedVersion: 2
-    m_Bits: 0
-  jumpOnButton: 1
+    m_Bits: 128
+  jumpOnButton: 0
+--- !u!1 &6213134595755653182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6913568859810916133}
+  - component: {fileID: 1078664033187464080}
+  m_Layer: 9
+  m_Name: Volleyball_Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6913568859810916133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6213134595755653182}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -0.168, z: 0}
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4895197878653077775}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!64 &1078664033187464080
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6213134595755653182}
+  m_Material: {fileID: 13400000, guid: 471ff2ede4033254b87035571012c056, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 10a1e47d0d282414481a0b2a67c79333, type: 3}

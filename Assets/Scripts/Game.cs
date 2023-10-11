@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -33,8 +35,9 @@ public class Game : MonoBehaviour
 
     public Action<RoundResult> actionRoundFail;
 
-    public ScenePreference.Scene scene;//Curret scene preference
+    public ScenePreference.Scene scene;
     public Match match;
+    
 
     private PlayerType lastLuser = PlayerType.None;
 
@@ -46,17 +49,17 @@ public class Game : MonoBehaviour
         {
             RunningLights.SetActive(false);
             Shuts.SetActive(false);
-        }// выключаем шафт и лийт
+        }
         if (qualityLevel == 1) 
         {
             RunningLights.SetActive(true); 
             Shuts.SetActive(false);
-        } // выключаем шафт
+        }
         if (qualityLevel == 2) 
         {
             RunningLights.SetActive(true);
             Shuts.SetActive(true);
-        } //
+        }
     }
 
     private void Start()

@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,8 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11f6d3bead165c4a90e3ee0d580a710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starMatch: 1
+  useTargetFramerate: 1
+  targetFrameRate: 500
   roundFallClip: {fileID: 8300000, guid: 5ba96fc4947271d4f8c3c7917e659a12, type: 3}
-  debugCurrentGameState: 
+  RunningLights: {fileID: 0}
+  Shuts: {fileID: 0}
   scene:
     arrayIndex: 0
     name: 
@@ -52,6 +57,9 @@ MonoBehaviour:
     rounds: 0
     difficultEnum: 0
     buildIndex: 0
+    ballPrefab: {fileID: 0}
+    playerPrefab: {fileID: 0}
+    enemyPrefab: {fileID: 0}
     description: 
   match:
     round: 0

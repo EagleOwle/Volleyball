@@ -225,7 +225,7 @@
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\4Textures\VertexColored.shader" />
     <None Include="Assets\Sprites\full-moon-in-night-sky-with-stars-and-clouds-scene\License free.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\5Textures\Diffuse-Fog.shader" />
-    <None Include="Assets\Material\DottedLineShader.shader" />
+    <None Include="Assets\Materials\Material\DottedLineShader.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\Surface\4Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\TextureArray.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\Packed\NamingConvention.txt" />
