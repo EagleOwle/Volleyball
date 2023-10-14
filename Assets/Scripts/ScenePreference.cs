@@ -43,7 +43,7 @@ public class ScenePreference : ScriptableObject
     }
 
     [System.Serializable]
-    public struct Scene
+    public class Scene
     {
         public int arrayIndex;
         public string name;
@@ -67,4 +67,5 @@ public class ScenePreference : ScriptableObject
         Normal,
         Hard
     }
+
 }

@@ -962,7 +962,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39294847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: -19.19}
+  m_LocalPosition: {x: 0, y: 3.5, z: -20.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9248,6 +9248,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8907607656115011679, guid: 58190e8f4a9889846b534002a9a0e904, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9049438699052371146, guid: 58190e8f4a9889846b534002a9a0e904, type: 3}
       propertyPath: m_Name
       value: Cort
@@ -10770,7 +10774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &716371067
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -17483,7 +17487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811507507}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.3, z: 0}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32300,7 +32304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1803870420
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -42543,6 +42547,10 @@ PrefabInstance:
     - target: {fileID: 8434888001521389512, guid: c17e9e47cc676694b846368df518efe8, type: 3}
       propertyPath: m_Name
       value: TrajectoryRender
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434888001521389514, guid: c17e9e47cc676694b846368df518efe8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
       propertyPath: m_RootOrder

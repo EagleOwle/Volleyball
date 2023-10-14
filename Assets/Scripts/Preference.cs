@@ -108,6 +108,7 @@ public class Preference : ScriptableObject
     public const float pushForceDef = 25;
     public const float maxMagnetudeDef = 5;
     public float maxMagnetude = 5;
+    public float maxAngularMagnitude = 60;
 
     public void SetDefaultValue()
     {

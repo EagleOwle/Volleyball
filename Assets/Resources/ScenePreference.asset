@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: ScenePreference
   m_EditorClassIdentifier: 
   scenes:
-  - arrayIndex: 1
+  - arrayIndex: 0
     name: Beach Game
     sprite: {fileID: 21300000, guid: 6941a25a714dc064b8fe3024e37ba7ea, type: 3}
     rounds: 15
     difficultEnum: 1
     buildIndex: 1
-    ballPrefab: {fileID: 7184068039002683323, guid: 3d035fcfc82284348967c4790998bafa, type: 3}
+    ballPrefab: {fileID: 9059572617327112409, guid: 0729e867baf68ad488aa6da115e94355, type: 3}
     playerPrefab: {fileID: 4895197878652982575, guid: 110dfd4946fba6c48ba7bc8e5fae2ddf, type: 3}
     enemyPrefab: {fileID: 4895197878652982575, guid: 4d81891d2b3a05b46b3a4bf0ac8fef07, type: 3}
-    description: You will find an island paradise where everyone is doing what they
-      love. Volleyball.
-  - arrayIndex: 2
+    description: You will find an island paradise where beach balls do their job,
+      play volleyball!
+  - arrayIndex: 1
     name: Forest Game
     sprite: {fileID: 21300000, guid: 1fac706d236382c4d93ad016186b5313, type: 3}
     rounds: 15

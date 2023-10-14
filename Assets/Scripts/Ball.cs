@@ -22,6 +22,7 @@ public class Ball : MonoBehaviour
     {
         StateMachine.actionChangeState += OnChangeGameState;
         rigidbody.maxAngularVelocity = maxAngularVelocity;
+
     }
 
     private void OnDisable()
@@ -37,21 +38,18 @@ public class Ball : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 currentVelosity = rigidbody.velocity;
+        Vector3 currentAngularVelosity = rigidbody.angularVelocity;
 
         if (Preference.Singleton.maxMagnetude > 0)
         {
             currentVelosity = Vector3.ClampMagnitude(currentVelosity, Preference.Singleton.maxMagnetude);
-
-            if (StateMachine.currentState is GameState)
-            {
-                TrajectoryRender.Instance.ShowTrajectory(transform.position, rigidbody.velocity);
-            }
-            else
-            {
-                TrajectoryRender.Instance.Hide();
-            }
-
             rigidbody.velocity = currentVelosity;
+        }
+
+        if (Preference.Singleton.maxAngularMagnitude > 0)
+        {
+            currentAngularVelosity = Vector3.ClampMagnitude(currentAngularVelosity, Preference.Singleton.maxAngularMagnitude);
+            rigidbody.angularVelocity = currentAngularVelosity;
         }
 
         if (StateMachine.currentState is GameState)
@@ -62,6 +60,19 @@ public class Ball : MonoBehaviour
             {
                 Game.Instance.OnRoundFall(currentPlayerSide);
             }
+
+            if (Game.Instance.scene.difficultEnum != ScenePreference.GameDifficult.Hard)
+            {
+                TrajectoryRender.Instance.ShowTrajectory(transform.position, rigidbody.velocity);
+            }
+            else
+            {
+                TrajectoryRender.Instance.Hide();
+            }
+        }
+        else
+        {
+            TrajectoryRender.Instance.Hide();
         }
     }
 

@@ -23,3 +23,4 @@ MonoBehaviour:
   deadzoneForJump: 3
   pushForce: 150
   maxMagnetude: 8
+  maxAngularMagnitude: 7
