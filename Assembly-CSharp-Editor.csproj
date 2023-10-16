@@ -77,6 +77,7 @@
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassPainter.Instance.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassPainter.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetailList.cs" />
+    <Compile Include="Assets\Editor\RectTransformSnapAnchors.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SplatPainter\TextureModifyGroup.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassEditorUtilityWindow.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\MeshModifyGroup.cs" />
@@ -91,7 +92,6 @@
     <Compile Include="Assets\TreeRandomizer\Editor\TreeRandomizer.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassLoaderEditor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetailEditorWindow.cs" />
-    <Compile Include="Assets\Editor\RectTransformSnapAnchors.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshTerrainEditor\Editor\MTE.dll" />

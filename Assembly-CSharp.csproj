@@ -114,6 +114,8 @@
     <Compile Include="Assets\Scripts\TrajectoryRenderAdvanced.cs" />
     <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
     <Compile Include="Assets\Scripts\Menu\EffectChangeSize.cs" />
+    <Compile Include="Assets\Scripts\MediumQualityVisualEffect.cs" />
+    <Compile Include="Assets\Scripts\HighQualityVisualEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\Diffuse.shader" />

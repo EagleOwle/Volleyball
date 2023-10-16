@@ -1,12 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Xml.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEngine.InputManagerEntry;
 
 public class Game : MonoBehaviour
 {
@@ -31,8 +25,7 @@ public class Game : MonoBehaviour
     [SerializeField] private int targetFrameRate = 30;
     [SerializeField] private AudioClip roundFallClip;
     private string debugCurrentGameState;
-    [SerializeField] private GameObject RunningLights;
-    [SerializeField] private GameObject Shuts;
+   
 
     public Action<RoundResult> actionRoundFail;
 
@@ -42,26 +35,7 @@ public class Game : MonoBehaviour
 
     private PlayerType lastLuser = PlayerType.None;
 
-    private void Awake()
-    {
-        if (useTargetFramerate) Application.targetFrameRate = targetFrameRate;
-        int qualityLevel = QualitySettings.GetQualityLevel();
-        if (qualityLevel == 0) 
-        {
-            RunningLights.SetActive(false);
-            Shuts.SetActive(false);
-        }
-        if (qualityLevel == 1) 
-        {
-            RunningLights.SetActive(true); 
-            Shuts.SetActive(false);
-        }
-        if (qualityLevel == 2) 
-        {
-            RunningLights.SetActive(true);
-            Shuts.SetActive(true);
-        }
-    }
+
 
     private void Start()
     {
