@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+
 
 [CreateAssetMenu(fileName = "ScenePreference", menuName = "ScenePreference")]
 public class ScenePreference : ScriptableObject
@@ -42,6 +45,10 @@ public class ScenePreference : ScriptableObject
         }
     }
 
+    public LocalizedStringTable stringTable;
+
+  
+
     [System.Serializable]
     public class Scene
     {
@@ -55,10 +62,19 @@ public class ScenePreference : ScriptableObject
             set { difficultEnum = (GameDifficult)value; }
         }
         public int buildIndex;
-        public GameObject ballPrefab;
+        public int ballIndex;
         public GameObject playerPrefab;
         public GameObject enemyPrefab;
         public string description;
+        public Description[] descriptions;
+    }
+
+    [System.Serializable]
+    public class Description
+    {
+        public Language language;
+        public string keyName;
+        public string value;
     }
 
     public enum GameDifficult

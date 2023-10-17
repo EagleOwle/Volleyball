@@ -27,8 +27,9 @@ public static class SceneInitialize
         Bot = tmp.GetComponent<Unit>();
         Bot.transform.position = Cort.BotSpawnPoint.position;
 
-        tmp = Object.Instantiate(scene.ballPrefab);
+        tmp = Object.Instantiate(Preference.Singleton.balls[scene.ballIndex].prefab);
         Ball = tmp.GetComponent<Ball>();
+        Ball.Initialise(scene.ballIndex);
         Ball.transform.position = Cort.BallSpawnPoint.position;
 
         //Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
