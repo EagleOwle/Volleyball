@@ -62,6 +62,42 @@ MonoBehaviour:
     m_Localized: Name Scene
     m_Metadata:
       m_Items: []
+  - m_Id: 58726204846080
+    m_Localized: Easy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62117324795904
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 62706234437632
+    m_Localized: Hard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 121979396173824
+    m_Localized: Round
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123219723169792
+    m_Localized: Tap To Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123588746424320
+    m_Localized: Fail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124042201018368
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124255372324864
+    m_Localized: Tap to resume...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 125285535330304
+    m_Localized: Music Value
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

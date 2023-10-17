@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: GamePreference
   m_EditorClassIdentifier: 
   _onVibration: 1
-  InputDeadZone: 0.3
+  InputDeadZone: 0
   inputType: 1
-  moveSpeed: 250
-  jumpForce: 400
-  horizontalMultiply: 1.5
-  downSpeed: 12
-  deadzoneForMove: 0.2
-  deadzoneForJump: 3
-  pushForce: 150
-  maxMagnetude: 8
+  moveSpeed: 0
+  jumpForce: 0
+  horizontalMultiply: 0
+  downSpeed: 0
+  deadzoneForMove: 0
+  deadzoneForJump: 0
+  pushForce: 0
+  maxMagnetude: 0
   maxAngularMagnitude: 7
