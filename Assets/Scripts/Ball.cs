@@ -18,6 +18,13 @@ public class Ball : MonoBehaviour
     public int playerHitCount;
     public Action<PlayerType, int> actionUnitHit;
 
+    private Preference.Ball config;
+
+    public void Initialise(int ballIndex)
+    {
+        config = Preference.Singleton.balls[ballIndex];
+    }
+
     private void OnEnable()
     {
         StateMachine.actionChangeState += OnChangeGameState;
@@ -40,15 +47,15 @@ public class Ball : MonoBehaviour
         Vector3 currentVelosity = rigidbody.velocity;
         Vector3 currentAngularVelosity = rigidbody.angularVelocity;
 
-        if (Preference.Singleton.maxMagnetude > 0)
+        if (config.maxMagnetude > 0)
         {
-            currentVelosity = Vector3.ClampMagnitude(currentVelosity, Preference.Singleton.maxMagnetude);
+            currentVelosity = Vector3.ClampMagnitude(currentVelosity, config.maxMagnetude);
             rigidbody.velocity = currentVelosity;
         }
 
-        if (Preference.Singleton.maxAngularMagnitude > 0)
+        if (config.maxAngularMagnitude > 0)
         {
-            currentAngularVelosity = Vector3.ClampMagnitude(currentAngularVelosity, Preference.Singleton.maxAngularMagnitude);
+            currentAngularVelosity = Vector3.ClampMagnitude(currentAngularVelosity, config.maxAngularMagnitude);
             rigidbody.angularVelocity = currentAngularVelosity;
         }
 

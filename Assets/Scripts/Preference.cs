@@ -3,6 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Language
+{
+    Rus,
+    Eng
+}
+
 [CreateAssetMenu(fileName = "GamePreference", menuName = "GamePreference")]
 public class Preference : ScriptableObject
 {
@@ -81,6 +87,7 @@ public class Preference : ScriptableObject
     public const bool onVibrationDef = true;
     public Action<bool> actionOnChangeVibration;
 
+    public Language language;
 
     [Header("Input")]
     public float InputDeadZone = 10;
@@ -96,6 +103,8 @@ public class Preference : ScriptableObject
     public float horizontalMultiply = 1.5f;
     public const float downSpeedDef = 20;
     public float downSpeed = 20;
+    public float pushForce = 25f;
+    public const float pushForceDef = 25;
 
     [Header("AiLogic")]
     public float deadzoneForMove = 0.3f;
@@ -104,26 +113,31 @@ public class Preference : ScriptableObject
     public float deadzoneForJump = 3;
 
     [Header("Ball")]
-    public float pushForce = 25f;
-    public const float pushForceDef = 25;
-    public const float maxMagnetudeDef = 5;
-    public float maxMagnetude = 5;
-    public float maxAngularMagnitude = 60;
+    public Ball[] balls;
 
-    public void SetDefaultValue()
+    //public void SetDefaultValue()
+    //{
+    //    MusicValue = musicValueDef;
+    //    SfxValue = sfxValueDef;
+    //    InputDeadZone = InputDeadZoneDef;
+    //    moveSpeed = moveSpeedDef;
+    //    jumpForce = jumpForceDef;
+    //    horizontalMultiply = horizontalMultiplyDef;
+    //    downSpeed = downSpeedDef;
+    //    deadzoneForMove = deadzoneForMoveDef;
+    //    deadzoneForJump = deadzoneForJumpDef;
+    //    pushForce = pushForceDef;
+    //    maxMagnetude = maxMagnetudeDef;
+
+    //}
+
+    [System.Serializable]
+    public class Ball
     {
-        MusicValue = musicValueDef;
-        SfxValue = sfxValueDef;
-        InputDeadZone = InputDeadZoneDef;
-        moveSpeed = moveSpeedDef;
-        jumpForce = jumpForceDef;
-        horizontalMultiply = horizontalMultiplyDef;
-        downSpeed = downSpeedDef;
-        deadzoneForMove = deadzoneForMoveDef;
-        deadzoneForJump = deadzoneForJumpDef;
-        pushForce = pushForceDef;
-        maxMagnetude = maxMagnetudeDef;
-
+        public string neme;
+        public const float maxMagnetudeDef = 5;
+        public float maxMagnetude = 5;
+        public float maxAngularMagnitude = 60;
+        public GameObject prefab;
     }
-
 }
