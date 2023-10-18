@@ -98,6 +98,62 @@ MonoBehaviour:
     m_Localized: Music Value
     m_Metadata:
       m_Items: []
+  - m_Id: 348872821190656
+    m_Localized: Joystick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349285511344128
+    m_Localized: Edit position
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345754343583744
+    m_Localized: Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345244253302784
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346708363194368
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346298390949888
+    m_Localized: Vibration Is ON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346926366339072
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 347392735195136
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 347967455506432
+    m_Localized: Buttons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 348443701948416
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 356169777688576
+    m_Localized: Select a button and specify its position on the screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 356678622261248
+    m_Localized: Select a joystick and specify its position on the screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358180493471744
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 405622601560064
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: fa4aeccdad124ff42b4bf2898b465b92
   m_SerializeEntries:
   - m_GUID: 7ce103d0cfb54e44898ad0a176189fca
-    m_Address: Three languages(StringTable)_zh
+    m_Address: Languages(StringTable)_zh
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-zh

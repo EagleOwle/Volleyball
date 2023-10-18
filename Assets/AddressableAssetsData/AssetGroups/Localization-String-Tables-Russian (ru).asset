@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 8e885174e8148fe4fa6e2f04e60a367d
   m_SerializeEntries:
   - m_GUID: ea4b639b3fc3f9144bab0bf6140d4312
-    m_Address: Three languages(StringTable)_ru
+    m_Address: Languages(StringTable)_ru
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ru

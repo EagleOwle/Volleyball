@@ -99,6 +99,62 @@ MonoBehaviour:
     m_Key: DescriptionScene
     m_Metadata:
       m_Items: []
+  - m_Id: 345244253302784
+    m_Key: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 345754343583744
+    m_Key: Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346298390949888
+    m_Key: Vibration Is ON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346708363194368
+    m_Key: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346926366339072
+    m_Key: 'Medium '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 347392735195136
+    m_Key: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 347967455506432
+    m_Key: Buttons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 348443701948416
+    m_Key: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 348872821190656
+    m_Key: Joystick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349285511344128
+    m_Key: 'Edit position '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 356169777688576
+    m_Key: DescriptionPreferenceButtons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 356678622261248
+    m_Key: DescriptionPreferenceJoystic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358180493471744
+    m_Key: 'Return '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 405622601560064
+    m_Key: 'Return. '
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
