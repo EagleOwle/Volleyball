@@ -24,7 +24,6 @@ public class UIGame : MonoBehaviour
     [SerializeField] private GameObject inputButtonPanel, inputJoystickPanel;
     [SerializeField] private UIFailPanel failPanel;
     [SerializeField] private Text hitCountText;
-    [SerializeField] private Text roundText;
     [SerializeField] private Text scorePlayerText, scoreEnemyText;
 
     public void Start()
@@ -59,7 +58,6 @@ public class UIGame : MonoBehaviour
         Game.Instance.actionRoundFail += OnFail;
         ShowBallHitCount(PlayerType.None, 0);
         failPanel.gameObject.SetActive(false);
-        roundText.text = "Round \n" + Game.Instance.match.round.ToString();
         ShowScore();
     }
 

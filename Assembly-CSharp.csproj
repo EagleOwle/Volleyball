@@ -56,6 +56,8 @@
     <Analyzer Include="D:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Menu\Localization\LocalizationData.cs" />
+    <Compile Include="Assets\Scripts\Menu\Localization\LocalizationManager.cs" />
     <Compile Include="Assets\Scripts\RoundResult.cs" />
     <Compile Include="Assets\Scripts\InputButton.cs" />
     <Compile Include="Assets\Scripts\Menu\UIGame.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="Assets\Scripts\Preference.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
+    <Compile Include="Assets\Scripts\Menu\Localization\LocalSelector.cs" />
     <Compile Include="Assets\Scripts\Menu\UIHud.cs" />
     <Compile Include="Assets\Scripts\Menu\UIPause.cs" />
     <Compile Include="Assets\Scripts\Menu\UIEditInputPanel.cs" />
@@ -116,7 +119,6 @@
     <Compile Include="Assets\Scripts\TrajectoryRenderAdvanced.cs" />
     <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
     <Compile Include="Assets\Scripts\Menu\EffectChangeSize.cs" />
-    <Compile Include="Assets\LocalSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\Diffuse.shader" />

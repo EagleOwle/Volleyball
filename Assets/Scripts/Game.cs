@@ -77,7 +77,7 @@ public class Game : MonoBehaviour
         StateMachine.SetState<FallState>();
     }
 
-    public void RestartRaund()
+    public void RestartRound()
     {
         StartRound();
     }

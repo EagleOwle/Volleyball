@@ -9,7 +9,7 @@ public class UIPreferenceMenu : UIPanel
 
     
     [SerializeField] private Button soundButton, inputButton, graphicsButton, returnButton;
-    [SerializeField] private GameObject soundPanel, inputPanel, graphicsPanel;
+    [SerializeField] private GameObject soundPanel, inputPanel, graphicsPanel, languagePanel;
     [Space()]
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Text musicValueText;
@@ -136,21 +136,25 @@ public class UIPreferenceMenu : UIPanel
                 soundPanel.SetActive(false);
                 inputPanel.SetActive(false);
                 graphicsPanel.SetActive(false);
+                languagePanel.SetActive(true);
                 break;
             case PreferenceType.soundType:
                 soundPanel.SetActive(true);
                 inputPanel.SetActive(false);
                 graphicsPanel.SetActive(false);
+                languagePanel.SetActive(true);
                 break;
             case PreferenceType.inputType:
                 soundPanel.SetActive(false);
                 inputPanel.SetActive(true);
                 graphicsPanel.SetActive(false);
+                languagePanel.SetActive(true);
                 break;
             case PreferenceType.graphicType:
                 soundPanel.SetActive(false);
                 inputPanel.SetActive(false);
                 graphicsPanel.SetActive(true);
+                languagePanel.SetActive(true);
                 break;
         }
     }

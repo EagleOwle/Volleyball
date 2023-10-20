@@ -91,7 +91,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 124255372324864
-    m_Localized: Tap to resume...
+    m_Localized: Tap to resume
     m_Metadata:
       m_Items: []
   - m_Id: 125285535330304
@@ -155,7 +155,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 424216785858560
-    m_Localized: Round
+    m_Localized: Serve
     m_Metadata:
       m_Items: []
   references:
