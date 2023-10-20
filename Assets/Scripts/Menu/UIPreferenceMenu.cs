@@ -87,21 +87,26 @@ public class UIPreferenceMenu : UIPanel
         switch (value)
         {
             case 0:
-                lowQualityText.fontSize = 50;
-                normalQualityText.fontSize = 30;
-                highQualityText.fontSize = 30;
+                //normalQualityText.fontSize = 20;
+                //highQualityText.fontSize = 20;
+                //lowQualityText.fontSize = 30;
+                lowQualityText.transform.SetAsLastSibling();
+                
                 break;
 
             case 1:
-                lowQualityText.fontSize = 30;
-                normalQualityText.fontSize = 50;
-                highQualityText.fontSize = 30;
+                //highQualityText.fontSize = 20;
+                //lowQualityText.fontSize = 20;
+                //normalQualityText.fontSize = 30;
+                normalQualityText.transform.SetAsLastSibling();
+               
                 break;
 
             case 2:
-                lowQualityText.fontSize = 30;
-                normalQualityText.fontSize = 30;
-                highQualityText.fontSize = 50;
+                //lowQualityText.fontSize = 20;
+                //normalQualityText.fontSize = 20;
+                //highQualityText.fontSize = 30;
+                highQualityText.transform.SetAsLastSibling();
                 break;
                 
         }
@@ -114,13 +119,16 @@ public class UIPreferenceMenu : UIPanel
         switch (value)
         {
             case 0:
-                inputButtonText.fontSize = 50;
-                inputJoystickText.fontSize = 30;
+                inputJoystickText.fontSize = 20;
+                inputButtonText.fontSize = 30;
+                inputButtonText.transform.SetAsLastSibling();
+                
                 break;
 
             case 1:
-                inputButtonText.fontSize = 30;
-                inputJoystickText.fontSize = 50;
+               inputButtonText.fontSize = 20;
+               inputJoystickText.fontSize = 30;
+                inputJoystickText.transform.SetAsLastSibling();
                 break;
 
         }
