@@ -20,25 +20,15 @@ public class UILoadingScreen : CanvasGroupUI
 
     private void Start()
     {
-        SceneLoader.OnSceneLoadStart += Show;
+        SceneLoader.OnSceneLoadStart += InstantlyShow;
         SceneLoader.OnSceneLoadComplete += Hide;
         Invoke(nameof(Hide), Time.deltaTime);
     }
 
-    public override void Show()
+    public void InstantlyShow()
     {
-        base.Show();
-        StartCoroutine(Loading());
-    }
-
-    private IEnumerator Loading()
-    {
-        while (true)
-        {
-            //Play Animation
-
-            yield return null;
-        }
+        gameObject.SetActive(true);
+        CanvasGroup.alpha = 1;
     }
 
     private void OnDestroy()

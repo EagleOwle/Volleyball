@@ -21,21 +21,16 @@ public class Game : MonoBehaviour
     #endregion
 
     [SerializeField] private bool starMatch = true;
-    [SerializeField] private bool useTargetFramerate = false;
-    [SerializeField] private int targetFrameRate = 30;
     [SerializeField] private AudioClip roundFallClip;
     private string debugCurrentGameState;
    
-
     public Action<RoundResult> actionRoundFail;
+    public Action<PlayerType, int> actionUnitHit;
 
     public ScenePreference.Scene scene;
     public Match match;
     
-
     private PlayerType lastLuser = PlayerType.None;
-
-
 
     private void Start()
     {
@@ -51,7 +46,7 @@ public class Game : MonoBehaviour
         StateMachine.actionChangeState += ChangeState;
 
         match = new Match();
-        match.Initialise(scene.rounds);
+        match.Initialise(scene.matchPreference.Rounds);
 
         if (starMatch)
         {
@@ -63,6 +58,11 @@ public class Game : MonoBehaviour
     private void ChangeState(State obj)
     {
         debugCurrentGameState = obj.nameState;
+    }
+
+    public void UnitHitBall(PlayerType playerType, int hitCount)
+    {
+        actionUnitHit?.Invoke(playerType, hitCount);
     }
 
     public void OnRoundFall(PlayerType luser)

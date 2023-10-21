@@ -30,6 +30,7 @@ public class UIGame : MonoBehaviour
     {
         StateMachine.actionChangeState += OnChangeGameState;
         pauseBtn.onClick.AddListener(OnButtonPause);
+        Game.Instance.actionUnitHit += ShowBallHitCount;
     }
 
     private void OnEnable()
@@ -110,11 +111,6 @@ public class UIGame : MonoBehaviour
 
     private void OnFail(RoundResult roundResult)
     {
-        //if (ball != null)
-        //{
-        //    ball.actionUnitHit -= ShowBallHitCount;
-        //}
-
         Game.Instance.actionRoundFail -= OnFail;
 
         ShowScore();

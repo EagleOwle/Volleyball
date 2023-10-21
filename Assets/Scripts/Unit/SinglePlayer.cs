@@ -124,10 +124,14 @@ public class SinglePlayer : Unit
         {
             if ((1 << collision.collider.gameObject.layer & ballLayer) != 0)
             {
-                if (collision.collider.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rigidBody))
-                {
-                    rigidBody.AddForce((Vector3.right + Vector3.up) * Preference.Singleton.pushForce);
-                }
+                Rigidbody rigidbody = collision.collider.gameObject.GetComponentInParent<Rigidbody>();
+                rigidbody.AddForce((Vector3.right + Vector3.up) * Preference.Singleton.pushForce);
+
+                //if (collision.collider.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rigidBody))
+                //{
+                //    rigidBody.AddForce((Vector3.right + Vector3.up) * Preference.Singleton.pushForce);
+                    
+                //}
             }
         }
     }

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private PhysicMaterial ballPhysic, defaultPhysic;
-    [SerializeField] private new Collider collider;
+    [SerializeField] private MeshCollider meshCollider;
+    [SerializeField] private SphereCollider sphereCollider;
     [SerializeField] private new Rigidbody rigidbody;
     [SerializeField] private AudioClip hitClip;
     [SerializeField] protected LayerMask unitLayer = 0;
@@ -16,13 +16,14 @@ public class Ball : MonoBehaviour
 
     public PlayerType currentPlayerSide;
     public int playerHitCount;
-    public Action<PlayerType, int> actionUnitHit;
 
     private Preference.Ball config;
+    private MatchPreference matchPreference;
 
-    public void Initialise(int ballIndex)
+    public void Initialise(int ballIndex, MatchPreference matchPreference)
     {
         config = Preference.Singleton.balls[ballIndex];
+        this.matchPreference = matchPreference;
     }
 
     private void OnEnable()
@@ -88,25 +89,25 @@ public class Ball : MonoBehaviour
         if (transform.position.x < 0 && currentPlayerSide != PlayerType.Local)
         {
             currentPlayerSide = PlayerType.Local;
-            playerHitCount = 0;
+            playerHitCount = matchPreference.BallHits;
 
-            actionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
+            Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
         }
 
         if (transform.position.x > 0 && currentPlayerSide != PlayerType.Rival)
         {
             currentPlayerSide = PlayerType.Rival;
-            playerHitCount = 0;
+            playerHitCount = matchPreference.BallHits;
 
-            actionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
+            Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
         }
 
         if (transform.position.x == 0 && currentPlayerSide != PlayerType.None)
         {
             currentPlayerSide = PlayerType.None;
-            playerHitCount = 0;
+            playerHitCount = matchPreference.BallHits;
 
-            actionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
+            Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
         }
     }
 
@@ -121,7 +122,8 @@ public class Ball : MonoBehaviour
             }
 
             rigidbody.isKinematic = false;
-            collider.material = ballPhysic;
+            sphereCollider.enabled = true;
+            meshCollider.enabled = false;
         }
 
         if (state is PauseState || state is TimerState)
@@ -131,9 +133,10 @@ public class Ball : MonoBehaviour
 
         if (state is FallState)
         {
-            collider.material = defaultPhysic;
+            sphereCollider.enabled = false;
+            meshCollider.enabled = true;
             currentPlayerSide = PlayerType.None;
-            playerHitCount = 0;
+            playerHitCount = matchPreference.BallHits;
             transform.rotation = Quaternion.identity;
         }
     }
@@ -159,22 +162,19 @@ public class Ball : MonoBehaviour
 
     private void HitEnvironment()
     {
-        actionUnitHit?.Invoke(PlayerType.None, 0);
+        Game.Instance.UnitHitBall(PlayerType.None, 0);
         Game.Instance.OnRoundFall(currentPlayerSide);
     }
 
     private void HitUnit()
     {
-        playerHitCount++;
+        playerHitCount--;
+        Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
 
-        if (playerHitCount > 3)
+        if (playerHitCount <= 0)
         {
-            actionUnitHit?.Invoke(PlayerType.None, 0);
             Game.Instance.OnRoundFall(currentPlayerSide);
         }
-        else
-        {
-            actionUnitHit?.Invoke(currentPlayerSide, playerHitCount);
-        }
+       
     }
 }

@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
+using UnityEngine.Localization.Tables;
 using UnityEngine.UI;
 
 public class UIScenePreference : UIPanel
@@ -9,8 +12,10 @@ public class UIScenePreference : UIPanel
     [SerializeField] private Transform buttonContent;
     [SerializeField] private GameObject buttonPrefab;
     [SerializeField] private Image previewImage;
-    [SerializeField] private Text nameSceneText;
-    [SerializeField] private Text descriptionText;
+    //[SerializeField] private Text nameSceneText;
+    //[SerializeField] private Text descriptionText;
+    [SerializeField] private LocalizeStringEvent nameSceneLocalize;
+    [SerializeField] private LocalizeStringEvent descriptionLocalize;
     [SerializeField] private Button startButton;
     [SerializeField] private Button returnButton;
     [SerializeField] private Slider roundCountSlider;
@@ -41,7 +46,7 @@ public class UIScenePreference : UIPanel
         for (int i = 0; i < scenes.Length; i++)
         {
             GameObject tmp = Instantiate(buttonPrefab, buttonContent);
-            tmp.GetComponentInChildren<Text>().text = scenes[i].name;
+            tmp.GetComponent<UIChangeSceneButton>().localizeString.StringReference = scenes[i].nameString;
             int index = i;
             tmp.GetComponent<Button>().onClick.AddListener(() => SetCurrentScene(index));
             tmp.SetActive(true);
@@ -74,7 +79,7 @@ public class UIScenePreference : UIPanel
 
     private void OnChangeRoundCountValue(float value)
     {
-        currentScene.rounds = (int)value;
+        currentScene.matchPreference.Rounds = (int)value;
         roundCountText.text = value.ToString();
     }
 
@@ -82,9 +87,10 @@ public class UIScenePreference : UIPanel
     {
         currentScene = scenes[index];
         currentScene.arrayIndex = index;
-        nameSceneText.text = currentScene.name;
         previewImage.sprite = currentScene.sprite;
-        descriptionText.text = currentScene.description;
+
+        nameSceneLocalize.StringReference = currentScene.nameString;
+        descriptionLocalize.StringReference = currentScene.descriptionString;
 
         for (int i = 0; i < buttons.Count; i++)
         {
@@ -101,7 +107,7 @@ public class UIScenePreference : UIPanel
         roundCountSlider.onValueChanged.RemoveAllListeners();
         roundCountSlider.minValue = 1;
         roundCountSlider.maxValue = 15;
-        roundCountSlider.value = currentScene.rounds;
+        roundCountSlider.value = currentScene.matchPreference.Rounds;
         roundCountSlider.onValueChanged.AddListener(OnChangeRoundCountValue);
         roundCountText.text = roundCountSlider.value.ToString();
 

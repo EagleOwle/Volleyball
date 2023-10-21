@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: GamePreference
   m_EditorClassIdentifier: 
   _onVibration: 1
+  language: 0
   InputDeadZone: 0.3
-  inputType: 0
+  inputType: 1
   moveSpeed: 250
   jumpForce: 400
   horizontalMultiply: 1.5

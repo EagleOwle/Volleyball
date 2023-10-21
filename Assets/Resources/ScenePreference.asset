@@ -13,25 +13,64 @@ MonoBehaviour:
   m_Name: ScenePreference
   m_EditorClassIdentifier: 
   scenes:
-  - arrayIndex: 0
-    name: Beach Game
+  - name: Beach Game
+    arrayIndex: 0
     sprite: {fileID: 21300000, guid: 6941a25a714dc064b8fe3024e37ba7ea, type: 3}
-    rounds: 15
+    matchPreference:
+      Rounds: 15
+      BallHits: 3
     difficultEnum: 1
     buildIndex: 1
     ballIndex: 0
     playerPrefab: {fileID: 3713206965255687523, guid: ef71be2c89d619c438893f81639adda7, type: 3}
     enemyPrefab: {fileID: 3713206965255687523, guid: 594485bf1071ec04ebffd0470f604314, type: 3}
-    description: You will find an island paradise where beach balls do their job,
-      play volleyball!
-  - arrayIndex: 1
-    name: Forest Game
+    descriptionString:
+      m_TableReference:
+        m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableEntryReference:
+        m_KeyId: 1527461542850560
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    nameString:
+      m_TableReference:
+        m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableEntryReference:
+        m_KeyId: 1535434394660864
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  - name: Forest Game
+    arrayIndex: 1
     sprite: {fileID: 21300000, guid: 1fac706d236382c4d93ad016186b5313, type: 3}
-    rounds: 15
+    matchPreference:
+      Rounds: 15
+      BallHits: 3
     difficultEnum: 1
     buildIndex: 2
     ballIndex: 1
     playerPrefab: {fileID: 7611914722553763607, guid: 203fa9de41e82764c9c6f02c54c98293, type: 3}
     enemyPrefab: {fileID: 8894947739782925218, guid: 3e9b4b089647c0147865bb0335ee4e7b, type: 3}
-    description: You will find a forest filled with horror and cheerful inhabitants
-      playing their favorite game. Head volleyball.
+    descriptionString:
+      m_TableReference:
+        m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableEntryReference:
+        m_KeyId: 1527528198729728
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    nameString:
+      m_TableReference:
+        m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableEntryReference:
+        m_KeyId: 1535535154425856
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

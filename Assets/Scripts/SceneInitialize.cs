@@ -29,7 +29,7 @@ public static class SceneInitialize
 
         tmp = Object.Instantiate(Preference.Singleton.balls[scene.ballIndex].prefab);
         Ball = tmp.GetComponent<Ball>();
-        Ball.Initialise(scene.ballIndex);
+        Ball.Initialise(scene.ballIndex, scene.matchPreference);
         Ball.transform.position = Cort.BallSpawnPoint.position;
 
         //Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);

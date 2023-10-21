@@ -45,40 +45,6 @@ public class InputHandler : MonoBehaviour
     }
     private Vector2 percent;
 
-    private void KeyboardInput()
-    {
-        if(Input.GetKey(KeyCode.RightArrow))
-        {
-            OnButtonRightDown();
-            
-        }
-
-        if (Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            OnButtonRightUp();
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            OnButtonLeftDown();
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            OnButtonLeftUp();
-        }
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            OnButtonJumpDown();
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            OnButtonJumpUp();
-        }
-
-    }
 
     private void GetSwipe()
     {

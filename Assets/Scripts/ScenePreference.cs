@@ -45,36 +45,22 @@ public class ScenePreference : ScriptableObject
         }
     }
 
-    public LocalizedStringTable stringTable;
-
-  
-
     [System.Serializable]
     public class Scene
     {
-        public int arrayIndex;
         public string name;
+        public int arrayIndex;
         public Sprite sprite;
-        public int rounds;
+        public MatchPreference matchPreference;
         public GameDifficult difficultEnum;
-        public int difficult
-        {
-            set { difficultEnum = (GameDifficult)value; }
-        }
         public int buildIndex;
         public int ballIndex;
         public GameObject playerPrefab;
         public GameObject enemyPrefab;
-        public string description;
-        public Description[] descriptions;
-    }
+        public LocalizedString descriptionString;
+        public LocalizedString nameString;
 
-    [System.Serializable]
-    public class Description
-    {
-        public Language language;
-        public string keyName;
-        public string value;
+        public int difficult { set { difficultEnum = (GameDifficult)value; } }
     }
 
     public enum GameDifficult

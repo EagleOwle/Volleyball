@@ -48,22 +48,42 @@ MonoBehaviour:
   useTargetFramerate: 1
   targetFrameRate: 500
   roundFallClip: {fileID: 8300000, guid: 5ba96fc4947271d4f8c3c7917e659a12, type: 3}
-  RunningLights: {fileID: 0}
-  Shuts: {fileID: 0}
   scene:
-    arrayIndex: 0
     name: 
+    arrayIndex: 0
     sprite: {fileID: 0}
-    rounds: 0
+    matchPreference:
+      Rounds: 0
+      BallHits: 0
     difficultEnum: 0
     buildIndex: 0
-    ballPrefab: {fileID: 0}
+    ballIndex: 0
     playerPrefab: {fileID: 0}
     enemyPrefab: {fileID: 0}
-    description: 
+    descriptionString:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    nameString:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   match:
     round: 0
     playerScore:
       playerType: 0
     enemyScore:
       playerType: 0
+  references:
+    version: 2
+    RefIds: []

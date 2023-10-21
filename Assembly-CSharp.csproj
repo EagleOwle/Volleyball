@@ -119,6 +119,15 @@
     <Compile Include="Assets\Scripts\TrajectoryRenderAdvanced.cs" />
     <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
     <Compile Include="Assets\Scripts\Menu\EffectChangeSize.cs" />
+    <Compile Include="Assets\Samples\Localization\1.3.2\Loading Strings\LocalizedStringTableExample.cs" />
+    <Compile Include="Assets\Samples\Localization\1.3.2\Loading Strings\StringDatabaseGetLocalizedStringExample.cs" />
+    <Compile Include="Assets\Samples\Localization\1.3.2\Loading Strings\LoadingMultipleStringsExample.cs" />
+    <Compile Include="Assets\Samples\Localization\1.3.2\Loading Strings\LocalizedStringGetLocalizedStringExample.cs" />
+    <Compile Include="Assets\Samples\Localization\1.3.2\Loading Strings\LocalizedStringWithChangeHandlerExample.cs" />
+    <Compile Include="Assets\Scripts\MatchPreference.cs" />
+    <Compile Include="Assets\Scripts\InputKeyboard.cs" />
+    <Compile Include="Assets\Scripts\CameraInitialise.cs" />
+    <Compile Include="Assets\Scripts\ScreenMarker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\Diffuse.shader" />
