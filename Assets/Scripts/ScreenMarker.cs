@@ -7,8 +7,19 @@ public class ScreenMarker : MonoBehaviour
 {
     public event Action eventOnVisible;
 
-    private void OnBecameVisible()
+    private void Update()
     {
-        eventOnVisible?.Invoke();
+        Bounds bounds = GetComponentInChildren<Renderer>().bounds;
+        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
+        if (GeometryUtility.TestPlanesAABB(planes, bounds))
+        {
+            eventOnVisible?.Invoke();
+        }
+
     }
+
+    //private void OnBecameVisible()
+    //{
+    //    eventOnVisible?.Invoke();
+    //}
 }

@@ -20,7 +20,7 @@ public class Game : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] private bool starMatch = true;
+    [SerializeField] private CameraInitialise cameraInitialise;
     [SerializeField] private AudioClip roundFallClip;
     private string debugCurrentGameState;
    
@@ -48,11 +48,14 @@ public class Game : MonoBehaviour
         match = new Match();
         match.Initialise(scene.matchPreference.Rounds);
 
-        if (starMatch)
-        {
-            SceneInitialize.Initialise(scene);
-            Invoke(nameof(StartRound), Time.deltaTime);
-        }
+        SceneInitialize.Initialise(scene);
+        cameraInitialise.eventCameraOnPosition += CameraOnPosition;
+    }
+
+    private void CameraOnPosition()
+    {
+        cameraInitialise.eventCameraOnPosition -= CameraOnPosition;
+        StartRound();
     }
 
     private void ChangeState(State obj)
