@@ -9,8 +9,6 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Water 1
   m_Shader: {fileID: 4800000, guid: 52f768d0d02cb0b4dadd1ee80734b842, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -19,7 +17,6 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -49,7 +46,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: f5d6704464e433d4499078fd9808612b, type: 3}
-        m_Scale: {x: 50, y: 50}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -74,8 +71,8 @@ Material:
     - _DepthFactor: 1
     - _DetailNormalMapScale: 1
     - _DistortStrength: 1
-    - _DistortionSpeed: 0.2
-    - _DistortionStrength: 0.4
+    - _DistortionSpeed: 1
+    - _DistortionStrength: 0.1
     - _DstBlend: 0
     - _ExtraHeight: 0
     - _GlossMapScale: 1
@@ -90,7 +87,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Tiling: 18
+    - _Tiling: 5
     - _UVSec: 0
     - _WaveAmp: 0.2
     - _WaveSpeed: 1

@@ -6,43 +6,50 @@ using UnityEngine.UI;
 
 public class Fps : MonoBehaviour
 {
-    [SerializeField] private Text text;
+    public static Fps Instance;
 
-    const string display = "{0} fps";
-    const float fpsMeasurePeriod = 1;
-
-    private int fpsAccumulator = 0;
-    private float fpsNextPeriod = 0;
-    private int currentFps;
-
-    public async void Start()
+    private void Awake()
     {
-        fpsNextPeriod = Time.realtimeSinceStartup + fpsMeasurePeriod;
-
-        while (true)
+        if (Instance != null && Instance != this)
         {
-            fpsAccumulator++;
-
-            await Task.Yield();
-
-            if (Time.realtimeSinceStartup > fpsNextPeriod)
-            {
-                currentFps = (int)(fpsAccumulator / fpsMeasurePeriod);
-                fpsAccumulator = 0;
-                fpsNextPeriod += fpsMeasurePeriod;
-                text.text = string.Format(display, currentFps);
-            }
-
-
-#if UNITY_EDITOR
-            if (EditorApplication.isPlaying == false)
-            {
-                break;
-            }
-#endif
+            Destroy(gameObject);
+            return;
         }
+
+        Instance = this;
+        DontDestroyOnLoad(this);
     }
 
+    [SerializeField] private Text text;
 
-    
+    public int rangeInt;
+    public float updateInterval = 0.5F;
+    private float accum = 0;
+    private int frames = 0;
+    private float timeleft;
+    private string stringFps;
+
+    void Start()
+    {
+        timeleft = updateInterval;
+    }
+
+    void Update()
+    {
+        timeleft -= Time.deltaTime;
+        accum += Time.timeScale / Time.deltaTime;
+        ++frames;
+        if (timeleft <= 0.0)
+        {
+            float fps = accum / frames;
+            string format = System.String.Format("{0:F2} FPS", fps);
+            stringFps = format;
+            timeleft = updateInterval;
+            accum = 0.0F;
+            frames = 0;
+        }
+
+        text.text = stringFps;
+    }
 }
+
