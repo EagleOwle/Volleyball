@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraInitialise : MonoBehaviour
 {
+    public event Action eventCameraOnPosition;
+
     [SerializeField] private ScreenMarker screenMarker;
     [SerializeField] private float speed;
 
@@ -29,7 +32,7 @@ public class CameraInitialise : MonoBehaviour
             }
 
             var position = transform.position;
-            position.z -= speed * Time.deltaTime;
+            position.z = Mathf.Lerp(position.z, position.z -1, speed * Time.deltaTime);
             transform.position = position;
             yield return null;
         }
@@ -37,7 +40,11 @@ public class CameraInitialise : MonoBehaviour
 
     private void ScreenMarker_eventOnVisible()
     {
+        Debug.Log("Camera On Position");
+        eventCameraOnPosition?.Invoke();
         StopCoroutine(moveRoutine);
+        Destroy(screenMarker);
+        Destroy(this);
         
     }
 }

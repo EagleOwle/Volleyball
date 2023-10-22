@@ -24,6 +24,10 @@ public class Ball : MonoBehaviour
     {
         config = Preference.Singleton.balls[ballIndex];
         this.matchPreference = matchPreference;
+
+        rigidbody.isKinematic = true;
+        sphereCollider.enabled = false;
+        meshCollider.enabled = true;
     }
 
     private void OnEnable()
