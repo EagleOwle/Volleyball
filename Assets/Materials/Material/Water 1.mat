@@ -74,8 +74,8 @@ Material:
     - _DepthFactor: 1
     - _DetailNormalMapScale: 1
     - _DistortStrength: 1
-    - _DistortionSpeed: 0.5
-    - _DistortionStrength: 0.2
+    - _DistortionSpeed: 0.2
+    - _DistortionStrength: 0.4
     - _DstBlend: 0
     - _ExtraHeight: 0
     - _GlossMapScale: 1
@@ -90,7 +90,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Tiling: 25
+    - _Tiling: 18
     - _UVSec: 0
     - _WaveAmp: 0.2
     - _WaveSpeed: 1
