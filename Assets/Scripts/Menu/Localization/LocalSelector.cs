@@ -37,8 +37,8 @@ public class LocalSelector : MonoBehaviour
         }
         _instance = this;
 
-        int ID = PlayerPrefs.GetInt("LocaleKey", 0);
-        ChangeLocale(ID);
+        //int ID = PlayerPrefs.GetInt("LocaleKey", 0);
+        //ChangeLocale(ID);
     }
 
     public void ChangeLocale(int localeId)
