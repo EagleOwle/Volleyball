@@ -6,6 +6,8 @@ public class UILoadingScreen : CanvasGroupUI
 {
     public static UILoadingScreen Instance;
 
+    [SerializeField]private float showFirstLoad = 3;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -22,7 +24,7 @@ public class UILoadingScreen : CanvasGroupUI
     {
         SceneLoader.OnSceneLoadStart += InstantlyShow;
         SceneLoader.OnSceneLoadComplete += Hide;
-        Invoke(nameof(Hide), Time.deltaTime);
+        Invoke(nameof(Hide), showFirstLoad);
     }
 
     public void InstantlyShow()

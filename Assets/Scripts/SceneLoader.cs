@@ -48,6 +48,7 @@ public class SceneLoader : MonoBehaviour
     private void Load(int index, SceneType type)
     {
         OnSceneLoadStart?.Invoke();
+        //SceneManager.LoadScene(index);
         AsyncOperation operation = SceneManager.LoadSceneAsync(index);
         operation.completed += AsyncLoadComplete;
         currentSceneType = type;
