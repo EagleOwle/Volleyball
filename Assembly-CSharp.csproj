@@ -128,6 +128,10 @@
     <Compile Include="Assets\Scripts\TrajectoryRenderAdvanced.cs" />
     <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
     <Compile Include="Assets\Scripts\Menu\EffectChangeSize.cs" />
+    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\FreeCamera.cs" />
+    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\FreeCam.cs" />
+    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\UIButton_ShowNext.cs" />
+    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\SuperCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\Diffuse.shader" />
@@ -161,7 +165,9 @@
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\4Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\4Textures\HeightBlendPacked.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Bumped_for_target_2.0.shader" />
+    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Specular-Fog.shader" />
+    <None Include="Assets\Ciconia Studio\Shaders\Standard Shaders\BuiltIn\CS_Standard (Specular setup) Opaque.shader" />
     <None Include="Assets\ProMaterialCombiner\VersionHistory.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\6Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Languages\en-US.xml" />
@@ -190,7 +196,6 @@
     <None Include="Assets\MeshTerrainEditor\EditorResources\Shaders\PaintTexturePreview_URP.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\3Textures\Bumped_for_target_2.0.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\Grass\UnlitBillboard.Shader" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\ReadMe.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\7Textures\Bumped.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -213,6 +218,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\6Textures\Bumped.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\5Textures\VertexColored-Fog.shader" />
+    <None Include="Assets\Ciconia Studio\Shaders\Standard Shaders\BuiltIn\CS_Standard (Specular setup) Transparent.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\WaterFlow.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Shaders\ConverterSplitPreview_URP.shader" />
@@ -236,8 +242,10 @@
     <None Include="Assets\AvtorMusicAnitation.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\4Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\2Textures\Bumped.shader" />
+    <None Include="Assets\Ciconia Studio\Shaders\Standard Shaders\BuiltIn\CS_Lite Standard (Specular setup) Transparent.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\VertexColored-NoFog.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\6Textures\Bumped.shader" />
+    <None Include="Assets\Ciconia Studio\Shaders\Standard Shaders\Readme.txt" />
     <None Include="Assets\Skybox\Day-Night Skyboxes\readme.txt" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Details\ReadMe.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\TextureArray\TextureArray_DisplayNormal.shader" />
@@ -251,6 +259,8 @@
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\Surface\3Textures\Diffuse.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\8Textures\Diffuse.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\Ciconia Studio\Shaders\Standard Shaders\BuiltIn\CS_Lite Standard (Specular setup) Opaque.shader" />
+    <None Include="Assets\Ciconia Studio\Shaders\Standard Shaders\BuiltIn\CS_Lite Standard (Specular setup) Cutout.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Unlit\2 Textures_baked_lightmap.shader" />
     <None Include="Assets\MeshTerrainEditor\EditorResources\Shaders\ConverterSplitPreview_Builtin.shader" />
@@ -264,6 +274,7 @@
     <None Include="Assets\Materials\Material\DottedLineShader.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Specialized\Mali 400\Surface\4Textures\Diffuse.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Ciconia Studio\Shaders\Standard Shaders\BuiltIn\CS_Standard (Specular setup) Cutout.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\URP\TextureArray.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\Packed\NamingConvention.txt" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\5Textures\DisplayNormal.shader" />
