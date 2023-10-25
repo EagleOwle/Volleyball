@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Menu\Localization\LocalizationData.cs" />
     <Compile Include="Assets\Scripts\Menu\Localization\LocalizationManager.cs" />
+    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\UIButton_ShowNext.cs" />
     <Compile Include="Assets\Scripts\RoundResult.cs" />
     <Compile Include="Assets\Samples\Localization\1.3.2\Loading Strings\StringDatabaseGetLocalizedStringExample.cs" />
     <Compile Include="Assets\Scripts\InputButton.cs" />
@@ -116,22 +117,21 @@
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\Menu\Localization\LocalSelector.cs" />
     <Compile Include="Assets\Scripts\Menu\UIHud.cs" />
+    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\FreeCam.cs" />
+    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\SuperCamera.cs" />
     <Compile Include="Assets\Samples\Localization\1.3.2\Loading Strings\LocalizedStringWithChangeHandlerExample.cs" />
     <Compile Include="Assets\Scripts\Menu\UIPause.cs" />
     <Compile Include="Assets\Scripts\Menu\UIEditInputPanel.cs" />
     <Compile Include="Assets\Scripts\Menu\UITimer.cs" />
     <Compile Include="Assets\Scripts\Menu\UILoadingScreen.cs" />
     <Compile Include="Assets\Scripts\Unit\SingleBot.cs" />
+    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\FreeCamera.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\GameState.cs" />
     <Compile Include="Assets\Scripts\Game.cs" />
     <Compile Include="Assets\Scripts\TrajectoryCalculate.cs" />
     <Compile Include="Assets\Scripts\TrajectoryRenderAdvanced.cs" />
     <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
     <Compile Include="Assets\Scripts\Menu\EffectChangeSize.cs" />
-    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\FreeCamera.cs" />
-    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\FreeCam.cs" />
-    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\UIButton_ShowNext.cs" />
-    <Compile Include="Assets\Ciconia Studio\_Shared Files\Scripts\Demo\SuperCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\Diffuse.shader" />
@@ -165,7 +165,6 @@
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\4Textures\Specular.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\4Textures\HeightBlendPacked.shader" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Bumped_for_target_2.0.shader" />
-    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Surface\5Textures\Specular-Fog.shader" />
     <None Include="Assets\Ciconia Studio\Shaders\Standard Shaders\BuiltIn\CS_Standard (Specular setup) Opaque.shader" />
     <None Include="Assets\ProMaterialCombiner\VersionHistory.txt" />
