@@ -57,34 +57,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\RaiseLowerEditor\RaiseLowerEditor.cs" />
-    <Compile Include="Assets\ProMaterialCombiner\Editor\Node.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\TextureArrayPainter\TextureArrayManager.cs" />
-    <Compile Include="Assets\ProMaterialCombiner\Editor\TextureScale.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\PaintHeightEditor\PaintHeightEditor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectPainter.cs" />
-    <Compile Include="Assets\ProMaterialCombiner\Editor\ShaderManager.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\MeshToolbox\MeshToolbox.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetailList.cs" />
     <Compile Include="Assets\MeshCombiner\Editor\MeshCombinerEditor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\EditorFilterMode.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\DetailListBox.cs" />
-    <Compile Include="Assets\ProMaterialCombiner\Editor\TextureReuseManager.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetailListBox.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\VertexColorPainter\VertexColorPainter.cs" />
-    <Compile Include="Assets\ProMaterialCombiner\Editor\CombinableObject.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetail.cs" />
-    <Compile Include="Assets\ProMaterialCombiner\Editor\Atlasser.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetail.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\Detail.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SmoothHeightEditor\SmoothHeightEditor.cs" />
-    <Compile Include="Assets\ProMaterialCombiner\Editor\TileManager.cs" />
-    <Compile Include="Assets\ProMaterialCombiner\Editor\MaterialCombiner.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\Preview.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassPainter.Instance.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassPainter.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetailList.cs" />
     <Compile Include="Assets\Editor\RectTransformSnapAnchors.cs" />
-    <Compile Include="Assets\ProMaterialCombiner\Editor\ProMaterialCombinerMenu.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SplatPainter\TextureModifyGroup.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassEditorUtilityWindow.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\MeshModifyGroup.cs" />
@@ -93,13 +84,11 @@
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetailListBox.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SplatPainter\SplatPainter.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassItem.cs" />
-    <Compile Include="Assets\ProMaterialCombiner\Editor\Utils.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\TextureArrayPainter\TextureArrayPainter.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassEditorUtil.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassType.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassLoaderEditor.cs" />
     <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetailEditorWindow.cs" />
-    <Compile Include="Assets\ProMaterialCombiner\Editor\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshTerrainEditor\Editor\MTE.dll" />
