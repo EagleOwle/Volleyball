@@ -1174,18 +1174,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 508334008aa0fa04ebf1632fd6f9c03a, type: 3}
-    m_FontSize: 128
+    m_FontSize: 100
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 1
-    m_MaxSize: 300
+    m_MaxSize: 150
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041D\u0435\u0443\u0434\u0430\u0447\u0430"
+  m_Text: "\u0422\u0435\u0441\u0442 \u0442\u0435\u043A\u0441\u0442"
 --- !u!114 &3773339244659727326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1228,9 +1228,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableCollectionName: 
     m_TableEntryReference:
-      m_KeyId: 123588746424320
+      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -9078,10 +9078,10 @@ RectTransform:
   m_Father: {fileID: 3773339246493467835}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.45358336, y: 0.4180328}
-  m_AnchorMax: {x: 0.54641664, y: 0.58196723}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3773339246055677102
 CanvasRenderer:
@@ -9932,7 +9932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3773339246238408510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10007,7 +10007,82 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closePanelBtn: {fileID: 3773339246307905121}
   buttonText: {fileID: 3773339245032004440}
-  messageText: {fileID: 3773339244659727321}
+  None:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 3082939746213888
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  FeedLoss:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 3082989712957440
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  PlayerFeedLoss:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 3083092255301632
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  RivalFeedLoss:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 3083155236970496
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  Victory:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 3083234811305984
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  Losing:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 3083306340966400
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  WinningGame:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 3083353375891456
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  LoseGame:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 3083506354741248
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  stringEvent: {fileID: 6355122219362273562}
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &3773339246275258243
 GameObject:
   m_ObjectHideFlags: 0
@@ -11871,7 +11946,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u043E\u0434\u0430\u0447\u0430"
+  m_Text: "\u041A\u0430\u0441\u0430\u043D\u0438\u044F"
 --- !u!114 &3773339246531684845
 MonoBehaviour:
   m_ObjectHideFlags: 0

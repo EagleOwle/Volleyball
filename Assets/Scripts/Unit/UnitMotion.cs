@@ -40,16 +40,7 @@ public class UnitMotion : MonoBehaviour
         }
 
         velocityY = Jump(moveDirection.y);
-
-        if (_onGround)
-        {
-            velocityX = moveDirection.x * Preference.Singleton.moveSpeed * Time.deltaTime;
-        }
-        else
-        {
-            velocityX = moveDirection.x * (Preference.Singleton.moveSpeed * 1.5f) * Time.deltaTime;
-        }
-
+        velocityX = moveDirection.x * Preference.Singleton.jumpMoveSpeed * Time.deltaTime;
         _rigidbody.velocity = new Vector3(velocityX, velocityY, _rigidbody.velocity.z);
 
     }

@@ -79,6 +79,7 @@ public class AudioController : MonoBehaviour
 
         _sfxSource.clip = clip;
         _sfxSource.Play();
+        //_sfxSource.PlayOneShot(clip);
     }
 
 }

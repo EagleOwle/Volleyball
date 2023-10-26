@@ -62,19 +62,19 @@ public class UIGame : MonoBehaviour
         ShowScore();
     }
 
-    private void OnChangeGameState(State value)
+    private void OnChangeGameState(State next, State last)
     {
-        if (value is GameState)
+        if (next is GameState)
         {
             pauseBtn.gameObject.SetActive(true);
         }
 
-        if (value is PauseState)
+        if (next is PauseState)
         {
             pauseBtn.gameObject.SetActive(false);
         }
 
-        if (value is FallState)
+        if (next is FallState)
         {
             pauseBtn.gameObject.SetActive(false);
         }

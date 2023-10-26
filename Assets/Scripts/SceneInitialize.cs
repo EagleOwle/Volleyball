@@ -52,7 +52,10 @@ public static class SceneInitialize
             case PlayerType.None:
                 Player.transform.position = Cort.PlayerSpawnPoint.position;
                 Bot.transform.position = Cort.BotSpawnPoint.position;
-                Ball.transform.position = Cort.BallSpawnPoint.position;
+
+                var position = Vector3.right * UnityEngine.Random.Range(-0.2f, 0.2f);
+                Ball.transform.position = Cort.BallSpawnPoint.position + position;
+
                 break;
             case PlayerType.Local:
                 Player.transform.position = Cort.PlayerSpawnPoint.position;

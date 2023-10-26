@@ -171,6 +171,38 @@ MonoBehaviour:
     m_Key: NameScene Forest
     m_Metadata:
       m_Items: []
+  - m_Id: 3082939746213888
+    m_Key: RoundResult None
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3082989712957440
+    m_Key: RoundResult FeedLoss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083092255301632
+    m_Key: RoundResult PlayerFeedLoss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083155236970496
+    m_Key: RoundResult RivalFeedLoss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083234811305984
+    m_Key: RoundResult Victory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083306340966400
+    m_Key: RoundResult Losing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083353375891456
+    m_Key: RoundResult WinningGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083506354741248
+    m_Key: RoundResult LoseGame
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -20,9 +20,7 @@ public class Game : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] private CameraInitialise cameraInitialise;
     [SerializeField] private AudioClip roundFallClip;
-    private string debugCurrentGameState;
    
     public Action<RoundResult> actionRoundFail;
     public Action<PlayerType, int> actionUnitHit;
@@ -36,7 +34,7 @@ public class Game : MonoBehaviour
     {
         if (SceneLoader.Instance == null)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            SceneManager.LoadScene(0);
             return;
         }
 
@@ -44,23 +42,20 @@ public class Game : MonoBehaviour
 
         StateMachine.InitBeheviors();
         StateMachine.actionChangeState += ChangeState;
+        StateMachine.SetState<PreviewSceneState>();
 
         match = new Match();
         match.Initialise(scene.matchPreference.Rounds);
 
         SceneInitialize.Initialise(scene);
-        cameraInitialise.eventCameraOnPosition += CameraOnPosition;
     }
 
-    private void CameraOnPosition()
+    private void ChangeState(State next, State last)
     {
-        cameraInitialise.eventCameraOnPosition -= CameraOnPosition;
-        StartRound();
-    }
-
-    private void ChangeState(State obj)
-    {
-        debugCurrentGameState = obj.nameState;
+        if (last is PreviewSceneState)
+        {
+            StartRound();
+        }
     }
 
     public void UnitHitBall(PlayerType playerType, int hitCount)

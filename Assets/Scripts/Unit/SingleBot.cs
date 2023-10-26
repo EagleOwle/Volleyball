@@ -56,9 +56,9 @@ public class SingleBot : Unit
         direction = Vector3.zero;
     }
 
-    private void OnChangeGameState(State state)
+    private void OnChangeGameState(State next, State last)
     {
-        if (state is GameState)
+        if (next is GameState)
         {
             Initialise();
         }
@@ -216,13 +216,13 @@ public class SingleBot : Unit
             switch (ball.currentPlayerSide)
             {
                 case PlayerType.None:
-                    nextHeightForJamp = Random.Range(2, 5);
+                    nextHeightForJamp = 2;// Random.Range(2, 5);
                     break;
                 case PlayerType.Local:
                     nextHeightForJamp = 0;
                     break;
                 case PlayerType.Rival:
-                    nextHeightForJamp = Random.Range(0, 5);
+                    nextHeightForJamp = 2;// Random.Range(0, 5);
                     break;
             }
         }
@@ -259,11 +259,24 @@ public class SingleBot : Unit
         {
             if ((1 << collision.gameObject.layer & ballLayer) != 0)
             {
-                if (collision.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rigidBody))
-                {
-                   rigidBody.AddForce((Vector3.left + Vector3.up) * Preference.Singleton.pushForce);
-                }
+                Rigidbody rigidbody = collision.collider.gameObject.GetComponentInParent<Rigidbody>();
+                rigidbody.AddForce((Vector3.left + Vector3.up) * PushForce(), ForceMode.Impulse);
             }
+        }
+    }
+
+    private float PushForce()
+    {
+        switch (Game.Instance.scene.difficultEnum)
+        {
+            case ScenePreference.GameDifficult.Easy:
+                return 0;
+            case ScenePreference.GameDifficult.Normal:
+                return Preference.Singleton.pushForce;
+            case ScenePreference.GameDifficult.Hard:
+                return Preference.Singleton.pushForce * 2;
+            default:
+                return Preference.Singleton.pushForce;
         }
     }
 

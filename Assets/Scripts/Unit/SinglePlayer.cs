@@ -41,19 +41,34 @@ public class SinglePlayer : Unit
         unitMotion.MoveDirection = lastMoveDirection;
     }
 
-    private void OnChangeGameState(State state)
+    private void OnChangeGameState(State next, State last)
     {
-        if (state is GameState)
+        if (next is GameState)
         {
             Initialise();
         }
 
-        if (state is PauseState)
+        if (next is PauseState)
         {
         }
 
-        if (state is FallState)
+        if (next is FallState)
         {
+        }
+    }
+
+    private float PushForce()
+    {
+        switch (Game.Instance.scene.difficultEnum)
+        {
+            case ScenePreference.GameDifficult.Easy:
+                return Preference.Singleton.pushForce * 2;
+            case ScenePreference.GameDifficult.Normal:
+                return Preference.Singleton.pushForce;
+            case ScenePreference.GameDifficult.Hard:
+                return 0;
+            default:
+                return Preference.Singleton.pushForce;
         }
     }
 
@@ -125,13 +140,7 @@ public class SinglePlayer : Unit
             if ((1 << collision.collider.gameObject.layer & ballLayer) != 0)
             {
                 Rigidbody rigidbody = collision.collider.gameObject.GetComponentInParent<Rigidbody>();
-                rigidbody.AddForce((Vector3.right + Vector3.up) * Preference.Singleton.pushForce);
-
-                //if (collision.collider.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rigidBody))
-                //{
-                //    rigidBody.AddForce((Vector3.right + Vector3.up) * Preference.Singleton.pushForce);
-                    
-                //}
+                rigidbody.AddForce((Vector3.right + Vector3.up) * PushForce(), ForceMode.Impulse);
             }
         }
     }

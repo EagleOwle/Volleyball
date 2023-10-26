@@ -115,10 +115,10 @@ public class Ball : MonoBehaviour
         }
     }
 
-    private void OnChangeGameState(State state)
+    private void OnChangeGameState(State next, State last)
     {
         //Debug.LogError(" OnChangeGameState: " + state);
-        if (state is GameState)
+        if (next is GameState)
         {
             if (rigidbody == null)
             {
@@ -130,12 +130,12 @@ public class Ball : MonoBehaviour
             meshCollider.enabled = false;
         }
 
-        if (state is PauseState || state is TimerState)
+        if (next is PauseState || next is TimerState)
         {
             rigidbody.isKinematic = true;
         }
 
-        if (state is FallState)
+        if (next is FallState)
         {
             sphereCollider.enabled = false;
             meshCollider.enabled = true;
@@ -173,12 +173,14 @@ public class Ball : MonoBehaviour
     private void HitUnit()
     {
         playerHitCount--;
-        Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
 
-        if (playerHitCount <= 0)
+        if (playerHitCount < 0)
         {
             Game.Instance.OnRoundFall(currentPlayerSide);
+            playerHitCount = 0;
         }
-       
+
+        Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
+
     }
 }

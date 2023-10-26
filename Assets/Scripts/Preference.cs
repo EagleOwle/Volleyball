@@ -12,7 +12,6 @@ public enum Language
 [CreateAssetMenu(fileName = "GamePreference", menuName = "GamePreference")]
 public class Preference : ScriptableObject
 {
-    private static Preference singleton;
     public static Preference Singleton
     {
         get
@@ -25,8 +24,8 @@ public class Preference : ScriptableObject
             return singleton;
         }
     }
+    private static Preference singleton;
 
-    private float _musicValue = 1;
     public float MusicValue
     {
         set
@@ -43,10 +42,9 @@ public class Preference : ScriptableObject
             return _musicValue;
         }
     }
-    public const float musicValueDef = 1;
+    private float _musicValue = 1;
     public Action<float> actionOnChangeMusicValue;
 
-    private float _sfxValue = 1;
     public float SfxValue
     {
         set
@@ -63,7 +61,7 @@ public class Preference : ScriptableObject
             return _sfxValue;
         }
     }
-    public const float sfxValueDef = 1;
+    private float _sfxValue = 1;
     public Action<float> actionOnChangeSfxValue;
 
     [Header("Vibra")]
@@ -84,58 +82,31 @@ public class Preference : ScriptableObject
             return _onVibration;
         }
     }
-    public const bool onVibrationDef = true;
     public Action<bool> actionOnChangeVibration;
 
     public Language language;
 
     [Header("Input")]
     public float InputDeadZone = 10;
-    public const float InputDeadZoneDef = 10;
     public InputType inputType = InputType.button;
 
     [Header("UnitMotion")]
     public float moveSpeed = 250;
-    public const float moveSpeedDef = 250;
-    public const float jumpForceDef = 250;
+    public float jumpMoveSpeed = 250;
     public float jumpForce = 250;
-    public const float horizontalMultiplyDef = 1.5f;
-    public float horizontalMultiply = 1.5f;
-    public const float downSpeedDef = 20;
     public float downSpeed = 20;
     public float pushForce = 25f;
-    public const float pushForceDef = 25;
 
     [Header("AiLogic")]
     public float deadzoneForMove = 0.3f;
-    public const float deadzoneForMoveDef = 0.3f;
-    public const float deadzoneForJumpDef = 3;
-    public float deadzoneForJump = 3;
 
     [Header("Ball")]
     public Ball[] balls;
-
-    //public void SetDefaultValue()
-    //{
-    //    MusicValue = musicValueDef;
-    //    SfxValue = sfxValueDef;
-    //    InputDeadZone = InputDeadZoneDef;
-    //    moveSpeed = moveSpeedDef;
-    //    jumpForce = jumpForceDef;
-    //    horizontalMultiply = horizontalMultiplyDef;
-    //    downSpeed = downSpeedDef;
-    //    deadzoneForMove = deadzoneForMoveDef;
-    //    deadzoneForJump = deadzoneForJumpDef;
-    //    pushForce = pushForceDef;
-    //    maxMagnetude = maxMagnetudeDef;
-
-    //}
 
     [System.Serializable]
     public class Ball
     {
         public string neme;
-        public const float maxMagnetudeDef = 5;
         public float maxMagnetude = 5;
         public float maxAngularMagnitude = 60;
         public GameObject prefab;

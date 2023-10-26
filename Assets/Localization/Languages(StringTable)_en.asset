@@ -151,7 +151,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 424216785858560
-    m_Localized: Serve
+    m_Localized: Touches
     m_Metadata:
       m_Items: []
   - m_Id: 1373595329327104
@@ -176,6 +176,38 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1535434394660864
     m_Localized: Beach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3082939746213888
+    m_Localized: '   '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3082989712957440
+    m_Localized: Feed Loss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083092255301632
+    m_Localized: 'Rival attack '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083155236970496
+    m_Localized: Player attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083234811305984
+    m_Localized: Victory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083306340966400
+    m_Localized: Losing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083353375891456
+    m_Localized: Winning Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3083506354741248
+    m_Localized: Lose Game
     m_Metadata:
       m_Items: []
   references:

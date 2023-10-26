@@ -15,7 +15,7 @@ public class UISlider : MonoBehaviour
 
     private void OnValueChange(float value)
     {
-        AudioController.Instance.PlayClip(clickClip);
+        AudioController.Instance.PlayClip(clickClip, false);
     }
 
 }
