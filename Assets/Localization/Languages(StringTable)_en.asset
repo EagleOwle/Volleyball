@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39658244550656
-    m_Localized: Preference
+    m_Localized: Settings
     m_Metadata:
       m_Items: []
   - m_Id: 40828757356544
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 123588746424320
-    m_Localized: Fail
+    m_Localized: Round lost
     m_Metadata:
       m_Items: []
   - m_Id: 124042201018368
@@ -183,7 +183,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3082989712957440
-    m_Localized: Feed Loss
+    m_Localized: Losing serve
     m_Metadata:
       m_Items: []
   - m_Id: 3083092255301632
@@ -203,11 +203,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3083353375891456
-    m_Localized: Winning Game
+    m_Localized: The match is won
     m_Metadata:
       m_Items: []
   - m_Id: 3083506354741248
-    m_Localized: Lose Game
+    m_Localized: The match is lost
     m_Metadata:
       m_Items: []
   references:

@@ -20,11 +20,13 @@ public class Ball : MonoBehaviour
     private Preference.Ball config;
     private MatchPreference matchPreference;
 
+    private TrajectoryCalculate trajectory;
+
     public void Initialise(int ballIndex, MatchPreference matchPreference)
     {
         config = Preference.Singleton.balls[ballIndex];
         this.matchPreference = matchPreference;
-
+        trajectory = new TrajectoryCalculate();
         rigidbody.isKinematic = true;
         sphereCollider.enabled = false;
         meshCollider.enabled = true;
@@ -73,18 +75,11 @@ public class Ball : MonoBehaviour
                 Game.Instance.OnRoundFall(currentPlayerSide);
             }
 
-            if (Game.Instance.scene.difficultEnum != ScenePreference.GameDifficult.Hard)
-            {
-                TrajectoryRender.Instance.ShowTrajectory(transform.position, rigidbody.velocity);
-            }
-            else
-            {
-                TrajectoryRender.Instance.Hide();
-            }
+            trajectory.Calculate(transform.position, rigidbody.velocity, groundLayer);
         }
         else
         {
-            TrajectoryRender.Instance.Hide();
+            trajectory.Clear();
         }
     }
 
@@ -145,7 +140,6 @@ public class Ball : MonoBehaviour
         }
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
         if (StateMachine.currentState is GameState)
@@ -181,6 +175,22 @@ public class Ball : MonoBehaviour
         }
 
         Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
-
     }
+
+    public RaycastHit TrajectoryHit
+    {
+        get
+        {
+            return trajectory.Hit;
+        }
+    }
+
+    public List<Vector3> TrajectoryPoints
+    {
+        get
+        {
+            return trajectory.Points;
+        }
+    }
+
 }

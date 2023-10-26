@@ -6,19 +6,9 @@ using UnityEngine;
 public class SingleBot : Unit
 {
     [SerializeField] protected LayerMask ballLayer = 0;
+    
     private Ball _ball;
-    private Ball ball
-    {
-        get
-        {
-            if (_ball == null)
-            {
-                _ball = GameObject.FindObjectOfType<Ball>();
-            }
 
-            return _ball;
-        }
-    }
     private UnitMotion unitMotion;
     private Vector3 direction;
     private float defaultPositionX;
@@ -34,6 +24,7 @@ public class SingleBot : Unit
     private void Start()
     {
         defaultPositionX = transform.position.x;
+        _ball = GameObject.FindObjectOfType<Ball>();
     }
 
     private void OnEnable()
@@ -89,10 +80,10 @@ public class SingleBot : Unit
     {
         direction = Vector3.zero;
 
-        if (StateMachine.currentState is GameState && TrajectoryCalculate.Hit.point.x >= 0)
+        if (StateMachine.currentState is GameState && _ball.TrajectoryHit.point.x >= 0)
         {
             defaultPositionX = 0;
-            float targetPositionX = TrajectoryCalculate.Hit.point.x + CalculateAdjustment();
+            float targetPositionX = _ball.TrajectoryHit.point.x + CalculateAdjustment();
             float dir = targetPositionX - transform.position.x;
 
             if (Mathf.Abs(dir) > Preference.Singleton.deadzoneForMove)
@@ -103,11 +94,11 @@ public class SingleBot : Unit
 
             direction = new Vector3(direction.x, 0, direction.z);
 
-            if (ball.transform.position.x > -0.5f && unitMotion.OnGround)
+            if (_ball.transform.position.x > -0.5f && unitMotion.OnGround)
             {
-                if (ball.transform.position.y > transform.position.y + 1)
+                if (_ball.transform.position.y > transform.position.y + 1)
                 {
-                    if (Mathf.Abs(ball.transform.position.y - transform.position.y) < nextHeightForJamp)
+                    if (Mathf.Abs(_ball.transform.position.y - transform.position.y) < nextHeightForJamp)
                     {
                         direction = new Vector3(direction.x, 1, direction.z);
                     }
@@ -130,10 +121,10 @@ public class SingleBot : Unit
     {
         direction = Vector3.zero;
 
-        if (StateMachine.currentState is GameState && TrajectoryCalculate.Hit.point.x >= 0)
+        if (StateMachine.currentState is GameState && _ball.TrajectoryHit.point.x >= 0)
         {
             defaultPositionX = 0;
-            float targetPositionX = TrajectoryCalculate.Hit.point.x + CalculateAdjustment();
+            float targetPositionX = _ball.TrajectoryHit.point.x + CalculateAdjustment();
             float dir = targetPositionX - transform.position.x;
 
             if (Mathf.Abs(dir) > Preference.Singleton.deadzoneForMove)
@@ -145,11 +136,11 @@ public class SingleBot : Unit
 
             direction = new Vector3(direction.x, 0, direction.z);
 
-            if (ball.transform.position.x > -0.5f && unitMotion.OnGround)
+            if (_ball.transform.position.x > -0.5f && unitMotion.OnGround)
             {
-                if (ball.transform.position.y > transform.position.y + 1)
+                if (_ball.transform.position.y > transform.position.y + 1)
                 {
-                    if ((ball.transform.position - transform.position).magnitude < nextHeightForJamp)
+                    if ((_ball.transform.position - transform.position).magnitude < nextHeightForJamp)
                     {
                         direction = new Vector3(direction.x, 1, direction.z);
                     }
@@ -172,10 +163,10 @@ public class SingleBot : Unit
     {
         direction = Vector3.zero;
 
-        if (StateMachine.currentState is GameState && TrajectoryCalculate.Hit.point.x >= 0)
+        if (StateMachine.currentState is GameState && _ball.TrajectoryHit.point.x >= 0)
         {
             defaultPositionX = 0;
-            float targetPositionX = TrajectoryCalculate.Hit.point.x + CalculateAdjustment();
+            float targetPositionX = _ball.TrajectoryHit.point.x + CalculateAdjustment();
             float dir = targetPositionX - transform.position.x;
 
             if (Mathf.Abs(dir) > Preference.Singleton.deadzoneForMove)
@@ -186,11 +177,11 @@ public class SingleBot : Unit
             #region Jump
 
             direction = new Vector3(direction.x, 0, direction.z);
-            if (ball.transform.position.x > -0.5f && unitMotion.OnGround)
+            if (_ball.transform.position.x > -0.5f && unitMotion.OnGround)
             {
-                if (ball.transform.position.y > transform.position.y + 1)
+                if (_ball.transform.position.y > transform.position.y + 1)
                 {
-                    if ((ball.transform.position - transform.position).magnitude < nextHeightForJamp)
+                    if ((_ball.transform.position - transform.position).magnitude < nextHeightForJamp)
                     {
                         direction = new Vector3(direction.x, 1, direction.z);
                     }
@@ -213,7 +204,7 @@ public class SingleBot : Unit
     {
         if (nextHeightForJamp == 0)
         {
-            switch (ball.currentPlayerSide)
+            switch (_ball.currentPlayerSide)
             {
                 case PlayerType.None:
                     nextHeightForJamp = 2;// Random.Range(2, 5);
@@ -235,15 +226,15 @@ public class SingleBot : Unit
     {
         float adjustment = 0;
 
-        if (Mathf.Abs(ball.transform.position.x - transform.position.x) > .1f)
+        if (Mathf.Abs(_ball.transform.position.x - transform.position.x) > .1f)
         {
-            if (ball.transform.position.x < transform.position.x)
+            if (_ball.transform.position.x < transform.position.x)
             {
                 adjustment = -.5f;
             }
             else
             {
-                if (ball.transform.position.x > transform.position.x)
+                if (_ball.transform.position.x > transform.position.x)
                 {
                     adjustment = .5f;
                 }
@@ -291,14 +282,6 @@ public class SingleBot : Unit
 
             return defaultPositionX;
         }
-    }
-
-    void OnDrawGizmosSelected()
-    {
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(TrajectoryCalculate.Hit.point, 0.1f);
-
     }
     
 }

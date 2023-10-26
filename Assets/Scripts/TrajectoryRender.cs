@@ -6,36 +6,36 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class TrajectoryRender : MonoBehaviour
 {
-    private static TrajectoryRender _instance;
-    public static TrajectoryRender Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = GameObject.FindObjectOfType<TrajectoryRender>();
-            }
+    private LineRenderer lineRenderer;
+    private Ball _ball;
 
-            return _instance;
+    public void Initialise(Ball ball)
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+        _ball = ball;
+    }
+
+    private void LateUpdate()
+    {
+        if (_ball == null) return;
+
+        if (StateMachine.currentState is GameState)
+        {
+            Show();
+        }
+        else
+        {
+            Hide();
         }
     }
 
-    [SerializeField] private LayerMask collisionMask;
-    private LineRenderer lineRenderer;
-
-    private void Awake()
+    private void Show()
     {
-        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.positionCount = _ball.TrajectoryPoints.Count;
+        lineRenderer.SetPositions(_ball.TrajectoryPoints.ToArray());
     }
 
-    public void ShowTrajectory(Vector3 origin, Vector3 speed)
-    {
-        Vector3[] points = TrajectoryCalculate.Calculate(origin, speed, collisionMask);
-        lineRenderer.positionCount = points.Length;
-        lineRenderer.SetPositions(points);
-    }
-
-    public void Hide()
+    private void Hide()
     {
         lineRenderer.positionCount = 0;
     }

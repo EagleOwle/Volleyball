@@ -130,6 +130,7 @@
     <Compile Include="Assets\Scripts\Menu\EffectChangeSize.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\PreviewSceneState.cs" />
     <Compile Include="Assets\Scripts\Menu\DropdownItem.cs" />
+    <Compile Include="Assets\Scripts\DropdownLabel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\MeshTerrainEditor\Shaders\Builtin\Standard\2Textures\Diffuse.shader" />

@@ -22,6 +22,7 @@ MonoBehaviour:
   downSpeed: 12
   pushForce: 5
   deadzoneForMove: 0.3
+  trajectoryRenderPrefab: {fileID: 8434888001521389513, guid: c17e9e47cc676694b846368df518efe8, type: 3}
   balls:
   - neme: Bucket
     maxMagnetude: 8

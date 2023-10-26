@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class TrajectoryCalculate
+public class TrajectoryCalculate
 {
-    private static RaycastHit hit;
-    public static RaycastHit Hit => hit;
-    private static List<Vector3> points;
-
-    public static Vector3[] Calculate(Vector3 origin, Vector3 speed, LayerMask collisionMask)
+    public TrajectoryCalculate()
     {
-       if (points == null)
+        points = new List<Vector3>();
+    }
+
+    public RaycastHit Hit => hit;
+    private RaycastHit hit;
+
+    public List<Vector3> Points => points;
+    private List<Vector3> points;
+
+    public Vector3[] Calculate(Vector3 origin, Vector3 speed, LayerMask collisionMask)
+    {
+        if (points == null)
         {
             points = new List<Vector3>();
         }
@@ -39,7 +46,13 @@ public static class TrajectoryCalculate
         return points.ToArray();
     }
 
-    private static bool CheckNextPointCollision(Vector3 startPosition, Vector3 targetPosition, LayerMask collisionMask)
+    public void Clear()
+    {
+        if (points == null) return;
+        points.Clear();
+    }
+
+    private bool CheckNextPointCollision(Vector3 startPosition, Vector3 targetPosition, LayerMask collisionMask)
     {
         float distance = (targetPosition - startPosition).magnitude;
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13701841, g: 0.2394935, b: 0.3172808, a: 0.5}
+  m_IndirectSpecularColor: {r: 0.13336387, g: 0.23158996, b: 0.30709842, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: e69869a8d92e17a459a60ae1aca6cbbf, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 009c75b7d70ff8941a14484b4e531c92, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: c92cf0c9bf24b5848b5684dafabfa482, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -613,7 +613,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274747231
 GameObject:
@@ -1210,7 +1210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9049438699052371147, guid: 58190e8f4a9889846b534002a9a0e904, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9049438699052371147, guid: 58190e8f4a9889846b534002a9a0e904, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2198,7 +2198,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2098672790508808784, guid: aaa000f6b118e6a49bbe4c9204824a01, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2098672790508808784, guid: aaa000f6b118e6a49bbe4c9204824a01, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2386,7 +2386,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1357838361
 GameObject:
@@ -2429,7 +2429,7 @@ Transform:
   - {fileID: 1103320730}
   - {fileID: 2116517532}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1435777095
 GameObject:
@@ -2640,7 +2640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3773339246389920287, guid: f7f2f5690da50cc468c6dd96c66ffa1d, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3773339246389920287, guid: f7f2f5690da50cc468c6dd96c66ffa1d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2903,7 +2903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5257921611084938163, guid: fa525c0f5f4d003439c06480f81c8985, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5257921611084938163, guid: fa525c0f5f4d003439c06480f81c8985, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3787,8 +3787,8 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
-    m_Resolution: 3
+    m_Type: 1
+    m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
@@ -3820,7 +3820,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -3848,60 +3848,3 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!1001 &8434888002791384232
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8434888001521389512, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_Name
-      value: TrajectoryRender
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8434888001521389515, guid: c17e9e47cc676694b846368df518efe8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c17e9e47cc676694b846368df518efe8, type: 3}

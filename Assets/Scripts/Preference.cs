@@ -100,6 +100,9 @@ public class Preference : ScriptableObject
     [Header("AiLogic")]
     public float deadzoneForMove = 0.3f;
 
+    [Header("Trajectory")]
+    public TrajectoryRender trajectoryRenderPrefab;
+
     [Header("Ball")]
     public Ball[] balls;
 

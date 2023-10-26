@@ -32,6 +32,12 @@ public static class SceneInitialize
         Ball.Initialise(scene.ballIndex, scene.matchPreference);
         Ball.transform.position = Cort.BallSpawnPoint.position;
 
+        if (Game.Instance.scene.difficultEnum != ScenePreference.GameDifficult.Hard)
+        {
+            var trajectoryRender = Object.Instantiate(Preference.Singleton.trajectoryRenderPrefab);
+            trajectoryRender.Initialise(Ball);
+        }
+
         //Player = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Player", typeof(Unit)) as Unit);
         //Bot = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Enemy", typeof(Unit)) as Unit);
         //Ball = UnityEngine.Object.Instantiate(Resources.Load("Prefabs/Volleyball", typeof(Ball))) as Ball;

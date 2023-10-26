@@ -14,10 +14,10 @@ public class DropdownItem : MonoBehaviour
     [SerializeField] private LocalizedString stringHard;
     private void OnEnable()
     {
-        Invoke(nameof(ShowText), Time.deltaTime);
+        Invoke(nameof(UpdateText), Time.deltaTime);
     }
 
-    private void ShowText()
+    public void UpdateText()
     {
         if(text.text == ScenePreference.GameDifficult.Easy.ToString())
         {
