@@ -24,7 +24,7 @@ public class Game : MonoBehaviour
    
     public Action<RoundResult> actionRoundFail;
     public Action<PlayerType, int> actionUnitHit;
-
+    public bool initialise;
     public ScenePreference.Scene scene;
     public Match match;
     
@@ -47,6 +47,7 @@ public class Game : MonoBehaviour
         match = new Match();
         match.Initialise(scene.matchPreference.Rounds);
 
+        if(initialise)
         SceneInitialize.Initialise(scene);
     }
 
