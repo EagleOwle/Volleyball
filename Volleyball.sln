@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{67000920-993D-B69C-7FB7-CA879554E759}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTE_script", "MTE_script.csproj", "{DB5C1A07-D624-F11E-3E35-9BEF2FC74B66}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{63E8B977-7356-5A30-394A-8E9042B3995A}"
 EndProject
 Global
@@ -17,10 +15,6 @@ Global
 		{67000920-993D-B69C-7FB7-CA879554E759}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67000920-993D-B69C-7FB7-CA879554E759}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67000920-993D-B69C-7FB7-CA879554E759}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB5C1A07-D624-F11E-3E35-9BEF2FC74B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB5C1A07-D624-F11E-3E35-9BEF2FC74B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB5C1A07-D624-F11E-3E35-9BEF2FC74B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB5C1A07-D624-F11E-3E35-9BEF2FC74B66}.Release|Any CPU.Build.0 = Release|Any CPU
 		{63E8B977-7356-5A30-394A-8E9042B3995A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{63E8B977-7356-5A30-394A-8E9042B3995A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63E8B977-7356-5A30-394A-8E9042B3995A}.Release|Any CPU.ActiveCfg = Release|Any CPU

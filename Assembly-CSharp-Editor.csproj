@@ -56,42 +56,9 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\RaiseLowerEditor\RaiseLowerEditor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\TextureArrayPainter\TextureArrayManager.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\PaintHeightEditor\PaintHeightEditor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectPainter.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\MeshToolbox\MeshToolbox.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetailList.cs" />
     <Compile Include="Assets\MeshCombiner\Editor\MeshCombinerEditor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\EditorFilterMode.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\DetailListBox.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetailListBox.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\VertexColorPainter\VertexColorPainter.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetail.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetail.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\Detail.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SmoothHeightEditor\SmoothHeightEditor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\Preview.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassPainter.Instance.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassPainter.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetailList.cs" />
     <Compile Include="Assets\Editor\RectTransformSnapAnchors.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SplatPainter\TextureModifyGroup.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassEditorUtilityWindow.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\MeshModifyGroup.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassMap.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\FlowPainter\FlowPainter.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassDetailListBox.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\SplatPainter\SplatPainter.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassItem.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\TextureArrayPainter\TextureArrayPainter.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassEditorUtil.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassType.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\GrassPainter\GrassLoaderEditor.cs" />
-    <Compile Include="Assets\MeshTerrainEditor\Plugins\Editor\ObjectPainter\ObjectDetailEditorWindow.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\MeshTerrainEditor\Editor\MTE.dll" />
+    <Compile Include="Assets\Scripts\Editor\TerrainConverter\ExportTerrain.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -351,9 +318,6 @@
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="MTE">
-      <HintPath>Assets\MeshTerrainEditor\Editor\MTE.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.7\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
@@ -850,15 +814,23 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
+    <Reference Include="Autodesk.Fbx">
+      <HintPath>Library\ScriptAssemblies\Autodesk.Fbx.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Fbx.Editor">
+      <HintPath>Library\ScriptAssemblies\Autodesk.Fbx.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Formats.Fbx.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.Formats.Fbx.Runtime.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{67000920-993D-B69C-7FB7-CA879554E759}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="MTE_script.csproj">
-      <Project>{DB5C1A07-D624-F11E-3E35-9BEF2FC74B66}</Project>
-      <Name>MTE_script</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
