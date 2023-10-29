@@ -104,8 +104,8 @@
     <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.31\UnityEditor.TestRunner\Api\ITestTreeRebuildCallbacks.cs" />
     <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.31\UnityEditor.TestRunner\TestRunner\Utils\ITestListCache.cs" />
     <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.31\UnityEditor.TestRunner\CommandLineTest\ExitCallbacksDataHolder.cs" />
-    <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.31\UnityEditor.TestRunner\Api\CallbacksDelegatorListener.cs" />
     <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.31\UnityEditor.TestRunner\TestLaunchers\PlayerLauncherContextSettings.cs" />
+    <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.31\UnityEditor.TestRunner\Api\CallbacksDelegatorListener.cs" />
     <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.31\UnityEditor.TestRunner\TestLaunchers\PlatformSetup\IPlatformSetup.cs" />
     <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.31\UnityEditor.TestRunner\TestSettings\ITestSettings.cs" />
     <Compile Include="Library\PackageCache\com.unity.test-framework@1.1.31\UnityEditor.TestRunner\GUI\TestListBuilder\TestTreeViewBuilder.cs" />
