@@ -262,10 +262,13 @@ public class SingleBot : Unit
         {
             case ScenePreference.GameDifficult.Easy:
                 return 0;
+
             case ScenePreference.GameDifficult.Normal:
                 return Preference.Singleton.pushForce;
+
             case ScenePreference.GameDifficult.Hard:
                 return Preference.Singleton.pushForce * 2;
+
             default:
                 return Preference.Singleton.pushForce;
         }

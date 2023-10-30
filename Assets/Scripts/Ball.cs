@@ -8,7 +8,6 @@ public class Ball : MonoBehaviour
     [SerializeField] private MeshCollider meshCollider;
     [SerializeField] private SphereCollider sphereCollider;
     [SerializeField] private new Rigidbody rigidbody;
-    [SerializeField] private AudioClip hitClip;
     [SerializeField] protected LayerMask unitLayer = 0;
     [SerializeField] protected LayerMask groundLayer = 0;
 
@@ -142,10 +141,10 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        AudioController.Instance.PlayClip(config.hitClip[UnityEngine.Random.Range(0, config.hitClipsCount)], true);
+
         if (StateMachine.currentState is GameState)
         {
-            AudioController.Instance.PlayClip(hitClip, true);
-
             if ((1 << collision.collider.gameObject.layer & unitLayer) != 0)
             {
                 HitUnit();

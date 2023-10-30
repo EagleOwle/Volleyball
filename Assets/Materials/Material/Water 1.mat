@@ -71,7 +71,7 @@ Material:
     - _DepthFactor: 1
     - _DetailNormalMapScale: 1
     - _DistortStrength: 1
-    - _DistortionSpeed: 1
+    - _DistortionSpeed: 0.2
     - _DistortionStrength: 0.1
     - _DstBlend: 0
     - _ExtraHeight: 0

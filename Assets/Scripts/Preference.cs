@@ -112,6 +112,14 @@ public class Preference : ScriptableObject
         public string neme;
         public float maxMagnetude = 5;
         public float maxAngularMagnitude = 60;
+        public int hitClipsCount
+        {
+            get
+            {
+                return hitClip.Length;
+            }
+        }
+        public AudioClip[] hitClip;
         public GameObject prefab;
     }
 }

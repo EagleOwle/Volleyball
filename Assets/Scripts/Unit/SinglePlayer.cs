@@ -63,10 +63,13 @@ public class SinglePlayer : Unit
         {
             case ScenePreference.GameDifficult.Easy:
                 return Preference.Singleton.pushForce * 2;
+
             case ScenePreference.GameDifficult.Normal:
                 return Preference.Singleton.pushForce;
+
             case ScenePreference.GameDifficult.Hard:
                 return 0;
+
             default:
                 return Preference.Singleton.pushForce;
         }

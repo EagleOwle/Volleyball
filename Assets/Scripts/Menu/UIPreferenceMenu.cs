@@ -119,15 +119,15 @@ public class UIPreferenceMenu : UIPanel
         switch (value)
         {
             case 0:
-                inputJoystickText.fontSize = 20;
-                inputButtonText.fontSize = 30;
+                inputJoystickText.fontSize = 30;
+                inputButtonText.fontSize = 40;
                 inputButtonText.transform.SetAsLastSibling();
                 
                 break;
 
             case 1:
-               inputButtonText.fontSize = 20;
-               inputJoystickText.fontSize = 30;
+               inputButtonText.fontSize = 30;
+               inputJoystickText.fontSize = 40;
                 inputJoystickText.transform.SetAsLastSibling();
                 break;
 
