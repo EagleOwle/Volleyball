@@ -21,20 +21,15 @@ public class UIFailPanel : MonoBehaviour
     [SerializeField] private LocalizedString LoseGame;
     [SerializeField] private LocalizeStringEvent stringEvent;
 
-    private int localeId;
-    //private LocalizationData localizationData; // Объявляем объект LocalizationData
 
     private void Start()
     {
-        localeId = LocalSelector.Instance.CurrentLocaleId;
         EventSystem.current.SetSelectedGameObject(closePanelBtn.gameObject);
-        //localizationData = new LocalizationData(GetLanguageCodeForLocale(localeId)); // Создаем объект LocalizationData
         ShowMessage(RoundResult.None); // Пример вызова с RoundResult.None
     }
 
     public void ShowMessage(RoundResult roundResult)
     {
-        //messageText.text = localizationData.GetMessageForRoundResult(roundResult); // Используем метод локализации
         stringEvent.StringReference = GetLocalizedString(roundResult);
         closePanelBtn.onClick.RemoveAllListeners();
 
@@ -74,20 +69,17 @@ public class UIFailPanel : MonoBehaviour
     }
     private void SetButtonEndGame()
     {
-        //buttonText.text = localizationData.GetButtonEndGameText(LocalizationData.ButtonText.SetButtonEndGame); // Используем метод локализации
         closePanelBtn.onClick.AddListener(Game.Instance.EndGame);
     }
 
     private void SetButtonStartRound()
     {
-        //buttonText.text = localizationData.GetButtonEndGameText(LocalizationData.ButtonText.SetButtonStartRound); // Используем метод локализации
         closePanelBtn.onClick.AddListener(Game.Instance.RestartRound);
         closePanelBtn.onClick.AddListener(Hide);
     }
 
     private void Hide()
     {
-        //buttonText.text = localizationData.GetButtonEndGameText(LocalizationData.ButtonText.Hide); // Используем метод локализации
         gameObject.SetActive(false);
     }
 

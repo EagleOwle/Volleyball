@@ -7,7 +7,6 @@ public class LocalSelector : MonoBehaviour
 {
     private bool _active = false;
     private static LocalSelector _instance;
-
     public static LocalSelector Instance
     {
         get
@@ -26,8 +25,6 @@ public class LocalSelector : MonoBehaviour
         }
     }
 
-    public int CurrentLocaleId { get; private set; } // Публичное свойство для доступа к localeId
-
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -36,9 +33,6 @@ public class LocalSelector : MonoBehaviour
             return;
         }
         _instance = this;
-
-        //int ID = PlayerPrefs.GetInt("LocaleKey", 0);
-        //ChangeLocale(ID);
     }
 
     public void ChangeLocale(int localeId)
@@ -48,6 +42,7 @@ public class LocalSelector : MonoBehaviour
             return;
         }
 
+        //Debug.Log("Local id= " + localeId);
         StartCoroutine(SetLocale(localeId));
     }
 
@@ -56,8 +51,7 @@ public class LocalSelector : MonoBehaviour
         _active = true;
         yield return LocalizationSettings.InitializationOperation;
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[_localeID];
-        PlayerPrefs.SetInt("LocaleKey", _localeID);
-        CurrentLocaleId = _localeID; // Устанавливаем значение localeId
+        Preference.Singleton.language = (Language)_localeID;
         _active = false;
     }
 }

@@ -5,8 +5,10 @@ using UnityEngine;
 
 public enum Language
 {
-    Rus,
-    Eng
+    Zh = 0,
+    Eng = 1,
+    Rus = 2
+    
 }
 
 [CreateAssetMenu(fileName = "GamePreference", menuName = "GamePreference")]
