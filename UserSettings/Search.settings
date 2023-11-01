@@ -1,5 +1,4 @@
 trackSelection = true
-refreshSearchWindowsInPlayMode = false
 fetchPreview = true
 defaultFlags = 0
 keepOpen = false
@@ -14,6 +13,9 @@ scopes = {
 	"last_search.B655092D" = "st:Har"
 	"OpenInspectorPreview.B655092D" = "0"
 	"currentGroup.B655092D" = "all"
+	"last_search.21382318" = "Missing"
+	"OpenInspectorPreview.21382318" = "0"
+	"currentGroup.21382318" = "all"
 }
 providers = {
 	at = {
@@ -75,6 +77,8 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"Missing"
+	"Unused"
 	"st:DescriptionScene"
 	"st:DescriptionScene "
 ]
@@ -82,12 +86,9 @@ searchItemFavorites = [
 ]
 savedSearchesSortOrder = 0
 showSavedSearchPanel = false
-hideTabs = false
 expandedQueries = [
 ]
 queryBuilder = false
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"
 disabledIndexers = ""
-minIndexVariations = 2
-findProviderIndexHelper = true
