@@ -204,7 +204,7 @@ public class SingleBot : Unit
     {
         if (nextHeightForJamp == 0)
         {
-            switch (_ball.currentPlayerSide)
+            switch (_ball.CurrentPlayerSide)
             {
                 case PlayerType.None:
                     nextHeightForJamp = 2;// Random.Range(2, 5);

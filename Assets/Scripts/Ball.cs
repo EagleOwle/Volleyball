@@ -13,7 +13,8 @@ public class Ball : MonoBehaviour
 
     private const float maxAngularVelocity = 80;
 
-    public PlayerType currentPlayerSide;
+    public PlayerType CurrentPlayerSide => currentPlayerSide;
+    private PlayerType currentPlayerSide;
     public int playerHitCount;
 
     private Preference.Ball config;
@@ -71,7 +72,7 @@ public class Ball : MonoBehaviour
 
             if (transform.position.y < 0)
             {
-                Game.Instance.OnRoundFall(currentPlayerSide);
+                Game.Instance.OnRoundFall(CurrentPlayerSide);
             }
 
             trajectory.Calculate(transform.position, rigidbody.velocity, groundLayer);
@@ -84,28 +85,28 @@ public class Ball : MonoBehaviour
 
     private void ChangeSide()
     {
-        if (transform.position.x < 0 && currentPlayerSide != PlayerType.Local)
+        if (transform.position.x < 0 && CurrentPlayerSide != PlayerType.Local)
         {
             currentPlayerSide = PlayerType.Local;
             playerHitCount = matchPreference.BallHits;
 
-            Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
+            Game.Instance.UnitHitBall(CurrentPlayerSide, playerHitCount);
         }
 
-        if (transform.position.x > 0 && currentPlayerSide != PlayerType.Rival)
+        if (transform.position.x > 0 && CurrentPlayerSide != PlayerType.Rival)
         {
             currentPlayerSide = PlayerType.Rival;
             playerHitCount = matchPreference.BallHits;
 
-            Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
+            Game.Instance.UnitHitBall(CurrentPlayerSide, playerHitCount);
         }
 
-        if (transform.position.x == 0 && currentPlayerSide != PlayerType.None)
+        if (transform.position.x == 0 && CurrentPlayerSide != PlayerType.None)
         {
             currentPlayerSide = PlayerType.None;
             playerHitCount = matchPreference.BallHits;
 
-            Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
+            Game.Instance.UnitHitBall(CurrentPlayerSide, playerHitCount);
         }
     }
 
@@ -160,7 +161,7 @@ public class Ball : MonoBehaviour
     private void HitEnvironment()
     {
         Game.Instance.UnitHitBall(PlayerType.None, 0);
-        Game.Instance.OnRoundFall(currentPlayerSide);
+        Game.Instance.OnRoundFall(CurrentPlayerSide);
     }
 
     private void HitUnit()
@@ -169,11 +170,11 @@ public class Ball : MonoBehaviour
 
         if (playerHitCount < 0)
         {
-            Game.Instance.OnRoundFall(currentPlayerSide);
+            Game.Instance.OnRoundFall(CurrentPlayerSide);
             playerHitCount = 0;
         }
 
-        Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
+        Game.Instance.UnitHitBall(CurrentPlayerSide, playerHitCount);
     }
 
     public RaycastHit TrajectoryHit

@@ -429,12 +429,11 @@ MonoBehaviour:
   meshCollider: {fileID: 4495919082430135837}
   sphereCollider: {fileID: 5087949841471524890}
   rigidbody: {fileID: 7111777258693995420}
-  hitClip: {fileID: 8300000, guid: 5da2b6c6fc532c34ba178887ab96e2e2, type: 3}
   unitLayer:
     serializedVersion: 2
     m_Bits: 512
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   currentPlayerSide: 0
   playerHitCount: 0
