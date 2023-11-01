@@ -64,7 +64,7 @@ public class Game : MonoBehaviour
 
     public void OnRoundFall(PlayerType luser)
     {
-        AudioController.Instance.PlayClip(roundFallClip);
+        AudioController.Instance.PlayInstanceClip(roundFallClip);
 
         RoundResult roundResult = match.SetScore(luser);
         actionRoundFail?.Invoke(roundResult);

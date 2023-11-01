@@ -77,9 +77,17 @@ public class AudioController : MonoBehaviour
                 return;
         }
 
-       // _sfxSource.clip = clip;
-       // _sfxSource.Play();
-        _sfxSource.PlayOneShot(clip);
+        _sfxSource.clip = clip;
+        _sfxSource.Play();
+    }
+
+    public void PlayInstanceClip(AudioClip clip)
+    {
+        GameObject audioObj = new GameObject();
+        var source = audioObj.AddComponent<AudioSource>();
+        source.clip = clip;
+        source.Play();
+        Destroy(audioObj, clip.length);
     }
 
 }

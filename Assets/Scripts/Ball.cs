@@ -30,6 +30,7 @@ public class Ball : MonoBehaviour
         rigidbody.isKinematic = true;
         sphereCollider.enabled = false;
         meshCollider.enabled = true;
+        playerHitCount = matchPreference.BallHits;
     }
 
     private void OnEnable()

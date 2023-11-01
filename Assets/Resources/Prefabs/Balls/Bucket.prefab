@@ -434,6 +434,5 @@ MonoBehaviour:
     m_Bits: 512
   groundLayer:
     serializedVersion: 2
-    m_Bits: 320
-  currentPlayerSide: 0
+    m_Bits: 64
   playerHitCount: 0

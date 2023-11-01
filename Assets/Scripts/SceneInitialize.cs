@@ -30,7 +30,7 @@ public static class SceneInitialize
         tmp = Object.Instantiate(Preference.Singleton.balls[scene.ballIndex].prefab);
         Ball = tmp.GetComponent<Ball>();
         Ball.Initialise(scene.ballIndex, scene.matchPreference);
-        Ball.transform.position = Cort.BallSpawnPoint.position;
+        Ball.transform.position = Cort.BallSpawnPoint.position + Vector3.right * AddRandomPosition();
 
         if (Game.Instance.scene.difficultEnum != ScenePreference.GameDifficult.Hard)
         {
@@ -55,20 +55,34 @@ public static class SceneInitialize
                 Player.transform.position = Cort.PlayerSpawnPoint.position;
                 Bot.transform.position = Cort.BotSpawnPoint.position;
 
-                var position = Vector3.right * UnityEngine.Random.Range(-0.2f, 0.2f);
+                var position = Vector3.right * AddRandomPosition();
                 Ball.transform.position = Cort.BallSpawnPoint.position + position;
 
                 break;
+
             case PlayerType.Local:
                 Player.transform.position = Cort.PlayerSpawnPoint.position;
                 Bot.transform.position = Cort.BotSpawnPoint.position;
                 Ball.transform.position = Cort.BotSpawnPoint.position + Vector3.up * 2.5f;
                 break;
+
             case PlayerType.Rival:
                 Player.transform.position = Cort.PlayerSpawnPoint.position;
                 Bot.transform.position = Cort.BotSpawnPoint.position;
                 Ball.transform.position = Cort.PlayerSpawnPoint.position + Vector3.up * 2.5f; 
                 break;
+        }
+    }
+
+    private static float AddRandomPosition()
+    {
+        if(UnityEngine.Random.Range(0,2) == 0)
+        {
+            return -0.2f;
+        }
+        else
+        {
+            return 0.2f;
         }
     }
 
