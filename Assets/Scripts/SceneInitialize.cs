@@ -19,13 +19,13 @@ public static class SceneInitialize
 
         GameObject tmp = null;
 
-        tmp = Object.Instantiate(scene.playerPrefab);
+        tmp = Object.Instantiate(scene.playerPrefab, Cort.PlayerSpawnPoint.position, Quaternion.identity);
         Player = tmp.GetComponent<Unit>();
-        Player.transform.position = Cort.PlayerSpawnPoint.position;
+        //Player.transform.position = Cort.PlayerSpawnPoint.position;
 
-        tmp = Object.Instantiate(scene.enemyPrefab);
+        tmp = Object.Instantiate(scene.enemyPrefab, Cort.BotSpawnPoint.position, Quaternion.identity);
         Bot = tmp.GetComponent<Unit>();
-        Bot.transform.position = Cort.BotSpawnPoint.position;
+        //Bot.transform.position = Cort.BotSpawnPoint.position;
 
         tmp = Object.Instantiate(Preference.Singleton.balls[scene.ballIndex].prefab);
         Ball = tmp.GetComponent<Ball>();

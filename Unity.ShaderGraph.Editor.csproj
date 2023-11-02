@@ -108,8 +108,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Collections\AdditionalCommandCollection.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Data\KeywordEntry.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Descriptors\RenderStateDescriptor.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Serialization\JsonRef.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Data\Nodes\Math\Basic\SubtractNode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Serialization\JsonRef.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Drawing\Inspector\PropertyDrawers\Texture2DPropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Descriptors\StencilDescriptor.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Data\Nodes\Input\Scene\EyeIndexNode.cs" />
@@ -245,13 +245,13 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Util\TypeMapper.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Data\Nodes\Procedural\Noise\GradientNoiseNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Data\Graphs\SamplerStateShaderProperty.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Processors\PropertyCollector.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Data\Graphs\BitangentMaterialSlot.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Processors\ActiveFields.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Data\Graphs\Vector2MaterialSlot.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Collections\KeywordCollection.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Data\Interfaces\GenerationMode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Data\Graphs\Texture2DArrayMaterialSlot.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Processors\PropertyCollector.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Drawing\ViewModels\BlackboardCategoryViewModel.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Data\Nodes\Input\Scene\CameraNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Drawing\Views\GraphSubWindow.cs" />
@@ -302,8 +302,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Enumerations\KeywordType.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Targets\BuiltIn\Editor\ShaderGraph\Targets\BuiltInLitSubTarget.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Targets\BuiltIn\Editor\ShaderUtils.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Collections\AssetCollection.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Drawing\Controls\TextControl.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Collections\AssetCollection.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Data\Nodes\Input\Lighting\ReflectionProbeNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Generation\Enumerations\ShaderValueType.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Data\Nodes\IPropertyFromNode.cs" />

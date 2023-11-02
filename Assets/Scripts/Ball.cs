@@ -52,6 +52,11 @@ public class Ball : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(rigidbody.isKinematic == true)
+        {
+            return;
+        }
+
         Vector3 currentVelosity = rigidbody.velocity;
         Vector3 currentAngularVelosity = rigidbody.angularVelocity;
 

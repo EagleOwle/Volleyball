@@ -105,6 +105,8 @@ Material:
     - _DetailSaturation: 0
     - _DetailSource: 0
     - _DetailSpecularIntensity: 0.2
+    - _DistortionSpeed: 1
+    - _DistortionStrength: 0.1
     - _DstBlend: 0
     - _EmissionIntensity: 0
     - _EnableDetailMask: 0
@@ -137,6 +139,7 @@ Material:
     - _SpreadDetailMap: 0
     - _SpreadTransparentMap: 0
     - _SrcBlend: 1
+    - _Tiling: 1
     - _TriplanarFalloff: 20
     - _TriplanarSpaceProjection: 0
     - _UVSec: 0
