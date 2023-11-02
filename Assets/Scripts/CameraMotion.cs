@@ -12,7 +12,7 @@ public class CameraMotion : MonoBehaviour
 
     private void Start()
     {
-        screenMarker = GameObject.FindAnyObjectByType<CameraViewMarker>();
+        screenMarker = GameObject.FindObjectOfType<CameraViewMarker>();
 
         if (screenMarker == null)
         {

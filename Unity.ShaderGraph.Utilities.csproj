@@ -58,10 +58,10 @@
     <Analyzer Include="D:\Unity\Hub\Editor\2022.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Utilities\GenerationAPIAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Utilities\EnumInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Utilities\AssemblyInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Utilities\StringBuilderExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Utilities\GenerationAPIAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Library\PackageCache\com.unity.shadergraph@14.0.4\Editor\Utilities\Unity.ShaderGraph.Utilities.asmdef" />
@@ -339,9 +339,6 @@
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="MTE">
-      <HintPath>Assets\MeshTerrainEditor\Editor\MTE.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.0.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
