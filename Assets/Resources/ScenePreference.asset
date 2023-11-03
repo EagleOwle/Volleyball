@@ -17,7 +17,7 @@ MonoBehaviour:
     arrayIndex: 0
     sprite: {fileID: 21300000, guid: 6941a25a714dc064b8fe3024e37ba7ea, type: 3}
     matchPreference:
-      Rounds: 15
+      Rounds: 10
       BallHits: 3
     difficultEnum: 1
     buildIndex: 1
@@ -46,7 +46,7 @@ MonoBehaviour:
     arrayIndex: 1
     sprite: {fileID: 21300000, guid: 1fac706d236382c4d93ad016186b5313, type: 3}
     matchPreference:
-      Rounds: 15
+      Rounds: 10
       BallHits: 3
     difficultEnum: 1
     buildIndex: 2

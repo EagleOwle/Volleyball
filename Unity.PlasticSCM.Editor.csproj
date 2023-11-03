@@ -319,9 +319,9 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Views\CreateWorkspace\DrawCreateWorkspaceView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\DrawGuiModeSwitcher.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\CheckWorkspaceTreeNodeStatus.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Views\Changesets\ChangesetsListHeaderState.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\ViewSwitcher.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\DrawActionButton.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Views\Changesets\ChangesetsListHeaderState.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\EditorWindowFocus.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\ShowWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\CooldownWindowDelayer.cs" />
@@ -335,8 +335,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Help\HelpLink.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Views\ConfirmContinueWithPendingChangesDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\ApplicationDataPath.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\Progress\DrawProgressForOperations.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\CollabMigration\MigrationProgressRender.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\UI\Progress\DrawProgressForOperations.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\Tool\FindTool.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\CloudProjectDownloader\ParseArguments.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.0.1\Editor\PlasticSCM\CloudProjectDownloader\CommandLineArguments.cs" />
