@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public enum RoundResult
+﻿public enum RoundResult
 {
     None,
     FeedLoss,

@@ -1,10 +1,10 @@
 using UnityEngine;
 
-
 [RequireComponent(typeof(UnitMotion))]
 public class SinglePlayer : Unit
 {
     [SerializeField] protected LayerMask ballLayer = 0;
+
     private UnitMotion unitMotion;
     private Vector3 lastMoveDirection;
     [SerializeField] private bool jumpOnButton = true;

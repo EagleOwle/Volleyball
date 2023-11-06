@@ -67,9 +67,8 @@ public class Game : MonoBehaviour
         AudioController.Instance.PlayInstanceClip(roundFallClip);
 
         RoundResult roundResult = match.SetScore(luser);
-        actionRoundFail?.Invoke(roundResult);
-
         lastLuser = luser;
+        actionRoundFail?.Invoke(roundResult);
 
         StateMachine.SetState<FallState>();
     }

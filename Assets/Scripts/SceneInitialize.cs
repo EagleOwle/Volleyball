@@ -41,7 +41,7 @@ public static class SceneInitialize
 
     public static void StartRound(PlayerType lastLuser)
     {
-        ArrangementOfActors(lastLuser);
+       ArrangementOfActors(lastLuser);
 
         UIGame.Instance.StartRound();
         UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
@@ -72,6 +72,8 @@ public static class SceneInitialize
                 Ball.transform.position = Cort.PlayerSpawnPoint.position + Vector3.up * 2.5f; 
                 break;
         }
+
+        Debug.Break();
     }
 
     private static float AddRandomPosition()
