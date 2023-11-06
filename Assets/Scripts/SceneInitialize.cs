@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public static class SceneInitialize
+public class SceneInitialize : MonoBehaviour
 {
-    private static Cort Cort;
-    private static Unit Player;
-    private static Unit Bot;
-    private static Ball Ball;
+    [SerializeField] private static Cort Cort;
+    [SerializeField] private static Unit Player;
+    [SerializeField] private static Unit Bot;
+    [SerializeField] private static Ball Ball;
 
-    public static void Initialise(ScenePreference.Scene scene)
+    public void Initialise(ScenePreference.Scene scene)
     {
         Cort = GameObject.FindObjectOfType<Cort>();
 
@@ -39,15 +39,14 @@ public static class SceneInitialize
         }
     }
 
-    public static void StartRound(PlayerType lastLuser)
+    public void StartRound(PlayerType lastLuser)
     {
-       ArrangementOfActors(lastLuser);
-
+        ArrangementOfActors(lastLuser);
         UIGame.Instance.StartRound();
         UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
     }
 
-    private static void ArrangementOfActors(PlayerType lastLuser)
+    private void ArrangementOfActors(PlayerType lastLuser)
     {
         switch (lastLuser)
         {
@@ -69,16 +68,17 @@ public static class SceneInitialize
             case PlayerType.Rival:
                 Player.transform.position = Cort.PlayerSpawnPoint.position;
                 Bot.transform.position = Cort.BotSpawnPoint.position;
-                Ball.transform.position = Cort.PlayerSpawnPoint.position + Vector3.up * 2.5f; 
+                Ball.transform.position = Cort.PlayerSpawnPoint.position + Vector3.up * 2.5f;
                 break;
         }
 
-        Debug.Break();
+        Debug.Log("Last luser = " + lastLuser.ToString());
+        // Debug.Break();
     }
 
-    private static float AddRandomPosition()
+    private float AddRandomPosition()
     {
-        if(UnityEngine.Random.Range(0,2) == 0)
+        if (UnityEngine.Random.Range(0, 2) == 0)
         {
             return -0.2f;
         }
@@ -87,5 +87,4 @@ public static class SceneInitialize
             return 0.2f;
         }
     }
-
 }

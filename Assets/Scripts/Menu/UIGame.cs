@@ -49,10 +49,10 @@ public class UIGame : MonoBehaviour
         
     }
 
-    public void StartRound(Ball ball)
-    {
-        StartRound();
-    }
+    //public void StartRound(Ball ball)
+    //{
+    //    StartRound();
+    //}
 
     public void StartRound()
     {

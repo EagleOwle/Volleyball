@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5257921611084938163}
   - component: {fileID: 5257921611084938162}
+  - component: {fileID: 4558300881216257846}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5257921611084938162
 MonoBehaviour:
@@ -44,9 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11f6d3bead165c4a90e3ee0d580a710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starMatch: 1
-  useTargetFramerate: 1
-  targetFrameRate: 500
   roundFallClip: {fileID: 8300000, guid: 5ba96fc4947271d4f8c3c7917e659a12, type: 3}
   scene:
     name: 
@@ -84,6 +82,19 @@ MonoBehaviour:
       playerType: 0
     enemyScore:
       playerType: 0
+  sceneInitialize: {fileID: 4558300881216257846}
   references:
     version: 2
     RefIds: []
+--- !u!114 &4558300881216257846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5257921611084938173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bf9ec75f08029c45bca82452ba77ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

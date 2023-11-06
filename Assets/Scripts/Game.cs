@@ -26,7 +26,8 @@ public class Game : MonoBehaviour
     public Action<PlayerType, int> actionUnitHit;
     public ScenePreference.Scene scene;
     public Match match;
-    
+    public SceneInitialize sceneInitialize;
+
     private PlayerType lastLuser = PlayerType.None;
 
     private void Start()
@@ -46,7 +47,7 @@ public class Game : MonoBehaviour
         match = new Match();
         match.Initialise(scene.matchPreference.Rounds);
 
-        SceneInitialize.Initialise(scene);
+        sceneInitialize.Initialise(scene);
     }
 
     private void ChangeState(State next, State last)
@@ -80,8 +81,10 @@ public class Game : MonoBehaviour
 
     private void StartRound()
     {
+        Debug.Break();
         match.round++;
-        SceneInitialize.StartRound(lastLuser);
+        sceneInitialize.StartRound(lastLuser);
+       
     }
 
     public void EndGame()
