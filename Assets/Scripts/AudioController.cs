@@ -38,9 +38,11 @@ public class AudioController : MonoBehaviour
         Preference.Singleton.actionOnChangeMusicValue += OnChangeMusicValue;
         Preference.Singleton.actionOnChangeSfxValue += OnChangeSfxValue;
 
+        OnChangeMusicValue(Preference.Singleton.MusicValue);
+        OnChangeSfxValue(Preference.Singleton.SfxValue);
+
         _musicSource.clip = _musicClip;
         _musicSource.loop = true;
-        OnChangeMusicValue(Preference.Singleton.MusicValue);
         _musicSource.Play();
     }
 
@@ -52,6 +54,7 @@ public class AudioController : MonoBehaviour
     private void OnChangeSfxValue(float value)
     {
         _sfxSource.volume = value;
+        _matchEventSource.volume = value;
     }
 
     private void PauseMusic()
@@ -87,12 +90,6 @@ public class AudioController : MonoBehaviour
     {
         _matchEventSource.clip = clip;
         _matchEventSource.Play();
-
-        //GameObject audioObj = new GameObject();
-        //var source = audioObj.AddComponent<AudioSource>();
-        //source.clip = clip;
-        //source.Play();
-        //Destroy(audioObj, clip.length);
     }
 
 }

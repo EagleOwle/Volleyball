@@ -44,7 +44,8 @@ public class Preference : ScriptableObject
             return _musicValue;
         }
     }
-    private float _musicValue = 1;
+    [Range(0,1)]
+    [SerializeField] private float _musicValue = 0.4f;
     public Action<float> actionOnChangeMusicValue;
 
     public float SfxValue
@@ -63,7 +64,8 @@ public class Preference : ScriptableObject
             return _sfxValue;
         }
     }
-    private float _sfxValue = 1;
+    [Range(0, 1)]
+    [SerializeField]private float _sfxValue = 0.6f;
     public Action<float> actionOnChangeSfxValue;
 
     [Header("Vibra")]
