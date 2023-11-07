@@ -25,7 +25,7 @@ public class UIPause : UIPanel
 
     private void OnButtonRessum()
     {
-        UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
+        UIHud.Instance.OnChangePanel(UIPanelName.Timer);
         gameObject.SetActive(false);
     }
 

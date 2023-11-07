@@ -36,7 +36,7 @@ public class UIScenePreference : UIPanel
 
     private void OnButtonReturn()
     {
-        UIHud.Singletone.OnChangePanel(UIPanelName.Main);
+        UIHud.Instance.OnChangePanel(UIPanelName.Main);
     }
 
     private void OnEnable()

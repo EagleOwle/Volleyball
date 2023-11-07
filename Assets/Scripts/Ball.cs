@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour
     [SerializeField] private new Rigidbody rigidbody;
     [SerializeField] protected LayerMask unitLayer = 0;
     [SerializeField] protected LayerMask groundLayer = 0;
+    [SerializeField] protected LayerMask trajectoryLayer = 0;
 
     private const float maxAngularVelocity = 80;
 
@@ -81,7 +82,7 @@ public class Ball : MonoBehaviour
                 Game.Instance.OnRoundFall(CurrentPlayerSide);
             }
 
-            trajectory.Calculate(transform.position, rigidbody.velocity, groundLayer);
+            trajectory.Calculate(transform.position, rigidbody.velocity, trajectoryLayer);
         }
         else
         {

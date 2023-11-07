@@ -10,6 +10,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] private AudioClip _musicClip;
 
     private AudioSource _musicSource;
+    private AudioSource _matchEventSource;
     private AudioSource _sfxSource;
 
     public static AudioController Instance;
@@ -27,6 +28,7 @@ public class AudioController : MonoBehaviour
 
         _musicSource = gameObject.AddComponent<AudioSource>();
         _sfxSource = gameObject.AddComponent<AudioSource>();
+        _matchEventSource = gameObject.AddComponent<AudioSource>();
     }
 
     private void Start()
@@ -83,11 +85,14 @@ public class AudioController : MonoBehaviour
 
     public void PlayInstanceClip(AudioClip clip)
     {
-        GameObject audioObj = new GameObject();
-        var source = audioObj.AddComponent<AudioSource>();
-        source.clip = clip;
-        source.Play();
-        Destroy(audioObj, clip.length);
+        _matchEventSource.clip = clip;
+        _matchEventSource.Play();
+
+        //GameObject audioObj = new GameObject();
+        //var source = audioObj.AddComponent<AudioSource>();
+        //source.clip = clip;
+        //source.Play();
+        //Destroy(audioObj, clip.length);
     }
 
 }

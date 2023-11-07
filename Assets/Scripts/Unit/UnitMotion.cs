@@ -11,7 +11,6 @@ public class UnitMotion : MonoBehaviour
     public bool OnGround => _onGround;
     private float velocityX;
     private float velocityY;
-    private float moveYTarget;
 
     private Vector3 moveDirection;
     public Vector3 MoveDirection
@@ -56,12 +55,9 @@ public class UnitMotion : MonoBehaviour
             {
                velocityY = Preference.Singleton.jumpForce * Time.deltaTime;
             }
-
-            //moveYTarget = 0;
         }
 
         return  Mathf.MoveTowards(velocityY, moveYTarget, Preference.Singleton.downSpeed * Time.deltaTime);
-        //return  Mathf.Lerp(velocityY, moveYTarget, Preference.Singleton.downSpeed * Time.deltaTime);
     }
 
     private void OnCollisionStay(Collision collision)
@@ -86,25 +82,6 @@ public class UnitMotion : MonoBehaviour
         {
             _onGround = true;
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (_rigidbody == null) return;
-
-        Gizmos.color = Color.red;
-
-        Vector3 startPosition = transform.position;
-
-        Vector3 endPosition = startPosition + _rigidbody.velocity;
-
-        Gizmos.DrawLine(startPosition, endPosition);
-
-    }
-
-    private void DebugBreak()
-    {
-        Debug.Break();
     }
 
 }

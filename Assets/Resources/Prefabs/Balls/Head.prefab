@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3206145727597744280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4360467399234697514}
+  - component: {fileID: 3269560387150032999}
+  - component: {fileID: 7072614454455358474}
+  m_Layer: 7
+  m_Name: Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4360467399234697514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3206145727597744280}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0.05, z: 0.03}
+  m_LocalScale: {x: 1.7, y: 1.9, z: 1.7}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8546560687653349729}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
+--- !u!64 &3269560387150032999
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3206145727597744280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1639555684092285398, guid: 0bfa6abdac5b784448d9feea2d86b931, type: 3}
+--- !u!135 &7072614454455358474
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3206145727597744280}
+  m_Material: {fileID: 13400000, guid: a4149fdeed0c70247a18f4470a9855df, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.18
+  m_Center: {x: 0, y: 0.0024056435, z: -0.0000018924475}
 --- !u!1 &3301843921707484011
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,8 +71,6 @@ GameObject:
   - component: {fileID: 3036286961800321414}
   - component: {fileID: 6749304152938924269}
   - component: {fileID: 6542583291263299722}
-  - component: {fileID: 5791336576752610635}
-  - component: {fileID: 8564450548372386968}
   m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
@@ -33,7 +91,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8546560687653349729}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &6749304152938924269
 MeshFilter:
@@ -85,33 +143,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5791336576752610635
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3301843921707484011}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5523277661179574252, guid: 750a4b60d0df1594c8e444126c20f198, type: 3}
---- !u!135 &8564450548372386968
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3301843921707484011}
-  m_Material: {fileID: 13400000, guid: a4149fdeed0c70247a18f4470a9855df, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.18
-  m_Center: {x: 0, y: 0.0024056435, z: -0.0000018924475}
 --- !u!1 &3890578020711540319
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4360467399234697514}
   - {fileID: 3036286961800321414}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -174,8 +206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce1b4875358317448db4824521d2699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshCollider: {fileID: 5791336576752610635}
-  sphereCollider: {fileID: 8564450548372386968}
+  meshCollider: {fileID: 3269560387150032999}
+  sphereCollider: {fileID: 7072614454455358474}
   rigidbody: {fileID: 188948765594262952}
   unitLayer:
     serializedVersion: 2
@@ -183,4 +215,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  trajectoryLayer:
+    serializedVersion: 2
+    m_Bits: 320
   playerHitCount: 0

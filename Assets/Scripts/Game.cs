@@ -81,7 +81,6 @@ public class Game : MonoBehaviour
 
     private void StartRound()
     {
-        Debug.Break();
         match.round++;
         sceneInitialize.StartRound(lastLuser);
        

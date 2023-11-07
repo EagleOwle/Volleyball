@@ -22,15 +22,15 @@ public abstract class UIPanel : MonoBehaviour
 
     public virtual void Init()
     {
-        UIHud.Singletone.ActionChangePanel += ChangePanel;
+        UIHud.Instance.ActionChangePanel += ChangePanel;
         //Debug.LogError("Init " + panelName);
     }
 
     protected virtual void OnDestroy()
     {
-        if (UIHud.Singletone != null)
+        if (UIHud.Instance != null)
         {
-            UIHud.Singletone.ActionChangePanel -= ChangePanel;
+            UIHud.Instance.ActionChangePanel -= ChangePanel;
         }
     }
 }

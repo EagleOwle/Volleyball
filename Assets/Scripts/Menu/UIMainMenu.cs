@@ -18,17 +18,17 @@ public class UIMainMenu : UIPanel
     private void OnButtonStart()
     {
         //SceneLoader.Instance.LoadLevel();
-        UIHud.Singletone.OnChangePanel(UIPanelName.ScenePreference);
+        UIHud.Instance.OnChangePanel(UIPanelName.ScenePreference);
     }
 
     private void OnButtonPreference()
     {
-        UIHud.Singletone.OnChangePanel(UIPanelName.Preference);
+        UIHud.Instance.OnChangePanel(UIPanelName.Preference);
     }
 
     private void OnButtonConnect()
     {
-        UIHud.Singletone.OnChangePanel(UIPanelName.Connect);
+        UIHud.Instance.OnChangePanel(UIPanelName.Connect);
     }
 
     private void OnButtonQuit()

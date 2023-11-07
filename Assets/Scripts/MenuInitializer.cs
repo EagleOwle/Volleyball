@@ -11,7 +11,7 @@ public class MenuInitializer : MonoBehaviour
 
     public void Restart()
     {
-        UIHud.Singletone.OnChangePanel(UIPanelName.Main);
+        UIHud.Instance.OnChangePanel(UIPanelName.Main);
     }
 
 }

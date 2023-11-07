@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class UIHud : MonoBehaviour
 {
-    private static UIHud uiHud;
-    public static UIHud Singletone
+    private static UIHud instance;
+    public static UIHud Instance
     {
         get
         {
-            if (uiHud == null)
+            if (instance == null)
             {
-                uiHud = GameObject.FindObjectOfType<UIHud>();
+                instance = GameObject.FindObjectOfType<UIHud>();
             }
 
-            return uiHud;
+            return instance;
         }
     }
 

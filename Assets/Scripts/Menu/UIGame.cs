@@ -49,11 +49,6 @@ public class UIGame : MonoBehaviour
         
     }
 
-    //public void StartRound(Ball ball)
-    //{
-    //    StartRound();
-    //}
-
     public void StartRound()
     {
         Game.Instance.actionRoundFail += OnFail;
@@ -106,7 +101,7 @@ public class UIGame : MonoBehaviour
 
     private void OnButtonPause()
     {
-        UIHud.Singletone.OnChangePanel(UIPanelName.Pause);
+        UIHud.Instance.OnChangePanel(UIPanelName.Pause);
     }
 
     private void OnFail(RoundResult roundResult)

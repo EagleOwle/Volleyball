@@ -79,7 +79,7 @@ public class UIPreferenceMenu : UIPanel
 
     private void OnButtonReturn()
     {
-        UIHud.Singletone.OnChangePanel(UIPanelName.Main);
+        UIHud.Instance.OnChangePanel(UIPanelName.Main);
     }
 
     private void OnQualityChange(float value)

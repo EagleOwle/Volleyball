@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class SceneInitialize : MonoBehaviour
 {
-    [SerializeField] private static Cort Cort;
-    [SerializeField] private static Unit Player;
-    [SerializeField] private static Unit Bot;
-    [SerializeField] private static Ball Ball;
+    private Cort Cort;
+    private Unit Player;
+    private Unit Bot;
+    private Ball Ball;
 
     public void Initialise(ScenePreference.Scene scene)
     {
@@ -17,18 +17,16 @@ public class SceneInitialize : MonoBehaviour
             return;
         }
 
-        GameObject tmp = null;
+        //GameObject tmp = null;
 
-        tmp = Object.Instantiate(scene.playerPrefab, Cort.PlayerSpawnPoint.position, Quaternion.identity);
-        Player = tmp.GetComponent<Unit>();
-        //Player.transform.position = Cort.PlayerSpawnPoint.position;
+        var tmpPlayer = Object.Instantiate(scene.playerPrefab, Cort.PlayerSpawnPoint.position, Quaternion.identity);
+        Player = tmpPlayer.GetComponent<Unit>();
 
-        tmp = Object.Instantiate(scene.enemyPrefab, Cort.BotSpawnPoint.position, Quaternion.identity);
-        Bot = tmp.GetComponent<Unit>();
-        //Bot.transform.position = Cort.BotSpawnPoint.position;
+        var tmpBot = Object.Instantiate(scene.enemyPrefab, Cort.BotSpawnPoint.position, Quaternion.identity);
+        Bot = tmpBot.GetComponent<Unit>();
 
-        tmp = Object.Instantiate(Preference.Singleton.balls[scene.ballIndex].prefab);
-        Ball = tmp.GetComponent<Ball>();
+        var tmpBall = Object.Instantiate(Preference.Singleton.balls[scene.ballIndex].prefab);
+        Ball = tmpBall.GetComponent<Ball>();
         Ball.Initialise(scene.ballIndex, scene.matchPreference);
         Ball.transform.position = Cort.BallSpawnPoint.position + Vector3.right * AddRandomPosition();
 
@@ -43,7 +41,7 @@ public class SceneInitialize : MonoBehaviour
     {
         ArrangementOfActors(lastLuser);
         UIGame.Instance.StartRound();
-        UIHud.Singletone.OnChangePanel(UIPanelName.Timer);
+        UIHud.Instance.OnChangePanel(UIPanelName.Timer);
     }
 
     private void ArrangementOfActors(PlayerType lastLuser)
@@ -53,10 +51,7 @@ public class SceneInitialize : MonoBehaviour
             case PlayerType.None:
                 Player.transform.position = Cort.PlayerSpawnPoint.position;
                 Bot.transform.position = Cort.BotSpawnPoint.position;
-
-                var position = Vector3.right * AddRandomPosition();
-                Ball.transform.position = Cort.BallSpawnPoint.position + position;
-
+                Ball.transform.position = Cort.BallSpawnPoint.position + (Vector3.right * AddRandomPosition());
                 break;
 
             case PlayerType.Local:
@@ -71,20 +66,17 @@ public class SceneInitialize : MonoBehaviour
                 Ball.transform.position = Cort.PlayerSpawnPoint.position + Vector3.up * 2.5f;
                 break;
         }
-
-        Debug.Log("Last luser = " + lastLuser.ToString());
-        // Debug.Break();
     }
 
     private float AddRandomPosition()
     {
         if (UnityEngine.Random.Range(0, 2) == 0)
         {
-            return -0.2f;
+            return -0.1f;
         }
         else
         {
-            return 0.2f;
+            return 0.1f;
         }
     }
 }
