@@ -17,8 +17,8 @@ MonoBehaviour:
   InputDeadZone: 0.3
   inputType: 0
   moveSpeed: 250
-  jumpMoveSpeed: 250
-  jumpForce: 500
+  jumpMoveSpeed: 300
+  jumpForce: 550
   downSpeed: 12
   pushForce: 5
   deadzoneForMove: 0.3
