@@ -20,11 +20,12 @@ public class CameraMotion : MonoBehaviour
             eventCameraEndMotion?.Invoke();
             return;
         }
-
-        screenMarker.eventOnVisible += ScreenMarker_eventOnVisible;
         var position = transform.position;
         position.z = 0;
         transform.position = position;
+
+        screenMarker.eventOnVisible += ScreenMarker_eventOnVisible;
+
         moveRoutine = StartCoroutine(Move());
     }
 
@@ -48,10 +49,10 @@ public class CameraMotion : MonoBehaviour
     private void ScreenMarker_eventOnVisible()
     {
         Debug.Log("Camera On Position");
+        screenMarker.eventOnVisible -= ScreenMarker_eventOnVisible;
         eventCameraEndMotion?.Invoke();
         StopCoroutine(moveRoutine);
         Destroy(screenMarker.gameObject);
         Destroy(this);
-        
     }
 }

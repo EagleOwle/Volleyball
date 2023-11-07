@@ -89,10 +89,6 @@ public class UIGame : MonoBehaviour
         }
     }
 
-    private void OnDisable()
-    {
-        StateMachine.actionChangeState -= OnChangeGameState;
-    }
 
     private void OnDestroy()
     {

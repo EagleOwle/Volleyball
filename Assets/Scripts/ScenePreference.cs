@@ -55,8 +55,8 @@ public class ScenePreference : ScriptableObject
         public GameDifficult difficultEnum;
         public int buildIndex;
         public int ballIndex;
-        public GameObject playerPrefab;
-        public GameObject enemyPrefab;
+        public Unit playerPrefab;
+        public Unit enemyPrefab;
         public LocalizedString descriptionString;
         public LocalizedString nameString;
 

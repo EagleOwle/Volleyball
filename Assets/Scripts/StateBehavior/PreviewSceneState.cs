@@ -8,7 +8,8 @@ public class PreviewSceneState : State
     public override void Enter()
     {
         nameState = "Previwe Scene";
-        cameraMotion = Camera.main.gameObject.AddComponent<CameraMotion>();
+        //cameraMotion = Camera.main.gameObject.AddComponent<CameraMotion>();
+        cameraMotion = Camera.main.GetComponent<CameraMotion>();
         cameraMotion.eventCameraEndMotion += Camera_eventCameraEndMotion;
     }
 

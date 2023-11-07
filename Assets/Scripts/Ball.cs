@@ -18,7 +18,7 @@ public class Ball : MonoBehaviour
     private PlayerType currentPlayerSide;
     public int playerHitCount;
 
-    private Preference.Ball config;
+    private Preference.BallSetting config;
     private MatchPreference matchPreference;
 
     private TrajectoryCalculate trajectory;

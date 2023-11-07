@@ -106,10 +106,10 @@ public class Preference : ScriptableObject
     public TrajectoryRender trajectoryRenderPrefab;
 
     [Header("Ball")]
-    public Ball[] balls;
+    public BallSetting[] balls;
 
     [System.Serializable]
-    public class Ball
+    public class BallSetting
     {
         public string neme;
         public float maxMagnetude = 5;
@@ -122,6 +122,6 @@ public class Preference : ScriptableObject
             }
         }
         public AudioClip[] hitClip;
-        public GameObject prefab;
+        public Ball prefab;
     }
 }
