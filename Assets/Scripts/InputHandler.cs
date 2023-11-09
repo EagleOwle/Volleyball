@@ -45,7 +45,6 @@ public class InputHandler : MonoBehaviour
     }
     private Vector2 percent;
 
-
     private void GetSwipe()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -70,8 +69,8 @@ public class InputHandler : MonoBehaviour
             direction.x = Mathf.Clamp(direction.x, -100, 100);
             direction.y = Mathf.Clamp(direction.y, -100, 100);
 
-            percent.x = Screen.width / 100 * Preference.Singleton.InputDeadZone;
-            percent.y = Screen.height / 100 * Preference.Singleton.InputDeadZone;
+            percent.x = Screen.width / 100 * Preference.Singleton.player[0].InputDeadZone;
+            percent.y = Screen.height / 100 * Preference.Singleton.player[0].InputDeadZone;
 
             if (Mathf.Abs(direction.x) < percent.x)
             {
@@ -125,11 +124,11 @@ public class InputHandler : MonoBehaviour
 
     public void OnJoysticInput(Vector2 value)
     {
-        if (Mathf.Abs(value.x) < Preference.Singleton.InputDeadZone)
+        if (Mathf.Abs(value.x) < Preference.Singleton.player[0].InputDeadZone)
         {
             value.x = 0;
         }
-        if (Mathf.Abs(value.y) < Preference.Singleton.InputDeadZone)
+        if (Mathf.Abs(value.y) < Preference.Singleton.player[0].InputDeadZone)
         {
             value.y = 0;
         }

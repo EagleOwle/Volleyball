@@ -24,7 +24,7 @@ public class UIPreferenceMenu : UIPanel
     [SerializeField] private Slider qualitySlider;
     [Space]
     [SerializeField] private Text inputButtonText;
-    [SerializeField] private Text inputJoystickText;
+    [SerializeField] private Text inputMouseText;
     [SerializeField] private Slider inputTypeSlider;
 
     public override void Init()
@@ -54,7 +54,7 @@ public class UIPreferenceMenu : UIPanel
         OnQualityChange(value);
 
         inputTypeSlider.onValueChanged.AddListener(OnInputTypeChange);
-        value = (int)Preference.Singleton.inputType;
+        value = (int)Preference.Singleton.player[0].inputType;
         inputTypeSlider.value = value;
         OnInputTypeChange(value);
     }
@@ -119,7 +119,7 @@ public class UIPreferenceMenu : UIPanel
         switch (value)
         {
             case 0:
-                inputJoystickText.fontSize = 30;
+                inputMouseText.fontSize = 30;
                 inputButtonText.fontSize = 40;
                 inputButtonText.transform.SetAsLastSibling();
                 
@@ -127,13 +127,13 @@ public class UIPreferenceMenu : UIPanel
 
             case 1:
                inputButtonText.fontSize = 30;
-               inputJoystickText.fontSize = 40;
-                inputJoystickText.transform.SetAsLastSibling();
+               inputMouseText.fontSize = 40;
+                inputMouseText.transform.SetAsLastSibling();
                 break;
 
         }
 
-        Preference.Singleton.inputType = (InputType)value;
+        Preference.Singleton.player[0].inputType = (InputType)value;
     }
 
     private void ShowPreferenceType(PreferenceType  type)
