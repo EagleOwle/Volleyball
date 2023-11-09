@@ -16,6 +16,11 @@ scopes = {
 	"last_search.21382318" = "Missing"
 	"OpenInspectorPreview.21382318" = "0"
 	"currentGroup.21382318" = "all"
+	"picker_window_position_offset.45F317DD" = "84;224,8;320;550,4"
+	"picker_search_text.45F317DD" = "st: "
+	"last_search.45F317DD" = "st: "
+	"OpenInspectorPreview.45F317DD" = "0"
+	"currentGroup.45F317DD" = "all"
 }
 providers = {
 	at = {
@@ -86,6 +91,7 @@ searchItemFavorites = [
 ]
 savedSearchesSortOrder = 0
 showSavedSearchPanel = false
+hideTabs = false
 expandedQueries = [
 ]
 queryBuilder = false

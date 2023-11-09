@@ -210,6 +210,30 @@ MonoBehaviour:
     m_Localized: The match is lost
     m_Metadata:
       m_Items: []
+  - m_Id: 8439684754845696
+    m_Localized: Player 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8442831762108416
+    m_Localized: Movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8465279232520192
+    m_Localized: 'Player 2 '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8467779071258624
+    m_Localized: Player 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8468278461870080
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8470962225033216
+    m_Localized: Player 2
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
