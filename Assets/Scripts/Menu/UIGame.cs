@@ -35,7 +35,7 @@ public class UIGame : MonoBehaviour
 
     private void OnEnable()
     {
-        switch (Preference.Singleton.inputType)
+        switch (Preference.Singleton.player[0].inputType)
         {
             case InputType.button:
                 inputJoystickPanel.SetActive(false);

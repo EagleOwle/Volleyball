@@ -90,9 +90,7 @@ public class Preference : ScriptableObject
 
     public Language language;
 
-    [Header("Input")]
-    public float InputDeadZone = 10;
-    public InputType inputType = InputType.button;
+    public PlayerPreference[] player;
 
     [Header("UnitMotion")]
     public float moveSpeed = 250;

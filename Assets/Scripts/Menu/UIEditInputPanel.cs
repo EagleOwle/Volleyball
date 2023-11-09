@@ -22,7 +22,7 @@ public class UIEditInputPanel : MonoBehaviour
 
     private void OnButtonEditInputPanel()
     {
-        switch (Preference.Singleton.inputType)
+        switch (Preference.Singleton.player[0].inputType)
         {
             case InputType.button:
                 ShowButtonPanel();
