@@ -56,7 +56,9 @@ MonoBehaviour:
     buildIndex: 0
     ballIndex: 0
     playerPrefab: {fileID: 0}
-    enemyPrefab: {fileID: 0}
+    aiPrefab: {fileID: 0}
+    player1Type: 0
+    player2Type: 0
     descriptionString:
       m_TableReference:
         m_TableCollectionName: 

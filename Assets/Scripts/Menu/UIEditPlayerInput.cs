@@ -9,21 +9,68 @@ public class UIEditPlayerInput : MonoBehaviour
     [SerializeField] private UIKeyChecker keyChecker;
     [SerializeField] private Button editKeyLeft, editKeyRight, editKeyJump;
     [SerializeField] private Text currentKeyLeft, currentKeyRight, currentKeyJump;
+    [SerializeField] private Slider inputTypeSlider, senceMouseMoveSlider, senceMouseJumpSlider;
+    [SerializeField] private GameObject editInputKeyPanel, editInputMousePanel;
 
     private PlayerPreference playerPreference;
 
     private void Awake()
     {
+        playerPreference = Preference.Singleton.player[playerId];
+
         editKeyLeft.onClick.AddListener(OnButtonChangeKeyLeft);
         editKeyRight.onClick.AddListener(OnButtonChangeKeyRight);
         editKeyJump.onClick.AddListener(OnButtonChangeKeyJump);
-        playerPreference = Preference.Singleton.player[playerId];
+
+        inputTypeSlider.onValueChanged.AddListener(ChangeEditInputPanel);
+
+        senceMouseMoveSlider.onValueChanged.AddListener(OnChangeMouseMoveSence);
+
+        senceMouseJumpSlider.onValueChanged.AddListener(OnChangeMouseJumpSence);
     }
 
     private void OnEnable()
     {
         keyChecker.eventHide += KeyChecker_eventHide;
         KeyChecker_eventHide();
+
+        inputTypeSlider.SetValueWithoutNotify((float)playerPreference.inputType);
+        ChangeEditInputPanel((float)playerPreference.inputType);
+
+        senceMouseMoveSlider.SetValueWithoutNotify(playerPreference.mouseMoveSence);
+        OnChangeMouseMoveSence(playerPreference.mouseMoveSence);
+
+        senceMouseJumpSlider.SetValueWithoutNotify(playerPreference.mouseJumpSence);
+        OnChangeMouseJumpSence(playerPreference.mouseJumpSence);
+    }
+
+    private void OnChangeMouseMoveSence(float value)
+    {
+        playerPreference.mouseMoveSence = value;
+    }
+
+    private void OnChangeMouseJumpSence(float value)
+    {
+        playerPreference.mouseJumpSence = value;
+    }
+
+    private void ChangeEditInputPanel(float value)
+    {
+        Debug.Log("ChangeEditInputPanel: " + value);
+        switch (value)
+        {
+            case 0:
+                editInputKeyPanel.SetActive(true);
+                editInputMousePanel.SetActive(false);
+                playerPreference.inputType = InputType.button;
+                break;
+
+            case 1:
+                editInputKeyPanel.SetActive(false);
+                editInputMousePanel.SetActive(true);
+                playerPreference.inputType = InputType.joystick;
+                break;
+        }
     }
 
     private void UpdateText()

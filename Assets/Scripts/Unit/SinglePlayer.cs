@@ -13,16 +13,32 @@ public class SinglePlayer : Unit
             Debug.LogError("Input handler is null");
             return;
         }
-
-        InputHandler.Instance.ActionSetSwipeDirection += OnSwipe;
+       
         if (playerIndex == 0)
         {
-            InputHandler.Instance.ActionOnInputForPlayer0 += OnInputButton;
+            if (Preference.Singleton.player[0].inputType == InputType.joystick)
+            {
+                InputHandler.Instance.ActionSetInputDirectionForPlayer0 += OnInputDirection;
+            }
+
+            if (Preference.Singleton.player[0].inputType == InputType.button)
+            {
+                InputHandler.Instance.ActionOnInputForPlayer0 += OnInputButton;
+            }
         }
 
         if (playerIndex == 1)
         {
-            InputHandler.Instance.ActionOnInputForPlayer1 += OnInputButton;
+            if (Preference.Singleton.player[1].inputType == InputType.joystick)
+            {
+                InputHandler.Instance.ActionSetInputDirectionForPlayer1 += OnInputDirection;
+            }
+
+            if (Preference.Singleton.player[1].inputType == InputType.button)
+            {
+                InputHandler.Instance.ActionOnInputForPlayer1 += OnInputButton;
+                
+            }
         }
     }
 
@@ -31,7 +47,7 @@ public class SinglePlayer : Unit
         lastMoveDirection = Vector3.zero;
     }
 
-    private void OnSwipe(Vector3 direction)
+    private void OnInputDirection(Vector2 direction)
     {
         lastMoveDirection = direction.normalized;
         unitMotion.MoveDirection = lastMoveDirection;
@@ -84,7 +100,8 @@ public class SinglePlayer : Unit
 
         if (InputHandler.Instance == null) return;
 
-        InputHandler.Instance.ActionSetSwipeDirection -= OnSwipe;
+        InputHandler.Instance.ActionSetInputDirectionForPlayer0 -= OnInputDirection;
+        InputHandler.Instance.ActionSetInputDirectionForPlayer1 -= OnInputDirection;
         InputHandler.Instance.ActionOnInputForPlayer0 -= OnInputButton;
         InputHandler.Instance.ActionOnInputForPlayer1 -= OnInputButton;
     }
@@ -95,7 +112,8 @@ public class SinglePlayer : Unit
 
         if (InputHandler.Instance == null) return;
 
-        InputHandler.Instance.ActionSetSwipeDirection -= OnSwipe;
+        InputHandler.Instance.ActionSetInputDirectionForPlayer0 -= OnInputDirection;
+        InputHandler.Instance.ActionSetInputDirectionForPlayer1 -= OnInputDirection;
         InputHandler.Instance.ActionOnInputForPlayer0 -= OnInputButton;
         InputHandler.Instance.ActionOnInputForPlayer1 -= OnInputButton;
     }

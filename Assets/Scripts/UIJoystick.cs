@@ -10,6 +10,7 @@ public class UIJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoint
     [SerializeField] private Image joystick;
 
     private Vector2 percent;
+    private Vector2 result;
 
     public void OnDrag(PointerEventData value)
     {
@@ -19,7 +20,19 @@ public class UIJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoint
         percent.x = (100 / radius) * joystick.rectTransform.localPosition.x;
         percent.y = (100 / radius) * joystick.rectTransform.localPosition.y;
 
-        InputHandler.Instance.OnJoysticInput(percent * 0.01f);
+        result = percent * 0.01f;
+
+        if (Mathf.Abs(result.x) < Preference.Singleton.player[0].joysticDeadZone)
+        {
+            result.x = 0;
+        }
+        if (Mathf.Abs(result.y) < Preference.Singleton.player[0].joysticDeadZone)
+        {
+            result.y = 0;
+        }
+
+       // InputHandler.Instance.OnInputDirection(result);
+        
     }
 
     public void OnPointerDown(PointerEventData ped)
@@ -30,6 +43,6 @@ public class UIJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoint
     public void OnPointerUp(PointerEventData ped)
     {
         joystick.rectTransform.anchoredPosition = Vector3.zero;
-        InputHandler.Instance.OnJoysticInput(Vector2.zero);
+       // InputHandler.Instance.OnInputDirection(Vector2.zero);
     }
 }

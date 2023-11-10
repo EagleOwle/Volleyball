@@ -6,12 +6,17 @@ using UnityEngine;
 public class PlayerPreference
 {
     public string Name;
-    public float InputDeadZone = 10;
+    [Space()]
     public InputType inputType = InputType.button;
+    [Space()]
     public PlayerInput leftKey;
     public PlayerInput rightKey;
     public PlayerInput jumpKey;
-
+    [Space()]
+    public float mouseMoveSence = 1;
+    public float mouseJumpSence = 10;
+    [Space()]
+    public float joysticDeadZone = 10;
 }
 
 [System.Serializable]

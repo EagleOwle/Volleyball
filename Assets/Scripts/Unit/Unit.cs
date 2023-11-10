@@ -8,7 +8,7 @@ public abstract class Unit : MonoBehaviour
 
     [SerializeField] protected LayerMask ballLayer = 0;
 
-    int playerIndex;
+    protected int playerIndex;
     Vector3 forceDirection;
 
     public virtual void Initialise(int playerIndex)

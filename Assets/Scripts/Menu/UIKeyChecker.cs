@@ -25,10 +25,10 @@ public class UIKeyChecker : MonoBehaviour
         {
             foreach (var item in Preference.Singleton.AllowedKeys)
             {
-                if (Input.GetKeyDown(item) && MatchChecking(item))
+                if (Input.GetKeyDown(item))
                 {
-                    Debug.Log("Key " + item + " is allowed");
                     targetInput.key = item;
+                    MatchChecking(targetInput);
                     HideSelf();
                     CancelInvoke();
                     return;
@@ -41,18 +41,34 @@ public class UIKeyChecker : MonoBehaviour
         }
     }
 
-    private bool MatchChecking(KeyCode key)
+    private void MatchChecking(PlayerInput targetInput)
     {
-        if (playerPreference.jumpKey.key == key)
-            return false;
+        foreach (var pref in Preference.Singleton.player)
+        {
+            if (pref.jumpKey != targetInput)
+            {
+                if (pref.jumpKey.key == targetInput.key)
+                {
+                    pref.jumpKey.key = KeyCode.None;
+                }
+            }
 
-        if (playerPreference.leftKey.key == key)
-            return false;
+            if (pref.leftKey != targetInput)
+            {
+                if (pref.leftKey.key == targetInput.key)
+                {
+                    pref.leftKey.key = KeyCode.None;
+                }
+            }
 
-        if (playerPreference.rightKey.key == key)
-            return false;
-
-        return true;
+            if (pref.rightKey != targetInput)
+            {
+                if (pref.rightKey.key == targetInput.key)
+                {
+                    pref.rightKey.key = KeyCode.None;
+                }
+            }
+        }
     }
 
     private void HideErroreMessage()

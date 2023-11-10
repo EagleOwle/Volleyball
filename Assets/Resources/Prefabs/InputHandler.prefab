@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2098672790508808784}
   - component: {fileID: 2098672790508808879}
   - component: {fileID: 925768764}
+  - component: {fileID: 2565589722039386621}
   m_Layer: 0
   m_Name: InputHandler
   m_TagString: Untagged
@@ -45,9 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf371dc7d110ea448110c84d3498ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiButtonMask:
-    serializedVersion: 2
-    m_Bits: 32
 --- !u!114 &925768764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,5 +56,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a9a005b1e9f4a45bfb6625e8feba21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2565589722039386621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098672790508808878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0094806d73f3aff469b195e2cabbd1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -35,6 +35,12 @@ public class UIGame : MonoBehaviour
 
     private void OnEnable()
     {
+        
+        
+    }
+
+    private void ShowUIInputPanel()
+    {
         switch (Preference.Singleton.player[0].inputType)
         {
             case InputType.button:
@@ -46,7 +52,6 @@ public class UIGame : MonoBehaviour
                 inputButtonPanel.SetActive(false);
                 break;
         }
-        
     }
 
     public void StartRound()

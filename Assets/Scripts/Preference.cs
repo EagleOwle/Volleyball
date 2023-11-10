@@ -88,8 +88,10 @@ public class Preference : ScriptableObject
     }
     public Action<bool> actionOnChangeVibration;
 
+    [Space()]
     public Language language;
 
+    [Space()]
     public List<KeyCode> AllowedKeys = new List<KeyCode>()
     {
         KeyCode.A,
@@ -99,11 +101,11 @@ public class Preference : ScriptableObject
         KeyCode.E
     };
 
+    [Space()]
     public PlayerPreference[] player;
 
     [Header("UnitMotion")]
     public float moveSpeed = 250;
-    public float jumpMoveSpeed = 250;
     public float jumpForce = 250;
     public float downSpeed = 20;
     public float pushForce = 25f;

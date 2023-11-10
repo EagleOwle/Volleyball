@@ -39,7 +39,7 @@ public class UnitMotion : MonoBehaviour
         }
 
         velocityY = Jump(moveDirection.y);
-        velocityX = moveDirection.x * Preference.Singleton.jumpMoveSpeed * Time.deltaTime;
+        velocityX = moveDirection.x * Preference.Singleton.moveSpeed * Time.deltaTime;
         _rigidbody.velocity = new Vector3(velocityX, velocityY, _rigidbody.velocity.z);
 
     }

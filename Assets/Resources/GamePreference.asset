@@ -19,7 +19,6 @@ MonoBehaviour:
   AllowedKeys: 6100000062000000630000006400000065000000710000007700000073000000640000007a00000078000000200000000800000011010000120100001301000014010000
   player:
   - Name: Player1
-    InputDeadZone: 10
     inputType: 0
     leftKey:
       type: 0
@@ -30,8 +29,10 @@ MonoBehaviour:
     jumpKey:
       type: 2
       key: 32
+    mouseMoveSence: 1
+    mouseJumpSence: 5
+    joysticDeadZone: 10
   - Name: Player2
-    InputDeadZone: 10
     inputType: 0
     leftKey:
       type: 0
@@ -42,8 +43,10 @@ MonoBehaviour:
     jumpKey:
       type: 2
       key: 32
+    mouseMoveSence: 1
+    mouseJumpSence: 10
+    joysticDeadZone: 10
   moveSpeed: 250
-  jumpMoveSpeed: 300
   jumpForce: 550
   downSpeed: 12
   pushForce: 5

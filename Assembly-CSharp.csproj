@@ -73,7 +73,7 @@
     <Compile Include="Assets\Scripts\Cort.cs" />
     <Compile Include="Assets\Scripts\Menu\UIPreferenceMenu.cs" />
     <Compile Include="Assets\Scripts\AudioController.cs" />
-    <Compile Include="Assets\Scripts\InputJoystick.cs" />
+    <Compile Include="Assets\Scripts\InputMouse.cs" />
     <Compile Include="Assets\Scripts\MediumQualityVisualEffect.cs" />
     <Compile Include="Assets\Scripts\Unit\Unit.cs" />
     <Compile Include="Assets\Scripts\DevSupport.cs" />
@@ -135,6 +135,7 @@
     <Compile Include="Assets\Scripts\PlayerPreference.cs" />
     <Compile Include="Assets\Scripts\Menu\UIKeyChecker.cs" />
     <Compile Include="Assets\Scripts\Menu\UIEditPlayerInput.cs" />
+    <Compile Include="Assets\Scripts\InputSwipe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
