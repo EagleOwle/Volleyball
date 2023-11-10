@@ -6,40 +6,46 @@ public class InputKeyboard : MonoBehaviour
 {
     private void Update()
     {
-        KeyboardInput();
+        foreach (var item in Preference.Singleton.player)
+        {
+            #region Left
+            if (Input.GetKey(item.leftKey.key))
+            {
+                InputHandler.Instance.OnButtonLeftDown();
+            }
+
+            if (Input.GetKeyUp(item.leftKey.key))
+            {
+                InputHandler.Instance.OnButtonLeftUp();
+            }
+            #endregion
+
+            #region Right
+            if (Input.GetKey(item.rightKey.key))
+            {
+                InputHandler.Instance.OnButtonRightDown();
+            }
+
+            if (Input.GetKeyUp(item.rightKey.key))
+            {
+                InputHandler.Instance.OnButtonRightUp();
+            }
+            #endregion
+
+            #region Jump
+            if (Input.GetKey(item.jumpKey.key))
+            {
+                InputHandler.Instance.OnButtonJumpDown();
+            }
+
+            if (Input.GetKeyUp(item.jumpKey.key))
+            {
+                InputHandler.Instance.OnButtonJumpUp();
+            }
+            #endregion
+
+        }
     }
 
-    private void KeyboardInput()
-    {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            InputHandler.Instance.OnButtonRightDown();
-        }
 
-        if (Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            InputHandler.Instance.OnButtonRightUp();
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            InputHandler.Instance.OnButtonLeftDown();
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            InputHandler.Instance.OnButtonLeftUp();
-        }
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            InputHandler.Instance.OnButtonJumpDown();
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            InputHandler.Instance.OnButtonJumpUp();
-        }
-
-    }
 }

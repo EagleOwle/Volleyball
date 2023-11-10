@@ -22,10 +22,10 @@ public class UIPreferenceMenu : UIPanel
     [SerializeField] private Text normalQualityText;
     [SerializeField] private Text highQualityText;
     [SerializeField] private Slider qualitySlider;
-    [Space]
-    [SerializeField] private Text inputButtonText;
-    [SerializeField] private Text inputMouseText;
-    [SerializeField] private Slider inputTypeSlider;
+   // [Space]
+   // [SerializeField] private Text inputButtonText;
+   // [SerializeField] private Text inputMouseText;
+   // [SerializeField] private Slider inputTypeSlider;
 
     public override void Init()
     {
@@ -53,10 +53,10 @@ public class UIPreferenceMenu : UIPanel
         qualitySlider.value = value;
         OnQualityChange(value);
 
-        inputTypeSlider.onValueChanged.AddListener(OnInputTypeChange);
-        value = (int)Preference.Singleton.player[0].inputType;
-        inputTypeSlider.value = value;
-        OnInputTypeChange(value);
+        //inputTypeSlider.onValueChanged.AddListener(OnInputTypeChange);
+        //value = (int)Preference.Singleton.player[0].inputType;
+        //inputTypeSlider.value = value;
+        //OnInputTypeChange(value);
     }
 
     private void OnMusicValueChange(float value)
@@ -116,24 +116,24 @@ public class UIPreferenceMenu : UIPanel
 
     private void OnInputTypeChange(float value)
     {
-        switch (value)
-        {
-            case 0:
-                inputMouseText.fontSize = 30;
-                inputButtonText.fontSize = 40;
-                inputButtonText.transform.SetAsLastSibling();
+        //switch (value)
+        //{
+        //    case 0:
+        //        inputMouseText.fontSize = 30;
+        //        inputButtonText.fontSize = 40;
+        //        inputButtonText.transform.SetAsLastSibling();
                 
-                break;
+        //        break;
 
-            case 1:
-               inputButtonText.fontSize = 30;
-               inputMouseText.fontSize = 40;
-                inputMouseText.transform.SetAsLastSibling();
-                break;
+        //    case 1:
+        //       inputButtonText.fontSize = 30;
+        //       inputMouseText.fontSize = 40;
+        //        inputMouseText.transform.SetAsLastSibling();
+        //        break;
 
-        }
+        //}
 
-        Preference.Singleton.player[0].inputType = (InputType)value;
+        //Preference.Singleton.player[0].inputType = (InputType)value;
     }
 
     private void ShowPreferenceType(PreferenceType  type)

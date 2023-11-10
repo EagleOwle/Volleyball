@@ -133,6 +133,8 @@
     <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
     <Compile Include="Assets\Scripts\Menu\EffectChangeSize.cs" />
     <Compile Include="Assets\Scripts\PlayerPreference.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIKeyChecker.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIEditPlayerInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

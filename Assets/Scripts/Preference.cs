@@ -90,6 +90,15 @@ public class Preference : ScriptableObject
 
     public Language language;
 
+    public List<KeyCode> AllowedKeys = new List<KeyCode>()
+    {
+        KeyCode.A,
+        KeyCode.B,
+        KeyCode.C,
+        KeyCode.D,
+        KeyCode.E
+    };
+
     public PlayerPreference[] player;
 
     [Header("UnitMotion")]

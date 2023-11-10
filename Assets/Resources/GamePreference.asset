@@ -16,13 +16,32 @@ MonoBehaviour:
   _sfxValue: 0.6
   _onVibration: 1
   language: 1
+  AllowedKeys: 6100000062000000630000006400000065000000710000007700000073000000640000007a00000078000000200000000800000011010000120100001301000014010000
   player:
   - Name: Player1
     InputDeadZone: 10
     inputType: 0
+    leftKey:
+      type: 0
+      key: 97
+    rightKey:
+      type: 1
+      key: 100
+    jumpKey:
+      type: 2
+      key: 32
   - Name: Player2
     InputDeadZone: 10
     inputType: 0
+    leftKey:
+      type: 0
+      key: 97
+    rightKey:
+      type: 1
+      key: 100
+    jumpKey:
+      type: 2
+      key: 32
   moveSpeed: 250
   jumpMoveSpeed: 300
   jumpForce: 550
