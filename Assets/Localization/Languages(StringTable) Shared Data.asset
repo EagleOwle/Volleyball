@@ -203,6 +203,34 @@ MonoBehaviour:
     m_Key: RoundResult LoseGame
     m_Metadata:
       m_Items: []
+  - m_Id: 8439684754845696
+    m_Key: Player 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8442831762108416
+    m_Key: Movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8465279232520192
+    m_Key: 'Player 2 '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8467779071258624
+    m_Key: Player2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8468278461870080
+    m_Key: Jum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8470022231175168
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8470962225033216
+    m_Key: Player 2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
