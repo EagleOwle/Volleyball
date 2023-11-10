@@ -22,34 +22,63 @@ public class InputButton : MonoBehaviour
 
     }
 
+    public void OnButtonJumpDown(int playerIndex)
+    {
+        InputHandler.Instance.OnButtonJumpDown(playerIndex);
+    }
+
     public void OnButtonJumpDown()
     {
-        InputHandler.Instance.OnButtonJumpDown();
+        InputHandler.Instance.OnButtonJumpDown(0);
+    }
+
+    public void OnButtonJumpUp(int playerIndex)
+    {
+        InputHandler.Instance.OnButtonJumpUp(playerIndex);
     }
 
     public void OnButtonJumpUp()
     {
-        InputHandler.Instance.OnButtonJumpUp();
+        InputHandler.Instance.OnButtonJumpUp(0);
+    }
+
+    public void OnButtonLeftDown(int playerIndex)
+    {
+        InputHandler.Instance.OnButtonLeftDown(playerIndex);
     }
 
     public void OnButtonLeftDown()
     {
-        InputHandler.Instance.OnButtonLeftDown();
+        InputHandler.Instance.OnButtonLeftDown(0);
+    }
+
+    public void OnButtonLeftUp(int playerIndex)
+    {
+        InputHandler.Instance.OnButtonLeftUp(playerIndex);
     }
 
     public void OnButtonLeftUp()
     {
-        InputHandler.Instance.OnButtonLeftUp();
+        InputHandler.Instance.OnButtonLeftUp(0);
+    }
+
+    public void OnButtonRightDown(int playerIndex)
+    {
+        InputHandler.Instance.OnButtonRightDown(playerIndex);
     }
 
     public void OnButtonRightDown()
     {
-        InputHandler.Instance.OnButtonRightDown();
+        InputHandler.Instance.OnButtonRightDown(0);
+    }
+
+    public void OnButtonRightUp(int playerIndex)
+    {
+        InputHandler.Instance.OnButtonRightUp(playerIndex);
     }
 
     public void OnButtonRightUp()
     {
-        InputHandler.Instance.OnButtonRightUp();
+        InputHandler.Instance.OnButtonRightUp(0);
     }
-
 }

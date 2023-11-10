@@ -3,14 +3,11 @@ using UnityEngine;
 [RequireComponent(typeof(UnitMotion))]
 public class SinglePlayer : Unit
 {
-    [SerializeField] protected LayerMask ballLayer = 0;
-
-    private UnitMotion unitMotion;
     private Vector3 lastMoveDirection;
-    [SerializeField] private bool jumpOnButton = true;
 
-    private void OnEnable()
+    public override void Initialise(int playerIndex)
     {
+        base.Initialise(playerIndex);
         if (InputHandler.Instance == null)
         {
             Debug.LogError("Input handler is null");
@@ -18,61 +15,26 @@ public class SinglePlayer : Unit
         }
 
         InputHandler.Instance.ActionSetSwipeDirection += OnSwipe;
-        InputHandler.Instance.ActionOnInputButton += OnInputButton;
-        StateMachine.actionChangeState += OnChangeGameState;
-        unitMotion = GetComponent<UnitMotion>();
+        if (playerIndex == 0)
+        {
+            InputHandler.Instance.ActionOnInputForPlayer0 += OnInputButton;
+        }
+
+        if (playerIndex == 1)
+        {
+            InputHandler.Instance.ActionOnInputForPlayer1 += OnInputButton;
+        }
     }
 
-
-    public override void Initialise()
+    protected override void ClearValue()
     {
         lastMoveDirection = Vector3.zero;
-        jumpOnButton = false;
     }
 
     private void OnSwipe(Vector3 direction)
     {
-        if (jumpOnButton)
-        {
-            direction.y = lastMoveDirection.y;
-        }
-
         lastMoveDirection = direction.normalized;
         unitMotion.MoveDirection = lastMoveDirection;
-    }
-
-    private void OnChangeGameState(State next, State last)
-    {
-        if (next is GameState)
-        {
-            Initialise();
-        }
-
-        if (next is PauseState)
-        {
-        }
-
-        if (next is FallState)
-        {
-        }
-    }
-
-    private float PushForce()
-    {
-        switch (Game.Instance.scene.difficultEnum)
-        {
-            case ScenePreference.GameDifficult.Easy:
-                return Preference.Singleton.pushForce * 2;
-
-            case ScenePreference.GameDifficult.Normal:
-                return Preference.Singleton.pushForce;
-
-            case ScenePreference.GameDifficult.Hard:
-                return 0;
-
-            default:
-                return Preference.Singleton.pushForce;
-        }
     }
 
     private void OnInputButton(InputHandler.InputButton button, InputHandler.InputDirection type)
@@ -116,35 +78,26 @@ public class SinglePlayer : Unit
         unitMotion.MoveDirection = lastMoveDirection;
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
-        StateMachine.actionChangeState -= OnChangeGameState;
+        base.OnDisable();
 
         if (InputHandler.Instance == null) return;
 
         InputHandler.Instance.ActionSetSwipeDirection -= OnSwipe;
-        InputHandler.Instance.ActionOnInputButton -= OnInputButton;
+        InputHandler.Instance.ActionOnInputForPlayer0 -= OnInputButton;
+        InputHandler.Instance.ActionOnInputForPlayer1 -= OnInputButton;
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
-        StateMachine.actionChangeState -= OnChangeGameState;
+        base.OnDisable();
 
         if (InputHandler.Instance == null) return;
 
         InputHandler.Instance.ActionSetSwipeDirection -= OnSwipe;
-        InputHandler.Instance.ActionOnInputButton -= OnInputButton;
+        InputHandler.Instance.ActionOnInputForPlayer0 -= OnInputButton;
+        InputHandler.Instance.ActionOnInputForPlayer1 -= OnInputButton;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (StateMachine.currentState is GameState)
-        {
-            if ((1 << collision.collider.gameObject.layer & ballLayer) != 0)
-            {
-                Rigidbody rigidbody = collision.collider.gameObject.GetComponentInParent<Rigidbody>();
-                rigidbody.AddForce((Vector3.right + Vector3.up) * PushForce(), ForceMode.Impulse);
-            }
-        }
-    }
 }

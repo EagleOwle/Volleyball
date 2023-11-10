@@ -25,7 +25,8 @@ public class InputHandler : MonoBehaviour
     }
 
     public Action<Vector3> ActionSetSwipeDirection;
-    public Action<InputButton, InputDirection> ActionOnInputButton;
+    public Action<InputButton, InputDirection> ActionOnInputForPlayer0;
+    public Action<InputButton, InputDirection> ActionOnInputForPlayer1;
 
     [SerializeField] private LayerMask uiButtonMask;
 
@@ -114,11 +115,19 @@ public class InputHandler : MonoBehaviour
         tupPosition = (Vector2)Input.mousePosition;
     }
 
-    private void OnInputButton(InputButton button, InputDirection type)
+    private void OnInputButton(InputButton button, InputDirection type, int playerIndex)
     {
         if (StateMachine.currentState is GameState)
         {
-            ActionOnInputButton?.Invoke(button, type);
+            if (playerIndex == 0)
+            {
+                ActionOnInputForPlayer0?.Invoke(button, type);
+            }
+
+            if (playerIndex == 1)
+            {
+                ActionOnInputForPlayer1?.Invoke(button, type);
+            }
         }
     }
 
@@ -137,34 +146,34 @@ public class InputHandler : MonoBehaviour
 
     }
 
-    public void OnButtonJumpDown()
+    public void OnButtonJumpDown(int playerIndex)
     {
-        OnInputButton(InputButton.jump, InputDirection.down);
+        OnInputButton(InputButton.jump, InputDirection.down, playerIndex);
     }
 
-    public void OnButtonJumpUp()
+    public void OnButtonJumpUp(int playerIndex)
     {
-        OnInputButton(InputButton.jump, InputDirection.up);
+        OnInputButton(InputButton.jump, InputDirection.up, playerIndex);
     }
 
-    public void OnButtonLeftDown()
+    public void OnButtonLeftDown(int playerIndex)
     {
-        OnInputButton(InputButton.left, InputDirection.down);
+        OnInputButton(InputButton.left, InputDirection.down, playerIndex);
     }
 
-    public void OnButtonLeftUp()
+    public void OnButtonLeftUp(int playerIndex)
     {
-        OnInputButton(InputButton.left, InputDirection.up);
+        OnInputButton(InputButton.left, InputDirection.up, playerIndex);
     }
 
-    public void OnButtonRightDown()
+    public void OnButtonRightDown(int playerIndex)
     {
-        OnInputButton(InputButton.right, InputDirection.down);
+        OnInputButton(InputButton.right, InputDirection.down, playerIndex);
     }
 
-    public void OnButtonRightUp()
+    public void OnButtonRightUp(int playerIndex)
     {
-        OnInputButton(InputButton.right, InputDirection.up);
+        OnInputButton(InputButton.right, InputDirection.up, playerIndex);
     }
 
     private GameObject GetUIObject(Vector3 touchScreenPositin)

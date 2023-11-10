@@ -409,7 +409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c3f07a25367094a915c1f4b286b0a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitMotion: {fileID: 7611914722553763614}
+  meshTransform: {fileID: 6194910621172831020}
   ballLayer:
     serializedVersion: 2
     m_Bits: 128
-  jumpOnButton: 0

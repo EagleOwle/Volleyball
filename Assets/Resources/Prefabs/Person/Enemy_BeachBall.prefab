@@ -151,6 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1c410c05bd20240b3fa7303825854b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitMotion: {fileID: 117146266}
+  meshTransform: {fileID: 719004924128191075}
   ballLayer:
     serializedVersion: 2
     m_Bits: 128

@@ -11,7 +11,7 @@ public class SceneLoader : MonoBehaviour
     }
 
     public static SceneLoader Instance;
-    public static Action OnSceneLoadStart;
+    public static Action<int> OnSceneLoadStart;
     public static Action OnSceneLoadComplete;
     public static SceneType currentSceneType;
     public static bool SceneLoadComplete = false;
@@ -47,7 +47,7 @@ public class SceneLoader : MonoBehaviour
 
     private void Load(int index, SceneType type)
     {
-        OnSceneLoadStart?.Invoke();
+        OnSceneLoadStart?.Invoke(index);
         //SceneManager.LoadScene(index);
         AsyncOperation operation = SceneManager.LoadSceneAsync(index);
         operation.completed += AsyncLoadComplete;

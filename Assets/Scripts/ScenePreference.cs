@@ -52,11 +52,13 @@ public class ScenePreference : ScriptableObject
         public int arrayIndex;
         public Sprite sprite;
         public MatchPreference matchPreference;
-        public GameDifficult difficultEnum;
+        [HideInInspector] public GameDifficult difficultEnum;
         public int buildIndex;
         public int ballIndex;
         public Unit playerPrefab;
-        public Unit enemyPrefab;
+        public Unit aiPrefab;
+        [HideInInspector]public PlayerType player1Type;
+        [HideInInspector] public PlayerType player2Type;
         public LocalizedString descriptionString;
         public LocalizedString nameString;
 
@@ -70,4 +72,9 @@ public class ScenePreference : ScriptableObject
         Hard
     }
 
+    public enum PlayerType
+    {
+        Human,
+        Bot
+    }
 }

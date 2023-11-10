@@ -33,8 +33,8 @@ public class AudioController : MonoBehaviour
 
     private void Start()
     {
-        SceneLoader.OnSceneLoadStart += PauseMusic;
-        SceneLoader.OnSceneLoadComplete += ResumeMusic;
+       // SceneLoader.OnSceneLoadStart += PauseMusic;
+       // SceneLoader.OnSceneLoadComplete += ResumeMusic;
         Preference.Singleton.actionOnChangeMusicValue += OnChangeMusicValue;
         Preference.Singleton.actionOnChangeSfxValue += OnChangeSfxValue;
 
@@ -69,8 +69,8 @@ public class AudioController : MonoBehaviour
 
     private void OnDestroy()
     {
-        SceneLoader.OnSceneLoadStart -= PauseMusic;
-        SceneLoader.OnSceneLoadComplete -= ResumeMusic;
+       // SceneLoader.OnSceneLoadStart -= PauseMusic;
+       // SceneLoader.OnSceneLoadComplete -= ResumeMusic;
         Preference.Singleton.actionOnChangeMusicValue -= OnChangeMusicValue;
     }
 

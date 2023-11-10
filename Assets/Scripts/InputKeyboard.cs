@@ -6,41 +6,41 @@ public class InputKeyboard : MonoBehaviour
 {
     private void Update()
     {
-        foreach (var item in Preference.Singleton.player)
+        for (int i = 0; i < Preference.Singleton.player.Length; i++)
         {
             #region Left
-            if (Input.GetKey(item.leftKey.key))
+            if (Input.GetKey(Preference.Singleton.player[i].leftKey.key))
             {
-                InputHandler.Instance.OnButtonLeftDown();
+                InputHandler.Instance.OnButtonLeftDown(i);
             }
 
-            if (Input.GetKeyUp(item.leftKey.key))
+            if (Input.GetKeyUp(Preference.Singleton.player[i].leftKey.key))
             {
-                InputHandler.Instance.OnButtonLeftUp();
+                InputHandler.Instance.OnButtonLeftUp(i);
             }
             #endregion
 
             #region Right
-            if (Input.GetKey(item.rightKey.key))
+            if (Input.GetKey(Preference.Singleton.player[i].rightKey.key))
             {
-                InputHandler.Instance.OnButtonRightDown();
+                InputHandler.Instance.OnButtonRightDown(i);
             }
 
-            if (Input.GetKeyUp(item.rightKey.key))
+            if (Input.GetKeyUp(Preference.Singleton.player[i].rightKey.key))
             {
-                InputHandler.Instance.OnButtonRightUp();
+                InputHandler.Instance.OnButtonRightUp(i);
             }
             #endregion
 
             #region Jump
-            if (Input.GetKey(item.jumpKey.key))
+            if (Input.GetKey(Preference.Singleton.player[i].jumpKey.key))
             {
-                InputHandler.Instance.OnButtonJumpDown();
+                InputHandler.Instance.OnButtonJumpDown(i);
             }
 
-            if (Input.GetKeyUp(item.jumpKey.key))
+            if (Input.GetKeyUp(Preference.Singleton.player[i].jumpKey.key))
             {
-                InputHandler.Instance.OnButtonJumpUp();
+                InputHandler.Instance.OnButtonJumpUp(i);
             }
             #endregion
 

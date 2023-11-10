@@ -3,21 +3,11 @@ using UnityEngine;
 [RequireComponent(typeof(UnitMotion))]
 public class SingleBot : Unit
 {
-    [SerializeField] protected LayerMask ballLayer = 0;
-    
     private Ball _ball;
 
-    private UnitMotion unitMotion;
     private Vector3 direction;
     private float defaultPositionX;
     private float nextHeightForJamp;
-    public ScenePreference.GameDifficult debugCurrentDifficult;
-
-    private void Awake()
-    {
-        unitMotion = GetComponent<UnitMotion>();
-
-    }
 
     private void Start()
     {
@@ -25,37 +15,13 @@ public class SingleBot : Unit
         _ball = GameObject.FindObjectOfType<Ball>();
     }
 
-    private void OnEnable()
-    {
-        StateMachine.actionChangeState += OnChangeGameState;
-    }
-
-    private void OnDisable()
-    {
-        StateMachine.actionChangeState -= OnChangeGameState;
-    }
-
-    private void OnDestroy()
-    {
-        StateMachine.actionChangeState -= OnChangeGameState;
-    }
-
-    public override void Initialise()
+    protected override void ClearValue()
     {
         direction = Vector3.zero;
     }
 
-    private void OnChangeGameState(State next, State last)
-    {
-        if (next is GameState)
-        {
-            Initialise();
-        }
-    }
-
     private void Update()
     {
-        debugCurrentDifficult = Game.Instance.scene.difficultEnum;
         nextHeightForJamp = NextHeightForJump();
         switch (Game.Instance.scene.difficultEnum)
         {
@@ -242,36 +208,6 @@ public class SingleBot : Unit
         return adjustment;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (StateMachine.currentState is GameState)
-        {
-            if ((1 << collision.gameObject.layer & ballLayer) != 0)
-            {
-                Rigidbody rigidbody = collision.collider.gameObject.GetComponentInParent<Rigidbody>();
-                rigidbody.AddForce((Vector3.left + Vector3.up) * PushForce(), ForceMode.Impulse);
-            }
-        }
-    }
-
-    private float PushForce()
-    {
-        switch (Game.Instance.scene.difficultEnum)
-        {
-            case ScenePreference.GameDifficult.Easy:
-                return 0;
-
-            case ScenePreference.GameDifficult.Normal:
-                return Preference.Singleton.pushForce;
-
-            case ScenePreference.GameDifficult.Hard:
-                return Preference.Singleton.pushForce * 2;
-
-            default:
-                return Preference.Singleton.pushForce;
-        }
-    }
-
     private float WaitPosition
     {
         get
@@ -284,5 +220,6 @@ public class SingleBot : Unit
             return defaultPositionX;
         }
     }
-    
+
+
 }
