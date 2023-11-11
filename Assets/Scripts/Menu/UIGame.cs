@@ -57,7 +57,7 @@ public class UIGame : MonoBehaviour
     public void StartRound()
     {
         Game.Instance.actionRoundFail += OnFail;
-        ShowBallHitCount(PlayerType.None, 0);
+        ShowBallHitCount(PlayerSide.None, 0);
         failPanel.gameObject.SetActive(false);
         ShowScore();
     }
@@ -86,7 +86,7 @@ public class UIGame : MonoBehaviour
         scoreEnemyText.text = Game.Instance.match.enemyScore.score.ToString();
     }
 
-    private void ShowBallHitCount(PlayerType playerType, int hitCount)
+    private void ShowBallHitCount(PlayerSide playerType, int hitCount)
     {
         if (StateMachine.currentState is GameState)
         {

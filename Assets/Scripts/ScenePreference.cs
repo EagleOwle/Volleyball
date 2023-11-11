@@ -5,7 +5,7 @@ using UnityEngine.Localization.Settings;
 
 
 [CreateAssetMenu(fileName = "ScenePreference", menuName = "ScenePreference")]
-public class ScenePreference : ScriptableObject
+public partial class ScenePreference : ScriptableObject
 {
     private static ScenePreference singleton;
     public static ScenePreference Singleton
@@ -63,18 +63,5 @@ public class ScenePreference : ScriptableObject
         public LocalizedString nameString;
 
         public int difficult { set { difficultEnum = (GameDifficult)value; } }
-    }
-
-    public enum GameDifficult
-    {
-        Easy,
-        Normal,
-        Hard
-    }
-
-    public enum PlayerType
-    {
-        Human,
-        Bot
     }
 }

@@ -14,9 +14,9 @@ public class Match
     public Score playerScore;
     public Score enemyScore;
 
-    private PlayerType lastLuser = PlayerType.None;
+    private PlayerSide lastLuser = PlayerSide.None;
 
-    public RoundResult SetScore(PlayerType luser)
+    public RoundResult SetScore(PlayerSide luser)
     {
         RoundResult roundResult = RoundResult.None;
         bool endMatch;
@@ -25,34 +25,34 @@ public class Match
         {
             switch (luser)
             {
-                case PlayerType.None:
+                case PlayerSide.None:
                     roundResult = RoundResult.None;
                     break;
 
-                case PlayerType.Local:
+                case PlayerSide.Left:
                     playerScore.ScoreReduction(out endMatch);
 
                     if (endMatch)
                     {
-                        roundResult = RoundResult.LoseGame;
+                        roundResult = RoundResult.EndMatch;
                     }
-                    else
-                    {
-                        roundResult = RoundResult.Losing;
-                    }
+                    //else
+                    //{
+                    //    roundResult = RoundResult.Losing;
+                    //}
                     break;
 
-                case PlayerType.Rival:
+                case PlayerSide.Right:
                     enemyScore.ScoreReduction(out endMatch);
 
                     if (endMatch)
                     {
-                        roundResult = RoundResult.WinningGame;
+                        roundResult = RoundResult.EndMatch;
                     }
-                    else
-                    {
-                        roundResult = RoundResult.Victory;
-                    }
+                    //else
+                    //{
+                    //    roundResult = RoundResult.Victory;
+                    //}
 
                     break;
             }
@@ -61,14 +61,14 @@ public class Match
         {
             switch (luser)
             {
-                case PlayerType.None:
+                case PlayerSide.None:
                     roundResult = RoundResult.FeedLoss;
                     break;
-                case PlayerType.Local:
-                    roundResult = RoundResult.PlayerFeedLoss;
+                case PlayerSide.Left:
+                    roundResult = RoundResult.Player1FeedLoss;
                     break;
-                case PlayerType.Rival:
-                    roundResult = RoundResult.RivalFeedLoss;
+                case PlayerSide.Right:
+                    roundResult = RoundResult.Player2FeedLoss;
                     break;
             }
 
@@ -94,7 +94,7 @@ public class Match
             this.score = score;
         }
 
-        public PlayerType playerType;
+        public PlayerSide playerType;
         public int score { get; private set; }
         public void ScoreReduction(out bool endScore)
         {

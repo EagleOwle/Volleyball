@@ -26,13 +26,13 @@ public class SingleBot : Unit
     {
         switch (Game.Instance.scene.difficultEnum)
         {
-            case ScenePreference.GameDifficult.Easy:
+            case GameDifficult.Easy:
                 EasyBehavior();
                 break;
-            case ScenePreference.GameDifficult.Normal:
+            case GameDifficult.Normal:
                 NormalBehavior();
                 break;
-            case ScenePreference.GameDifficult.Hard:
+            case GameDifficult.Hard:
                 HardBehavior();
                 break;
         }
@@ -167,35 +167,11 @@ public class SingleBot : Unit
         }
     }
 
-    //private float NextHeightForJump()
-    //{
-    //    //if (nextHeightForJamp == 0)
-    //    //{
-    //    //    switch (_ball.CurrentPlayerSide)
-    //    //    {
-    //    //        case PlayerType.None:
-    //    //            nextHeightForJamp = 2;// Random.Range(2, 5);
-    //    //            break;
-    //    //        case PlayerType.Local:
-    //    //            nextHeightForJamp = 2;
-    //    //            break;
-    //    //        case PlayerType.Rival:
-    //    //            nextHeightForJamp = 2;// Random.Range(0, 5);
-    //    //            break;
-    //    //    }
-    //    //}
-
-    //    if (nextHeightForJamp == 0)
-    //    {
-    //        nextHeightForJamp = Random.Range(3, 4);
-    //    }
-    //    return nextHeightForJamp;
-    //}
-
     private bool TrajectoryBallOnSelfSide(float xPosition)
     {
-        if (playerIndex == 0)
+        if (player == PlayerSide.Left)
         {
+
             if (xPosition < 0)
             {
                 return true;
@@ -206,8 +182,9 @@ public class SingleBot : Unit
             }
         }
 
-        if (playerIndex == 1)
+        if (player == PlayerSide.Right)
         {
+
             if (xPosition > 0)
             {
                 return true;

@@ -23,11 +23,11 @@ public class Game : MonoBehaviour
     [SerializeField] private AudioClip roundFallClip;
    
     public Action<RoundResult> actionRoundFail;
-    public Action<PlayerType, int> actionUnitHit;
+    public Action<PlayerSide, int> actionUnitHit;
     public ScenePreference.Scene scene;
     public Match match;
 
-    private PlayerType lastLuser = PlayerType.None;
+    private PlayerSide lastLuser = PlayerSide.None;
 
     private Cort Cort;
     private Unit Player1;
@@ -51,12 +51,12 @@ public class Game : MonoBehaviour
         match = new Match();
         match.Initialise(scene.matchPreference.Rounds);
 
-        lastLuser = PlayerType.None;
+        lastLuser = PlayerSide.None;
 
         InstantiatePerson(scene);
         InstaiateBall();
 
-        if (Game.Instance.scene.difficultEnum != ScenePreference.GameDifficult.Hard)
+        if (Game.Instance.scene.difficultEnum != GameDifficult.Hard)
         {
             var trajectoryRender = Instantiate(Preference.Singleton.trajectoryRenderPrefab);
             trajectoryRender.Initialise(Ball);
@@ -67,7 +67,7 @@ public class Game : MonoBehaviour
     {
         Cort = GameObject.FindObjectOfType<Cort>();
 
-        if (scene.player1Type == ScenePreference.PlayerType.Human)
+        if (scene.player1Type == PlayerType.Human)
         {
             Player1 = Instantiate(scene.playerPrefab, Cort.Player1SpawnPoint.position, Quaternion.identity);
         }
@@ -76,7 +76,7 @@ public class Game : MonoBehaviour
             Player1 = Instantiate(scene.aiPrefab, Cort.Player1SpawnPoint.position, Quaternion.identity);
         }
 
-        if (scene.player2Type == ScenePreference.PlayerType.Human)
+        if (scene.player2Type == PlayerType.Human)
         {
             Player2 = Instantiate(scene.playerPrefab, Cort.Player2SpawnPoint.position, Quaternion.identity);
         }
@@ -85,8 +85,8 @@ public class Game : MonoBehaviour
             Player2 = Instantiate(scene.aiPrefab, Cort.Player2SpawnPoint.position, Quaternion.identity);
         }
 
-        Player1.Initialise(0);
-        Player2.Initialise(1);
+        Player1.Initialise(PlayerSide.Left);
+        Player2.Initialise(PlayerSide.Right);
     }
 
     private void InstaiateBall()
@@ -104,12 +104,12 @@ public class Game : MonoBehaviour
         }
     }
 
-    public void UnitHitBall(PlayerType playerType, int hitCount)
+    public void UnitHitBall(PlayerSide playerType, int hitCount)
     {
         actionUnitHit?.Invoke(playerType, hitCount);
     }
 
-    public void OnRoundFall(PlayerType luser)
+    public void OnRoundFall(PlayerSide luser)
     {
         AudioController.Instance.PlayInstanceClip(roundFallClip);
 
@@ -138,26 +138,23 @@ public class Game : MonoBehaviour
         SceneLoader.Instance.LoadMenu();
     }
 
-    private void ArrangementOfActors(PlayerType lastLuser)
+    private void ArrangementOfActors(PlayerSide lastLuser)
     {
+        Player1.transform.position = Cort.Player1SpawnPoint.position;
+        Player2.transform.position = Cort.Player2SpawnPoint.position;
+
         switch (lastLuser)
         {
-            case PlayerType.None:
-                Player1.transform.position = Cort.Player1SpawnPoint.position;
-                Player2.transform.position = Cort.Player2SpawnPoint.position;
+            case PlayerSide.None:
                 Ball.transform.position = Cort.BallSpawnPoint.position + (Vector3.right * AddRandomPosition());
                 break;
 
-            case PlayerType.Local:
-                Player1.transform.position = Cort.Player1SpawnPoint.position;
-                Player2.transform.position = Cort.Player2SpawnPoint.position;
-                Ball.transform.position = Cort.Player1SpawnPoint.position + Vector3.up * 2.5f;
+            case PlayerSide.Left:
+                Ball.transform.position = Cort.Player2SpawnPoint.position + Vector3.up * 2.5f;
                 break;
 
-            case PlayerType.Rival:
-                Player1.transform.position = Cort.Player1SpawnPoint.position;
-                Player2.transform.position = Cort.Player2SpawnPoint.position;
-                Ball.transform.position = Cort.Player2SpawnPoint.position + Vector3.up * 2.5f;
+            case PlayerSide.Right:
+                Ball.transform.position = Cort.Player1SpawnPoint.position + Vector3.up * 2.5f;
                 break;
         }
     }

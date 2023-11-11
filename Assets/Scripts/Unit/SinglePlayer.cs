@@ -5,16 +5,16 @@ public class SinglePlayer : Unit
 {
     private Vector3 lastMoveDirection;
 
-    public override void Initialise(int playerIndex)
+    public override void Initialise(PlayerSide playerSide)
     {
-        base.Initialise(playerIndex);
+        base.Initialise(playerSide);
         if (InputHandler.Instance == null)
         {
             Debug.LogError("Input handler is null");
             return;
         }
        
-        if (playerIndex == 0)
+        if (playerSide == PlayerSide.Left)
         {
             if (Preference.Singleton.player[0].inputType == InputType.joystick)
             {
@@ -27,7 +27,7 @@ public class SinglePlayer : Unit
             }
         }
 
-        if (playerIndex == 1)
+        if (playerSide == PlayerSide.Right)
         {
             if (Preference.Singleton.player[1].inputType == InputType.joystick)
             {

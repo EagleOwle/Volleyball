@@ -81,12 +81,12 @@ public class UIScenePreference : UIPanel
 
     private void OnChangePlayer1DropdownValue(int value)
     {
-        currentScene.player1Type = (ScenePreference.PlayerType)value;
+        currentScene.player1Type = (PlayerType)value;
     }
 
     private void OnChangePlayer2DropdownValue(int value)
     {
-        currentScene.player2Type = (ScenePreference.PlayerType)value;
+        currentScene.player2Type = (PlayerType)value;
     }
 
     private void OnChangeRoundCountValue(float value)

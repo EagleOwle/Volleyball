@@ -14,8 +14,8 @@ public class Ball : MonoBehaviour
 
     private const float maxAngularVelocity = 80;
 
-    public PlayerType CurrentPlayerSide => currentPlayerSide;
-    private PlayerType currentPlayerSide;
+    public PlayerSide CurrentPlayerSide => currentPlayerSide;
+    private PlayerSide currentPlayerSide;
     public int playerHitCount;
 
     private Preference.BallSetting config;
@@ -92,25 +92,25 @@ public class Ball : MonoBehaviour
 
     private void ChangeSide()
     {
-        if (transform.position.x < 0 && CurrentPlayerSide != PlayerType.Local)
+        if (transform.position.x < 0 && currentPlayerSide != PlayerSide.Left)
         {
-            currentPlayerSide = PlayerType.Local;
+            currentPlayerSide = PlayerSide.Left;
+            playerHitCount = matchPreference.BallHits;
+
+            Game.Instance.UnitHitBall(currentPlayerSide, playerHitCount);
+        }
+
+        if (transform.position.x > 0 && currentPlayerSide != PlayerSide.Right)
+        {
+            currentPlayerSide = PlayerSide.Right;
             playerHitCount = matchPreference.BallHits;
 
             Game.Instance.UnitHitBall(CurrentPlayerSide, playerHitCount);
         }
 
-        if (transform.position.x > 0 && CurrentPlayerSide != PlayerType.Rival)
+        if (transform.position.x == 0 && CurrentPlayerSide != PlayerSide.None)
         {
-            currentPlayerSide = PlayerType.Rival;
-            playerHitCount = matchPreference.BallHits;
-
-            Game.Instance.UnitHitBall(CurrentPlayerSide, playerHitCount);
-        }
-
-        if (transform.position.x == 0 && CurrentPlayerSide != PlayerType.None)
-        {
-            currentPlayerSide = PlayerType.None;
+            currentPlayerSide = PlayerSide.None;
             playerHitCount = matchPreference.BallHits;
 
             Game.Instance.UnitHitBall(CurrentPlayerSide, playerHitCount);
@@ -141,7 +141,7 @@ public class Ball : MonoBehaviour
         {
             sphereCollider.enabled = false;
             meshCollider.enabled = true;
-            currentPlayerSide = PlayerType.None;
+            currentPlayerSide = PlayerSide.None;
             playerHitCount = matchPreference.BallHits;
             transform.rotation = Quaternion.identity;
         }
@@ -167,7 +167,7 @@ public class Ball : MonoBehaviour
 
     private void HitEnvironment()
     {
-        Game.Instance.UnitHitBall(PlayerType.None, 0);
+        Game.Instance.UnitHitBall(PlayerSide.None, 0);
         Game.Instance.OnRoundFall(CurrentPlayerSide);
     }
 

@@ -2,10 +2,10 @@
 {
     None,
     FeedLoss,
-    PlayerFeedLoss,
-    RivalFeedLoss,
-    Victory,
-    Losing,
-    WinningGame,
-    LoseGame,
+    Player1FeedLoss,
+    Player2FeedLoss,
+    EndMatch,
+    //Losing,
+    //WinningGame,
+    //LoseGame,
 }

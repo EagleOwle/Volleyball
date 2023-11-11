@@ -19,17 +19,17 @@ public class DropdownItem : MonoBehaviour
 
     public void UpdateText()
     {
-        if(text.text == ScenePreference.GameDifficult.Easy.ToString())
+        if(text.text == GameDifficult.Easy.ToString())
         {
             nameSceneLocalize.StringReference = stringEasy;
         }
 
-        if (text.text == ScenePreference.GameDifficult.Normal.ToString())
+        if (text.text == GameDifficult.Normal.ToString())
         {
             nameSceneLocalize.StringReference = stringNormal;
         }
 
-        if (text.text == ScenePreference.GameDifficult.Hard.ToString())
+        if (text.text == GameDifficult.Hard.ToString())
         {
             nameSceneLocalize.StringReference = stringHard;
         }

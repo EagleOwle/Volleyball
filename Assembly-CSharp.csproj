@@ -56,8 +56,6 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Menu\Localization\LocalizationData.cs" />
-    <Compile Include="Assets\Scripts\Menu\Localization\LocalizationManager.cs" />
     <Compile Include="Assets\Scripts\RoundResult.cs" />
     <Compile Include="Assets\Samples\Localization\1.3.2\Loading Strings\StringDatabaseGetLocalizedStringExample.cs" />
     <Compile Include="Assets\Scripts\InputButton.cs" />
@@ -68,10 +66,13 @@
     <Compile Include="Assets\Scripts\Menu\UIScenePreference.cs" />
     <Compile Include="Assets\Scripts\Menu\UIChangeSceneButton.cs" />
     <Compile Include="Assets\CustomDebug\CustomDebugUI.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIKeyChecker.cs" />
     <Compile Include="Assets\Scripts\CameraMotion.cs" />
     <Compile Include="Assets\Samples\Localization\1.3.2\Loading Strings\LoadingMultipleStringsExample.cs" />
     <Compile Include="Assets\Scripts\Cort.cs" />
+    <Compile Include="Assets\Scripts\PlayerPreference.cs" />
     <Compile Include="Assets\Scripts\Menu\UIPreferenceMenu.cs" />
+    <Compile Include="Assets\Scripts\InputSwipe.cs" />
     <Compile Include="Assets\Scripts\AudioController.cs" />
     <Compile Include="Assets\Scripts\InputMouse.cs" />
     <Compile Include="Assets\Scripts\MediumQualityVisualEffect.cs" />
@@ -88,7 +89,7 @@
     <Compile Include="Assets\Scripts\StateBehavior\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Menu\UIGamePreference.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\FallState.cs" />
-    <Compile Include="Assets\Scripts\Unit\PlayerType.cs" />
+    <Compile Include="Assets\Scripts\Unit\PlayerSide.cs" />
     <Compile Include="Assets\Scripts\CameraViewMarker.cs" />
     <Compile Include="Assets\Samples\Localization\1.3.2\Loading Strings\LocalizedStringGetLocalizedStringExample.cs" />
     <Compile Include="Assets\Scripts\Menu\DropdownItem.cs" />
@@ -116,10 +117,10 @@
     <Compile Include="Assets\Scripts\Preference.cs" />
     <Compile Include="Assets\Scripts\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
-    <Compile Include="Assets\Scripts\Menu\Localization\LocalSelector.cs" />
     <Compile Include="Assets\Scripts\Menu\UIHud.cs" />
     <Compile Include="Assets\Scripts\Menu\UIWaitConnectPanel.cs" />
     <Compile Include="Assets\Samples\Localization\1.3.2\Loading Strings\LocalizedStringWithChangeHandlerExample.cs" />
+    <Compile Include="Assets\Scripts\Menu\UIEditPlayerInput.cs" />
     <Compile Include="Assets\Scripts\Menu\UIPause.cs" />
     <Compile Include="Assets\Scripts\Menu\UIEditInputPanel.cs" />
     <Compile Include="Assets\Scripts\StateBehavior\FileTransferState.cs" />
@@ -132,10 +133,8 @@
     <Compile Include="Assets\Scripts\TrajectoryRenderAdvanced.cs" />
     <Compile Include="Assets\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
     <Compile Include="Assets\Scripts\Menu\EffectChangeSize.cs" />
-    <Compile Include="Assets\Scripts\PlayerPreference.cs" />
-    <Compile Include="Assets\Scripts\Menu\UIKeyChecker.cs" />
-    <Compile Include="Assets\Scripts\Menu\UIEditPlayerInput.cs" />
-    <Compile Include="Assets\Scripts\InputSwipe.cs" />
+    <Compile Include="Assets\Scripts\PlayerType.cs" />
+    <Compile Include="Assets\Scripts\GameDifficult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

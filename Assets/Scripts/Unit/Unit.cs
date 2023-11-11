@@ -8,19 +8,19 @@ public abstract class Unit : MonoBehaviour
 
     [SerializeField] protected LayerMask ballLayer = 0;
 
-    protected int playerIndex;
+    protected PlayerSide player;
     Vector3 forceDirection;
 
-    public virtual void Initialise(int playerIndex)
+    public virtual void Initialise(PlayerSide player)
     {
-        this.playerIndex = playerIndex;
+        this.player = player;
 
-        if (playerIndex == 0)
+        if (player == PlayerSide.Left)
         {
              meshTransform.eulerAngles = new Vector3(meshTransform.eulerAngles.x, 90, meshTransform.eulerAngles.z);
         }
 
-        if (playerIndex == 1)
+        if (player == PlayerSide.Right)
         {
             meshTransform.eulerAngles = new Vector3(meshTransform.eulerAngles.x, -90, meshTransform.eulerAngles.z);
         }
@@ -33,13 +33,13 @@ public abstract class Unit : MonoBehaviour
     {
         switch (Game.Instance.scene.difficultEnum)
         {
-            case ScenePreference.GameDifficult.Easy:
+            case GameDifficult.Easy:
                 return Preference.Singleton.pushForce;// * 2;
 
-            case ScenePreference.GameDifficult.Normal:
+            case GameDifficult.Normal:
                 return Preference.Singleton.pushForce;
 
-            case ScenePreference.GameDifficult.Hard:
+            case GameDifficult.Hard:
                 return Preference.Singleton.pushForce;
 
             default:
@@ -65,11 +65,12 @@ public abstract class Unit : MonoBehaviour
         {
             if ((1 << collision.gameObject.layer & ballLayer) != 0)
             {
-                if (playerIndex == 0)
+                if (player == PlayerSide.Left)
                 {
                     forceDirection = (Vector3.right + Vector3.up) * PushForce();
                 }
-                else
+
+                if (player == PlayerSide.Right)
                 {
                     forceDirection = (Vector3.left + Vector3.up) * PushForce();
                 }

@@ -3776,7 +3776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -297, y: 95}
+  m_AnchoredPosition: {x: -305.29996, y: 100}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3773339245082153566
@@ -4125,7 +4125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -127, y: 95}
+  m_AnchoredPosition: {x: -135.3, y: 100}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3773339245120427111
@@ -6281,7 +6281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 150, y: 95}
+  m_AnchoredPosition: {x: 150, y: 100}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3773339245440669732
@@ -10025,56 +10025,29 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  PlayerFeedLoss:
+  Player1FeedLoss:
     m_TableReference:
-      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableCollectionName: 
     m_TableEntryReference:
-      m_KeyId: 3083092255301632
+      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  RivalFeedLoss:
+  Player2FeedLoss:
     m_TableReference:
-      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableCollectionName: 
     m_TableEntryReference:
-      m_KeyId: 3083155236970496
+      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  Victory:
+  EndMatch:
     m_TableReference:
-      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableCollectionName: 
     m_TableEntryReference:
-      m_KeyId: 3083234811305984
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  Losing:
-    m_TableReference:
-      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
-    m_TableEntryReference:
-      m_KeyId: 3083306340966400
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  WinningGame:
-    m_TableReference:
-      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
-    m_TableEntryReference:
-      m_KeyId: 3083353375891456
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  LoseGame:
-    m_TableReference:
-      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
-    m_TableEntryReference:
-      m_KeyId: 3083506354741248
+      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
