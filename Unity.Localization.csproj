@@ -117,8 +117,8 @@
     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Runtime\Tables\AssetTable.cs" />
     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Runtime\Settings\Database\LocalizedStringDatabase.cs" />
     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Runtime\Events\UnityEvents.cs" />
-    <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Runtime\Smart Format\Core\Settings\CaseSensitivityType.cs" />
     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Runtime\Localized Reference\LocalizedAsset.deprecated.cs" />
+    <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Runtime\Smart Format\Core\Settings\CaseSensitivityType.cs" />
     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Runtime\Smart Format\Core\Parsing\Parser.cs" />
     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Runtime\Utilities\SystemLanguageConverter.cs" />
     <Compile Include="Library\PackageCache\com.unity.localization@1.3.2\Runtime\Metadata\PlatformOverride.cs" />

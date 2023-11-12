@@ -22,7 +22,6 @@ public class CanvasGroupUI : UICanvasGroupBase
 
 	public async virtual void Hide()
 	{
-		//Debug.Log($"Started async {Time.frameCount}");
 		CanvasGroup.alpha = 1;
 
 		while (CanvasGroup.alpha > 0)
@@ -32,7 +31,6 @@ public class CanvasGroupUI : UICanvasGroupBase
 		}
 
 		gameObject.SetActive(false);
-		//Debug.Log($"Finished async {Time.frameCount}");
 
 	}
 

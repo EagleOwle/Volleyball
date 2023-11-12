@@ -25,6 +25,7 @@ public class UILoadingScreen : CanvasGroupUI
     {
         inputPlayer1.SetActive(false);
         inputPlayer2.SetActive(false);
+        CanvasGroup.alpha = 1;
         SceneLoader.OnSceneLoadStart += InstantlyShow;
         SceneLoader.OnSceneLoadComplete += Hide;
         Invoke(nameof(Hide), showFirstLoad);
