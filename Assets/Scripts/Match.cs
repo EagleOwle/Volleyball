@@ -14,70 +14,16 @@ public class Match
     public Score playerScore;
     public Score enemyScore;
 
-    private PlayerSide lastLuser = PlayerSide.None;
-
     public RoundResult SetScore(PlayerSide luser)
     {
-        RoundResult roundResult = RoundResult.None;
-        bool endMatch;
-
-        if (luser == lastLuser)
+        if (playerScore.ScoreReduction())
         {
-            switch (luser)
-            {
-                case PlayerSide.None:
-                    roundResult = RoundResult.None;
-                    break;
-
-                case PlayerSide.Left:
-                    playerScore.ScoreReduction(out endMatch);
-
-                    if (endMatch)
-                    {
-                        roundResult = RoundResult.EndMatch;
-                    }
-                    //else
-                    //{
-                    //    roundResult = RoundResult.Losing;
-                    //}
-                    break;
-
-                case PlayerSide.Right:
-                    enemyScore.ScoreReduction(out endMatch);
-
-                    if (endMatch)
-                    {
-                        roundResult = RoundResult.EndMatch;
-                    }
-                    //else
-                    //{
-                    //    roundResult = RoundResult.Victory;
-                    //}
-
-                    break;
-            }
+            return  RoundResult.EndMatch;
         }
         else
         {
-            switch (luser)
-            {
-                case PlayerSide.None:
-                    roundResult = RoundResult.FeedLoss;
-                    break;
-                case PlayerSide.Left:
-                    roundResult = RoundResult.Player1FeedLoss;
-                    break;
-                case PlayerSide.Right:
-                    roundResult = RoundResult.Player2FeedLoss;
-                    break;
-            }
-
+            return  RoundResult.EndRound;
         }
-
-        lastLuser = luser;
-
-        return roundResult;
-
     }
 
     [Serializable]
@@ -105,6 +51,17 @@ public class Match
                 endScore = true;
             }
         }
+
+        public bool ScoreReduction()
+        {
+            score--;
+            if (score < 1)
+            {
+                return  true;
+            }
+            return false;
+        }
+
     }
 
 }

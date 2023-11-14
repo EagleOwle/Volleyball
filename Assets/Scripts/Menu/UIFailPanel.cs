@@ -16,7 +16,7 @@ public class UIFailPanel : MonoBehaviour
     [SerializeField] private LocalizedString Player1FeedLoss;
     [SerializeField] private LocalizedString Player2FeedLoss;
     [SerializeField] private LocalizedString EndMatch;
-    //[SerializeField] private LocalizedString Losing;
+    [SerializeField] private LocalizedString EndRound;
     //[SerializeField] private LocalizedString WinningGame;
     //[SerializeField] private LocalizedString LoseGame;
     [SerializeField] private LocalizeStringEvent stringEvent;
@@ -25,7 +25,7 @@ public class UIFailPanel : MonoBehaviour
     private void Start()
     {
         EventSystem.current.SetSelectedGameObject(closePanelBtn.gameObject);
-        ShowMessage(RoundResult.None); // Пример вызова с RoundResult.None
+        ShowMessage(RoundResult.None);
     }
 
     public void ShowMessage(RoundResult roundResult)
@@ -35,11 +35,11 @@ public class UIFailPanel : MonoBehaviour
 
         if (roundResult == RoundResult.EndMatch)
         {
-            SetButtonEndGame(); // Вызываем метод для кнопки завершения игры
+            SetButtonEndGame();
         }
         else
         {
-            SetButtonStartRound(); // Вызываем метод для кнопки начала раунда
+            SetButtonStartRound();
         }
     }
 
@@ -57,12 +57,12 @@ public class UIFailPanel : MonoBehaviour
                 return Player2FeedLoss;
             case RoundResult.EndMatch:
                 return EndMatch;
-            //case RoundResult.Losing:
-            //    return Losing;
-            //case RoundResult.WinningGame:
-            //    return WinningGame;
-            //case RoundResult.LoseGame:
-            //    return LoseGame;
+            case RoundResult.EndRound:
+                return EndRound;
+                //case RoundResult.WinningGame:
+                //    return WinningGame;
+                //case RoundResult.LoseGame:
+                //    return LoseGame;
         }
 
         return null;
@@ -83,21 +83,19 @@ public class UIFailPanel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    // Метод, который преобразует localeId в код языка
-    private string GetLanguageCodeForLocale(int localeId)
-    {
-        // Реализуйте логику преобразования, если требуется
-        if (localeId == 0)
-        {
-            return "ru";
-        }
-        else if (localeId == 2)
-        {
-            return "zh";
-        }
-        else
-        {
-            return "en";
-        }
-    }
+    //private string GetLanguageCodeForLocale(int localeId)
+    //{
+    //    if (localeId == 0)
+    //    {
+    //        return "ru";
+    //    }
+    //    else if (localeId == 2)
+    //    {
+    //        return "zh";
+    //    }
+    //    else
+    //    {
+    //        return "en";
+    //    }
+    //}
 }

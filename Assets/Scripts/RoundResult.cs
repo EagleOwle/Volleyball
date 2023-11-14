@@ -5,7 +5,7 @@
     Player1FeedLoss,
     Player2FeedLoss,
     EndMatch,
-    //Losing,
+    EndRound,
     //WinningGame,
     //LoseGame,
 }
