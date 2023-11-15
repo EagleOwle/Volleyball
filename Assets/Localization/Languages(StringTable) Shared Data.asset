@@ -287,6 +287,14 @@ MonoBehaviour:
     m_Key: WinnerPlayer2
     m_Metadata:
       m_Items: []
+  - m_Id: 10366131993538560
+    m_Key: VeryLow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10366209214869504
+    m_Key: VeryHigh
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
