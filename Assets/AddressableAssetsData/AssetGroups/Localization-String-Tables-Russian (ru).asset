@@ -23,13 +23,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     - Preload
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0e03d5366338d19409eec6c550e099ae
     m_Address: Three languages_ru
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ru
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: e619a58f2e6868c4bba87f1729cc82f5, type: 2}
   m_SchemaSet:

@@ -32,6 +32,15 @@ MonoBehaviour:
     mouseMoveSence: 1
     mouseJumpSence: 5
     joysticDeadZone: 10
+    nameLocalizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableEntryReference:
+        m_KeyId: 10209563570302976
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - Name: Player2
     inputType: 0
     leftKey:
@@ -46,6 +55,15 @@ MonoBehaviour:
     mouseMoveSence: 1
     mouseJumpSence: 10
     joysticDeadZone: 10
+    nameLocalizedString:
+      m_TableReference:
+        m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableEntryReference:
+        m_KeyId: 10209723658498048
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   moveSpeed: 250
   jumpForce: 550
   downSpeed: 12
@@ -68,3 +86,6 @@ MonoBehaviour:
     - {fileID: 8300000, guid: e154e72c9cbda0f4b91da7ae9222b3d8, type: 3}
     - {fileID: 8300000, guid: fda72a0062bf4f245a09875bd2cbd4a5, type: 3}
     prefab: {fileID: 3807298152630121872, guid: 7b16ac917d7f8f541b04fc07f5ccc407, type: 3}
+  references:
+    version: 2
+    RefIds: []

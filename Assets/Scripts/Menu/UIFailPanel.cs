@@ -17,6 +17,7 @@ public class UIFailPanel : MonoBehaviour
     [SerializeField] private LocalizedString Player2FeedLoss;
     [SerializeField] private LocalizedString EndMatch;
     [SerializeField] private LocalizedString EndRound;
+    [SerializeField] private LocalizedString Goal;
     //[SerializeField] private LocalizedString WinningGame;
     //[SerializeField] private LocalizedString LoseGame;
     [SerializeField] private LocalizeStringEvent stringEvent;
@@ -59,10 +60,8 @@ public class UIFailPanel : MonoBehaviour
                 return EndMatch;
             case RoundResult.EndRound:
                 return EndRound;
-                //case RoundResult.WinningGame:
-                //    return WinningGame;
-                //case RoundResult.LoseGame:
-                //    return LoseGame;
+            case RoundResult.Goal:
+                return Goal;
         }
 
         return null;

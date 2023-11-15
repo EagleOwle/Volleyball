@@ -27,7 +27,7 @@ public class Game : MonoBehaviour
     public ScenePreference.Scene scene;
     public Match match;
 
-    private PlayerSide lastLuser = PlayerSide.None;
+    public  PlayerSide Luser => match.LastLuser();
 
     private Cort Cort;
     private Unit Player1;
@@ -51,8 +51,6 @@ public class Game : MonoBehaviour
         match = new Match();
         match.Initialise(scene.matchPreference.Rounds);
 
-        lastLuser = PlayerSide.None;
-
         InstantiatePerson(scene);
         InstaiateBall();
 
@@ -67,7 +65,7 @@ public class Game : MonoBehaviour
     {
         Cort = GameObject.FindObjectOfType<Cort>();
 
-        if (scene.player1Type == PlayerType.Human)
+        if (scene.playersType[0] == PlayerType.Human)
         {
             Player1 = Instantiate(scene.playerPrefab, Cort.Player1SpawnPoint.position, Quaternion.identity);
         }
@@ -76,7 +74,7 @@ public class Game : MonoBehaviour
             Player1 = Instantiate(scene.aiPrefab, Cort.Player1SpawnPoint.position, Quaternion.identity);
         }
 
-        if (scene.player2Type == PlayerType.Human)
+        if (scene.playersType[1] == PlayerType.Human)
         {
             Player2 = Instantiate(scene.playerPrefab, Cort.Player2SpawnPoint.position, Quaternion.identity);
         }
@@ -113,9 +111,8 @@ public class Game : MonoBehaviour
     {
         AudioController.Instance.PlayInstanceClip(roundFallClip);
 
-        RoundResult roundResult = match.SetScore(luser);
-        lastLuser = luser;
-        actionRoundFail?.Invoke(roundResult);
+        RoundResult result = match.SetLuser(luser);
+        actionRoundFail?.Invoke(result);
 
         StateMachine.SetState<FallState>();
     }
@@ -127,8 +124,8 @@ public class Game : MonoBehaviour
 
     private void StartRound()
     {
-        match.round++;
-        ArrangementOfActors(lastLuser);
+        //match.round++;
+        ArrangementOfActors(match.LastLuser());
         UIGame.Instance.StartRound();
         UIHud.Instance.OnChangePanel(UIPanelName.Timer);
     }

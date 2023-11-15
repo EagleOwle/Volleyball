@@ -34,6 +34,9 @@ public class CanvasGroupUI : UICanvasGroupBase
 
 	}
 
-   
+    private void OnDestroy()
+    {
+		CanvasGroup.alpha = 1;
+	}
 
 }

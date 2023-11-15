@@ -6,6 +6,7 @@
     Player2FeedLoss,
     EndMatch,
     EndRound,
+    Goal,
     //WinningGame,
     //LoseGame,
 }

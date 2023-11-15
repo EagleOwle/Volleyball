@@ -21,12 +21,10 @@ MonoBehaviour:
     m_Address: Assets/Localization/Three languages Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 45d2624c1f020494ea570605f434f578
     m_Address: Assets/Localization/New Table 1 Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: e619a58f2e6868c4bba87f1729cc82f5, type: 2}
   m_SchemaSet:

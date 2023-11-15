@@ -12,6 +12,7 @@ public class DropdownItem : MonoBehaviour
     [SerializeField] private LocalizedString stringEasy;
     [SerializeField] private LocalizedString stringNormal;
     [SerializeField] private LocalizedString stringHard;
+
     private void OnEnable()
     {
         Invoke(nameof(UpdateText), Time.deltaTime);

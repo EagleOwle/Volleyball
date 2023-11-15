@@ -18,14 +18,12 @@ public class UIPreferenceMenu : UIPanel
     [SerializeField] private Toggle vibraToggle;
     [SerializeField] private Text vibraValueText;
     [Space]
+    [SerializeField] private Text veryLowQualityText;
     [SerializeField] private Text lowQualityText;
     [SerializeField] private Text normalQualityText;
     [SerializeField] private Text highQualityText;
+    [SerializeField] private Text veryHighQualityText;
     [SerializeField] private Slider qualitySlider;
-   // [Space]
-   // [SerializeField] private Text inputButtonText;
-   // [SerializeField] private Text inputMouseText;
-   // [SerializeField] private Slider inputTypeSlider;
 
     public override void Init()
     {
@@ -52,11 +50,6 @@ public class UIPreferenceMenu : UIPanel
         int value = QualitySettings.GetQualityLevel();
         qualitySlider.value = value;
         OnQualityChange(value);
-
-        //inputTypeSlider.onValueChanged.AddListener(OnInputTypeChange);
-        //value = (int)Preference.Singleton.player[0].inputType;
-        //inputTypeSlider.value = value;
-        //OnInputTypeChange(value);
     }
 
     private void OnMusicValueChange(float value)
@@ -87,53 +80,29 @@ public class UIPreferenceMenu : UIPanel
         switch (value)
         {
             case 0:
-                //normalQualityText.fontSize = 20;
-                //highQualityText.fontSize = 20;
-                //lowQualityText.fontSize = 30;
-                lowQualityText.transform.SetAsLastSibling();
-                
+                veryLowQualityText.transform.SetAsLastSibling();
                 break;
 
             case 1:
-                //highQualityText.fontSize = 20;
-                //lowQualityText.fontSize = 20;
-                //normalQualityText.fontSize = 30;
-                normalQualityText.transform.SetAsLastSibling();
-               
+                lowQualityText.transform.SetAsLastSibling();
+
                 break;
 
             case 2:
-                //lowQualityText.fontSize = 20;
-                //normalQualityText.fontSize = 20;
-                //highQualityText.fontSize = 30;
+                normalQualityText.transform.SetAsLastSibling();
+                break;
+
+            case 3:
                 highQualityText.transform.SetAsLastSibling();
                 break;
-                
+
+            case 4:
+                veryHighQualityText.transform.SetAsLastSibling();
+                break;
+
         }
 
         QualitySettings.SetQualityLevel((int)value);
-    }
-
-    private void OnInputTypeChange(float value)
-    {
-        //switch (value)
-        //{
-        //    case 0:
-        //        inputMouseText.fontSize = 30;
-        //        inputButtonText.fontSize = 40;
-        //        inputButtonText.transform.SetAsLastSibling();
-                
-        //        break;
-
-        //    case 1:
-        //       inputButtonText.fontSize = 30;
-        //       inputMouseText.fontSize = 40;
-        //        inputMouseText.transform.SetAsLastSibling();
-        //        break;
-
-        //}
-
-        //Preference.Singleton.player[0].inputType = (InputType)value;
     }
 
     private void ShowPreferenceType(PreferenceType  type)
