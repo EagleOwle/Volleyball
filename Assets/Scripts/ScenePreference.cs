@@ -7,7 +7,6 @@ using UnityEngine.Localization.Settings;
 [CreateAssetMenu(fileName = "ScenePreference", menuName = "ScenePreference")]
 public partial class ScenePreference : ScriptableObject
 {
-    private static ScenePreference singleton;
     public static ScenePreference Singleton
     {
         get
@@ -20,6 +19,7 @@ public partial class ScenePreference : ScriptableObject
             return singleton;
         }
     }
+    private static ScenePreference singleton;
 
     public Scene[] scenes;
 
@@ -57,11 +57,11 @@ public partial class ScenePreference : ScriptableObject
         public int ballIndex;
         public Unit playerPrefab;
         public Unit aiPrefab;
-        [HideInInspector]public PlayerType player1Type;
-        [HideInInspector] public PlayerType player2Type;
+        public PlayerType[] playersType = new PlayerType[2] { PlayerType.Human, PlayerType.Bot};
         public LocalizedString descriptionString;
         public LocalizedString nameString;
 
         public int difficult { set { difficultEnum = (GameDifficult)value; } }
+
     }
 }

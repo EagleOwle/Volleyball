@@ -1,4 +1,5 @@
 trackSelection = true
+refreshSearchWindowsInPlayMode = false
 fetchPreview = true
 defaultFlags = 0
 keepOpen = false
@@ -10,7 +11,7 @@ scopes = {
 	"last_search.B655095F" = "at:three"
 	"OpenInspectorPreview.B655095F" = "0"
 	"currentGroup.B655095F" = "all"
-	"last_search.B655092D" = "st:Har"
+	"last_search.B655092D" = "st:Win"
 	"OpenInspectorPreview.B655092D" = "0"
 	"currentGroup.B655092D" = "all"
 	"last_search.21382318" = "Missing"
@@ -77,6 +78,7 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"st:Buttons"
 	"Missing"
 	"Unused"
 	"st:DescriptionScene"
@@ -86,9 +88,12 @@ searchItemFavorites = [
 ]
 savedSearchesSortOrder = 0
 showSavedSearchPanel = false
+hideTabs = false
 expandedQueries = [
 ]
 queryBuilder = false
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"
 disabledIndexers = ""
+minIndexVariations = 2
+findProviderIndexHelper = true

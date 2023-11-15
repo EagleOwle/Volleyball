@@ -210,6 +210,90 @@ MonoBehaviour:
     m_Localized: The match is lost
     m_Metadata:
       m_Items: []
+  - m_Id: 10209563570302976
+    m_Localized: Player 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10209723658498048
+    m_Localized: Player 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10220643688345600
+    m_Localized: Mouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10221976130646016
+    m_Localized: Right
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10222000814125056
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10221954639032320
+    m_Localized: Left
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10223942298726400
+    m_Localized: Motion sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10224352551989248
+    m_Localized: Jump Sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10225995112738816
+    m_Localized: Press the key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10226371949981696
+    m_Localized: This key is not available
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10232039939469312
+    m_Localized: Movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10232714660376576
+    m_Localized: Mouse control
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10250900625649664
+    m_Localized: Human
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10250940702224384
+    m_Localized: Bot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10320980923346944
+    m_Localized: Goal!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10330247394979840
+    m_Localized: The match is over!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10337051311042560
+    m_Localized: Ball draw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10337492467937280
+    m_Localized: Player 1 serves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10337704791994368
+    m_Localized: Player 2 serves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10339534485811200
+    m_Localized: Winner Player 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10339588701384704
+    m_Localized: Winner Player 2
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

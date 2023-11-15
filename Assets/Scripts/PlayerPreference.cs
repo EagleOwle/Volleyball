@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
 [System.Serializable]
 public class PlayerPreference
@@ -17,6 +18,8 @@ public class PlayerPreference
     public float mouseJumpSence = 10;
     [Space()]
     public float joysticDeadZone = 10;
+    [Space()]
+    public LocalizedString nameLocalizedString;
 }
 
 [System.Serializable]

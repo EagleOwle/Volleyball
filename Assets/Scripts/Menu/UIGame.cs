@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 public class UIGame : MonoBehaviour
 {
-    private static UIGame _instance;
     public static UIGame Instance
     {
         get
@@ -19,24 +19,27 @@ public class UIGame : MonoBehaviour
             return _instance;
         }
     }
+    private static UIGame _instance;
 
     [SerializeField] private Button pauseBtn;
     [SerializeField] private GameObject inputButtonPanel, inputJoystickPanel;
     [SerializeField] private UIFailPanel failPanel;
-    [SerializeField] private Text hitCountText;
-    [SerializeField] private Text scorePlayerText, scoreEnemyText;
+    [SerializeField] private Text hitCountText, scorePlayer1Text, scorePlayer2Text;
+    [SerializeField] private UIGameMessage gameMessage;
+
+
+    [Space()]
+    [SerializeField] private LocalizedString BallDraw;
+    [SerializeField] private LocalizedString Player1Serves;
+    [SerializeField] private LocalizedString Player2Serves;
+    [SerializeField] private LocalizedString WinnerPlayer1;
+    [SerializeField] private LocalizedString WinnerPlayer2;
 
     public void Start()
     {
         StateMachine.actionChangeState += OnChangeGameState;
         pauseBtn.onClick.AddListener(OnButtonPause);
         Game.Instance.actionUnitHit += ShowBallHitCount;
-    }
-
-    private void OnEnable()
-    {
-        
-        
     }
 
     private void ShowUIInputPanel()
@@ -60,6 +63,21 @@ public class UIGame : MonoBehaviour
         ShowBallHitCount(PlayerSide.None, 0);
         failPanel.gameObject.SetActive(false);
         ShowScore();
+
+        switch (Game.Instance.Luser)
+        {
+            case PlayerSide.None:
+                gameMessage.ShowLocalizedMessage(BallDraw);
+                break;
+            case PlayerSide.Left:
+                gameMessage.ShowLocalizedMessage(Player1Serves);
+                break;
+            case PlayerSide.Right:
+                gameMessage.ShowLocalizedMessage(Player2Serves);
+                break;
+            default:
+                break;
+        }
     }
 
     private void OnChangeGameState(State next, State last)
@@ -82,8 +100,8 @@ public class UIGame : MonoBehaviour
 
     private void ShowScore()
     {
-        scorePlayerText.text = Game.Instance.match.playerScore.score.ToString();
-        scoreEnemyText.text = Game.Instance.match.enemyScore.score.ToString();
+        scorePlayer1Text.text = Game.Instance.match.GetScore(PlayerSide.Left).ToString();
+        scorePlayer2Text.text = Game.Instance.match.GetScore(PlayerSide.Right).ToString();
     }
 
     private void ShowBallHitCount(PlayerSide playerType, int hitCount)
@@ -112,6 +130,19 @@ public class UIGame : MonoBehaviour
         ShowScore();
         failPanel.ShowMessage(roundResult);
         failPanel.gameObject.SetActive(true);
+
+        if(roundResult == RoundResult.EndMatch)
+        {
+            if (Game.Instance.match.LastWinner().playerSide == PlayerSide.Left)
+            {
+                gameMessage.ShowLocalizedMessage(WinnerPlayer1);
+            }
+
+            if (Game.Instance.match.LastWinner().playerSide == PlayerSide.Right)
+            {
+                gameMessage.ShowLocalizedMessage(WinnerPlayer2);
+            }
+        }
     }
 
 }

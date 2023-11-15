@@ -1,5 +1,158 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1895682457998040731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 968551648838323278}
+  - component: {fileID: 2561338165562567889}
+  - component: {fileID: 4512372091455407075}
+  - component: {fileID: 862516808511669437}
+  - component: {fileID: 8622320712144924428}
+  - component: {fileID: 853267669841524447}
+  m_Layer: 5
+  m_Name: GameMessageText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &968551648838323278
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895682457998040731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3773339246044111158}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 0, y: 45}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2561338165562567889
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895682457998040731}
+  m_CullTransparentMesh: 1
+--- !u!114 &4512372091455407075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895682457998040731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 508334008aa0fa04ebf1632fd6f9c03a, type: 3}
+    m_FontSize: 80
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0421\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435"
+--- !u!114 &862516808511669437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895682457998040731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
+--- !u!114 &8622320712144924428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895682457998040731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4512372091455407075}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &853267669841524447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895682457998040731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63cf01ce38e6044a9285d06a0ad4651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 4512372091455407075}
+  liveTime: 2
+  stringEvent: {fileID: 8622320712144924428}
 --- !u!1 &3773339244440295285
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +338,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3773339246044111158}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.90509385, y: 0.8262295}
   m_AnchorMax: {x: 0.9533512, y: 0.9245902}
@@ -710,7 +863,7 @@ RectTransform:
   m_Children:
   - {fileID: 3773339245203409096}
   m_Father: {fileID: 3773339246044111158}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -804,7 +957,7 @@ GameObject:
   - component: {fileID: 3773339244623481549}
   - component: {fileID: 3773339244623481522}
   m_Layer: 5
-  m_Name: ScorePlayerText
+  m_Name: ScorePlayer1Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -823,7 +976,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3773339246044111158}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07017301, y: 0.77868855}
   m_AnchorMax: {x: 0.30789712, y: 0.89344263}
@@ -2508,7 +2661,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3773339246044111158}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.40338898, y: 0.75635654}
   m_AnchorMax: {x: 0.59365696, y: 0.8360656}
@@ -5337,7 +5490,7 @@ RectTransform:
   - {fileID: 3773339245120427112}
   - {fileID: 3773339245082153539}
   m_Father: {fileID: 3773339246044111158}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7112,7 +7265,7 @@ GameObject:
   - component: {fileID: 3773339245589476522}
   - component: {fileID: 3773339245589476523}
   m_Layer: 5
-  m_Name: ScoreEnemyText
+  m_Name: ScorePlayer2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7131,7 +7284,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3773339246044111158}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6723378, y: 0.77868855}
   m_AnchorMax: {x: 0.9261571, y: 0.89344263}
@@ -9011,6 +9164,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3773339246531684818}
+  - {fileID: 968551648838323278}
   - {fileID: 3773339244897407503}
   - {fileID: 3773339244623481523}
   - {fileID: 3773339245589476520}
@@ -9043,8 +9197,57 @@ MonoBehaviour:
   inputJoystickPanel: {fileID: 3773339244584976157}
   failPanel: {fileID: 3773339246238408505}
   hitCountText: {fileID: 3773339244897407497}
-  scorePlayerText: {fileID: 3773339244623481549}
-  scoreEnemyText: {fileID: 3773339245589476522}
+  scorePlayer1Text: {fileID: 3773339244623481549}
+  scorePlayer2Text: {fileID: 3773339245589476522}
+  gameMessage: {fileID: 853267669841524447}
+  BallDraw:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 10337051311042560
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  Player1Serves:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 10337492467937280
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  Player2Serves:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 10337704791994368
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  WinnerPlayer1:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 10339534485811200
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  WinnerPlayer2:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 10339588701384704
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &3773339246055677101
 GameObject:
   m_ObjectHideFlags: 0
@@ -9948,7 +10151,7 @@ RectTransform:
   - {fileID: 3773339246307905126}
   - {fileID: 3773339244659727324}
   m_Father: {fileID: 3773339246044111158}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -10045,18 +10248,27 @@ MonoBehaviour:
     m_LocalVariables: []
   EndMatch:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 10330247394979840
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   EndRound:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 3082989712957440
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  Goal:
+    m_TableReference:
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+    m_TableEntryReference:
+      m_KeyId: 10320980923346944
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

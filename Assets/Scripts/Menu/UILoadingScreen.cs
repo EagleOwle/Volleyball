@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 
 public class UILoadingScreen : CanvasGroupUI
 {
     public static UILoadingScreen Instance;
 
     [SerializeField] private GameObject inputPlayer1, inputPlayer2;
-    [SerializeField]private float showFirstLoad = 3;
+    [SerializeField] private float showFirstLoad = 3;
+    [SerializeField] private LocalizeStringEvent namePlayer1Localize;
+    [SerializeField] private LocalizeStringEvent namePlayer2Localize;
 
     private void Awake()
     {
@@ -36,7 +39,10 @@ public class UILoadingScreen : CanvasGroupUI
         gameObject.SetActive(true);
         CanvasGroup.alpha = 1;
 
-        if(sceneIndex != 0)
+        namePlayer1Localize.StringReference = Preference.Singleton.player[0].nameLocalizedString;
+        namePlayer2Localize.StringReference = Preference.Singleton.player[1].nameLocalizedString;
+
+        if (sceneIndex != 0)
         {
             inputPlayer1.SetActive(true);
             inputPlayer2.SetActive(true);

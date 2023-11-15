@@ -7,11 +7,34 @@ public class UIDisplayPlayerInput : MonoBehaviour
 {
     [SerializeField] private PlayerSide player;
     [SerializeField] private Text keyMoveText, keyJumpText;
+    [SerializeField] private GameObject keyboardInfoPlayerPanel, mouseInfoPlayerPanel;
 
-    private void OnEnable()
+    public void OnEnable()
     {
-        keyMoveText.text = Preference.Singleton.player[(int)player].leftKey.key.ToString() + "   " + Preference.Singleton.player[(int)player].rightKey.key.ToString();
-        keyJumpText.text = Preference.Singleton.player[(int)player].jumpKey.key.ToString();
+        var scene = ScenePreference.Singleton.GameScene;
+        int value = (int)player - 1;
+
+        keyMoveText.text = Preference.Singleton.player[value].leftKey.key.ToString() + "   " + Preference.Singleton.player[value].rightKey.key.ToString();
+        keyJumpText.text = Preference.Singleton.player[value].jumpKey.key.ToString();
+
+        if (scene.playersType[value] != PlayerType.Human)
+        {
+            keyboardInfoPlayerPanel.SetActive(false);
+            mouseInfoPlayerPanel.SetActive(false);
+        }
+        else
+        {
+            if (Preference.Singleton.player[value].inputType == InputType.button)
+            {
+                keyboardInfoPlayerPanel.SetActive(true);
+                mouseInfoPlayerPanel.SetActive(false);
+            }
+            else
+            {
+                keyboardInfoPlayerPanel.SetActive(false);
+                mouseInfoPlayerPanel.SetActive(true);
+            }
+        }
     }
 
 }

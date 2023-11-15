@@ -24,8 +24,7 @@ MonoBehaviour:
     ballIndex: 0
     playerPrefab: {fileID: 117146265, guid: ef71be2c89d619c438893f81639adda7, type: 3}
     aiPrefab: {fileID: -2411857389215965578, guid: 594485bf1071ec04ebffd0470f604314, type: 3}
-    player1Type: 0
-    player2Type: 1
+    playersType: 0000000001000000
     descriptionString:
       m_TableReference:
         m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
@@ -55,8 +54,7 @@ MonoBehaviour:
     ballIndex: 1
     playerPrefab: {fileID: 462525173706812902, guid: 203fa9de41e82764c9c6f02c54c98293, type: 3}
     aiPrefab: {fileID: 2390012871689189901, guid: 3e9b4b089647c0147865bb0335ee4e7b, type: 3}
-    player1Type: 0
-    player2Type: 0
+    playersType: 0000000001000000
     descriptionString:
       m_TableReference:
         m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97

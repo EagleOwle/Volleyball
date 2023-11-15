@@ -81,12 +81,12 @@ public class UIScenePreference : UIPanel
 
     private void OnChangePlayer1DropdownValue(int value)
     {
-        currentScene.player1Type = (PlayerType)value;
+        currentScene.playersType[0] = (PlayerType)value;
     }
 
     private void OnChangePlayer2DropdownValue(int value)
     {
-        currentScene.player2Type = (PlayerType)value;
+        currentScene.playersType[1] = (PlayerType)value;
     }
 
     private void OnChangeRoundCountValue(float value)
@@ -128,11 +128,11 @@ public class UIScenePreference : UIPanel
         difficultDropdown.onValueChanged.AddListener(OnChangeDifficultDropdownValue);
 
         player1Dropdown.onValueChanged.RemoveAllListeners();
-        player1Dropdown.value = (int)currentScene.player1Type;
+        player1Dropdown.value = (int)currentScene.playersType[0];
         player1Dropdown.onValueChanged.AddListener(OnChangePlayer1DropdownValue);
 
         player2Dropdown.onValueChanged.RemoveAllListeners();
-        player2Dropdown.value = (int)currentScene.player2Type;
+        player2Dropdown.value = (int)currentScene.playersType[1];
         player2Dropdown.onValueChanged.AddListener(OnChangePlayer2DropdownValue);
     }
 

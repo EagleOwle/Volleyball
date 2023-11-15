@@ -1,65 +1,136 @@
 using System;
 
-[Serializable]
+[System.Serializable]
 public class Match
 {
     public void Initialise(int roundCount)
     {
-        round = 0;
-        playerScore = new Score(roundCount);
-        enemyScore = new Score(roundCount);
+        playerLeft = new Player("Player1", PlayerSide.Left, roundCount);
+        playerRight = new Player("Player2", PlayerSide.Right, roundCount);
+        lastLuser = null;
     }
 
-    public int round;
-    public Score playerScore;
-    public Score enemyScore;
+    private Player playerLeft;
+    private Player playerRight;
+    private Player lastLuser;
 
-    public RoundResult SetScore(PlayerSide luser)
+    Player tmpPlayer;
+    RoundResult roundResult;
+    bool endMatch;
+
+    public RoundResult SetLuser(PlayerSide luser)
     {
-        if (playerScore.ScoreReduction())
+        roundResult = RoundResult.None;
+        endMatch = false;
+        tmpPlayer = GetPlayer(luser);
+
+        if (tmpPlayer == lastLuser)
         {
-            return  RoundResult.EndMatch;
+            tmpPlayer.ScoreReduction(out endMatch);
+            roundResult = RoundResult.Goal;
+
+            if(endMatch)
+            {
+                roundResult = RoundResult.EndMatch;
+            }
         }
         else
         {
-            return  RoundResult.EndRound;
+            roundResult = RoundResult.EndRound;
+        }
+
+        lastLuser = tmpPlayer;
+        return roundResult;
+    }
+
+    public PlayerSide LastLuser()
+    {
+        if (lastLuser == null)
+        {
+            return PlayerSide.None;
+        }
+        else
+        {
+            return lastLuser.playerSide;
         }
     }
 
-    [Serializable]
-    public class Round
+    public Player LastWinner()
     {
-        public int roundNumber = 0;
+        if (lastLuser == null)
+        {
+            return null;
+        }
+        else
+        {
+            if (lastLuser == playerLeft)
+            {
+                return playerRight;
+            }
+            else
+            {
+                return playerLeft;
+            }
+        }
     }
 
-    [Serializable]
-    public class Score
+    public int GetScore(PlayerSide side)
     {
-        public Score(int score)
+        switch (side)
         {
+            case PlayerSide.None:
+                return 0;
+            case PlayerSide.Left:
+                return playerLeft.score;
+            case PlayerSide.Right:
+                return playerRight.score;
+            default:
+                return 0;
+        }
+    }
+
+    private Player GetPlayer(PlayerSide side)
+    {
+        switch (side)
+        {
+            case PlayerSide.None:
+                return null;
+
+            case PlayerSide.Left:
+                return playerLeft;
+
+            case PlayerSide.Right:
+                return playerRight;
+
+            default:
+                return null;
+        }
+    }
+
+    [System.Serializable]
+    public class Player
+    {
+        public Player(String name, PlayerSide playerSide, int score)
+        {
+            this.name = name;
+            this.playerSide = playerSide;
             this.score = score;
         }
 
-        public PlayerSide playerType;
+        public PlayerSide playerSide;
+
+        public string name;
+
         public int score { get; private set; }
+
         public void ScoreReduction(out bool endScore)
         {
             endScore = false;
             score--;
-            if (score < 1)
+            if (score <= 0)
             {
                 endScore = true;
             }
-        }
-
-        public bool ScoreReduction()
-        {
-            score--;
-            if (score < 1)
-            {
-                return  true;
-            }
-            return false;
         }
 
     }

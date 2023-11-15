@@ -48,7 +48,6 @@ public class CameraMotion : MonoBehaviour
 
     private void ScreenMarker_eventOnVisible()
     {
-        Debug.Log("Camera On Position");
         screenMarker.eventOnVisible -= ScreenMarker_eventOnVisible;
         eventCameraEndMotion?.Invoke();
         StopCoroutine(moveRoutine);
