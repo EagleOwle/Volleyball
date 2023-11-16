@@ -18,11 +18,9 @@ public class UIPreferenceMenu : UIPanel
     [SerializeField] private Toggle vibraToggle;
     [SerializeField] private Text vibraValueText;
     [Space]
-    [SerializeField] private Text veryLowQualityText;
     [SerializeField] private Text lowQualityText;
     [SerializeField] private Text normalQualityText;
     [SerializeField] private Text highQualityText;
-    [SerializeField] private Text veryHighQualityText;
     [SerializeField] private Slider qualitySlider;
 
     public override void Init()
@@ -77,31 +75,6 @@ public class UIPreferenceMenu : UIPanel
 
     private void OnQualityChange(float value)
     {
-        switch (value)
-        {
-            case 0:
-                veryLowQualityText.transform.SetAsLastSibling();
-                break;
-
-            case 1:
-                lowQualityText.transform.SetAsLastSibling();
-
-                break;
-
-            case 2:
-                normalQualityText.transform.SetAsLastSibling();
-                break;
-
-            case 3:
-                highQualityText.transform.SetAsLastSibling();
-                break;
-
-            case 4:
-                veryHighQualityText.transform.SetAsLastSibling();
-                break;
-
-        }
-
         QualitySettings.SetQualityLevel((int)value);
     }
 
