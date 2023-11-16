@@ -18,7 +18,7 @@ MonoBehaviour:
   language: 1
   AllowedKeys: 6100000062000000630000006400000065000000710000007700000073000000640000007a00000078000000200000000800000011010000120100001301000014010000
   player:
-  - Name: Player1
+  - Name: "\u0412\u0430\u0441\u044F"
     inputType: 0
     leftKey:
       type: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-  - Name: Player2
+  - Name: "\u0410\u043B\u0435\u043A\u0441\u0435\u0439"
     inputType: 0
     leftKey:
       type: 0

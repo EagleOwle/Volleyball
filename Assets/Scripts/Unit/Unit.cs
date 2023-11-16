@@ -8,19 +8,24 @@ public abstract class Unit : MonoBehaviour
 
     [SerializeField] protected LayerMask ballLayer = 0;
 
-    protected PlayerSide player;
+    public string PlayerName => playerName;
+    protected string playerName;
+
+    protected PlayerSide playerSide;
+    
     Vector3 forceDirection;
 
-    public virtual void Initialise(PlayerSide player)
+    public virtual void Initialise(PlayerSide playerSide, string playerName)
     {
-        this.player = player;
+        this.playerSide = playerSide;
+        this.playerName = playerName;
 
-        if (player == PlayerSide.Left)
+        if (playerSide == PlayerSide.Left)
         {
              meshTransform.eulerAngles = new Vector3(meshTransform.eulerAngles.x, 90, meshTransform.eulerAngles.z);
         }
 
-        if (player == PlayerSide.Right)
+        if (playerSide == PlayerSide.Right)
         {
             meshTransform.eulerAngles = new Vector3(meshTransform.eulerAngles.x, -90, meshTransform.eulerAngles.z);
         }
@@ -65,12 +70,12 @@ public abstract class Unit : MonoBehaviour
         {
             if ((1 << collision.gameObject.layer & ballLayer) != 0)
             {
-                if (player == PlayerSide.Left)
+                if (playerSide == PlayerSide.Left)
                 {
                     forceDirection = (Vector3.right + Vector3.up) * PushForce();
                 }
 
-                if (player == PlayerSide.Right)
+                if (playerSide == PlayerSide.Right)
                 {
                     forceDirection = (Vector3.left + Vector3.up) * PushForce();
                 }

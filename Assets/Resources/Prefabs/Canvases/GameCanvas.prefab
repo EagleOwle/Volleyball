@@ -9209,38 +9209,20 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  Player1Serves:
+  Serves:
     m_TableReference:
-      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableCollectionName: 
     m_TableEntryReference:
-      m_KeyId: 10337492467937280
+      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  Player2Serves:
+  Winner:
     m_TableReference:
-      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
+      m_TableCollectionName: 
     m_TableEntryReference:
-      m_KeyId: 10337704791994368
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  WinnerPlayer1:
-    m_TableReference:
-      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
-    m_TableEntryReference:
-      m_KeyId: 10339534485811200
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  WinnerPlayer2:
-    m_TableReference:
-      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
-    m_TableEntryReference:
-      m_KeyId: 10339588701384704
+      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -10224,24 +10206,6 @@ MonoBehaviour:
       m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
     m_TableEntryReference:
       m_KeyId: 3082989712957440
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  Player1FeedLoss:
-    m_TableReference:
-      m_TableCollectionName: 
-    m_TableEntryReference:
-      m_KeyId: 0
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  Player2FeedLoss:
-    m_TableReference:
-      m_TableCollectionName: 
-    m_TableEntryReference:
-      m_KeyId: 0
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

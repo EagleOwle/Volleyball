@@ -5,9 +5,9 @@ public class SinglePlayer : Unit
 {
     private Vector3 lastMoveDirection;
 
-    public override void Initialise(PlayerSide playerSide)
+    public override void Initialise(PlayerSide playerSide, string playerName)
     {
-        base.Initialise(playerSide);
+        base.Initialise(playerSide, playerName);
         if (InputHandler.Instance == null)
         {
             Debug.LogError("Input handler is null");

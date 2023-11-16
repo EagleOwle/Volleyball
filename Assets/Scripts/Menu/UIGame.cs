@@ -26,14 +26,11 @@ public class UIGame : MonoBehaviour
     [SerializeField] private UIFailPanel failPanel;
     [SerializeField] private Text hitCountText, scorePlayer1Text, scorePlayer2Text;
     [SerializeField] private UIGameMessage gameMessage;
-
-
+    
     [Space()]
     [SerializeField] private LocalizedString BallDraw;
-    [SerializeField] private LocalizedString Player1Serves;
-    [SerializeField] private LocalizedString Player2Serves;
-    [SerializeField] private LocalizedString WinnerPlayer1;
-    [SerializeField] private LocalizedString WinnerPlayer2;
+    [SerializeField] private LocalizedString Serves;
+    [SerializeField] private LocalizedString Winner;
 
     public void Start()
     {
@@ -42,20 +39,20 @@ public class UIGame : MonoBehaviour
         Game.Instance.actionUnitHit += ShowBallHitCount;
     }
 
-    private void ShowUIInputPanel()
-    {
-        switch (Preference.Singleton.player[0].inputType)
-        {
-            case InputType.button:
-                inputJoystickPanel.SetActive(false);
-                inputButtonPanel.SetActive(true);
-                break;
-            case InputType.joystick:
-                inputJoystickPanel.SetActive(true);
-                inputButtonPanel.SetActive(false);
-                break;
-        }
-    }
+    //private void ShowUIInputPanel()
+    //{
+    //    switch (Preference.Singleton.player[0].inputType)
+    //    {
+    //        case InputType.button:
+    //            inputJoystickPanel.SetActive(false);
+    //            inputButtonPanel.SetActive(true);
+    //            break;
+    //        case InputType.joystick:
+    //            inputJoystickPanel.SetActive(true);
+    //            inputButtonPanel.SetActive(false);
+    //            break;
+    //    }
+    //}
 
     public void StartRound()
     {
@@ -64,19 +61,13 @@ public class UIGame : MonoBehaviour
         failPanel.gameObject.SetActive(false);
         ShowScore();
 
-        switch (Game.Instance.Luser)
+        if (Game.Instance.Luser == null)
         {
-            case PlayerSide.None:
-                gameMessage.ShowLocalizedMessage(BallDraw);
-                break;
-            case PlayerSide.Left:
-                gameMessage.ShowLocalizedMessage(Player1Serves);
-                break;
-            case PlayerSide.Right:
-                gameMessage.ShowLocalizedMessage(Player2Serves);
-                break;
-            default:
-                break;
+            gameMessage.ShowLocalizedMessage(BallDraw);
+        }
+        else
+        {
+            gameMessage.ShowLocalizedMessage(Serves, Game.Instance.Luser.name);
         }
     }
 
@@ -133,15 +124,7 @@ public class UIGame : MonoBehaviour
 
         if(roundResult == RoundResult.EndMatch)
         {
-            if (Game.Instance.match.LastWinner().playerSide == PlayerSide.Left)
-            {
-                gameMessage.ShowLocalizedMessage(WinnerPlayer1);
-            }
-
-            if (Game.Instance.match.LastWinner().playerSide == PlayerSide.Right)
-            {
-                gameMessage.ShowLocalizedMessage(WinnerPlayer2);
-            }
+            gameMessage.ShowLocalizedMessage(Winner, Game.Instance.match.LastWinner().name);
         }
     }
 

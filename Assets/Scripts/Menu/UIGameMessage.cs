@@ -30,11 +30,21 @@ public class UIGameMessage : MonoBehaviour
         }
     }
     
+    public void ShowLocalizedMessage(LocalizedString local, string playerName)
+    {
+        StopAllCoroutines();
+        ClearMessage();
+        stringEvent.StringReference = local;
+        text.text += " " + playerName;
+        Invoke(nameof(ClearMessage), liveTime);
+    }
+
     public void ShowLocalizedMessage(LocalizedString local)
     {
         StopAllCoroutines();
         ClearMessage();
         stringEvent.StringReference = local;
+        text.text = "";
         Invoke(nameof(ClearMessage), liveTime);
     }
 

@@ -9,8 +9,6 @@ public class UILoadingScreen : CanvasGroupUI
 
     [SerializeField] private GameObject inputPlayer1, inputPlayer2;
     [SerializeField] private float showFirstLoad = 3;
-    [SerializeField] private LocalizeStringEvent namePlayer1Localize;
-    [SerializeField] private LocalizeStringEvent namePlayer2Localize;
 
     private void Awake()
     {
@@ -38,9 +36,6 @@ public class UILoadingScreen : CanvasGroupUI
     {
         gameObject.SetActive(true);
         CanvasGroup.alpha = 1;
-
-        namePlayer1Localize.StringReference = Preference.Singleton.player[0].nameLocalizedString;
-        namePlayer2Localize.StringReference = Preference.Singleton.player[1].nameLocalizedString;
 
         if (sceneIndex != 0)
         {

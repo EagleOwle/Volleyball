@@ -6,21 +6,27 @@ using UnityEngine.UI;
 public class UIDisplayPlayerInput : MonoBehaviour
 {
     [SerializeField] private PlayerSide player;
-    [SerializeField] private Text keyMoveText, keyJumpText;
+    [SerializeField] private Text playerNameText, keyMoveText, keyJumpText;
     [SerializeField] private GameObject keyboardInfoPlayerPanel, mouseInfoPlayerPanel;
+
+    private PlayerPreference playerPreference;
 
     public void OnEnable()
     {
         var scene = ScenePreference.Singleton.GameScene;
         int value = (int)player - 1;
 
-        keyMoveText.text = Preference.Singleton.player[value].leftKey.key.ToString() + "   " + Preference.Singleton.player[value].rightKey.key.ToString();
-        keyJumpText.text = Preference.Singleton.player[value].jumpKey.key.ToString();
+        playerPreference = Preference.Singleton.player[value];
+
+        keyMoveText.text = playerPreference.leftKey.key.ToString() + "   " + playerPreference.rightKey.key.ToString();
+        keyJumpText.text = playerPreference.jumpKey.key.ToString();
 
         if (scene.playersType[value] != PlayerType.Human)
         {
             keyboardInfoPlayerPanel.SetActive(false);
             mouseInfoPlayerPanel.SetActive(false);
+            playerNameText.text = "Bot";
+            
         }
         else
         {
@@ -34,6 +40,9 @@ public class UIDisplayPlayerInput : MonoBehaviour
                 keyboardInfoPlayerPanel.SetActive(false);
                 mouseInfoPlayerPanel.SetActive(true);
             }
+
+            playerNameText.text = playerPreference.Name;
+
         }
     }
 

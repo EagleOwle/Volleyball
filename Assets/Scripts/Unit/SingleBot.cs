@@ -169,7 +169,7 @@ public class SingleBot : Unit
 
     private bool TrajectoryBallOnSelfSide(float xPosition)
     {
-        if (player == PlayerSide.Left)
+        if (playerSide == PlayerSide.Left)
         {
 
             if (xPosition < 0)
@@ -182,7 +182,7 @@ public class SingleBot : Unit
             }
         }
 
-        if (player == PlayerSide.Right)
+        if (playerSide == PlayerSide.Right)
         {
 
             if (xPosition > 0)

@@ -302,6 +302,14 @@ MonoBehaviour:
     m_Localized: Very High
     m_Metadata:
       m_Items: []
+  - m_Id: 10959950732554240
+    m_Localized: Profile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10963055540924416
+    m_Localized: Enter Name
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

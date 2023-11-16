@@ -27,7 +27,7 @@ public class Game : MonoBehaviour
     public ScenePreference.Scene scene;
     public Match match;
 
-    public  PlayerSide Luser => match.LastLuser();
+    public  Match.Player Luser => match.LastLuser();
 
     private Cort Cort;
     private Unit Player1;
@@ -48,11 +48,11 @@ public class Game : MonoBehaviour
         StateMachine.actionChangeState += ChangeState;
         StateMachine.SetState<PreviewSceneState>();
 
-        match = new Match();
-        match.Initialise(scene.matchPreference.Rounds);
-
         InstantiatePerson(scene);
         InstaiateBall();
+
+        match = new Match();
+        match.Initialise(scene.matchPreference.Rounds, Player1.PlayerName, Player2.PlayerName);
 
         if (Game.Instance.scene.difficultEnum != GameDifficult.Hard)
         {
@@ -68,23 +68,24 @@ public class Game : MonoBehaviour
         if (scene.playersType[0] == PlayerType.Human)
         {
             Player1 = Instantiate(scene.playerPrefab, Cort.Player1SpawnPoint.position, Quaternion.identity);
+            Player1.Initialise(PlayerSide.Left, Preference.Singleton.player[0].Name);
         }
         else
         {
             Player1 = Instantiate(scene.aiPrefab, Cort.Player1SpawnPoint.position, Quaternion.identity);
+            Player1.Initialise(PlayerSide.Left, "Bot");
         }
 
         if (scene.playersType[1] == PlayerType.Human)
         {
             Player2 = Instantiate(scene.playerPrefab, Cort.Player2SpawnPoint.position, Quaternion.identity);
+            Player2.Initialise(PlayerSide.Right, Preference.Singleton.player[1].Name);
         }
         else
         {
             Player2 = Instantiate(scene.aiPrefab, Cort.Player2SpawnPoint.position, Quaternion.identity);
+            Player2.Initialise(PlayerSide.Right, "Bot");
         }
-
-        Player1.Initialise(PlayerSide.Left);
-        Player2.Initialise(PlayerSide.Right);
     }
 
     private void InstaiateBall()
@@ -124,8 +125,12 @@ public class Game : MonoBehaviour
 
     private void StartRound()
     {
-        //match.round++;
-        ArrangementOfActors(match.LastLuser());
+        PlayerSide side = PlayerSide.None;
+        if (match.LastLuser() != null)
+        {
+            side = match.LastLuser().playerSide;
+        }
+        ArrangementOfActors(side);
         UIGame.Instance.StartRound();
         UIHud.Instance.OnChangePanel(UIPanelName.Timer);
     }

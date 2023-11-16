@@ -3,10 +3,10 @@ using System;
 [System.Serializable]
 public class Match
 {
-    public void Initialise(int roundCount)
+    public void Initialise(int roundCount, string player1Name, string player2Name)
     {
-        playerLeft = new Player("Player1", PlayerSide.Left, roundCount);
-        playerRight = new Player("Player2", PlayerSide.Right, roundCount);
+        playerLeft = new Player(player1Name, PlayerSide.Left, roundCount);
+        playerRight = new Player(player2Name, PlayerSide.Right, roundCount);
         lastLuser = null;
     }
 
@@ -43,15 +43,15 @@ public class Match
         return roundResult;
     }
 
-    public PlayerSide LastLuser()
+    public Player LastLuser()
     {
         if (lastLuser == null)
         {
-            return PlayerSide.None;
+            return null;
         }
         else
         {
-            return lastLuser.playerSide;
+            return lastLuser;
         }
     }
 
@@ -118,7 +118,6 @@ public class Match
         }
 
         public PlayerSide playerSide;
-
         public string name;
 
         public int score { get; private set; }

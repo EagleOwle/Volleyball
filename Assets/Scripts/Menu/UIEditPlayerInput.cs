@@ -9,8 +9,9 @@ public class UIEditPlayerInput : MonoBehaviour
     [SerializeField] private int playerId;
     [SerializeField] private UIKeyChecker keyChecker;
     [SerializeField] private Button editKeyLeft, editKeyRight, editKeyJump;
-    [SerializeField] private Text currentKeyLeft, currentKeyRight, currentKeyJump;
+    [SerializeField] private Text currentKeyLeft, currentKeyRight, currentKeyJump, playerName;
     [SerializeField] private Slider inputTypeSlider, senceMouseMoveSlider, senceMouseJumpSlider;
+    [SerializeField] private InputField nameInputField;
     [SerializeField] private GameObject editInputKeyPanel, editInputMousePanel;
 
     private PlayerPreference playerPreference;
@@ -28,6 +29,9 @@ public class UIEditPlayerInput : MonoBehaviour
         senceMouseMoveSlider.onValueChanged.AddListener(OnChangeMouseMoveSence);
 
         senceMouseJumpSlider.onValueChanged.AddListener(OnChangeMouseJumpSence);
+
+        nameInputField.onEndEdit.AddListener(OnEnterPlayerName);
+
     }
 
     private void OnEnable()
@@ -43,6 +47,13 @@ public class UIEditPlayerInput : MonoBehaviour
 
         senceMouseJumpSlider.SetValueWithoutNotify(playerPreference.mouseJumpSence);
         OnChangeMouseJumpSence(playerPreference.mouseJumpSence);
+
+        nameInputField.text = playerPreference.Name;
+    }
+
+    private void OnEnterPlayerName(string value)
+    {
+       playerPreference.Name = value;
     }
 
     private void OnChangeMouseMoveSence(float value)

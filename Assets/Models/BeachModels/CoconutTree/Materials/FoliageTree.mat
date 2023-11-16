@@ -126,8 +126,8 @@ Material:
     - _Parallax: -0.1
     - _RepeatCount: 5
     - _Saturation: 0
-    - _ShakeBending: 0.3
-    - _ShakeDisplacement: 1
+    - _ShakeBending: 0.5
+    - _ShakeDisplacement: 0.5
     - _ShakeTime: 0.3
     - _ShakeWindspeed: 0.3
     - _Shininess: 0.078125
