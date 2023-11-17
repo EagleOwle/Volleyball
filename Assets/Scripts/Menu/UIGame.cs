@@ -39,21 +39,6 @@ public class UIGame : MonoBehaviour
         Game.Instance.actionUnitHit += ShowBallHitCount;
     }
 
-    //private void ShowUIInputPanel()
-    //{
-    //    switch (Preference.Singleton.player[0].inputType)
-    //    {
-    //        case InputType.button:
-    //            inputJoystickPanel.SetActive(false);
-    //            inputButtonPanel.SetActive(true);
-    //            break;
-    //        case InputType.joystick:
-    //            inputJoystickPanel.SetActive(true);
-    //            inputButtonPanel.SetActive(false);
-    //            break;
-    //    }
-    //}
-
     public void StartRound()
     {
         Game.Instance.actionRoundFail += OnFail;

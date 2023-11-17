@@ -110,7 +110,7 @@ public class Match
     [System.Serializable]
     public class Player
     {
-        public Player(String name, PlayerSide playerSide, int score)
+        public Player(string name, PlayerSide playerSide, int score)
         {
             this.name = name;
             this.playerSide = playerSide;
