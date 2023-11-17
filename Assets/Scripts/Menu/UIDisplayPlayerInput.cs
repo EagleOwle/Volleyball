@@ -25,7 +25,7 @@ public class UIDisplayPlayerInput : MonoBehaviour
         {
             keyboardInfoPlayerPanel.SetActive(false);
             mouseInfoPlayerPanel.SetActive(false);
-            playerNameText.text = "Bot";
+            playerNameText.text = "";
             
         }
         else

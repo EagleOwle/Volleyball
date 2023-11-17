@@ -303,6 +303,18 @@ MonoBehaviour:
     m_Key: Enter Name
     m_Metadata:
       m_Items: []
+  - m_Id: 11256476776521728
+    m_Key: Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11258244784709632
+    m_Key: Winner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11258802442301440
+    m_Key: Serves
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

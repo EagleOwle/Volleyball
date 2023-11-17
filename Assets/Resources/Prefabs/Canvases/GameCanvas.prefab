@@ -9211,18 +9211,18 @@ MonoBehaviour:
     m_LocalVariables: []
   Serves:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 11258802442301440
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   Winner:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 11258244784709632
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -9257,7 +9257,7 @@ RectTransform:
   m_GameObject: {fileID: 3773339246055677101}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3773339246493467835}

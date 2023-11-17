@@ -310,6 +310,18 @@ MonoBehaviour:
     m_Localized: Enter Name
     m_Metadata:
       m_Items: []
+  - m_Id: 11256476776521728
+    m_Localized: Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11258244784709632
+    m_Localized: Winner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11258802442301440
+    m_Localized: Serves
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -44,7 +44,6 @@ public class UIGameMessage : MonoBehaviour
         StopAllCoroutines();
         ClearMessage();
         stringEvent.StringReference = local;
-        text.text = "";
         Invoke(nameof(ClearMessage), liveTime);
     }
 

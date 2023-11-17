@@ -73,7 +73,7 @@ public class Game : MonoBehaviour
         else
         {
             Player1 = Instantiate(scene.aiPrefab, Cort.Player1SpawnPoint.position, Quaternion.identity);
-            Player1.Initialise(PlayerSide.Left, "Bot");
+            Player1.Initialise(PlayerSide.Left, "Bot Basil");
         }
 
         if (scene.playersType[1] == PlayerType.Human)
@@ -84,7 +84,7 @@ public class Game : MonoBehaviour
         else
         {
             Player2 = Instantiate(scene.aiPrefab, Cort.Player2SpawnPoint.position, Quaternion.identity);
-            Player2.Initialise(PlayerSide.Right, "Bot");
+            Player2.Initialise(PlayerSide.Right, "Bot Fedor");
         }
     }
 
