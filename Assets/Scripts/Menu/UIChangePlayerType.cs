@@ -16,7 +16,7 @@ public class UIChangePlayerType : MonoBehaviour
         this.currentScene = currentScene;
         this.playerIndex = playerIndex;
         dropdown.onValueChanged.RemoveAllListeners();
-        dropdown.value = (int)currentScene.playersType[0];
+        dropdown.value = (int)currentScene.playersType[playerIndex];
         dropdown.onValueChanged.AddListener(OnChangePlayerDropdownValue);
         dropdownOptionPlayerType.ChangeCurrentScene();
 

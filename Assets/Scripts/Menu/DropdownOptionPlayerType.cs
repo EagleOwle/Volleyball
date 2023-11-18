@@ -15,7 +15,6 @@ public class DropdownOptionPlayerType : MonoBehaviour
 
     private void OnEnable()
     {
-        //dropdown.onValueChanged.AddListener(OnValueChange);
         Invoke(nameof(UpdateText), Time.deltaTime);
     }
 

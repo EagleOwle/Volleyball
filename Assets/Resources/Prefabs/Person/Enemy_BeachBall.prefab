@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _checkGroundMask:
     serializedVersion: 2
-    m_Bits: 320
+    m_Bits: 64
 --- !u!95 &6125744921731221073
 Animator:
   serializedVersion: 5

@@ -50,7 +50,7 @@ public class SinglePlayer : Unit
     private void OnInputDirection(Vector2 direction)
     {
         lastMoveDirection = direction.normalized;
-        unitMotion.MoveDirection = lastMoveDirection;
+        unitMotion.moveDirection = lastMoveDirection;
     }
 
     private void OnInputButton(InputHandler.InputButton button, InputHandler.InputDirection type)
@@ -91,7 +91,7 @@ public class SinglePlayer : Unit
                 break;
         }
 
-        unitMotion.MoveDirection = lastMoveDirection;
+        unitMotion.moveDirection = lastMoveDirection;
     }
 
     protected override void OnDisable()

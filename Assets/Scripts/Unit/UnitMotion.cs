@@ -7,19 +7,15 @@ public class UnitMotion : MonoBehaviour
     [SerializeField] private LayerMask _checkGroundMask;
 
     private Rigidbody _rigidbody;
-    private bool _onGround = false;
+    
     public bool OnGround => _onGround;
+    private bool _onGround = false;
+
     private float velocityX;
     private float velocityY;
+    private float moveYTarget;
 
-    private Vector3 moveDirection;
-    public Vector3 MoveDirection
-    {
-        set
-        {
-            moveDirection = value;
-        }
-    }
+    public Vector3 moveDirection { get; set; }
 
     private void Awake()
     {
@@ -40,14 +36,17 @@ public class UnitMotion : MonoBehaviour
 
         velocityY = Jump(moveDirection.y);
         velocityX = moveDirection.x * Preference.Singleton.moveSpeed * Time.deltaTime;
+
+        if (_onGround == false) velocityX *= 2;
+
         _rigidbody.velocity = new Vector3(velocityX, velocityY, _rigidbody.velocity.z);
 
     }
 
     private float Jump(float inputJump)
     {
-        float velocityY = _rigidbody.velocity.y;
-        float moveYTarget = Physics.gravity.y;
+        velocityY = _rigidbody.velocity.y;
+        moveYTarget = Physics.gravity.y;
 
         if (_onGround)
         {
@@ -60,13 +59,13 @@ public class UnitMotion : MonoBehaviour
         return  Mathf.MoveTowards(velocityY, moveYTarget, Preference.Singleton.downSpeed * Time.deltaTime);
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            _onGround = true;
-        }
-    }
+    //private void OnCollisionStay(Collision collision)
+    //{
+    //    if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+    //    {
+    //        _onGround = true;
+    //    }
+    //}
 
     private void OnCollisionExit(Collision collision)
     {
