@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 4512372091455407075}
-  liveTime: 2
   stringEvent: {fileID: 8622320712144924428}
 --- !u!1 &3773339244440295285
 GameObject:

@@ -46,13 +46,13 @@ public class UIGame : MonoBehaviour
         failPanel.gameObject.SetActive(false);
         ShowScore();
 
-        if (Game.Instance.Luser == null)
+        if (Game.Instance.Winner == null)
         {
             gameMessage.ShowLocalizedMessage(BallDraw);
         }
         else
         {
-            gameMessage.ShowLocalizedMessage(Serves, Game.Instance.Luser.name);
+            gameMessage.ShowLocalizedMessage(Serves, Game.Instance.Winner.name);
         }
     }
 

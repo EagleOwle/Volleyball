@@ -15,7 +15,7 @@ public class DropdownOptionPlayerType : MonoBehaviour
 
     private void OnEnable()
     {
-        dropdown.onValueChanged.AddListener(OnValueChange);
+        //dropdown.onValueChanged.AddListener(OnValueChange);
         Invoke(nameof(UpdateText), Time.deltaTime);
     }
 
@@ -24,8 +24,14 @@ public class DropdownOptionPlayerType : MonoBehaviour
         Invoke(nameof(UpdateText), Time.deltaTime);
     }
 
-    public void UpdateText()
+    public void ChangeCurrentScene()
     {
+        Invoke(nameof(UpdateText), Time.deltaTime);
+    }
+
+    private void UpdateText()
+    {
+        Debug.Log("Update text: " + dropdown.value);
         if (dropdown.value == 0)
         {
             playerTypeLocalize.StringReference = stringHuman;

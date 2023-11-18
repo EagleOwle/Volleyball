@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum PlayerSide
 {
-    None = 0,
-    Left = 1,
-    Right = 2
+    Left = 0,
+    Right = 1,
+    None = 2,
 }

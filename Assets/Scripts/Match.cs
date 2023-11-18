@@ -7,7 +7,6 @@ public class Match
     {
         playerLeft = new Player(player1Name, PlayerSide.Left, roundCount);
         playerRight = new Player(player2Name, PlayerSide.Right, roundCount);
-        lastLuser = null;
     }
 
     private Player playerLeft;
@@ -107,7 +106,6 @@ public class Match
         }
     }
 
-    [System.Serializable]
     public class Player
     {
         public Player(string name, PlayerSide playerSide, int score)

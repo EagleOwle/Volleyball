@@ -12,8 +12,6 @@ public class UIScenePreference : UIPanel
     [SerializeField] private Transform buttonContent;
     [SerializeField] private GameObject buttonPrefab;
     [SerializeField] private Image previewImage;
-    //[SerializeField] private Text nameSceneText;
-    //[SerializeField] private Text descriptionText;
     [SerializeField] private LocalizeStringEvent nameSceneLocalize;
     [SerializeField] private LocalizeStringEvent descriptionLocalize;
     [SerializeField] private Button startButton;
@@ -21,8 +19,8 @@ public class UIScenePreference : UIPanel
     [SerializeField] private Slider roundCountSlider;
     [SerializeField] private Text roundCountText;
     [SerializeField] private Dropdown difficultDropdown;
-    [SerializeField] private Dropdown player1Dropdown;
-    [SerializeField] private Dropdown player2Dropdown;
+    [SerializeField] private UIChangePlayerType changePlayer1Type;
+    [SerializeField] private UIChangePlayerType changePlayer2Type;
 
     private ScenePreference.Scene[] scenes;
     private ScenePreference.Scene currentScene;
@@ -79,16 +77,6 @@ public class UIScenePreference : UIPanel
         currentScene.difficult = value;
     }
 
-    private void OnChangePlayer1DropdownValue(int value)
-    {
-        currentScene.playersType[0] = (PlayerType)value;
-    }
-
-    private void OnChangePlayer2DropdownValue(int value)
-    {
-        currentScene.playersType[1] = (PlayerType)value;
-    }
-
     private void OnChangeRoundCountValue(float value)
     {
         currentScene.matchPreference.Rounds = (int)value;
@@ -127,13 +115,9 @@ public class UIScenePreference : UIPanel
         difficultDropdown.value = (int)currentScene.difficultEnum;
         difficultDropdown.onValueChanged.AddListener(OnChangeDifficultDropdownValue);
 
-        player1Dropdown.onValueChanged.RemoveAllListeners();
-        player1Dropdown.value = (int)currentScene.playersType[0];
-        player1Dropdown.onValueChanged.AddListener(OnChangePlayer1DropdownValue);
+        changePlayer1Type.SetCurrentScene(currentScene, 0);
+        changePlayer2Type.SetCurrentScene(currentScene, 1);
 
-        player2Dropdown.onValueChanged.RemoveAllListeners();
-        player2Dropdown.value = (int)currentScene.playersType[1];
-        player2Dropdown.onValueChanged.AddListener(OnChangePlayer2DropdownValue);
     }
 
 }

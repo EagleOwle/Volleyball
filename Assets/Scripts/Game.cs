@@ -28,6 +28,7 @@ public class Game : MonoBehaviour
     public Match match;
 
     public  Match.Player Luser => match.LastLuser();
+    public Match.Player Winner => match.LastWinner();
 
     private Cort Cort;
     private Unit Player1;
@@ -67,23 +68,23 @@ public class Game : MonoBehaviour
 
         if (scene.playersType[0] == PlayerType.Human)
         {
-            Player1 = Instantiate(scene.playerPrefab, Cort.Player2SpawnPoint.position, Quaternion.identity);
+            Player1 = Instantiate(scene.playerPrefab, Cort.Player1SpawnPoint.position, Quaternion.identity);
             Player1.Initialise(PlayerSide.Left, Preference.Singleton.player[0].Name);
         }
         else
         {
-            Player1 = Instantiate(scene.aiPrefab, Cort.Player2SpawnPoint.position, Quaternion.identity);
+            Player1 = Instantiate(scene.aiPrefab, Cort.Player1SpawnPoint.position, Quaternion.identity);
             Player1.Initialise(PlayerSide.Left, "Bot Basil");
         }
 
         if (scene.playersType[1] == PlayerType.Human)
         {
-            Player2 = Instantiate(scene.playerPrefab, Cort.Player1SpawnPoint.position, Quaternion.identity);
+            Player2 = Instantiate(scene.playerPrefab, Cort.Player2SpawnPoint.position, Quaternion.identity);
             Player2.Initialise(PlayerSide.Right, Preference.Singleton.player[1].Name);
         }
         else
         {
-            Player2 = Instantiate(scene.aiPrefab, Cort.Player1SpawnPoint.position, Quaternion.identity);
+            Player2 = Instantiate(scene.aiPrefab, Cort.Player2SpawnPoint.position, Quaternion.identity);
             Player2.Initialise(PlayerSide.Right, "Bot Fedor");
         }
     }
@@ -111,7 +112,6 @@ public class Game : MonoBehaviour
     public void OnRoundFall(PlayerSide luser)
     {
         AudioController.Instance.PlayInstanceClip(roundFallClip);
-
         RoundResult result = match.SetLuser(luser);
         actionRoundFail?.Invoke(result);
 
