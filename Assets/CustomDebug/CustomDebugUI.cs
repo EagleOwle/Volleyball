@@ -8,7 +8,7 @@ public class CustomDebugUI : MonoBehaviour
 {
     [SerializeField] private Button hideButton, closeButton;
     [SerializeField] private RectTransform consolTransform;
-    [SerializeField] private float defaultSizeY;
+    [SerializeField] private float maxSizeY, minSizeY;
 
     private RectTransform buttonImageTransform;
 
@@ -22,8 +22,9 @@ public class CustomDebugUI : MonoBehaviour
         hideButton.onClick.AddListener(HideConsole);
         closeButton.onClick.AddListener(CloseConsole);
         buttonImageTransform.eulerAngles = new Vector3(0, 0, 180);
-        consolTransform.sizeDelta = new Vector2(consolTransform.sizeDelta.x, 75);
-        Invoke(nameof(ShowTestMessage), 1);
+        consolTransform.sizeDelta = new Vector2(consolTransform.sizeDelta.x, minSizeY);
+        //Invoke(nameof(ShowTestMessage), 1);
+       // InvokeRepeating(nameof(ShowTestMessage), 1, 5);
     }
 
     private void ShowTestMessage()
@@ -38,14 +39,14 @@ public class CustomDebugUI : MonoBehaviour
 
     private void HideConsole()
     {
-        if(consolTransform.sizeDelta.y == 0)
+        if(consolTransform.sizeDelta.y == minSizeY)
         {
-            consolTransform.sizeDelta = new Vector2(consolTransform.sizeDelta.x, defaultSizeY);
+            consolTransform.sizeDelta = new Vector2(consolTransform.sizeDelta.x, maxSizeY);
             buttonImageTransform.eulerAngles = Vector3.zero;
         }
         else
         {
-            consolTransform.sizeDelta = new Vector2(consolTransform.sizeDelta.x, 35);
+            consolTransform.sizeDelta = new Vector2(consolTransform.sizeDelta.x, minSizeY);
             buttonImageTransform.eulerAngles = new Vector3(0, 0, 180);
         }
     }
