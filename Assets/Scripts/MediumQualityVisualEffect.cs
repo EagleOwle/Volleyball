@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class MediumQualityVisualEffect : MonoBehaviour
 {
-    public ParticleSystem particle;
-    public float hSliderValueRatio = 1.0f;
-    public float hSliderValueMax = 10.0f;
-    public bool randomDistribution = true;
 
     private void Awake()
     {
@@ -24,14 +20,6 @@ public class MediumQualityVisualEffect : MonoBehaviour
         {
             gameObject.SetActive(true);
         }
-    }
-
-    private void Update()
-    {
-        var lights = particle.lights;
-        lights.ratio = hSliderValueRatio;
-        lights.maxLights = (int)hSliderValueMax;
-        lights.useRandomDistribution = randomDistribution;
     }
 
 }
