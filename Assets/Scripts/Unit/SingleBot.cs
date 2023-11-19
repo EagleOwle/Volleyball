@@ -28,28 +28,10 @@ public class SingleBot : Unit
 
     private void FixedUpdate()
     {
-        EasyBehavior();
-
-        //switch (Game.Instance.scene.difficultEnum)
-        //{
-        //    case GameDifficult.Easy:
-        //        EasyBehavior();
-        //        break;
-        //    case GameDifficult.Normal:
-        //        //NormalBehavior();
-        //        EasyBehavior();
-        //        break;
-        //    case GameDifficult.Hard:
-        //        //HardBehavior();
-        //        EasyBehavior();
-        //        break;
-        //}
-
-        unitMotion.moveDirection = direction.normalized;
-
+        AiLogic();
     }
 
-    private void EasyBehavior()
+    private void AiLogic()
     {
         direction = Vector3.zero;
 
@@ -88,12 +70,14 @@ public class SingleBot : Unit
         }
         else
         {
-            dir = WaitPosition - transform.position.x;
+            dir = defaultPositionX - transform.position.x;
             if (Mathf.Abs(dir) > 0.3f)
             {
                 direction = new Vector3(dir, 0, direction.z);
             }
         }
+
+        unitMotion.moveDirection = direction.normalized;
     }
 
     private bool PositionOnSelfSide(float xPosition)
@@ -135,13 +119,13 @@ public class SingleBot : Unit
         {
             if (_ball.transform.position.x < transform.position.x)
             {
-                adjustment = -1f;
+                adjustment = -0.5f;
             }
             else
             {
                 if (_ball.transform.position.x > transform.position.x)
                 {
-                    adjustment = 1f;
+                    adjustment = 0.5f;
                 }
             }
         }
@@ -149,18 +133,18 @@ public class SingleBot : Unit
         return adjustment;
     }
 
-    private float WaitPosition
-    {
-        get
-        {
-            if (defaultPositionX == 0)
-            {
-                defaultPositionX = Random.Range(0.2f, 5);
-            }
+    //private float WaitPosition
+    //{
+    //    get
+    //    {
+    //        if (defaultPositionX == 0)
+    //        {
+    //            defaultPositionX = Random.Range(0.2f, 5);
+    //        }
 
-            return defaultPositionX;
-        }
-    }
+    //        return defaultPositionX;
+    //    }
+    //}
 
 
 }

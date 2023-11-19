@@ -22,7 +22,13 @@ public class CustomDebugUI : MonoBehaviour
         hideButton.onClick.AddListener(HideConsole);
         closeButton.onClick.AddListener(CloseConsole);
         buttonImageTransform.eulerAngles = new Vector3(0, 0, 180);
+        consolTransform.sizeDelta = new Vector2(consolTransform.sizeDelta.x, 75);
+        Invoke(nameof(ShowTestMessage), 1);
+    }
 
+    private void ShowTestMessage()
+    {
+        Debug.Log("Debug Test");
     }
 
     private void CloseConsole()
@@ -39,7 +45,7 @@ public class CustomDebugUI : MonoBehaviour
         }
         else
         {
-            consolTransform.sizeDelta = new Vector2(consolTransform.sizeDelta.x, 0);
+            consolTransform.sizeDelta = new Vector2(consolTransform.sizeDelta.x, 35);
             buttonImageTransform.eulerAngles = new Vector3(0, 0, 180);
         }
     }

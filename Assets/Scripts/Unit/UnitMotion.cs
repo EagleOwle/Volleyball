@@ -14,6 +14,7 @@ public class UnitMotion : MonoBehaviour
     private float velocityX;
     private float velocityY;
     private float moveYTarget;
+    private float acceleration = 1;
 
     public Vector3 moveDirection { get; set; }
 
@@ -25,6 +26,20 @@ public class UnitMotion : MonoBehaviour
     private void Start()
     {
         _onGround = false;
+
+        switch (Game.Instance.scene.difficultEnum)
+        {
+            case GameDifficult.Easy:
+                acceleration = 1;
+                break;
+            case GameDifficult.Normal:
+                acceleration = 1.5f;
+                break;
+            case GameDifficult.Hard:
+                acceleration = 2;
+                break;
+        }
+
     }
 
     private void FixedUpdate()
@@ -37,7 +52,10 @@ public class UnitMotion : MonoBehaviour
         velocityY = Jump(moveDirection.y);
         velocityX = moveDirection.x * Preference.Singleton.moveSpeed * Time.deltaTime;
 
-        if (_onGround == false) velocityX *= 2;
+        if (_onGround == false)
+        {
+            velocityX *= acceleration;
+        }
 
         _rigidbody.velocity = new Vector3(velocityX, velocityY, _rigidbody.velocity.z);
 
@@ -58,14 +76,6 @@ public class UnitMotion : MonoBehaviour
 
         return  Mathf.MoveTowards(velocityY, moveYTarget, Preference.Singleton.downSpeed * Time.deltaTime);
     }
-
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //    if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
-    //    {
-    //        _onGround = true;
-    //    }
-    //}
 
     private void OnCollisionExit(Collision collision)
     {

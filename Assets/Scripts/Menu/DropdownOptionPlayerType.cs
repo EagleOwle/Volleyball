@@ -30,7 +30,6 @@ public class DropdownOptionPlayerType : MonoBehaviour
 
     private void UpdateText()
     {
-        Debug.Log("Update text: " + dropdown.value);
         if (dropdown.value == 0)
         {
             playerTypeLocalize.StringReference = stringHuman;

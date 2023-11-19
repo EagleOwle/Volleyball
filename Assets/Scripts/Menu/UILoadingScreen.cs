@@ -8,7 +8,7 @@ public class UILoadingScreen : CanvasGroupUI
     public static UILoadingScreen Instance;
 
     [SerializeField] private GameObject inputPlayer1, inputPlayer2;
-    [SerializeField] private float showFirstLoad = 3;
+    [SerializeField] private float showFirstLoad = 5;
 
     private void Awake()
     {
