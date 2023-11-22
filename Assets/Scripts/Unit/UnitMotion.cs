@@ -33,10 +33,10 @@ public class UnitMotion : MonoBehaviour
                 acceleration = 1;
                 break;
             case GameDifficult.Normal:
-                acceleration = 1.5f;
+                acceleration = 1.2f;
                 break;
             case GameDifficult.Hard:
-                acceleration = 2;
+                acceleration = 1.5f;
                 break;
         }
 
