@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class Game : MonoBehaviour
 {
     #region Singleton
@@ -60,8 +61,27 @@ public class Game : MonoBehaviour
             var trajectoryRender = Instantiate(Preference.Singleton.trajectoryRenderPrefab);
             trajectoryRender.Initialise(Ball);
         }
+        //StartCoroutine(SendVKRequest());
     }
 
+    //IEnumerator SendVKRequest()
+    //{
+    //    string url = "https://api.vk.com/method/users.get?user_ids=1&access_token=YOUR_ACCESS_TOKEN&v=5.131";
+
+    //    UnityWebRequest www = UnityWebRequest.Get(url);
+
+    //    yield return www.SendWebRequest();
+
+    //    if (www.result != UnityWebRequest.Result.Success)
+    //    {
+    //        Debug.LogError(www.error);
+    //    }
+    //    else
+    //    {
+    //        // Обработка успешного ответа
+    //        Debug.Log(www.downloadHandler.text);
+    //    }
+    //}
     private void InstantiatePerson(ScenePreference.Scene scene)
     {
         Cort = GameObject.FindObjectOfType<Cort>();

@@ -15,5 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Forest.unity
     guid: 934e8a9e30afc6d44aa8cd2db7e1e36b
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: d5611336362796d47b99d033aba16de9, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: b8b01340ee3c40349962f5d6fcd8d91a, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: a6abeb201000b244194ce0e49dac7c30, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 7558e2405cfb8f44a9ce6c8eadd80762, type: 2}
