@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class UIHud : MonoBehaviour
 {
-    private static UIHud instance;
     public static UIHud Instance
     {
         get
@@ -19,6 +18,7 @@ public class UIHud : MonoBehaviour
             return instance;
         }
     }
+    private static UIHud instance;
 
     public Action<UIPanelName> ActionChangePanel;
 
@@ -35,6 +35,8 @@ public class UIHud : MonoBehaviour
         {
             item.Init();
         }
+
+        OnChangePanel(UIPanelName.Main);
     }
 
 }

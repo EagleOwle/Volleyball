@@ -339,8 +339,8 @@ RectTransform:
   m_Father: {fileID: 3773339246044111158}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.90509385, y: 0.8262295}
-  m_AnchorMax: {x: 0.9533512, y: 0.9245902}
+  m_AnchorMin: {x: 0.9140625, y: 0.837963}
+  m_AnchorMax: {x: 0.9453125, y: 0.912037}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -438,12 +438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  _enterColor: {r: 0, g: 0, b: 0, a: 0}
-  _exitColor: {r: 0, g: 0, b: 0, a: 0}
-  _downColor: {r: 0, g: 0, b: 0, a: 0}
-  _text: {fileID: 0}
   clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
+  enterClip: {fileID: 0}
 --- !u!1 &3773339244449235410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,12 +1245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  _enterColor: {r: 0, g: 0, b: 0, a: 0}
-  _exitColor: {r: 0, g: 0, b: 0, a: 0}
-  _downColor: {r: 0, g: 0, b: 0, a: 0}
-  _text: {fileID: 0}
   clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
+  enterClip: {fileID: 0}
 --- !u!1 &3773339244659727325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,12 +2102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 0.015686275, g: 0.38431373, b: 1, a: 1}
-  _enterColor: {r: 0.024430392, g: 0.23079656, b: 0.5754717, a: 1}
-  _exitColor: {r: 0.015686275, g: 0.38431373, b: 1, a: 1}
-  _downColor: {r: 0.43173724, g: 0.6162886, b: 0.9245283, a: 1}
-  _text: {fileID: 3773339245075710598}
   clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
+  enterClip: {fileID: 0}
 --- !u!1 &3773339244827426812
 GameObject:
   m_ObjectHideFlags: 0
@@ -4082,12 +4070,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  _enterColor: {r: 0, g: 0, b: 0, a: 0}
-  _exitColor: {r: 0, g: 0, b: 0, a: 0}
-  _downColor: {r: 0, g: 0, b: 0, a: 0}
-  _text: {fileID: 0}
   clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
+  enterClip: {fileID: 0}
 --- !u!1 &3773339245111124498
 GameObject:
   m_ObjectHideFlags: 0
@@ -4419,12 +4403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  _enterColor: {r: 0, g: 0, b: 0, a: 0}
-  _exitColor: {r: 0, g: 0, b: 0, a: 0}
-  _downColor: {r: 0, g: 0, b: 0, a: 0}
-  _text: {fileID: 0}
   clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
+  enterClip: {fileID: 0}
 --- !u!1 &3773339245121815633
 GameObject:
   m_ObjectHideFlags: 0
@@ -6575,12 +6555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  _enterColor: {r: 0, g: 0, b: 0, a: 0}
-  _exitColor: {r: 0, g: 0, b: 0, a: 0}
-  _downColor: {r: 0, g: 0, b: 0, a: 0}
-  _text: {fileID: 0}
   clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
+  enterClip: {fileID: 0}
 --- !u!1 &3773339245507486032
 GameObject:
   m_ObjectHideFlags: 0
@@ -7667,12 +7643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  _enterColor: {r: 0, g: 0, b: 0, a: 0}
-  _exitColor: {r: 0, g: 0, b: 0, a: 0}
-  _downColor: {r: 0, g: 0, b: 0, a: 0}
-  _text: {fileID: 0}
   clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
+  enterClip: {fileID: 0}
 --- !u!1 &3773339245631395453
 GameObject:
   m_ObjectHideFlags: 0
@@ -8940,12 +8912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 0.015686275, g: 0.38431373, b: 1, a: 1}
-  _enterColor: {r: 0.024430392, g: 0.23079656, b: 0.5754717, a: 1}
-  _exitColor: {r: 0.015686275, g: 0.38431373, b: 1, a: 1}
-  _downColor: {r: 0.43173724, g: 0.6162886, b: 0.9245283, a: 1}
-  _text: {fileID: 3773339245419899791}
   clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
+  enterClip: {fileID: 0}
 --- !u!1 &3773339245937722902
 GameObject:
   m_ObjectHideFlags: 0
@@ -12294,12 +12262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb615b4997ef8394ab0051340223f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
-  _enterColor: {r: 0, g: 0, b: 0, a: 0}
-  _exitColor: {r: 0, g: 0, b: 0, a: 0}
-  _downColor: {r: 0, g: 0, b: 0, a: 0}
-  _text: {fileID: 0}
   clickClip: {fileID: 8300000, guid: c95a9d3d17b71d34993e67e81366a7a1, type: 3}
+  enterClip: {fileID: 0}
 --- !u!1 &3773339246549480384
 GameObject:
   m_ObjectHideFlags: 0

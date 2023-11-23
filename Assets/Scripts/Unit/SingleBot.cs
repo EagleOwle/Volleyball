@@ -17,13 +17,13 @@ public class SingleBot : Unit
     {
         defaultPositionX = transform.position.x;
         _ball = GameObject.FindObjectOfType<Ball>();
-        nextHeightForJamp = Random.Range(2, 4);
+        nextHeightForJamp = Random.Range(2, 6);
     }
 
     protected override void ClearValue()
     {
         direction = Vector3.zero;
-        nextHeightForJamp = Random.Range(2, 4);
+        nextHeightForJamp = Random.Range(2, 6);
     }
 
     private void FixedUpdate()
@@ -62,7 +62,7 @@ public class SingleBot : Unit
                 if (Mathf.Abs(_ball.transform.position.y) <= (transform.position.y + nextHeightForJamp))
                 {
                     direction = new Vector3(direction.x, 1, direction.z);
-                    nextHeightForJamp = Random.Range(2, 4);
+                    nextHeightForJamp = Random.Range(2, 6);
                 }
             }
             #endregion
@@ -132,19 +132,6 @@ public class SingleBot : Unit
 
         return adjustment;
     }
-
-    //private float WaitPosition
-    //{
-    //    get
-    //    {
-    //        if (defaultPositionX == 0)
-    //        {
-    //            defaultPositionX = Random.Range(0.2f, 5);
-    //        }
-
-    //        return defaultPositionX;
-    //    }
-    //}
 
 
 }
