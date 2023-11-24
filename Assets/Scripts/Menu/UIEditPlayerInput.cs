@@ -86,9 +86,9 @@ public class UIEditPlayerInput : MonoBehaviour
 
     private void UpdateText()
     {
-        currentKeyLeft.text = playerPreference.leftKey.key.ToString();
-        currentKeyRight.text = playerPreference.rightKey.key.ToString();
-        currentKeyJump.text = playerPreference.jumpKey.key.ToString();
+        currentKeyLeft.text = playerPreference.leftKey.Key.ToString();
+        currentKeyRight.text = playerPreference.rightKey.Key.ToString();
+        currentKeyJump.text = playerPreference.jumpKey.Key.ToString();
     }
 
     private void OnButtonChangeKeyLeft()

@@ -17,7 +17,7 @@ public class PlayerPreference
         this.name = name;
     }
     public string Name => name;
-    private string name;
+    [SerializeField] private string name;
 
     [Space()]
     public InputType inputType = InputType.button;
@@ -47,6 +47,10 @@ public class PlayerPreference
         {
             mouseJumpSence = PlayerPrefs.GetFloat("JoysticDeadZone" + playerId);
         }
+
+        leftKey.ReadKey();
+        rightKey.ReadKey();
+        jumpKey.ReadKey();
     }
 
     public void SaveMouseMoveSence(float value, int playerId)
@@ -82,7 +86,7 @@ public class PlayerInput
 {
     public ActionType type;
     public int playerIndex;
-    
+
     public void ReadKey()
     {
         if (PlayerPrefs.HasKey(type.ToString() + playerIndex))
@@ -96,8 +100,9 @@ public class PlayerInput
         PlayerPrefs.SetInt(type.ToString() + playerIndex, (int)key);
         this.key = key;
     }
-    
-    public KeyCode key { get; private set; }
+
+    public KeyCode Key => key;
+    [SerializeField] private KeyCode key;
 
 }
 

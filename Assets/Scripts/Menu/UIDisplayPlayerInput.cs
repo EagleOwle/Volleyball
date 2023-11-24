@@ -18,8 +18,8 @@ public class UIDisplayPlayerInput : MonoBehaviour
 
         playerPreference = Preference.Singleton.player[value];
 
-        keyMoveText.text = playerPreference.leftKey.key.ToString() + "   " + playerPreference.rightKey.key.ToString();
-        keyJumpText.text = playerPreference.jumpKey.key.ToString();
+        keyMoveText.text = playerPreference.leftKey.Key.ToString() + "   " + playerPreference.rightKey.Key.ToString();
+        keyJumpText.text = playerPreference.jumpKey.Key.ToString();
 
         if (scene.playersType[value] != PlayerType.Human)
         {

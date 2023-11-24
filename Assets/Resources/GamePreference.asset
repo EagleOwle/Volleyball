@@ -16,20 +16,20 @@ MonoBehaviour:
   language: 1
   AllowedKeys: 6100000062000000630000006400000065000000710000007700000073000000640000007a0000007800000020000000080000001101000012010000130100001401000072000000740000007900000075000000690000006f000000700000006600000067000000680000006a0000006b0000006c0000007a000000780000006300000076000000620000006e0000006d0000006d0000003001000032010000340100002f0100003101000033010000000100000101000002010000030100000401000005010000060100000701000008010000090100000d0100000e0100000f010000100100000b0100000a0100000c01000016010000170100001801000019010000
   player:
-  - id: 0
+  - name: Ivan
     inputType: 0
     leftKey:
       type: 0
       playerIndex: 0
+      key: 97
     rightKey:
       type: 1
       playerIndex: 0
+      key: 100
     jumpKey:
       type: 2
       playerIndex: 0
-    mouseMoveSence: 1
-    mouseJumpSence: 5
-    joysticDeadZone: 10
+      key: 32
     nameLocalizedString:
       m_TableReference:
         m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
@@ -39,20 +39,20 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-  - id: 1
+  - name: Boris
     inputType: 0
     leftKey:
       type: 0
       playerIndex: 1
+      key: 276
     rightKey:
       type: 1
       playerIndex: 1
+      key: 275
     jumpKey:
       type: 2
       playerIndex: 1
-    mouseMoveSence: 1
-    mouseJumpSence: 10
-    joysticDeadZone: 10
+      key: 8
     nameLocalizedString:
       m_TableReference:
         m_TableCollectionName: GUID:f62591414bb54c648b3db5bab9bf8c97
