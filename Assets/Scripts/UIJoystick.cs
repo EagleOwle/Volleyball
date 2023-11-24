@@ -22,11 +22,11 @@ public class UIJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoint
 
         result = percent * 0.01f;
 
-        if (Mathf.Abs(result.x) < Preference.Singleton.player[0].joysticDeadZone)
+        if (Mathf.Abs(result.x) < Preference.Singleton.player[0].JoysticDeadZone)
         {
             result.x = 0;
         }
-        if (Mathf.Abs(result.y) < Preference.Singleton.player[0].joysticDeadZone)
+        if (Mathf.Abs(result.y) < Preference.Singleton.player[0].JoysticDeadZone)
         {
             result.y = 0;
         }

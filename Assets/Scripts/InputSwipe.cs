@@ -52,8 +52,8 @@ public class InputSwipe : MonoBehaviour
             direction.x = Mathf.Clamp(direction.x, -100, 100);
             direction.y = Mathf.Clamp(direction.y, -100, 100);
 
-            percent.x = Screen.width / 100 * Preference.Singleton.player[0].joysticDeadZone;
-            percent.y = Screen.height / 100 * Preference.Singleton.player[0].joysticDeadZone;
+            percent.x = Screen.width / 100 * Preference.Singleton.player[0].JoysticDeadZone;
+            percent.y = Screen.height / 100 * Preference.Singleton.player[0].JoysticDeadZone;
 
             if (Mathf.Abs(direction.x) < percent.x)
             {

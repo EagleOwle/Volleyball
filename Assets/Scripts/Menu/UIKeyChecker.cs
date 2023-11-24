@@ -27,7 +27,7 @@ public class UIKeyChecker : MonoBehaviour
             {
                 if (Input.GetKeyDown(item))
                 {
-                    targetInput.key = item;
+                    targetInput.WriteKey(item);
                     MatchChecking(targetInput);
                     HideSelf();
                     CancelInvoke();
@@ -49,7 +49,7 @@ public class UIKeyChecker : MonoBehaviour
             {
                 if (pref.jumpKey.key == targetInput.key)
                 {
-                    pref.jumpKey.key = KeyCode.None;
+                    pref.jumpKey.WriteKey(KeyCode.None);
                 }
             }
 
@@ -57,7 +57,7 @@ public class UIKeyChecker : MonoBehaviour
             {
                 if (pref.leftKey.key == targetInput.key)
                 {
-                    pref.leftKey.key = KeyCode.None;
+                    pref.leftKey.WriteKey(KeyCode.None);
                 }
             }
 
@@ -65,7 +65,7 @@ public class UIKeyChecker : MonoBehaviour
             {
                 if (pref.rightKey.key == targetInput.key)
                 {
-                    pref.rightKey.key = KeyCode.None;
+                    pref.rightKey.WriteKey(KeyCode.None);
                 }
             }
         }

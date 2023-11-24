@@ -49,6 +49,9 @@ public class Game : MonoBehaviour
         StateMachine.actionChangeState += ChangeState;
         StateMachine.SetState<PreviewSceneState>();
 
+        Preference.Singleton.player[0].Initialise(0);
+        Preference.Singleton.player[1].Initialise(1);
+
         InstantiatePerson(scene);
         InstaiateBall();
 

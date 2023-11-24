@@ -42,28 +42,28 @@ public class UIEditPlayerInput : MonoBehaviour
         inputTypeSlider.SetValueWithoutNotify((float)playerPreference.inputType);
         ChangeEditInputPanel((float)playerPreference.inputType);
 
-        senceMouseMoveSlider.SetValueWithoutNotify(playerPreference.mouseMoveSence);
-        OnChangeMouseMoveSence(playerPreference.mouseMoveSence);
+        senceMouseMoveSlider.SetValueWithoutNotify(playerPreference.MouseMoveSence);
+        OnChangeMouseMoveSence(playerPreference.MouseMoveSence);
 
-        senceMouseJumpSlider.SetValueWithoutNotify(playerPreference.mouseJumpSence);
-        OnChangeMouseJumpSence(playerPreference.mouseJumpSence);
+        senceMouseJumpSlider.SetValueWithoutNotify(playerPreference.MouseJumpSence);
+        OnChangeMouseJumpSence(playerPreference.MouseJumpSence);
 
         nameInputField.text = playerPreference.Name;
     }
 
     private void OnEnterPlayerName(string value)
     {
-       playerPreference.Name = value;
+       playerPreference.SavePlayerName(value, playerId);
     }
 
     private void OnChangeMouseMoveSence(float value)
     {
-        playerPreference.mouseMoveSence = value;
+        playerPreference.SaveMouseMoveSence(value, playerId);
     }
 
     private void OnChangeMouseJumpSence(float value)
     {
-        playerPreference.mouseJumpSence = value;
+        playerPreference.SaveMouseJumpSence(value, playerId);
     }
 
     private void ChangeEditInputPanel(float value)

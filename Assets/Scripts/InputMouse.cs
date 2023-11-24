@@ -19,12 +19,12 @@ public class InputMouse: MonoBehaviour
 
             for (int i = 0; i < Preference.Singleton.player.Length; i++)
             {
-                if (Mathf.Abs(direction.x) < Preference.Singleton.player[1].mouseMoveSence)
+                if (Mathf.Abs(direction.x) < Preference.Singleton.player[1].MouseMoveSence)
                 {
                     direction.x = 0;
                 }
 
-                if (Mathf.Abs(direction.y) < Preference.Singleton.player[1].mouseJumpSence)
+                if (Mathf.Abs(direction.y) < Preference.Singleton.player[1].MouseJumpSence)
                 {
                     direction.y = 0;
                 }

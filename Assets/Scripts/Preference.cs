@@ -32,40 +32,61 @@ public class Preference : ScriptableObject
     {
         set
         {
-            if (value != _musicValue)
+            var currentValue = defaultMusicValue;
+            if (PlayerPrefs.HasKey("MusicValue"))
             {
-                _musicValue = value;
-                actionOnChangeMusicValue?.Invoke(_musicValue);
+                currentValue = PlayerPrefs.GetFloat("MusicValue");
+            }
+
+            if (value != currentValue)
+            {
+                currentValue = value;
+                PlayerPrefs.SetFloat("MusicValue", currentValue);
+                actionOnChangeMusicValue?.Invoke(currentValue);
             }
         }
 
         get
         {
-            return _musicValue;
+            var currentValue = defaultMusicValue;
+            if (PlayerPrefs.HasKey("MusicValue"))
+            {
+                currentValue = PlayerPrefs.GetFloat("MusicValue");
+            }
+            return currentValue;
         }
     }
-    [Range(0,1)]
-    [SerializeField] private float _musicValue = 0.4f;
+    private const float defaultMusicValue = 0.4f;
     public Action<float> actionOnChangeMusicValue;
 
     public float SfxValue
     {
         set
         {
-            if (value != _sfxValue)
+            var currentValue = defaultSfxValue;
+            if (PlayerPrefs.HasKey("SfxValue"))
             {
-                _sfxValue = value;
-                actionOnChangeSfxValue?.Invoke(_sfxValue);
+                currentValue = PlayerPrefs.GetFloat("SfxValue");
+            }
+            if (value != currentValue)
+            {
+                currentValue = value;
+                PlayerPrefs.SetFloat("SfxValue", currentValue);
+                actionOnChangeSfxValue?.Invoke(currentValue);
             }
         }
 
         get
         {
-            return _sfxValue;
+            var currentValue = defaultSfxValue;
+            if (PlayerPrefs.HasKey("SfxValue"))
+            {
+                currentValue = PlayerPrefs.GetFloat("SfxValue");
+            }
+            return currentValue;
         }
     }
-    [Range(0, 1)]
-    [SerializeField]private float _sfxValue = 0.6f;
+    private const float defaultSfxValue = 0.6f;
     public Action<float> actionOnChangeSfxValue;
 
     [Header("Vibra")]
@@ -94,11 +115,64 @@ public class Preference : ScriptableObject
     [Space()]
     public List<KeyCode> AllowedKeys = new List<KeyCode>()
     {
+        KeyCode.Q,
+        KeyCode.W,
+        KeyCode.E,
+        KeyCode.R,
+        KeyCode.T,
+        KeyCode.Y,
+        KeyCode.U,
+        KeyCode.I,
+        KeyCode.O,
+        KeyCode.P,
         KeyCode.A,
-        KeyCode.B,
-        KeyCode.C,
+        KeyCode.S,
         KeyCode.D,
-        KeyCode.E
+        KeyCode.F,
+        KeyCode.G,
+        KeyCode.H,
+        KeyCode.J,
+        KeyCode.K,
+        KeyCode.L,
+        KeyCode.Z,
+        KeyCode.X,
+        KeyCode.C,
+        KeyCode.V,
+        KeyCode.B,
+        KeyCode.N,
+        KeyCode.M,
+        KeyCode.LeftArrow,
+        KeyCode.RightArrow,
+        KeyCode.UpArrow,
+        KeyCode.DownArrow,
+        KeyCode.Backspace,
+        KeyCode.LeftShift,
+        KeyCode.LeftAlt,
+        KeyCode.LeftControl,
+        KeyCode.RightShift,
+        KeyCode.RightAlt,
+        KeyCode.RightControl,
+        KeyCode.Keypad0,
+        KeyCode.Keypad1,
+        KeyCode.Keypad2,
+        KeyCode.Keypad3,
+        KeyCode.Keypad4,
+        KeyCode.Keypad5,
+        KeyCode.Keypad6,
+        KeyCode.Keypad7,
+        KeyCode.Keypad8,
+        KeyCode.Keypad9,
+        KeyCode.KeypadEnter,
+        KeyCode.KeypadEquals,
+        KeyCode.KeypadMinus,
+        KeyCode.KeypadMultiply,
+        KeyCode.KeypadPeriod,
+        KeyCode.KeypadPlus,
+        KeyCode.End,
+        KeyCode.Home,
+        KeyCode.PageUp,
+        KeyCode.PageDown,
+        KeyCode.Insert
     };
 
     [Space()]
@@ -135,4 +209,5 @@ public class Preference : ScriptableObject
         public AudioClip[] hitClip;
         public Ball prefab;
     }
+
 }
